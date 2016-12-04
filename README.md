@@ -198,7 +198,7 @@ This extension is presented in several tabs. Depending on which tab is on top, t
 
 **Invert V/I directions:** invert the directions of the arrows. Keep in mind that they will ALWAYS follow the **receiver convention** (current flows in the direction of the voltage drop).
 
-<img src="docs/images/Semi_annotation.png" width="700px"/>
+<img src="docs/images/Semi_annotation.png" width="500px"/>
 
 ### Operational amplifier tab
 
