@@ -16,6 +16,8 @@ The main features are
  - adjustable orientation is available
  - optional LaTeX support
 
+This is a work-in-progress project. New components will be added in the future.
+
 # Installation and requirements
 
 This extension was partially developed in Inkscape 0.48 and partially in 0.91 in Linux (Kubuntu 12.04 and 14.04). It should work on both versions of Inkscape. Also, they should work in different OSs too as long as all requirements are installed.
