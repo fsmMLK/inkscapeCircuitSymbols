@@ -296,7 +296,7 @@ In both cases, you have two options in the `Color` drop down menu:
 
   - You can select the predefined colors as presented below
 
-<img src="docs/images/Anno_types.png" width="200px"/>
+<img src="docs/images/Anno_types.png" width="250px"/>
 
   - You can select **use color picker** to choose the color from the color picker widget just below the `Color` drop down menu. **Attention:** the color selected in the color picker widget will be considered **ONLY** if you select **use color picker** in the drop down menu. 
 
