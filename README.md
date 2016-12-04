@@ -67,7 +67,7 @@ This extension is presented in several tabs. Depending on which tab is on top, t
 
 **Type:** You can select the type of bipole. The available types are:
 
-<img src="docs/images/RLC_types.png" width="600px"/>
+<img src="docs/images/RLC_types.png" width="500px"/>
 
 **Value:** Value of the bipole. If LaTeX support is enabled, this text will be included in a math environment $...$. You don't have to enclose your text between $...$. If you type numeric values, you can use ``M,k,m,u,p`` to indicate multiplier unit.
 
