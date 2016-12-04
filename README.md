@@ -264,7 +264,7 @@ This extension is presented in several tabs. Depending on which tab is on top, t
 
 This tab allows you to create custom voltage or current annotation to add to your circuits.
 
-<img src="docs/images/Tab_Arrows.png" width="600px"/>
+<img src="docs/images/Tab_Arrows.png" width="650px"/>
 
 
 **Type:** You can select voltage or current annotation
