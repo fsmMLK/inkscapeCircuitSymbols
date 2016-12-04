@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:ns0="http://www.iki.fi/pav/software/textext/"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 744.09448819 1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r"
+   sodipodi:docname="Switch_types.svg">
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="4.812499994921"
+     inkscape:cx="118.1833947545"
+     inkscape:cy="536.8545475949"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:object-nodes="true"
+     inkscape:snap-text-baseline="true"
+     inkscape:window-width="1920"
+     inkscape:window-height="1062"
+     inkscape:window-x="-4"
+     inkscape:window-y="-6"
+     inkscape:window-maximized="1" />
+  <defs
+     id="defs4">
+    <marker
+       inkscape:stockid="arrowSwitchStart"
+       style="overflow:visible"
+       refY="0.0"
+       refX="0.0"
+       orient="auto"
+       id="arrowSwitchStart">
+      <path
+         id="path4214"
+         transform="scale(0.25) rotate(0) translate(7.2925,0)"
+         style="stroke-width:1.0;stroke:#FF0000;fill:#FF0000;fill-rule:evenodd"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z " />
+    </marker>
+    <marker
+       inkscape:stockid="arrowSwitchEnd"
+       style="overflow:visible"
+       refY="0.0"
+       refX="0.0"
+       orient="auto"
+       id="arrowSwitchEnd">
+      <path
+         id="path4217"
+         transform="scale(0.25) rotate(180) translate(7.2925,0)"
+         style="stroke-width:1.0;stroke:#FF0000;fill:#FF0000;fill-rule:evenodd"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z " />
+    </marker>
+  </defs>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Layer 1" />
+  <g
+     id="g4222"
+     inkscape:label="Switch">
+    <g
+       id="g4224"
+       inkscape:label="Switch">
+      <path
+         id="path4226"
+         inkscape:label="none"
+         style="stroke-linejoin:round;stroke:#000000;stroke-linecap:round;stroke-dasharray:none;stroke-width:1.0;fill:none"
+         d="m 70 540 15.5 0 20 -8" />
+      <path
+         id="path4228"
+         inkscape:label="none"
+         style="stroke-linejoin:round;stroke:#000000;stroke-linecap:round;stroke-dasharray:none;stroke-width:1.0;fill:none"
+         d="m 120 540 -15.5 0" />
+      <path
+         id="path4230"
+         inkscape:label="circle"
+         sodipodi:type="arc"
+         sodipodi:start="0"
+         sodipodi:ry="1.0"
+         sodipodi:rx="1.0"
+         sodipodi:end="6.28318530718"
+         sodipodi:cy="540"
+         sodipodi:cx="105"
+         style="stroke-linejoin:round;stroke:#000000;stroke-linecap:round;stroke-dasharray:none;stroke-width:0.7;fill:#000000"
+         d="M 106.0 540 a 1.000000,1.000000 0 1 1 -2.000000,0.000000  a 1.000000,1.000000 0 1 1 2.000000,0.000000 z" />
+      <path
+         id="path4232"
+         inkscape:label="circle"
+         sodipodi:type="arc"
+         sodipodi:start="0"
+         sodipodi:ry="1.0"
+         sodipodi:rx="1.0"
+         sodipodi:end="6.28318530718"
+         sodipodi:cy="540"
+         sodipodi:cx="85"
+         style="stroke-linejoin:round;stroke:#000000;stroke-linecap:round;stroke-dasharray:none;stroke-width:0.7;fill:#000000"
+         d="M 86.0 540 a 1.000000,1.000000 0 1 1 -2.000000,0.000000  a 1.000000,1.000000 0 1 1 2.000000,0.000000 z" />
+    </g>
+    <g
+       transform="translate(95.000000 530.666667) translate(-167.825450 352.825458) scale(0.739645 -0.739645)  "
+       ns0:preamble="/home/fernando/.config/inkscape/extensions/textextLib/CircuitSymbolsLatexPreamble.tex"
+       ns0:text=" $S$"
+       text-anchor="start"
+       word-spacing="normal"
+       letter-spacing="normal"
+       font-size-adjust="none"
+       font-stretch="normal"
+       font-weight="normal"
+       font-variant="normal"
+       font-style="normal"
+       fill-opacity="1"
+       fill-rule="evenodd"
+       fill="none"
+       stroke-opacity="1"
+       stroke-dashoffset="0"
+       stroke-dasharray="none"
+       stroke-miterlimit="10.433"
+       stroke-linejoin="miter"
+       stroke-linecap="butt"
+       stroke="black"
+       xml:space="preserve"
+       id="content"><path
+         id="path4235"
+         style="fill:#000000;stroke-width:0"
+         fill="black"
+         stroke-width="0"
+         d="M229.85,484.14 L229.85,484.14 L229.85,484.15 L229.85,484.15 L229.85,484.15 L229.85,484.16 L229.85,484.16 L229.85,484.16 L229.84,484.17 L229.84,484.17 L229.84,484.18 L229.84,484.18 L229.84,484.18 L229.84,484.19 L229.83,484.19 L229.83,484.2 L229.83,484.2 L229.82,484.2 L229.82,484.21 L229.82,484.21 L229.81,484.21 L229.81,484.22 L229.8,484.22 L229.8,484.22 L229.79,484.23 L229.79,484.23 L229.79,484.23 L229.78,484.23 L229.78,484.23 L229.78,484.23 L229.77,484.23 L229.77,484.23 L229.77,484.24 L229.76,484.24 L229.76,484.24 L229.76,484.24 L229.75,484.24 L229.75,484.24 L229.74,484.24 L229.74,484.24 C229.69,484.24,229.68,484.23,229.56,484.09 L229.08,483.52 C228.82,483.99,228.31,484.24,227.66,484.24 C226.4,484.24,225.2,483.1,225.2,481.89 C225.2,481.09,225.73,480.63,226.24,480.48 L227.3,480.2 C227.67,480.12,228.22,479.97,228.22,479.15 C228.22,478.26,227.4,477.32,226.43,477.32 C225.79,477.32,224.69,477.54,224.69,478.77 C224.69,479.01,224.74,479.25,224.74,479.31 C224.76,479.35,224.76,479.36,224.76,479.38 C224.76,479.48,224.7,479.49,224.65,479.49 C224.6,479.49,224.58,479.48,224.55,479.45 C224.51,479.41,223.95,477.15,223.95,477.12 C223.95,477.06,224,477.02,224.06,477.02 C224.11,477.02,224.12,477.03,224.24,477.17 L224.73,477.73 C225.15,477.16,225.83,477.02,226.41,477.02 C227.76,477.02,228.93,478.34,228.93,479.57 C228.93,480.26,228.6,480.59,228.45,480.73 C228.22,480.96,228.07,481,227.18,481.23 C226.96,481.29,226.61,481.39,226.52,481.41 C226.25,481.5,225.91,481.79,225.91,482.31 C225.91,483.12,226.71,483.96,227.65,483.96 C228.48,483.96,229.08,483.53,229.08,482.42 C229.08,482.1,229.04,481.92,229.04,481.86 C229.04,481.85,229.04,481.77,229.16,481.77 C229.26,481.77,229.27,481.8,229.31,481.96 Z " /></g>  </g>
+</svg>
