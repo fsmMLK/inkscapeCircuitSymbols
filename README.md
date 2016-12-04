@@ -177,7 +177,7 @@ This extension is presented in several tabs. Depending on which tab is on top, t
 
 **Open/close text:** Adds text near the annotation arrow. Useful to express the time when the switch changes state.
 
-<img src="docs/images/Switch_state.png" width="300px"/>
+<img src="docs/images/Switch_state.png" width="400px"/>
 
 
 ### Semiconductor tab
@@ -186,7 +186,7 @@ This extension is presented in several tabs. Depending on which tab is on top, t
 
 **Type:** You can select the type of semiconductor. The available types are:
 
-<img src="docs/images/Semi_types.png" width="700px"/>
+<img src="docs/images/Semi_types.png" width="650px"/>
 
 **Label:** Label of the switch. If LaTeX support is enabled, this text will be included in a math environment $...$. You don't have to enclose your text between $...$.
 
