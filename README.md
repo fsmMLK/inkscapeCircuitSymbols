@@ -264,12 +264,12 @@ This extension is presented in several tabs. Depending on which tab is on top, t
 
 This tab allows you to create custom voltage or current annotation to add to your circuits.
 
-<img src="docs/images/Tab_Arrows.png" width="650px"/>
+<img src="docs/images/Tab_Arrows.png" width="600px"/>
 
 
 **Type:** You can select voltage or current annotation
 
-<img src="docs/images/Anno_types.png" width="200px"/>
+<img src="docs/images/Anno_types.png" width="250px"/>
 
 **Label:** Label of the annotation. If LaTeX support is enabled, this text will be included in a math environment $...$. You don't have to enclose your text between $...$.
 
