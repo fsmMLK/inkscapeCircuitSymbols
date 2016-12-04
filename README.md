@@ -306,5 +306,15 @@ In both cases, you have two options in the `Color` drop down menu:
 
  - The objects will be created at the center of your screen.
 
+# Examples
 
+<img src="docs/images/Example_B.png" width="900px"/>
+
+<img src="docs/images/Example_A.png" width="900px"/>
+
+<img src="docs/images/Example_C.png" width="900px"/>
+
+<img src="docs/images/Example_D.png" width="900px"/>
+
+<img src="docs/images/Example_E.png" width="900px"/>
 
