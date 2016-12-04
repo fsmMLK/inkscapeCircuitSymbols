@@ -134,7 +134,7 @@ This extension is presented in several tabs. Depending on which tab is on top, t
 
 > Note: Together with the source, the extension will create control arrows in all possible directions. This allow you to choose from them the arrow that fits to your situation.
 
-> <img src="docs/images/DepSrc_controlOptions.png" width="300px"/>
+> <img src="docs/images/DepSrc_controlOptions.png" width="250px"/>
 
 **Gain:** control gain of the source. If LaTeX support is enabled, this text will be included in a math environment $...$. You don't have to enclose your text between $...$. If you type numeric values, you can use ``M,k,m,u,p`` to indicate multiplier unit.
 
