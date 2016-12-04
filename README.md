@@ -207,7 +207,7 @@ This extension is presented in several tabs. Depending on which tab is on top, t
 
 **Type:** You can select the type of operational amplifier. At the moment there is only one type of OpAmp.
 
-<img src="docs/images/OpAmp_types.png" width="700px"/>
+<img src="docs/images/OpAmp_types.png" width="150px"/>
 
 **Invert inputs:** invert the position between inverting and non inverting inputs
 
@@ -219,7 +219,7 @@ This extension is presented in several tabs. Depending on which tab is on top, t
 
 **+V/-V supply label:** positive/negative supply values. -V is used only if `Symmetric supply` is unchecked. 
 
-<img src="docs/images/OpAmp_supply.png" width="700px"/>
+<img src="docs/images/OpAmp_supply.png" width="850px"/>
 
 **Add input voltage labels (v+) (v-):** add input nodal voltage annotation.
 
@@ -239,7 +239,7 @@ This extension is presented in several tabs. Depending on which tab is on top, t
 
 **Vd label:** label of the input differential voltage
 
-<img src="docs/images/OpAmp_annotation.png" width="700px"/>
+<img src="docs/images/OpAmp_annotation.png" width="900px"/>
 
 ### Signals tab
 
