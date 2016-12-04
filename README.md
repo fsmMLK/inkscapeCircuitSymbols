@@ -67,7 +67,7 @@ This extension is presented in several tabs. Depending on which tab is on top, t
 
 **Type:** You can select the type of bipole. The available types are:
 
-<img src="docs/images/RLC_types.png" width="700px"/>
+<img src="docs/images/RLC_types.png" width="600px"/>
 
 **Value:** Value of the bipole. If LaTeX support is enabled, this text will be included in a math environment $...$. You don't have to enclose your text between $...$. If you type numeric values, you can use ``M,k,m,u,p`` to indicate multiplier unit.
 
@@ -75,7 +75,7 @@ This extension is presented in several tabs. Depending on which tab is on top, t
 
 > Note: If LaTeX support is enabled, the unit will be inserted using ``siunitx`` package.
 
-<img src="docs/images/RLC_values.png" width="700px"/>
+<img src="docs/images/RLC_values.png" width="800px"/>
 
 **Orientation:** Rotation angle in degrees.
 
@@ -87,11 +87,11 @@ This extension is presented in several tabs. Depending on which tab is on top, t
 
 **Invert V/I directions:** invert the directions of the arrows. Keep in mind that they will ALWAYS follow the **receiver convention** (current flows in the direction of the voltage drop).
 
-<img src="docs/images/RLC_annotation.png" width="700px"/>
+<img src="docs/images/RLC_annotation.png" width="500px"/>
 
 ### Independent source tab
 
-<img src="docs/images/Tab_indSrc.png" width="400px"/>
+<img src="docs/images/Tab_indSrc.png" width="600px"/>
 
 **Type:** You can select the type of source. The available types are:
 
@@ -124,7 +124,7 @@ This extension is presented in several tabs. Depending on which tab is on top, t
 
 ### Dependent source tab
 
-<img src="docs/images/Tab_depSrc.png" width="400px"/>
+<img src="docs/images/Tab_depSrc.png" width="600px"/>
 
 **Type:** You can select the type of source.
 
@@ -160,7 +160,7 @@ This extension is presented in several tabs. Depending on which tab is on top, t
 
 ### Switches tab
 
-<img src="docs/images/Tab_switch.png" width="400px"/>
+<img src="docs/images/Tab_switch.png" width="600px"/>
 
 **Type:** You can select the type of switch. At the moment there is only one type of switch.
 
@@ -181,7 +181,7 @@ This extension is presented in several tabs. Depending on which tab is on top, t
 
 ### Semiconductor tab
 
-<img src="docs/images/Tab_Semiconductor.png" width="400px"/>
+<img src="docs/images/Tab_Semiconductor.png" width="600px"/>
 
 **Type:** You can select the type of semiconductor. The available types are:
 
@@ -202,7 +202,7 @@ This extension is presented in several tabs. Depending on which tab is on top, t
 ### Operational amplifier tab
 
 
-<img src="docs/images/Tab_OpAmp.png" width="400px"/>
+<img src="docs/images/Tab_OpAmp.png" width="600px"/>
 
 **Type:** You can select the type of operational amplifier. At the moment there is only one type of OpAmp.
 
@@ -242,7 +242,7 @@ This extension is presented in several tabs. Depending on which tab is on top, t
 
 ### Signals tab
 
-<img src="docs/images/Tab_Signals.png" width="700px"/>
+<img src="docs/images/Tab_Signals.png" width="600px"/>
 
 
 **Type:** Allows the selection of one type of signal. You can select a few commonly used signal or select ``Custom`` to customize its label. (see below)
@@ -262,6 +262,9 @@ This extension is presented in several tabs. Depending on which tab is on top, t
 ### Annotation tab
 
 This tab allows you to create custom voltage or current annotation to add to your circuits.
+
+<img src="docs/images/Tab_Arrows.png" width="600px"/>
+
 
 **Type:** You can select voltage or current annotation
 
@@ -284,7 +287,7 @@ This tab allows you to create custom voltage or current annotation to add to you
 
 ### Color tab
 
-<img src="docs/images/Tab_Colors.png" width="700px"/>
+<img src="docs/images/Tab_Colors.png" width="600px"/>
 
 This tab is divided in two sections. The first control the color of current annotation, the second controls the color of voltage annotation.
 
