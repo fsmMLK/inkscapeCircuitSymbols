@@ -128,13 +128,13 @@ This extension is presented in several tabs. Depending on which tab is on top, t
 
 **Type:** You can select the type of source.
 
-<img src="docs/images/DepSrc_types.png" width="700px"/>
+<img src="docs/images/DepSrc_types.png" width="850px"/>
 
 **Type of control:** You can select the type of control.
 
 > Note: Together with the source, the extension will create control arrows in all possible directions. This allow you to choose from them the arrow that fits to your situation.
 
-> <img src="docs/images/DepSrc_controlOptions.png" width="400px"/>
+> <img src="docs/images/DepSrc_controlOptions.png" width="200px"/>
 
 **Gain:** control gain of the source. If LaTeX support is enabled, this text will be included in a math environment $...$. You don't have to enclose your text between $...$. If you type numeric values, you can use ``M,k,m,u,p`` to indicate multiplier unit.
 
@@ -165,7 +165,7 @@ This extension is presented in several tabs. Depending on which tab is on top, t
 
 **Type:** You can select the type of switch. At the moment there is only one type of switch.
 
-<img src="docs/images/Switch_types.png" width="300px"/>
+<img src="docs/images/Switch_types.png" width="150px"/>
 
 **Label:** Label of the switch. If LaTeX support is enabled, this text will be included in a math environment $...$. You don't have to enclose your text between $...$.
 
