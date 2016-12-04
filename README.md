@@ -308,13 +308,13 @@ In both cases, you have two options in the `Color` drop down menu:
 
 # Examples
 
-<img src="docs/images/Example_B.png" width="600px"/>
+<img src="docs/images/Example_B.png" width="550px"/>
 
 <img src="docs/images/Example_C.png" width="900px"/>
 
 <img src="docs/images/Example_A.png" width="450px"/>
 
-<img src="docs/images/Example_D.png" width="900px"/>
+<img src="docs/images/Example_D.png" width="450px"/>
 
-<img src="docs/images/Example_E.png" width="900px"/>
+<img src="docs/images/Example_E.png" width="450px"/>
 
