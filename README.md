@@ -63,7 +63,7 @@ This extension is presented in several tabs. Depending on which tab is on top, t
 
 ### RLC tab
 
-<img src="docs/images/Tab_RLC.png" width="400px"/>
+<img src="docs/images/Tab_RLC.png" width="600px"/>
 
 **Type:** You can select the type of bipole. The available types are:
 
