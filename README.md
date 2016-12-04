@@ -95,7 +95,7 @@ This extension is presented in several tabs. Depending on which tab is on top, t
 
 **Type:** You can select the type of source. The available types are:
 
-<img src="docs/images/IndSrc_types.png" width="700px"/>
+<img src="docs/images/IndSrc_types.png" width="500px"/>
 
 **Value:** Value of the bipole. If LaTeX support is enabled, this text will be included in a math environment $...$. You don't have to enclose your text between $...$. If you type numeric values, you can use ``M,k,m,u,p`` to indicate multiplier unit.
 
@@ -103,7 +103,7 @@ This extension is presented in several tabs. Depending on which tab is on top, t
 
 > Note: If LaTeX support is enabled, the unit will be inserted using ``siunitx`` package.
 
-<img src="docs/images/indSrc_values.png" width="700px"/>
+<img src="docs/images/indSrc_values.png" width="850px"/>
 
 **Orientation:** Rotation angle in degrees. See *RLC tab* section for examples.
 
@@ -128,6 +128,8 @@ This extension is presented in several tabs. Depending on which tab is on top, t
 
 **Type:** You can select the type of source.
 
+<img src="docs/images/DepSrc_types.png" width="700px"/>
+
 **Type of control:** You can select the type of control.
 
 > Note: Together with the source, the extension will create control arrows in all possible directions. This allow you to choose from them the arrow that fits to your situation.
@@ -138,7 +140,6 @@ This extension is presented in several tabs. Depending on which tab is on top, t
 
 **Control name:** Label of the control signal (voltage or current, depending on the type of control. If LaTeX support is enabled, this text will be included in a math environment $...$. You don't have to enclose your text between $...$. If you type numeric values, you can use ``M,k,m,u,p`` to indicate multiplier unit.
 
-<img src="docs/images/DepSrc_types.png" width="700px"/>
 
 **Orientation:** Rotation angle in degrees. See *RLC tab* section for examples.
 
