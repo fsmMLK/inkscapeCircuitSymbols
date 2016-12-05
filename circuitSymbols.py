@@ -74,7 +74,7 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
     self.OptionParser.add_option("--switchVal", action="store", type="string", dest="switchVal", default='') 
     self.OptionParser.add_option("--switchFlagOpen", action="store", type="inkbool", dest="switchFlagOpen", default=True) 
     self.OptionParser.add_option("--switchOpenClose", action="store", type="inkbool", dest="switchOpenClose", default=True) 
-    self.OptionParser.add_option("--switchOpenCloseText",action="store", type="string",dest="switchOpenCloseText", default='t_0')
+    self.OptionParser.add_option("--switchOpenCloseText",action="store", type="string",dest="switchOpenCloseText", default='')
     self.OptionParser.add_option("--switchRot", action="store", type="string", dest="switchRot", default=0) 
 
     self.OptionParser.add_option("--electr",action="store", type="string",dest="electr", default='none')
@@ -139,13 +139,9 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
     root_layer = self.document.getroot()
     
     # text size and font style
-    self.useLatex=True
-    if self.useLatex:
-      self.fontSize=5
-      self.fontSizeSmall=4
-    else:
-      self.fontSize=8
-      self.fontSizeSmall=5
+    self.fontSize=5
+    self.fontSizeSmall=4
+
       
     self.textOffset = self.fontSize/1.5  # offset between symbol and text
     self.textOffsetSmall = self.fontSizeSmall/2  # offset between symbol and text
@@ -168,45 +164,67 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
     so.arrowRot=float(so.arrowRot)
     so.electrRot=float(so.electrRot)
     
+    
+    #x=inkDraw.textStyle.setSimpleBlack(fontSize=10, justification='center')
+    #ang=30.0
+    #inkDraw.text.write(self, 'abc', position, root_layer, textStyle=x, fontSize=None, justification=None, angleDeg=ang)
+    
+    #inkDraw.text.latex(self, root_layer, 'def', position, fontSize=10, refPoint='cc', angleDeg=ang)
     #---------------------------
     # RLC
     #---------------------------
     if so.tab=='RLC':
       
-      if so.bipoleRLCUnit:
+      
+      if so.bipoleRLCUnit and inkDraw.useLatex:
           so.bipoleRLCVal=latexUnitMultiple(so.bipoleRLCVal)
         
       if so.bipoleRLC=="genericBipole":
         if so.bipoleRLCUnit:
-          so.bipoleRLCVal+=r'\si\ohm'
+          if inkDraw.useLatex:
+            so.bipoleRLCVal+=r'\si\ohm'
+          else:
+            so.bipoleRLCVal+=u'\u2126'
         self.drawBipoleGeneral(root_layer,position,value=so.bipoleRLCVal,angleDeg=so.bipoleRLCRot,
                               flagVolt=so.bipoleRLCVolt,voltName=so.bipoleRLCVoltName,flagCurr=so.bipoleRLCCurr,
                               currName=so.bipoleRLCCurrName,invertArrows=so.bipoleRLCVoltCurrInvert)
         
       if so.bipoleRLC=="resistor":
         if so.bipoleRLCUnit:
-          so.bipoleRLCVal+=r'\si\ohm'
+          if inkDraw.useLatex:
+            so.bipoleRLCVal+=r'\si\ohm'
+          else:
+            so.bipoleRLCVal+=u'\u2126'
         self.drawResistor(root_layer,position,value=so.bipoleRLCVal,angleDeg=so.bipoleRLCRot,
                           flagVolt=so.bipoleRLCVolt,voltName=so.bipoleRLCVoltName,flagCurr=so.bipoleRLCCurr,
                           currName=so.bipoleRLCCurrName,invertArrows=so.bipoleRLCVoltCurrInvert)
         
       if so.bipoleRLC=="capacitor":
         if so.bipoleRLCUnit:
-          so.bipoleRLCVal+=r'\si\farad'
+          if inkDraw.useLatex:
+            so.bipoleRLCVal+=r'\si\farad'
+          else:
+            so.bipoleRLCVal+='F'
         self.drawCapacitor(root_layer,position,value=so.bipoleRLCVal,flagPol=False,angleDeg=so.bipoleRLCRot,
                           flagVolt=so.bipoleRLCVolt,voltName=so.bipoleRLCVoltName,flagCurr=so.bipoleRLCCurr,
                           currName=so.bipoleRLCCurrName,invertArrows=so.bipoleRLCVoltCurrInvert)
         
       if so.bipoleRLC=="capacitorPol":
         if so.bipoleRLCUnit:
-          so.bipoleRLCVal+=r'\si\farad'
+          if inkDraw.useLatex:
+            so.bipoleRLCVal+=r'\si\farad'
+          else:
+            so.bipoleRLCVal+='F'
         self.drawCapacitor(root_layer,position,value=so.bipoleRLCVal,flagPol=True,angleDeg=so.bipoleRLCRot,
                           flagVolt=so.bipoleRLCVolt,voltName=so.bipoleRLCVoltName,flagCurr=so.bipoleRLCCurr,
                           currName=so.bipoleRLCCurrName,invertArrows=so.bipoleRLCVoltCurrInvert)
 
       if so.bipoleRLC=="inductor":
         if so.bipoleRLCUnit:
-          so.bipoleRLCVal+=r'\si\henry'
+          if inkDraw.useLatex:
+            so.bipoleRLCVal+=r'\si\henry'
+          else:
+            so.bipoleRLCVal+='H'
         self.drawInductor(root_layer,position,value=so.bipoleRLCVal,angleDeg=so.bipoleRLCRot,
                           flagVolt=so.bipoleRLCVolt,voltName=so.bipoleRLCVoltName,flagCurr=so.bipoleRLCCurr,
                           currName=so.bipoleRLCCurrName,invertArrows=so.bipoleRLCVoltCurrInvert)
@@ -216,40 +234,55 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
     #---------------------------
     if so.tab=='Indep. Source':
       
-      if so.sourceUnit:
+      if so.sourceUnit and inkDraw.useLatex:
           so.sourceVal=latexUnitMultiple(so.sourceVal)
                 
       if so.source=="voltIndepDC":
         if so.sourceUnit:
-          so.sourceVal+=r'\si\volt'
+          if inkDraw.useLatex:
+            so.sourceVal+=r'\si\volt'
+          else:
+            so.sourceVal+='V'
         self.drawSourceVDC(root_layer,position,value=so.sourceVal,angleDeg=so.sourceRot,
                           flagVolt=so.sourceVolt,flagCurr=so.sourceCurr,
                           currName=so.sourceCurrName,invertArrows=so.sourceVoltCurrInvert,mirror=so.sourceMirror)
                                         
       if so.source=="voltIndepDCbattery":
         if so.sourceUnit:
-          so.sourceVal+=r'\si\volt'
+          if inkDraw.useLatex:
+            so.sourceVal+=r'\si\volt'
+          else:
+            so.sourceVal+='V'
         self.drawSourceVDCbattery(root_layer,position,value=so.sourceVal,angleDeg=so.sourceRot,
                                 flagVolt=so.sourceVolt,flagCurr=so.sourceCurr,
                                 currName=so.sourceCurrName,invertArrows=so.sourceVoltCurrInvert,mirror=so.sourceMirror)
 
       if so.source=="voltIndep":
         if so.sourceUnit:
-          so.sourceVal+=r'\si\volt'
+          if inkDraw.useLatex:
+            so.sourceVal+=r'\si\volt'
+          else:
+            so.sourceVal+='V'
         self.drawSourceV(root_layer,position,value=so.sourceVal,angleDeg=so.sourceRot,
                         flagVolt=so.sourceVolt,flagCurr=so.sourceCurr,
                         currName=so.sourceCurrName,invertArrows=so.sourceVoltCurrInvert,mirror=so.sourceMirror)
                                     
       if so.source=="voltIndepSinusoidal":
         if so.sourceUnit:
-          so.sourceVal+=r'\si\volt'
+          if inkDraw.useLatex:
+            so.sourceVal+=r'\si\volt'
+          else:
+            so.sourceVal+='V'
         self.drawSourceVSinusoidal(root_layer,position,value=so.sourceVal,angleDeg=so.sourceRot,
                                     flagVolt=so.sourceVolt,flagCurr=so.sourceCurr,
                                     currName=so.sourceCurrName,invertArrows=so.sourceVoltCurrInvert,mirror=so.sourceMirror)
                                     
       if so.source=="currIndep":
         if so.sourceUnit:
-          so.sourceVal+=r'\si\ampere'
+          if inkDraw.useLatex:
+            so.sourceVal+=r'\si\ampere'
+          else:
+            so.sourceVal+='A'
         self.drawSourceI(root_layer,position,value=so.sourceVal,angleDeg=so.sourceRot,
                           flagVolt=so.sourceVolt,flagCurr=so.sourceCurr,
                           voltName=so.sourceVoltName,invertArrows=so.sourceVoltCurrInvert,mirror=so.sourceMirror)
@@ -388,10 +421,10 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
     inkDraw.line.relCoords(elem, [[15.5,0]],[position[0]+34.5,position[1]])
       
     pos_text=[position[0]+25,position[1]-3-self.textOffset]
-    if self.useLatex:
-      inkDraw.text.latex(self,group,'$'+value+'$',pos_text,fontSize=self.fontSize,refPoint='bc',preambleFile=self.preambleFile)
-    else:
-      inkDraw.text.write(self,value,pos_text,group,self.textStyle)
+    if inkDraw.useLatex:
+      value='$'+value + '$'
+      
+    inkDraw.text.latex(self,group,value,pos_text,fontSize=self.fontSize,refPoint='bc',preambleFile=self.preambleFile)
       
     if angleDeg!=0:
       self.rotateElement(group,position,angleDeg)
@@ -420,12 +453,6 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
     flagCurr: indicates whether the current arrow must be drawn (default: true)
     currName: current drop name (default: i)
     """
-    
-    if not self.useLatex:
-      if value[-3:]=='ohm' or value[-3:]=='OHM' or value[-3:]=='Ohm':
-        textValue= value[0:-3] + Ohm
-      else:
-        textValue= value
       
     group = self.createGroup(parent,label)
     elem = self.createGroup(group)
@@ -433,10 +460,10 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
     inkDraw.line.relCoords(elem, [[15.5,0],[2,3],[3,-6],[3,6],[3,-6],[3,6],[3,-6],[2,3],[15.5,0]],position)
       
     pos_text=[position[0]+25,position[1]-3-self.textOffset]
-    if self.useLatex:
-      inkDraw.text.latex(self,group,'$'+value+'$',pos_text,fontSize=self.fontSize,refPoint='bc',preambleFile=self.preambleFile)
-    else:
-      inkDraw.text.write(self,textValue,pos_text,group,self.textStyle)
+    if inkDraw.useLatex:
+      value='$'+value +'$'
+      
+    inkDraw.text.latex(self,group,value,pos_text,fontSize=self.fontSize,refPoint='bc',preambleFile=self.preambleFile)
 
     if angleDeg!=0:
       self.rotateElement(group,position,angleDeg)
@@ -475,10 +502,10 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
     inkDraw.line.relCoords(elem, [[0,-14]],[position[0]+27,position[1]+7])
     
     pos_text=[position[0]+25,position[1]-8-self.textOffset]
-    if self.useLatex:
-      inkDraw.text.latex(self,group,'$'+value+'$',pos_text,fontSize=self.fontSize,refPoint='bc',preambleFile=self.preambleFile)
-    else:
-      inkDraw.text.write(self,value,pos_text,group,self.textStyle)
+    if inkDraw.useLatex:
+      value='$'+value +'$'
+      
+    inkDraw.text.latex(self,group,value,pos_text,fontSize=self.fontSize,refPoint='bc',preambleFile=self.preambleFile)
       
     if flagPol:
       inkDraw.text.write(self,'+',[position[0]+31,position[1]-3],group,self.textStyle,fontSize=5)
@@ -510,12 +537,6 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
     flagCurr: indicates whether the current arrow must be drawn (default: true)
     currName: current drop name (default: i)
     """
-    
-    if not self.useLatex:
-      if value[-3:]=='ohm' or value[-3:]=='OHM' or value[-3:]=='Ohm':
-        textValue= value[0:-3] + Ohm
-      else:
-        textValue= value
       
     group = self.createGroup(parent,label)
     elem = self.createGroup(group,label)
@@ -529,10 +550,10 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
     inkDraw.arc.centerAngStartAngEnd(elem,[position[0]+34,position[1]], 3.0,0.0,180.0,[0,0],flagOpen=True,largeArc=False)  
     
     pos_text=[position[0]+25,position[1]-self.textOffset]
-    if self.useLatex:
-      inkDraw.text.latex(self,group,'$'+value+'$',pos_text,fontSize=self.fontSize,refPoint='bc',preambleFile=self.preambleFile)
-    else:
-      inkDraw.text.write(self,textValue,pos_text,group,self.textStyle)
+    if inkDraw.useLatex:
+      value='$'+value +'$'
+      
+    inkDraw.text.latex(self,group,value,pos_text,fontSize=self.fontSize,refPoint='bc',preambleFile=self.preambleFile)
 
     if angleDeg!=0:
       self.rotateElement(group,position,angleDeg)
@@ -580,12 +601,11 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
       if flagType=='diode':
         pos_text=[position[0]+25,position[1]-6-self.textOffset]
       
-      
-      if self.useLatex:
-        inkDraw.text.latex(self,group,'$'+value+'$',pos_text,fontSize=self.fontSize,refPoint='bc',preambleFile=self.preambleFile)
-      else:
-        inkDraw.text.write(self,value,pos_text,group,self.textStyle)
-      
+      if inkDraw.useLatex:
+        value='$'+value +'$'
+
+      inkDraw.text.latex(self,group,value,pos_text,fontSize=self.fontSize,refPoint='bc',preambleFile=self.preambleFile)
+
     if angleDeg!=0:
       self.rotateElement(group,position,angleDeg)
     
@@ -656,10 +676,10 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
     
     
     pos_text=[position[0]+25,position[1]-8-self.textOffset]
-    if self.useLatex:
-      inkDraw.text.latex(self,group,'$'+value+'$',pos_text,fontSize=self.fontSize,refPoint='bc',preambleFile=self.preambleFile)
-    else:
-      inkDraw.text.write(self,value,pos_text,group,self.textStyle)
+    if inkDraw.useLatex:
+      value='$'+value +'$'
+      
+    inkDraw.text.latex(self,group,value,pos_text,fontSize=self.fontSize,refPoint='bc',preambleFile=self.preambleFile)
            
     if angleDeg!=0:
       self.rotateElement(group,position,angleDeg)
@@ -714,10 +734,10 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
       
     
     pos_text=[position[0]+25,position[1]-8-self.textOffset]
-    if self.useLatex:
-      inkDraw.text.latex(self,group,'$'+value+'$',pos_text,fontSize=self.fontSize,refPoint='bc',preambleFile=self.preambleFile)
-    else:
-      inkDraw.text.write(self,value,pos_text,group,self.textStyle)
+    if inkDraw.useLatex:
+      value='$'+value +'$'
+      
+    inkDraw.text.latex(self,group,value,pos_text,fontSize=self.fontSize,refPoint='bc',preambleFile=self.preambleFile)
            
     if angleDeg!=0:
       self.rotateElement(group,position,angleDeg)
@@ -768,12 +788,10 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
       inkDraw.line.relCoords(elem, [[0,-14]],[position[0]+27,position[1]+7])
     
     pos_text=[position[0]+25,position[1]-8-self.textOffset]
-    if self.useLatex:
-      inkDraw.text.latex(self,group,'$'+value+'$',pos_text,fontSize=self.fontSize,refPoint='bc',preambleFile=self.preambleFile)
-    else:
-      inkDraw.text.write(self,value,pos_text,group,self.textStyle)
-    
-
+    if inkDraw.useLatex:
+      value='$'+value +'$'
+      
+    inkDraw.text.latex(self,group,value,pos_text,fontSize=self.fontSize,refPoint='bc',preambleFile=self.preambleFile)
     
     if angleDeg!=0:
       self.rotateElement(group,position,angleDeg)
@@ -833,13 +851,11 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
       inkDraw.line.relCoords(elem, [[0,-14]],[position[0]+33,position[1]+7])
     
     pos_text=[position[0]+25,position[1]-8-self.textOffset]
-    if self.useLatex:
-      inkDraw.text.latex(self,group,'$'+value+'$',pos_text,fontSize=self.fontSize,refPoint='bc',preambleFile=self.preambleFile)
-    else:
-      inkDraw.text.write(self,value,pos_text,group,self.textStyle)
-    
-
-    
+    if inkDraw.useLatex:
+      value='$'+value +'$'
+      
+    inkDraw.text.latex(self,group,value,pos_text,fontSize=self.fontSize,refPoint='bc',preambleFile=self.preambleFile)
+   
     if angleDeg!=0:
       self.rotateElement(group,position,angleDeg)
     
@@ -882,10 +898,10 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
       inkDraw.line.relCoords(elem, [[5,0],[0,1.2],[3,-1.2],[-3,-1.2],[0,1.2]],[position[0]+21,position[1]],lineStyle=lineStyleSign)
     
     pos_text=[position[0]+25,position[1]-8-self.textOffset]
-    if self.useLatex:
-      inkDraw.text.latex(self,group,'$'+value+'$',pos_text,fontSize=self.fontSize,refPoint='bc',preambleFile=self.preambleFile)
-    else:
-      inkDraw.text.write(self,value,pos_text,group,self.textStyle)
+    if inkDraw.useLatex:
+      value='$'+value +'$'
+      
+    inkDraw.text.latex(self,group,value,pos_text,fontSize=self.fontSize,refPoint='bc',preambleFile=self.preambleFile)
            
     if angleDeg!=0:
       self.rotateElement(group,position,angleDeg)
@@ -937,11 +953,12 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
     
     #text
     pos_text=[position[0]+25,position[1]-8-self.textOffset]
-    value=gain + ' . ' + controlName
-    if self.useLatex:
-      inkDraw.text.latex(self,group,'$'+value+'$',pos_text,fontSize=self.fontSize,refPoint='bc',preambleFile=self.preambleFile)
-    else:
-      inkDraw.text.write(self,value,pos_text,group,self.textStyle)
+    value=gain + '.' + controlName
+    
+    if inkDraw.useLatex:
+      value='$'+value +'$'
+      
+    inkDraw.text.latex(self,group,value,pos_text,fontSize=self.fontSize,refPoint='bc',preambleFile=self.preambleFile)
            
            
     if angleDeg!=0:
@@ -1004,11 +1021,12 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
     
     #text
     pos_text=[position[0]+25,position[1]-8-self.textOffset]
-    value=gain + ' . ' + controlName
-    if self.useLatex:
-      inkDraw.text.latex(self,group,'$'+value+'$',pos_text,fontSize=self.fontSize,refPoint='bc',preambleFile=self.preambleFile)
-    else:
-      inkDraw.text.write(self,value,pos_text,group,self.textStyle)
+    value=gain + '.' + controlName
+    
+    if inkDraw.useLatex:
+      value='$'+value +'$'
+      
+    inkDraw.text.latex(self,group,value,pos_text,fontSize=self.fontSize,refPoint='bc',preambleFile=self.preambleFile)
     
     if angleDeg!=0:
       self.rotateElement(group,position,angleDeg)
@@ -1054,18 +1072,21 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
     inkDraw.circle.centerRadius(elem, position, 1.0, offset=[0,0],lineStyle=linestyleBlackFill)
     if drawLine: 
       inkDraw.line.relCoords(elem, [[0,10]],position)
+      
     #text
-    if self.useLatex:
-      if abs(angleDeg)<=90:
-        justif='bc'
-        pos_text=[position[0],position[1]-self.textOffset]
-      else:
-        justif='tc'
-        pos_text=[position[0],position[1]+self.textOffset]
-        
-      temp=inkDraw.text.latex(self,group,'$'+nodalVal+'$',pos_text,fontSize=self.fontSize,refPoint=justif,preambleFile=self.preambleFile)
+    if abs(angleDeg)<=90:
+      justif='bc'
+      pos_text=[position[0],position[1]-self.textOffset]
     else:
-      temp=inkDraw.text.write(self,nodalVal,pos_text,group,self.textStyle)
+      justif='tc'
+      pos_text=[position[0],position[1]+self.textOffset]
+        
+    if not inkDraw.useLatex:
+      value = nodalVal.replace('_','').replace('{','').replace('}','').replace(r'\volt','V')  # removes LaTeX stuff
+    else:
+      value = '$'+nodalVal+'$'
+    temp=inkDraw.text.latex(self,group,value,pos_text,fontSize=self.fontSize,refPoint=justif,preambleFile=self.preambleFile)
+
     self.rotateElement(temp,position,-angleDeg)
     
     if angleDeg!=0:
@@ -1193,34 +1214,38 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
     if opampDrawVin:
       posTop=[position[0]-1 ,position[1]-10-self.textOffsetSmall]
       posBot=[position[0]-1 ,position[1]+10-self.textOffsetSmall]
-      if self.useLatex:
-        temp1=inkDraw.text.latex(self,group,'$'+textVTop+'$',posTop,textColor=self.voltageColor,fontSize=self.fontSizeSmall,refPoint='br',preambleFile=self.preambleFile)
-        temp2=inkDraw.text.latex(self,group,'$'+textVBot+'$',posBot,textColor=self.voltageColor,fontSize=self.fontSizeSmall,refPoint='br',preambleFile=self.preambleFile)
-      else:
-        temp1=inkDraw.text.write(self,textTop,posTop,group,self.textStyleSmall)
-        temp2=inkDraw.text.write(self,textBot,posBot,group,self.textStyleSmall)
+      
+      if inkDraw.useLatex:
+        textVTop='$'+textVTop+'$'
+        textVBot='$'+textVBot+'$'
+        
+      temp1=inkDraw.text.latex(self,group,textVTop,posTop,textColor=self.voltageColor,fontSize=self.fontSizeSmall,refPoint='br',preambleFile=self.preambleFile)
+      temp2=inkDraw.text.latex(self,group,textVBot,posBot,textColor=self.voltageColor,fontSize=self.fontSizeSmall,refPoint='br',preambleFile=self.preambleFile)
         
     #write i+ i-
     if opampDrawIin:
       posTop=[position[0]-7.5 ,position[1]-10+3]
       posBot=[position[0]-7.5 ,position[1]+10+3]
-      temp1=self.drawCurrArrow(group,posTop,name='$'+textITop+'$',color=self.currentColor,angleDeg=180,invertArrows=False)
+        
+      temp1=self.drawCurrArrow(group,posTop,name=textITop,color=self.currentColor,angleDeg=180,invertArrows=False)
       self.rotateElement(temp1,posTop,180)
-      temp1=self.drawCurrArrow(group,posBot,name='$'+textIBot+'$',color=self.currentColor,angleDeg=180,invertArrows=False)
+      temp1=self.drawCurrArrow(group,posBot,name=textIBot,color=self.currentColor,angleDeg=180,invertArrows=False)
       self.rotateElement(temp1,posBot,180)
       
     #write v_out
     if opampDrawVout:
       postext=[position[0]+35,position[1]-self.textOffsetSmall]
-      if self.useLatex:
-        temp1=inkDraw.text.latex(self,group,'$'+opampVoutName+'$',postext,textColor=self.voltageColor,fontSize=self.fontSize,refPoint='bl',preambleFile=self.preambleFile)
-      else:
-        temp1=inkDraw.text.write(self,opampVoutName,postext,group,self.textStyleSmall)
+      
+      if inkDraw.useLatex:
+        opampVoutName='$'+opampVoutName+'$'
+        
+      temp1=inkDraw.text.latex(self,group,opampVoutName,postext,textColor=self.voltageColor,fontSize=self.fontSize,refPoint='bl',preambleFile=self.preambleFile)
 
     #write i_out
     if opampDrawIout:
       pos=[position[0]+42,position[1]+3]
-      temp1=self.drawCurrArrow(group,pos,name='$'+opampIoutName+'$',color=self.currentColor,angleDeg=180,invertArrows=False)
+        
+      temp1=self.drawCurrArrow(group,pos,name=opampIoutName,color=self.currentColor,angleDeg=180,invertArrows=False)
       self.rotateElement(temp1,pos,180)
       
     if opampDrawVd:
@@ -1230,7 +1255,7 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
       
     return group;
   #---------------------------------------------
-  def drawSwitch2T(self,parent,position=[0, 0],value='S',label='Switch',angleDeg=0,flagOpen=True,flagDrawArrow=False,OpenCloseText='t_0'):
+  def drawSwitch2T(self,parent,position=[0, 0],value='S',label='Switch',angleDeg=0,flagOpen=True,flagDrawArrow=False,OpenCloseText=''):
     """ draws a switch with two terminals only
     
     parent: parent object
@@ -1258,10 +1283,12 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
     if flagDrawArrow:
       if OpenCloseText:
         pos_text=[position[0]+25,position[1]+4+self.textOffset]
-        if self.useLatex:
-          inkDraw.text.latex(self,group,'$'+OpenCloseText+'$',pos_text,fontSize=self.fontSize,refPoint='tc',preambleFile=self.preambleFile)
-        else:
-          inkDraw.text.write(self,OpenCloseText,pos_text,group,self.textStyle)
+        
+        if inkDraw.useLatex:
+          OpenCloseText='$'+OpenCloseText +'$'
+          
+        inkDraw.text.latex(self,group,OpenCloseText,pos_text,fontSize=self.fontSize,refPoint='tc',preambleFile=self.preambleFile)
+
       if flagOpen:
         lineStyle = inkDraw.lineStyle.set(lineColor=color,markerEnd=arrowEnd);
       else:
@@ -1275,10 +1302,10 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
       pos_text=[position[0]+25,position[1]-6-self.textOffset]
     
     if value:
-      if self.useLatex:
-        inkDraw.text.latex(self,group,'$'+value+'$',pos_text,fontSize=self.fontSize,refPoint='bc',preambleFile=self.preambleFile)
-      else:
-        inkDraw.text.write(self,value,pos_text,group,self.textStyle)
+      if inkDraw.useLatex:
+        value='$'+value +'$'
+        
+      inkDraw.text.latex(self,group,value,pos_text,fontSize=self.fontSize,refPoint='bc',preambleFile=self.preambleFile)
       
     if angleDeg!=0:
       self.rotateElement(group,position,angleDeg)
@@ -1328,8 +1355,9 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
     
     scale=size/20.0  # the default size was 20 height
     
+    renameMode=0   #0: do not modify  1: overwrite  2:rename
     #make linestyle
-    [arrowStartVolt,arrowEndVolt] = inkDraw.marker.createArrow1Marker(self,'arrowVoltage',RenameMode=0,scale=0.25,strokeColor=color,fillColor=color)
+    [arrowStartVolt,arrowEndVolt] = inkDraw.marker.createArrow1Marker(self,'arrowVoltage',RenameMode=renameMode,scale=0.25,strokeColor=color,fillColor=color)
     
     if invertArrows:
       lineStyle = inkDraw.lineStyle.set(lineColor=color,markerStart=arrowStartVolt);
@@ -1373,8 +1401,15 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
                   
     centerY=-radius*math.cos(halfTheta)
     posY=centerY+radius
+    
     if not name == '':
-      inkDraw.text.latex(self,group,'$'+name+'$',[position[0],position[1]+posY+4.0],fontSize=self.fontSize,refPoint=justif,textColor=color,angleDeg=-theta,preambleFile=self.preambleFile)
+      if inkDraw.useLatex:
+        name='$'+name + '$'
+        dist=4.0
+      else:
+        dist=3.0
+      inkDraw.text.latex(self,group,name,[position[0],position[1]+posY+dist],fontSize=self.fontSize,
+                         refPoint=justif,textColor=color,angleDeg=-theta,preambleFile=self.preambleFile)
           
     return group
 
@@ -1396,7 +1431,7 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
     invertCurvatureDirection: invert curvature direction of the arrow
     """
       
-          #control signal
+    #control signal
     if invertTextSide:
       temp1=self.drawCurrArrow(parent,position,label,name,color=self.currentColor,angleDeg=angleDeg+180,invertArrows=invertArrows,size=size)    
       self.rotateElement(temp1,position,angleDeg+180)
@@ -1419,9 +1454,10 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
     """
     scale=size/10.0
     group = self.createGroup(parent,label)
-    
+    renameMode=0   #0: do not modify  1: overwrite  2:rename
+        
     #make linestyle
-    [arrowStartCurr,arrowEndCurr] = inkDraw.marker.createArrow1Marker(self,'arrowCurrent',RenameMode=0,scale=0.25,strokeColor=color,fillColor=color)
+    [arrowStartCurr,arrowEndCurr] = inkDraw.marker.createArrow1Marker(self,'arrowCurrent',RenameMode=renameMode,scale=0.25,strokeColor=color,fillColor=color)
     lineStyle = inkDraw.lineStyle.set(lineColor=color,markerEnd=arrowEndCurr);
     
     if invertArrows:
@@ -1458,8 +1494,12 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
                   justif='cl'
                 else:
                   justif='bl'
+    
+    
+    if inkDraw.useLatex:
+      name='$'+name + '$'
         
-    inkDraw.text.latex(self,group,'$'+name+'$',[position[0],position[1]-self.textOffset*0.8],fontSize=self.fontSize,refPoint=justif,textColor=color,angleDeg=-theta,preambleFile=self.preambleFile)
+    inkDraw.text.latex(self,group,name,[position[0],position[1]-self.textOffset*0.8],fontSize=self.fontSize,refPoint=justif,textColor=color,angleDeg=-theta,preambleFile=self.preambleFile)
     
     return group
 if __name__ == '__main__':
