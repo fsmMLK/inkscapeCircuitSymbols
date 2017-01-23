@@ -284,7 +284,7 @@ In both cases, you have two options in the `Color` drop down menu:
 
 **Type:** You can select the type of operational amplifier. At the moment there are two types.
 
-<img src="docs/images/Transistor_types.png" width="500px"/>
+<img src="docs/images/Transistor_types.png" width="400px"/>
 
 **Label:** Label of the transistor. If LaTeX support is enabled, this text will be included in a math environment $...$. You don't have to enclose your text between $...$.
 
@@ -292,11 +292,11 @@ In both cases, you have two options in the `Color` drop down menu:
 
 **Draw Envelope:** Draws an envelope circle around the transistor
 
-<img src="docs/images/Transistor_envelope.png" width="500px"/>
+<img src="docs/images/Transistor_envelope.png" width="400px"/>
 
 **Switch Emitter/Collector terminals:** Switch terminals. **Attention:** This will not switch between NPN and PNP transistors.
 
-<img src="docs/images/Transistor_switch_EC.png" width="600px"/>
+<img src="docs/images/Transistor_switch_EC.png" width="500px"/>
 
 
 **Add E/B/C tags:**  Add Emitter, base and collector label annotations
