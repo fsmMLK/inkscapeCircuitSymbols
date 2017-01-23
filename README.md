@@ -378,4 +378,9 @@ In both cases, you have two options in the `Color` drop down menu:
 
 <img src="docs/images/Example_A.png" width="450px"/>
 
+<img src="docs/images/Example_F.png" width="450px"/>
+
+<img src="docs/images/Example_G.png" width="450px"/>
+
+<img src="docs/images/Example_H.png" width="450px"/>
 

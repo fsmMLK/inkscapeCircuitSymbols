@@ -336,7 +336,6 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
     #---------------------------
     # diodes
     #---------------------------
-    self.displayMsg(so.tab)
     if so.tab=='Diodes':
       if so.diode in ['regular','LED','photoDiode','zener','schottky','tunnel','varicap']:
         self.drawDiode(root_layer,position,value=so.diodeVal,angleDeg=so.diodeRot,
