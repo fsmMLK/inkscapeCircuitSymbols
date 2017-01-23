@@ -10,6 +10,7 @@ The main features are
  - Passive bipoles: resistors, capacitors, inductors, diodes, LEDs, photo diodes, 2 way switch
  - Active bipoles: various independent and dependent voltage/current sources
  - Operational amplifiers
+ - Bipolar transistors
  - Signal labeling generator with a few commonly used signals predefined
  - Each element can be labeled individually. Numeric nominal values are supported with optional unit inclusion
  - current and/or voltage arrows can be added to all elements, with custom labels. Their directions are adjustable.
@@ -61,7 +62,17 @@ Please refer to <https://fsmmlk.github.io/inkscapeMadeEasy/#installation-and-req
 
 # Usage
 
-This extension is presented in several tabs. Depending on which tab is on top, the extension will create different elements in your document as soon as you click on `Apply` button (or check `live preview`). The modes are RLC elements, independent sources, dependent sources, switches, semiconductors, operational amplifiers, signals and annotation.
+This extension is presented in two menu entries: **General** and **Semiconductor**.
+
+The first generates symbols of commonly used circuit elements like resistors, capacitors, inductors, 2 way switches and  various independent and dependent voltage/current sources
+
+The second generates semiconductor elements like diodes, transistors and operational amplifiers.
+
+Each entry has several tabs. Depending on which tab is on top, the extension will create different elements in your document as soon as you click on `Apply` button (or check `live preview`).
+
+In addition to these elements, both menu entries has extra tabs to generate signal labes and annotation. They are repeated in both entries to facilitate its use.
+
+## GENERAL menu entry
 
 ### RLC tab
 
@@ -182,66 +193,6 @@ This extension is presented in several tabs. Depending on which tab is on top, t
 <img src="docs/images/Switch_state.png" width="400px"/>
 
 
-### Semiconductor tab
-
-<img src="docs/images/Tab_Semiconductor.png" width="600px"/>
-
-**Type:** You can select the type of semiconductor. The available types are:
-
-<img src="docs/images/Semi_types.png" width="650px"/>
-
-**Label:** Label of the switch. If LaTeX support is enabled, this text will be included in a math environment $...$. You don't have to enclose your text between $...$.
-
-**Orientation:** Rotation angle in degrees. See *RLC tab* section for examples.
-
-**Add voltage/current arrow:** add voltage drop and current arrow indications.
-
-**V/I labels:** Label of the voltage drop and current arrows. If LaTeX support is enabled, this text will be included in a math environment $...$. You don't have to enclose your text between $...$.
-
-**Invert V/I directions:** invert the directions of the arrows. Keep in mind that they will ALWAYS follow the **receiver convention** (current flows in the direction of the voltage drop).
-
-<img src="docs/images/Semi_annotation.png" width="450px"/>
-
-### Operational amplifier tab
-
-
-<img src="docs/images/Tab_OpAmp.png" width="600px"/>
-
-**Type:** You can select the type of operational amplifier. At the moment there is only one type of OpAmp.
-
-<img src="docs/images/OpAmp_types.png" width="150px"/>
-
-**Invert inputs:** invert the position between inverting and non inverting inputs
-
-**Add supply terminals:** draw supply terminals.
-
-**Add supply values:** add values to supply terminals. This parameter has effect only if `Add supply terminals` is checked.
-
-**Symmetric supply:** force symmetric supply. This parameter has effect only if `Add supply values` is checked.
-
-**+V/-V supply label:** positive/negative supply values. -V is used only if `Symmetric supply` is unchecked. 
-
-<img src="docs/images/OpAmp_supply.png" width="850px"/>
-
-**Add input voltage labels (v+) (v-):** add input nodal voltage annotation.
-
-**Add input voltage labels (i+) (i-):** add input current annotation.
-
-**Add output voltage label (Vout):** add output nodal voltage annotation.
-
-**Add output current label (Vout):** add output current annotation.
-
-**Add input differential voltage arrow (Vd):** add input differential voltage annotation.
-
-**v+/v- label:** labels of input nodal voltages
-
-**i+/i- label:** labels of input currents
-
-**Vout/Iout label:** labels of the output voltage and current
-
-**Vd label:** label of the input differential voltage
-
-<img src="docs/images/OpAmp_annotation.png" width="900px"/>
 
 ### Signals tab
 
@@ -301,6 +252,115 @@ In both cases, you have two options in the `Color` drop down menu:
 <img src="docs/images/Anno_types.png" width="250px"/>
 
   - You can select **use color picker** to choose the color from the color picker widget just below the `Color` drop down menu. **Attention:** the color selected in the color picker widget will be considered **ONLY** if you select **use color picker** in the drop down menu. 
+
+## SEMICONDUCTOR menu entry
+
+
+### Diodes tab
+
+<img src="docs/images/Tab_Diodes.png" width="600px"/>
+
+**Type:** You can select the type of semiconductor. The available types are:
+
+<img src="docs/images/Semi_types.png" width="650px"/>
+
+**Label:** Label of the switch. If LaTeX support is enabled, this text will be included in a math environment $...$. You don't have to enclose your text between $...$.
+
+**Orientation:** Rotation angle in degrees. See *RLC tab* section for examples.
+
+**Add voltage/current arrow:** add voltage drop and current arrow indications.
+
+**V/I labels:** Label of the voltage drop and current arrows. If LaTeX support is enabled, this text will be included in a math environment $...$. You don't have to enclose your text between $...$.
+
+**Invert V/I directions:** invert the directions of the arrows. Keep in mind that they will ALWAYS follow the **receiver convention** (current flows in the direction of the voltage drop).
+
+<img src="docs/images/Semi_annotation.png" width="450px"/>
+
+
+### Transistor tab
+
+
+<img src="docs/images/Tab_Transistors.png" width="600px"/>
+
+**Type:** You can select the type of operational amplifier. At the moment there are two types.
+
+<img src="docs/images/Transistor_types.png" width="150px"/>
+
+**Label:** Label of the transistor. If LaTeX support is enabled, this text will be included in a math environment $...$. You don't have to enclose your text between $...$.
+
+**Orientation:** Rotation angle in degrees. See *RLC tab* section for examples.
+
+**Draw Envelope:** Draws an envelope circle around the transistor
+
+<img src="docs/images/Transistor_envelope.png" width="150px"/>
+
+**Switch Emitter/Collector terminals:** Switch terminals. **Attention:** This will not switch between NPN and PNP transistors.
+
+<img src="docs/images/Transistor_switch_EC.png" width="150px"/>
+
+
+**Add E/B/C tags:**  Add Emitter, base and collector label annotations
+
+**Add v_CE voltage arrow:**  Add Collector/Emmiter voltage drop arrow annotation
+
+**Add v_CB voltage arrow:**  Add Collector/Base voltage drop arrow annotation
+
+**Add v_BE voltage arrow:**  Add Base/Emitter voltage drop arrow annotation
+
+**Add collector current arrow (i_c):** Add collector current annotation
+
+**Add base current arrow (i_b):** Add base current annotation
+
+**Add emitter current arrow (i_e):** Add emitter current annotation
+
+**v_CE, v_CB and v_BE labels:** labels of voltage drop annotations
+
+**i_c, i_b, i_e labels:** labels of transistor currents
+
+<img src="docs/images/Transistor_annotations.png" width="900px"/>
+
+
+### Operational amplifier tab
+
+
+<img src="docs/images/Tab_OpAmp.png" width="600px"/>
+
+**Type:** You can select the type of operational amplifier. At the moment there is only one type of OpAmp.
+
+<img src="docs/images/OpAmp_types.png" width="150px"/>
+
+**Invert inputs:** invert the position between inverting and non inverting inputs
+
+**Add supply terminals:** draw supply terminals.
+
+**Add supply values:** add values to supply terminals. This parameter has effect only if `Add supply terminals` is checked.
+
+**Symmetric supply:** force symmetric supply. This parameter has effect only if `Add supply values` is checked.
+
+**+V/-V supply label:** positive/negative supply values. -V is used only if `Symmetric supply` is unchecked. 
+
+<img src="docs/images/OpAmp_supply.png" width="850px"/>
+
+**Add input voltage labels (v+) (v-):** add input nodal voltage annotation.
+
+**Add input voltage labels (i+) (i-):** add input current annotation.
+
+**Add output voltage label (Vout):** add output nodal voltage annotation.
+
+**Add output current label (Vout):** add output current annotation.
+
+**Add input differential voltage arrow (Vd):** add input differential voltage annotation.
+
+**v+/v- label:** labels of input nodal voltages
+
+**i+/i- label:** labels of input currents
+
+**Vout/Iout label:** labels of the output voltage and current
+
+**Vd label:** label of the input differential voltage
+
+<img src="docs/images/OpAmp_annotation.png" width="900px"/>
+
 
 # Observations
 
