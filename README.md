@@ -329,7 +329,7 @@ In both cases, you have two options in the `Color` drop down menu:
 
 **Add body diode (MOSFET-E only):** Draws the body diode of power MOSFETS.
 
-<img src="docs/images/FET_bodyDiode.png" width="500px"/>
+<img src="docs/images/FET_bodyDiode.png" width="450px"/>
 
 **Add S/G/D tags:**  Add source, gate and drain label annotations
 
