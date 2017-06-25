@@ -9,7 +9,6 @@
   <param name="tab" type="notebook">
     <page name="Diodes" appearance="minimal" _gui-text="Diodes">
       <param name="diode" type="optiongroup" appearance="minimal" _gui-text="Type:">
-        <_option value="none">None</_option>
         <_option value="regular">Regular diode</_option>
         <_option value="LED">LED</_option>
         <_option value="photoDiode">Photo Diode</_option>
@@ -36,14 +35,12 @@
       <param name="diodeCurrName" type="string" _gui-text="I label (no $...$ needed)">i</param>
       <param name="diodeVoltCurrInvert" type="boolean" _gui-text="Invert V/I directions">0</param>
     </page>
-    <page name="Transistor" appearance="minimal" _gui-text="Transistor">
-      <param name="trans" type="optiongroup" appearance="minimal" _gui-text="Type:">
-        <_option value="none">None</_option>
+    <page name="Transistor_BJT" appearance="minimal" _gui-text="BJT">
+      <param name="BJT" type="optiongroup" appearance="minimal" _gui-text="Type:">
         <_option value="BJT_NPN">bipolar NPN</_option>
         <_option value="BJT_PNP">bipolar PNP</_option>
       </param>
-      <param name="transVal" type="string" _gui-text="Label (no $...$ needed)"/>
-      <param name="transRot" type="optiongroup" appearance="minimal" _gui-text="Orientation (deg):">
+      <param name="BJT_Rot" type="optiongroup" appearance="minimal" _gui-text="Orientation (deg):">
         <_option value="0">0</_option>
         <_option value="90">90</_option>
         <_option value="-60">-60</_option>
@@ -54,26 +51,66 @@
         <_option value="60">60</_option>
         <_option value="180">180</_option>
       </param>
-      <param name="transEnvelope" type="boolean" _gui-text="Draw envelope">1</param>
-      <param name="transMirrorEC" type="boolean" _gui-text="Switch Emitter/Collector terminals">0</param>
+      <param name="BJT_Envelope" type="boolean" _gui-text="Draw envelope">1</param>
+      <param name="BJT_MirrorEC" type="boolean" _gui-text="Switch Emitter/Collector terminals">0</param>
       <param name="desc1" type="description" appearance="header">Annotation</param>
-      <param name="transEBCtags" type="boolean" _gui-text="Add E/B/C tags">0</param>
-      <param name="transDrawVCEarrow" type="boolean" _gui-text="Add v_CE voltage arrow">0</param>
-      <param name="transDrawVCBarrow" type="boolean" _gui-text="Add v_CB voltage arrow">0</param>
-      <param name="transDrawVBEarrow" type="boolean" _gui-text="Add v_BE voltage arrow">0</param>
-      <param name="transDrawICarrow" type="boolean" _gui-text="Add collector current arrow (i_c)">0</param>
-      <param name="transDrawIBarrow" type="boolean" _gui-text="Add base current arrow (i_b)">0</param>
-      <param name="transDrawIEarrow" type="boolean" _gui-text="Add emitter current arrow (i_e)">0</param>
-      <param name="transVCEname" type="string" _gui-text="v_CE label (no $...$ needed)">v_{ce}</param>
-      <param name="transVCBname" type="string" _gui-text="v_CB label (no $...$ needed)">v_{cb}</param>
-      <param name="transVBEname" type="string" _gui-text="v_BE label (no $...$ needed)">v_{be}</param>
-      <param name="transICname" type="string" _gui-text="i_c label (no $...$ needed)">i_c</param>
-      <param name="transIBname" type="string" _gui-text="i_b label (no $...$ needed)">i_b</param>
-      <param name="transIEname" type="string" _gui-text="i_e label (no $...$ needed)">i_e</param>
+      <param name="BJT_EBCtags" type="boolean" _gui-text="Add E/B/C tags">0</param>
+      <param name="BJT_DrawVCEarrow" type="boolean" _gui-text="Add v_CE voltage arrow">0</param>
+      <param name="BJT_DrawVCBarrow" type="boolean" _gui-text="Add v_CB voltage arrow">0</param>
+      <param name="BJT_DrawVBEarrow" type="boolean" _gui-text="Add v_BE voltage arrow">0</param>
+      <param name="BJT_DrawICarrow" type="boolean" _gui-text="Add collector current arrow (i_c)">0</param>
+      <param name="BJT_DrawIBarrow" type="boolean" _gui-text="Add base current arrow (i_b)">0</param>
+      <param name="BJT_DrawIEarrow" type="boolean" _gui-text="Add emitter current arrow (i_e)">0</param>
+      <param name="BJT_VCEname" type="string" _gui-text="v_CE label (no $...$ needed)">v_{ce}</param>
+      <param name="BJT_VCBname" type="string" _gui-text="v_CB label (no $...$ needed)">v_{cb}</param>
+      <param name="BJT_VBEname" type="string" _gui-text="v_BE label (no $...$ needed)">v_{be}</param>
+      <param name="BJT_ICname" type="string" _gui-text="i_c label (no $...$ needed)">i_c</param>
+      <param name="BJT_IBname" type="string" _gui-text="i_b label (no $...$ needed)">i_b</param>
+      <param name="BJT_IEname" type="string" _gui-text="i_e label (no $...$ needed)">i_e</param>
+    </page>
+    <page name="Transistor_FET" appearance="minimal" _gui-text="FET">
+      <param name="FET_Type" type="optiongroup" appearance="minimal" _gui-text="FET type:">
+
+        <_option value="MOSFET-E">MOSFET-E (enhancement-mode)</_option>
+        <_option value="MOSFET-D">MOSFET-D (depletion-mode)</_option>
+      </param>
+      <param name="FET_Gate" type="optiongroup" appearance="minimal" _gui-text="Channel type:">
+        <_option value="P_gate">Positive</_option>
+        <_option value="N_gate">Negative</_option>
+      </param>
+      <param name="FET_Rot" type="optiongroup" appearance="minimal" _gui-text="Orientation (deg):">
+        <_option value="0">0</_option>
+        <_option value="90">90</_option>
+        <_option value="-60">-60</_option>
+        <_option value="-45">-45</_option>
+        <_option value="-30">-30</_option>
+        <_option value="30">30</_option>
+        <_option value="45">45</_option>
+        <_option value="60">60</_option>
+        <_option value="180">180</_option>
+      </param>
+      <param name="FET_Envelope" type="boolean" _gui-text="Draw envelope">1</param>
+      <param name="FET_MirrorEC" type="boolean" _gui-text="Switch Source/Drain terminals">0</param>
+      <param name="FET_BodyDiode" type="boolean" _gui-text="Add body diode (MOSFET-E only)">0</param>
+      
+      <param name="desc1" type="description" appearance="header">Annotation</param>
+      <param name="FET_SGDtags" type="boolean" _gui-text="Add S/G/D tags">0</param>
+      <param name="FET_DrawVGSarrow" type="boolean" _gui-text="Add v_GS voltage arrow">0</param>
+      <param name="FET_DrawVDSarrow" type="boolean" _gui-text="Add v_DS voltage arrow">0</param>
+      <param name="FET_DrawVDGarrow" type="boolean" _gui-text="Add v_DG voltage arrow">0</param>
+      <param name="FET_DrawIDarrow" type="boolean" _gui-text="Add drain current arrow (i_d)">0</param>
+      <param name="FET_DrawISarrow" type="boolean" _gui-text="Add source current arrow (i_s)">0</param>
+      <param name="FET_DrawIGarrow" type="boolean" _gui-text="Add gate current arrow (i_g)">0</param>
+      <param name="FET_VGSname" type="string" _gui-text="v_GS label (no $...$ needed)">v_{cb}</param>
+      <param name="FET_VDSname" type="string" _gui-text="v_DS label (no $...$ needed)">v_{ce}</param>
+      <param name="FET_VDGname" type="string" _gui-text="v_DG label (no $...$ needed)">v_{be}</param>
+      <param name="FET_IDname" type="string" _gui-text="i_d label (no $...$ needed)">i_e</param>
+      <param name="FET_ISname" type="string" _gui-text="i_s label (no $...$ needed)">i_c</param>
+      <param name="FET_IGname" type="string" _gui-text="i_g label (no $...$ needed)">i_b</param>
     </page>
     <page name="Opamp" appearance="minimal" _gui-text="OpAmp">
       <param name="opamp" type="optiongroup" appearance="minimal" _gui-text="Type:">
-        <_option value="none">None</_option>
+
         <_option value="general">general</_option>
       </param>
       <param name="opampMirrorInput" type="boolean" _gui-text="Invert inputs">0</param>
@@ -122,7 +159,6 @@
     </page>
     <page name="Arrow" appearance="minimal" _gui-text="Annotation">
       <param name="arrow" type="optiongroup" appearance="minimal" _gui-text="Type:">
-        <_option value="none">None</_option>
         <_option value="voltage">voltage</_option>
         <_option value="current">current</_option>
       </param>

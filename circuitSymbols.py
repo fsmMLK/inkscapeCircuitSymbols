@@ -77,25 +77,45 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
     self.OptionParser.add_option("--switchOpenCloseText",action="store", type="string",dest="switchOpenCloseText", default='')
     self.OptionParser.add_option("--switchRot", action="store", type="string", dest="switchRot", default=0) 
 
-    self.OptionParser.add_option("--trans",action="store", type="string",dest="trans", default='none')
-    self.OptionParser.add_option("--transVal", action="store", type="string", dest="transVal", default=None) 
-    self.OptionParser.add_option("--transRot", action="store", type="string", dest="transRot", default='0') 
-    self.OptionParser.add_option("--transEnvelope", action="store", type="inkbool", dest="transEnvelope", default=True) 
-    self.OptionParser.add_option("--transMirrorEC", action="store", type="inkbool", dest="transMirrorEC", default=False) 
-    self.OptionParser.add_option("--transEBCtags", action="store", type="inkbool", dest="transEBCtags", default=False) 
-    self.OptionParser.add_option("--transDrawVCEarrow", action="store", type="inkbool", dest="transDrawVCEarrow", default=False)
-    self.OptionParser.add_option("--transDrawVCBarrow", action="store", type="inkbool", dest="transDrawVCBarrow", default=False)
-    self.OptionParser.add_option("--transDrawVBEarrow", action="store", type="inkbool", dest="transDrawVBEarrow", default=False)
-    self.OptionParser.add_option("--transDrawICarrow", action="store", type="inkbool", dest="transDrawICarrow", default=False)
-    self.OptionParser.add_option("--transDrawIBarrow", action="store", type="inkbool", dest="transDrawIBarrow", default=False)
-    self.OptionParser.add_option("--transDrawIEarrow", action="store", type="inkbool", dest="transDrawIEarrow", default=False)
+    self.OptionParser.add_option("--BJT",action="store", type="string",dest="BJT", default='none')
+    self.OptionParser.add_option("--BJT_Rot", action="store", type="string", dest="BJT_Rot", default='0') 
+    self.OptionParser.add_option("--BJT_Envelope", action="store", type="inkbool", dest="BJT_Envelope", default=True) 
+    self.OptionParser.add_option("--BJT_MirrorEC", action="store", type="inkbool", dest="BJT_MirrorEC", default=False) 
+    self.OptionParser.add_option("--BJT_EBCtags", action="store", type="inkbool", dest="BJT_EBCtags", default=False) 
+    self.OptionParser.add_option("--BJT_DrawVCEarrow", action="store", type="inkbool", dest="BJT_DrawVCEarrow", default=False)
+    self.OptionParser.add_option("--BJT_DrawVCBarrow", action="store", type="inkbool", dest="BJT_DrawVCBarrow", default=False)
+    self.OptionParser.add_option("--BJT_DrawVBEarrow", action="store", type="inkbool", dest="BJT_DrawVBEarrow", default=False)
+    self.OptionParser.add_option("--BJT_DrawICarrow", action="store", type="inkbool", dest="BJT_DrawICarrow", default=False)
+    self.OptionParser.add_option("--BJT_DrawIBarrow", action="store", type="inkbool", dest="BJT_DrawIBarrow", default=False)
+    self.OptionParser.add_option("--BJT_DrawIEarrow", action="store", type="inkbool", dest="BJT_DrawIEarrow", default=False)
 
-    self.OptionParser.add_option("--transVCEname", action="store", type="string", dest="transVCEname", default='v_{ce}')
-    self.OptionParser.add_option("--transVCBname", action="store", type="string", dest="transVCBname", default='v_{cb}')
-    self.OptionParser.add_option("--transVBEname", action="store", type="string", dest="transVBEname", default='v_{be}')
-    self.OptionParser.add_option("--transICname", action="store", type="string", dest="transICname", default='i_c')
-    self.OptionParser.add_option("--transIBname", action="store", type="string", dest="transIBname", default='i_b')
-    self.OptionParser.add_option("--transIEname", action="store", type="string", dest="transIEname", default='i_e')
+    self.OptionParser.add_option("--BJT_VCEname", action="store", type="string", dest="BJT_VCEname", default='v_{ce}')
+    self.OptionParser.add_option("--BJT_VCBname", action="store", type="string", dest="BJT_VCBname", default='v_{cb}')
+    self.OptionParser.add_option("--BJT_VBEname", action="store", type="string", dest="BJT_VBEname", default='v_{be}')
+    self.OptionParser.add_option("--BJT_ICname", action="store", type="string", dest="BJT_ICname", default='i_c')
+    self.OptionParser.add_option("--BJT_IBname", action="store", type="string", dest="BJT_IBname", default='i_b')
+    self.OptionParser.add_option("--BJT_IEname", action="store", type="string", dest="BJT_IEname", default='i_e')
+
+    self.OptionParser.add_option("--FET_Type",action="store", type="string",dest="FET_Type", default='none')
+    self.OptionParser.add_option("--FET_Gate",action="store", type="string",dest="FET_Gate", default='none')
+    self.OptionParser.add_option("--FET_BodyDiode",action="store", type="inkbool",dest="FET_BodyDiode", default=False)    
+    self.OptionParser.add_option("--FET_Rot", action="store", type="string", dest="FET_Rot", default='0') 
+    self.OptionParser.add_option("--FET_Envelope", action="store", type="inkbool", dest="FET_Envelope", default=True) 
+    self.OptionParser.add_option("--FET_MirrorEC", action="store", type="inkbool", dest="FET_MirrorEC", default=False) 
+    self.OptionParser.add_option("--FET_SGDtags", action="store", type="inkbool", dest="FET_SGDtags", default=False) 
+    self.OptionParser.add_option("--FET_DrawVGSarrow", action="store", type="inkbool", dest="FET_DrawVGSarrow", default=False)
+    self.OptionParser.add_option("--FET_DrawVDSarrow", action="store", type="inkbool", dest="FET_DrawVDSarrow", default=False)
+    self.OptionParser.add_option("--FET_DrawVDGarrow", action="store", type="inkbool", dest="FET_DrawVDGarrow", default=False)
+    self.OptionParser.add_option("--FET_DrawIDarrow", action="store", type="inkbool", dest="FET_DrawIDarrow", default=False)
+    self.OptionParser.add_option("--FET_DrawISarrow", action="store", type="inkbool", dest="FET_DrawISarrow", default=False)
+    self.OptionParser.add_option("--FET_DrawIGarrow", action="store", type="inkbool", dest="FET_DrawIGarrow", default=False)
+
+    self.OptionParser.add_option("--FET_VGSname", action="store", type="string", dest="FET_VGSname", default='v_{gs}')
+    self.OptionParser.add_option("--FET_VDSname", action="store", type="string", dest="FET_VDSname", default='v_{ds}')
+    self.OptionParser.add_option("--FET_VDGname", action="store", type="string", dest="FET_VDGname", default='v_{dg}')
+    self.OptionParser.add_option("--FET_IDname", action="store", type="string", dest="FET_IDname", default='i_d')
+    self.OptionParser.add_option("--FET_ISname", action="store", type="string", dest="FET_ISname", default='i_s')
+    self.OptionParser.add_option("--FET_IGname", action="store", type="string", dest="FET_IGname", default='i_g')
 
     self.OptionParser.add_option("--diode",action="store", type="string",dest="diode", default='none')
     self.OptionParser.add_option("--diodeVal", action="store", type="string", dest="diodeVal", default=None) 
@@ -183,7 +203,8 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
     so.switchRot=float(so.switchRot)
     so.arrowRot=float(so.arrowRot)
     so.diodeRot=float(so.diodeRot)
-    so.transRot=float(so.transRot)
+    so.BJT_Rot=float(so.BJT_Rot)
+    so.FET_Rot=float(so.FET_Rot)
     
     #x=inkDraw.textStyle.setSimpleBlack(fontSize=10, justification='center')
     #ang=30.0
@@ -345,21 +366,28 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
     #---------------------------
     # Transistors
     #---------------------------
-    if so.tab=='Transistor':
-      if so.trans =='BJT_PNP':
-        self.drawTransistorBJT(root_layer,position,value=so.transVal,angleDeg=so.transRot,mirrorEC=so.transMirrorEC,
-                               drawBCEtags=so.transEBCtags,drawEnvelope=so.transEnvelope,transistorType='PNP',
-                               drawVCE=so.transDrawVCEarrow,drawVCB=so.transDrawVCBarrow,drawVBE=so.transDrawVBEarrow,
-                               drawICarrow=so.transDrawICarrow,drawIBarrow=so.transDrawIBarrow,drawIEarrow=so.transDrawIEarrow,
-                               VCEname=so.transVCEname,VCBname=so.transVCBname,VBEname=so.transVBEname,
-                               ICname=so.transICname,IBname=so.transIBname,IEname=so.transIEname)
-      if so.trans =='BJT_NPN':
-        self.drawTransistorBJT(root_layer,position,value=so.transVal,angleDeg=so.transRot,mirrorEC=so.transMirrorEC,
-                               drawBCEtags=so.transEBCtags,drawEnvelope=so.transEnvelope,transistorType='NPN',
-                               drawVCE=so.transDrawVCEarrow,drawVCB=so.transDrawVCBarrow,drawVBE=so.transDrawVBEarrow,
-                               drawICarrow=so.transDrawICarrow,drawIBarrow=so.transDrawIBarrow,drawIEarrow=so.transDrawIEarrow,
-                               VCEname=so.transVCEname,VCBname=so.transVCBname,VBEname=so.transVBEname,
-                               ICname=so.transICname,IBname=so.transIBname,IEname=so.transIEname)
+    if so.tab=='Transistor_BJT':
+      
+      if so.BJT =='BJT_PNP':
+        type='PNP'
+      else:
+        type='NPN'
+        
+      self.drawTransistorBJT(root_layer,position,angleDeg=so.BJT_Rot,mirrorEC=so.BJT_MirrorEC,
+                              drawBCEtags=so.BJT_EBCtags,drawEnvelope=so.BJT_Envelope,transistorType=type,
+                              drawVCE=so.BJT_DrawVCEarrow,drawVCB=so.BJT_DrawVCBarrow,drawVBE=so.BJT_DrawVBEarrow,
+                              drawICarrow=so.BJT_DrawICarrow,drawIBarrow=so.BJT_DrawIBarrow,drawIEarrow=so.BJT_DrawIEarrow,
+                              VCEname=so.BJT_VCEname,VCBname=so.BJT_VCBname,VBEname=so.BJT_VBEname,
+                              ICname=so.BJT_ICname,IBname=so.BJT_IBname,IEname=so.BJT_IEname)
+
+
+    if so.tab=='Transistor_FET':
+        self.drawTransistorMOSFET(root_layer,position,angleDeg=so.FET_Rot,mirrorEC=so.FET_MirrorEC,
+                                  drawSGDtags=so.FET_SGDtags,drawEnvelope=so.FET_Envelope,modeType=so.FET_Type,gateType=so.FET_Gate,bodyDiode=so.FET_BodyDiode,
+                                  drawVGS=so.FET_DrawVGSarrow,drawVDS=so.FET_DrawVDSarrow,drawVDG=so.FET_DrawVDGarrow,
+                                  drawIDarrow=so.FET_DrawIDarrow,drawISarrow=so.FET_DrawISarrow,drawIGarrow=so.FET_DrawIGarrow,
+                                  VGSname=so.FET_VGSname,VDSname=so.FET_VDSname,VDGname=so.FET_VDGname,
+                                  IDname=so.FET_IDname,ISname=so.FET_ISname,IGname=so.FET_IGname)
 
     # --------------------------
     # operational amplifiers
@@ -1315,7 +1343,7 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
   
   #---------------------------------------------
   #bipolar junction transistors (NPN and PNP)
-  def drawTransistorBJT(self,parent,position=[0, 0],value='T',angleDeg=0,label='BJT',mirrorEC=False,
+  def drawTransistorBJT(self,parent,position=[0, 0],angleDeg=0,label='BJT',mirrorEC=False,
                        drawBCEtags=False,
                        drawEnvelope=False,
                        transistorType='NPN',
@@ -1332,7 +1360,7 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
                        IBname='i_b',
                        IEname='i_e'):
     
-    """ draws a general ampOp
+    """ draws BJT transisitor
     
     parent: parent object
     position: position [x,y]
@@ -1363,22 +1391,22 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
     
     #draw emitter and collector terminals
     if mirrorEC:
-      if transistorType == 'NPN':
+      if isNPN:
         inkDraw.line.relCoords(elem, [[7,5],[0,17]],[position[0]+18,position[1]+3]) # emitter
         inkDraw.line.relCoords(elem, [[7,-5]],[position[0]+18,position[1]-3],lineStyle=lineStyleArrow) # emitter arrow
         inkDraw.line.relCoords(elem, [[0,-17]],[position[0]+25,position[1]-8]) # collector
-      if transistorType == 'PNP':
+      else:
         inkDraw.line.relCoords(elem, [[7,5],[0,17]],[position[0]+18,position[1]+3]) # emitter
         inkDraw.line.relCoords(elem, [[-7,5]],[position[0]+25,position[1]-8],lineStyle=lineStyleArrow) # emitter arrow
         inkDraw.line.relCoords(elem, [[0,-17]],[position[0]+25,position[1]-8]) # collector
       pos_Etag=[position[0]+22.5,position[1]-12.5]
       pos_Ctag=[position[0]+22.5,position[1]+12.5]
     else:
-      if transistorType == 'NPN':
+      if isNPN:
         inkDraw.line.relCoords(elem, [[7,-5],[0,-17]],[position[0]+18,position[1]-3]) # collector
         inkDraw.line.relCoords(elem, [[7,5]],[position[0]+18,position[1]+3],lineStyle=lineStyleArrow) # emitter arrow
         inkDraw.line.relCoords(elem, [[0,17]],[position[0]+25,position[1]+8]) # emitter
-      if transistorType == 'PNP':
+      else:
         inkDraw.line.relCoords(elem, [[7,-5],[0,-17]],[position[0]+18,position[1]-3]) # collector
         inkDraw.line.relCoords(elem, [[-7,-5]],[position[0]+25,position[1]+8],lineStyle=lineStyleArrow) # emitter arrow
         inkDraw.line.relCoords(elem, [[0,17]],[position[0]+25,position[1]+8]) # emitter
@@ -1453,6 +1481,220 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
                                 angleDeg=90,invertArrows=isNPN,size=7.5,invertTextSide=True,extraAngleText=angleDeg)
     return group;
   
+  #---------------------------------------------
+  #metal-oxide-semiconductor field-effect transistor (N and P channel)
+  def drawTransistorMOSFET(self,parent,position=[0, 0],angleDeg=0,label='MOSFET',mirrorEC=False,
+                          drawSGDtags=False,
+                          drawEnvelope=False,
+                          modeType='MOSFET-E',
+                          gateType='P_gate',
+                          bodyDiode=False,
+                          drawVGS=False,
+                          drawVDS=False,
+                          drawVDG=False,
+                          drawIDarrow=False,
+                          drawISarrow=False,
+                          drawIGarrow=False,
+                          VGSname='V_{GS}',
+                          VDSname='V_{SD}',
+                          VDGname='V_{GD}',
+                          IDname='i_d',
+                          ISname='i_s',
+                          IGname='i_g'):
+         
+    """ draws a general MOSFET
+    
+    parent: parent object
+    position: position [x,y]
+    label: label of the object (it can be repeated)
+    mirrorInput: invert + and - inputs (default: positive above, negative below)
+    opampDrawVin: write v+ and v- besides the inputs (default: False)
+    opampDrawVd: write vd besides the input terminals
+    flagDrawSupply: draw supply terminals
+    """
+    
+    if gateType == 'P_gate':
+      isNgate=False
+    else:
+      isNgate=True
+      
+    if modeType == 'MOSFET-E':
+      isEmode=True
+    else:
+      isEmode=False
+
+    group = self.createGroup(parent,label)
+    elem = self.createGroup(group,label)
+    colorBlack=inkDraw.color.defined('black')
+
+    L_arrow=2.0
+    markerMOS=inkDraw.marker.createMarker(self, 'MOSArrow', 'M -0.3,0 l -%f,%f l 0,-%f z'% (L_arrow*1.2, L_arrow/2.0,L_arrow), RenameMode=1,
+                                          strokeColor=colorBlack, fillColor=colorBlack, lineWidth=0.6)
+    lineStyleArrow = inkDraw.lineStyle.set(lineWidth=0.7, lineColor=colorBlack, markerEnd=markerMOS)
+    lineStyleFine = inkDraw.lineStyle.set(lineWidth=0.7, lineColor=colorBlack)
+
+    if mirrorEC:
+      inkDraw.line.relCoords(elem, [[0,-12],[-28,0]],[position[0]+17,position[1]+6])   #gate
+      
+      if bodyDiode and isEmode:
+        inkDraw.line.relCoords(elem, [[0,18.75]],[position[0]+24,position[1]+5.25]) # drain line
+      else:
+        inkDraw.line.relCoords(elem, [[0,18.6]],[position[0]+24,position[1]+5.4]) # drain line
+      inkDraw.line.relCoords(elem, [[5,0],[0,5.25]],[position[0]+19,position[1]+5.25],lineStyle=lineStyleFine) # drain line
+      
+      inkDraw.line.relCoords(elem, [[0,-20.75]],[position[0]+24,position[1]-5.25]) # source line
+      inkDraw.line.relCoords(elem, [[5,0],[0,5.25]],[position[0]+19,position[1]-5.25],lineStyle=lineStyleFine) # source line
+      
+      inkDraw.circle.centerRadius(elem, [position[0]+24,position[1]-5.25], radius=0.4, offset=[0, 0], label='circle') # source dot
+      if isNgate:
+        inkDraw.line.relCoords(elem, [[-5,0]],[position[0]+24,position[1]+0],lineStyle=lineStyleArrow) # horizontal arrow line 
+      else:
+        inkDraw.line.relCoords(elem, [[5,0]],[position[0]+19,position[1]+0],lineStyle=lineStyleArrow) # horizontal arrow line 
+
+      if bodyDiode and isEmode:
+        inkDraw.circle.centerRadius(elem, [position[0]+24,position[1]+5.25], radius=0.4, offset=[0, 0], label='circle') # diode cathode dot
+        inkDraw.line.relCoords(elem, [[4,0],[0,-3.75]],[position[0]+24,position[1]+5.25],lineStyle=lineStyleFine) # diode cathode
+        inkDraw.line.relCoords(elem, [[4,0],[0, 3.75]],[position[0]+24,position[1]-5.25],lineStyle=lineStyleFine) # diode anode
+        
+        if isNgate:
+          inkDraw.line.relCoords(elem, [[3,0]],[position[0]+26.5,position[1]+1.5],lineStyle=lineStyleFine) # diode cathode side line
+          inkDraw.line.relCoords(elem, [[3,0],[-1.5, 3],[-1.5,-3]],[position[0]+26.5,position[1]-1.5],lineStyle=lineStyleFine) # diode
+        else:
+          inkDraw.line.relCoords(elem, [[3,0]],[position[0]+26.5,position[1]-1.5],lineStyle=lineStyleFine) # diode cathode side line
+          inkDraw.line.relCoords(elem, [[3,0],[-1.5,-3],[-1.5, 3]],[position[0]+26.5,position[1]+1.5],lineStyle=lineStyleFine) # diode
+
+        pos_Gtag=[position[0]+9,position[1]-3]
+        pos_Dtag=[position[0]+26.5,position[1]+12.5]
+        pos_Stag=[position[0]+26.5,position[1]-12.5]
+      else:
+        pos_Gtag=[position[0]+7,position[1]-3]
+        pos_Dtag=[position[0]+26.5,position[1]+11.5]
+        pos_Stag=[position[0]+26.5,position[1]-11.5]
+        
+    else:
+      inkDraw.line.relCoords(elem, [[0,12],[-28,0]],[position[0]+17,position[1]-6])   #gate
+
+      if bodyDiode and isEmode:
+        inkDraw.line.relCoords(elem, [[0,-18.75]],[position[0]+24,position[1]-5.25]) # drain line
+      else:
+        inkDraw.line.relCoords(elem, [[0,-18.6]],[position[0]+24,position[1]-5.4]) # drain line
+
+      inkDraw.line.relCoords(elem, [[5,0],[0,-5.25]],[position[0]+19,position[1]-5.25],lineStyle=lineStyleFine) # drain line
+      
+      inkDraw.line.relCoords(elem, [[0,20.75]],[position[0]+24,position[1]+5.25]) # source line
+      inkDraw.line.relCoords(elem, [[5,0],[0,-5.25]],[position[0]+19,position[1]+5.25],lineStyle=lineStyleFine) # source line
+
+      inkDraw.circle.centerRadius(elem, [position[0]+24,position[1]+5.25], radius=0.4, offset=[0, 0], label='circle') # source dot
+      if isNgate:
+        inkDraw.line.relCoords(elem, [[-5,0]],[position[0]+24,position[1]+0],lineStyle=lineStyleArrow) # horizontal arrow line 
+      else:
+        inkDraw.line.relCoords(elem, [[5,0]],[position[0]+19,position[1]+0],lineStyle=lineStyleArrow) # horizontal arrow line 
+
+      if bodyDiode and isEmode:
+        inkDraw.circle.centerRadius(elem, [position[0]+24,position[1]-5.25], radius=0.4, offset=[0, 0], label='circle') # diode cathode dot
+        inkDraw.line.relCoords(elem, [[4,0],[0, 3.75]],[position[0]+24,position[1]-5.25],lineStyle=lineStyleFine) # diode cathode
+        inkDraw.line.relCoords(elem, [[4,0],[0,-3.75]],[position[0]+24,position[1]+5.25],lineStyle=lineStyleFine) # diode anode
+        
+        if isNgate:
+            inkDraw.line.relCoords(elem, [[3,0]],[position[0]+26.5,position[1]-1.5],lineStyle=lineStyleFine) # diode cathode side line
+            inkDraw.line.relCoords(elem, [[3,0],[-1.5,-3],[-1.5,3]],[position[0]+26.5,position[1]+1.5],lineStyle=lineStyleFine) # diode
+        else:
+            inkDraw.line.relCoords(elem, [[3,0]],[position[0]+26.5,position[1]+1.5],lineStyle=lineStyleFine) # diode cathode side line
+            inkDraw.line.relCoords(elem, [[3,0],[-1.5,3],[-1.5,-3]],[position[0]+26.5,position[1]-1.5],lineStyle=lineStyleFine) # diode
+
+        pos_Gtag=[position[0]+9,position[1]+3]
+        pos_Dtag=[position[0]+26.5,position[1]-12.5]
+        pos_Stag=[position[0]+26.5,position[1]+12.5]
+      else:
+        pos_Gtag=[position[0]+7,position[1]+3]
+        pos_Dtag=[position[0]+26.5,position[1]-11.5]
+        pos_Stag=[position[0]+26.5,position[1]+11.5]
+            
+    if isEmode:
+      # enhancement-mode line
+      inkDraw.line.relCoords(elem, [[0,3.5]],[position[0]+19,position[1]-7],lineStyle=lineStyleFine) #vertical gate line
+      inkDraw.line.relCoords(elem, [[0,3.5]],[position[0]+19,position[1]-1.75],lineStyle=lineStyleFine) #vertical gate line
+      inkDraw.line.relCoords(elem, [[0,3.5]],[position[0]+19,position[1]+3.5],lineStyle=lineStyleFine) #vertical gate line
+    else:
+      inkDraw.line.relCoords(elem, [[0,14]],[position[0]+19,position[1]-7],lineStyle=lineStyleFine) #vertical gate line
+      
+    if drawEnvelope:
+      if bodyDiode and isEmode:
+        inkDraw.circle.centerRadius(elem, centerPoint=[position[0]+22,position[1]], radius=10, offset=[0, 0], label='circle')
+      else:
+        inkDraw.circle.centerRadius(elem, centerPoint=[position[0]+20,position[1]], radius=10, offset=[0, 0], label='circle')
+
+    if drawSGDtags:
+      tB=inkDraw.text.latex(self,group,'G',position=pos_Gtag,fontSize=self.fontSizeSmall/1.5,refPoint='cc',preambleFile=self.preambleFile,angleDeg=-angleDeg)
+      tC=inkDraw.text.latex(self,group,'D',position=pos_Dtag,fontSize=self.fontSizeSmall/1.5,refPoint='cc',preambleFile=self.preambleFile,angleDeg=-angleDeg)
+      tE=inkDraw.text.latex(self,group,'S',position=pos_Stag,fontSize=self.fontSizeSmall/1.5,refPoint='cc',preambleFile=self.preambleFile,angleDeg=-angleDeg)
+            
+    if angleDeg!=0:
+      self.rotateElement(group,position,angleDeg)
+
+    if inkDraw.useLatex:
+      VDSname='$'+VDSname+'$'
+      VGSname='$'+VGSname+'$'
+      VDGname='$'+VDGname+'$'
+      IGname='$'+IGname+'$'
+      IDname='$'+IDname+'$'
+      ISname='$'+ISname+'$'
+      
+    #draw voltage drops
+    if drawVDS:
+      pos=[position[0]+25+10 ,position[1]]
+      self.drawVoltArrowSimple(group,pos,name=VDSname,color=self.voltageColor,angleDeg=90,
+                               invertArrows=mirrorEC ,size=20.0,invertCurvatureDirection=False,extraAngleText=angleDeg)
+    
+    if drawVGS:
+      if mirrorEC:
+        pos = [position[0]+15,position[1]-15]
+        ang = +45
+      else:
+        pos = [position[0]+15,position[1]+15]
+        ang = -45
+      self.drawVoltArrowSimple(group,pos,name=VGSname,color=self.voltageColor,angleDeg=ang,
+                               invertArrows=True, size=10.0,  invertCurvatureDirection=mirrorEC, extraAngleText=angleDeg)
+
+    if drawVDG:
+      if mirrorEC:
+        pos = [position[0]+10,position[1]+8]
+        ang = -45
+      else:
+        pos = [position[0]+10,position[1]-8]
+        ang = 45
+      self.drawVoltArrowSimple(group,pos,name=VDGname,color=self.voltageColor,angleDeg= ang,
+                                invertArrows= False,size=20.0,invertCurvatureDirection=not mirrorEC,extraAngleText=angleDeg)
+          
+    # draw terminal currents
+    if drawISarrow:
+      if mirrorEC:
+        pos = [position[0]+29 ,position[1]-17.5]
+      else:
+        pos = [position[0]+29 ,position[1]+17.5]
+
+      self.drawCurrArrowSimple(group,pos,name=ISname,color=self.currentColor,
+                              angleDeg=90,invertArrows=not mirrorEC,size=7.5,invertTextSide=True,extraAngleText=angleDeg)
+     
+    if drawIGarrow:
+      if mirrorEC:
+        pos = [position[0]-5 ,position[1]-11]
+      else:
+        pos = [position[0]-5 ,position[1]+11]
+
+      self.drawCurrArrowSimple(group,pos,name=IGname,color=self.currentColor,
+                               angleDeg=0,invertArrows=False,size=7.5,invertTextSide=not mirrorEC,extraAngleText=angleDeg) 
+
+    if drawIDarrow:
+      if mirrorEC:
+        pos = [position[0]+29 ,position[1]+17.5]
+      else:
+        pos = [position[0]+29 ,position[1]-17.5]
+      self.drawCurrArrowSimple(group,pos,name=IDname,color=self.currentColor,
+                                 angleDeg=90,invertArrows=not mirrorEC,size=7.5,invertTextSide=True,extraAngleText=angleDeg) 
+
+    return group;
+    
   #---------------------------------------------
   def drawSwitch2T(self,parent,position=[0, 0],value='S',label='Switch',angleDeg=0,flagOpen=True,flagDrawArrow=False,OpenCloseText=''):
     """ draws a switch with two terminals only

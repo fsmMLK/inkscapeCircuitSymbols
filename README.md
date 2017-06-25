@@ -277,47 +277,71 @@ In both cases, you have two options in the `Color` drop down menu:
 <img src="docs/images/Semi_annotation.png" width="450px"/>
 
 
-### Transistor tab
+### BJT Transistor tab
 
 
-<img src="docs/images/Tab_Transistors.png" width="600px"/>
+<img src="docs/images/Tab_BJT.png" width="600px"/>
 
-**Type:** You can select the type of operational amplifier. At the moment there are two types.
+**Type:** You can select the type of transistor. At the moment there are two types.
 
-<img src="docs/images/Transistor_types.png" width="400px"/>
-
-**Label:** Label of the transistor. If LaTeX support is enabled, this text will be included in a math environment $...$. You don't have to enclose your text between $...$.
+<img src="docs/images/BJT_types.png" width="400px"/>
 
 **Orientation:** Rotation angle in degrees. See *RLC tab* section for examples.
 
 **Draw Envelope:** Draws an envelope circle around the transistor
 
-<img src="docs/images/Transistor_envelope.png" width="400px"/>
+<img src="docs/images/BJT_envelope.png" width="400px"/>
 
 **Switch Emitter/Collector terminals:** Switch terminals. **Attention:** This will not switch between NPN and PNP transistors.
 
-<img src="docs/images/Transistor_switch_EC.png" width="500px"/>
+<img src="docs/images/BJT_switch_EC.png" width="500px"/>
 
 
 **Add E/B/C tags:**  Add Emitter, base and collector label annotations
 
-**Add v_CE voltage arrow:**  Add Collector/Emmiter voltage drop arrow annotation
+**Add v_CE/v_CB/v_BE voltage arrows:**  Add voltage drop annotations across the transistor
 
-**Add v_CB voltage arrow:**  Add Collector/Base voltage drop arrow annotation
+**Add i_C/i_B/i_E current arrows:** Add collector, base and emitter current annotations
 
-**Add v_BE voltage arrow:**  Add Base/Emitter voltage drop arrow annotation
+**v_CE/v_CB/v_BE labels:** labels of voltage drop annotations
 
-**Add collector current arrow (i_c):** Add collector current annotation
+**i_C/i_B/i_E labels:** labels of transistor currents
 
-**Add base current arrow (i_b):** Add base current annotation
+<img src="docs/images/BJT_annotations.png" width="800px"/>
 
-**Add emitter current arrow (i_e):** Add emitter current annotation
+### FET Transistor tab
 
-**v_CE, v_CB and v_BE labels:** labels of voltage drop annotations
+<img src="docs/images/Tab_FET.png" width="600px"/>
 
-**i_c, i_b, i_e labels:** labels of transistor currents
+**FET Type / Channel type:** Type of FET.
 
-<img src="docs/images/Transistor_annotations.png" width="800px"/>
+<img src="docs/images/MOSFET_types.png" width="400px"/>
+
+**Orientation:** Rotation angle in degrees. See *RLC tab* section for examples.
+
+**Draw Envelope:** Draws an envelope circle around the transistor
+
+<img src="docs/images/FET_envelope.png" width="400px"/>
+
+**Switch Source/Drain terminals:** Switch terminals. **Attention:** This will not switch between different channel types.
+
+<img src="docs/images/FET_switch_SD.png" width="500px"/>
+
+**Add body diode (MOSFET-E only):** Draws the body diode of power MOSFETS.
+
+<img src="docs/images/FET_bodyDiode.png" width="500px"/>
+
+**Add S/G/D tags:**  Add source, gate and drain label annotations
+
+**Add v_GS/v_DS/v_DG voltage arrows:**  Add voltage drop annotations across the transistor
+
+**Add i_D/i_S/i_G current arrows:** Add collector, base and emitter current annotations
+
+** v_GS/v_DS/v_DG labels:** labels of voltage drop annotations
+
+**i_D/i_S/i_G labels:** labels of transistor currents
+
+<img src="docs/images/FET_annotations.png" width="800px"/>
 
 
 ### Operational amplifier tab
@@ -384,3 +408,4 @@ In both cases, you have two options in the `Color` drop down menu:
 
 <img src="docs/images/Example_H.png" width="450px"/>
 
+<img src="docs/images/Example_I.png" width="450px"/>
