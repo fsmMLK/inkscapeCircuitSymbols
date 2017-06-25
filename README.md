@@ -315,17 +315,17 @@ In both cases, you have two options in the `Color` drop down menu:
 
 **FET Type / Channel type:** Type of FET.
 
-<img src="docs/images/MOSFET_types.png" width="400px"/>
+<img src="docs/images/MOSFET_types.png" width="900px"/>
 
 **Orientation:** Rotation angle in degrees. See *RLC tab* section for examples.
 
 **Draw Envelope:** Draws an envelope circle around the transistor
 
-<img src="docs/images/FET_envelope.png" width="400px"/>
+<img src="docs/images/FET_envelope.png" width="500px"/>
 
 **Switch Source/Drain terminals:** Switch terminals. **Attention:** This will not switch between different channel types.
 
-<img src="docs/images/FET_switch_SD.png" width="500px"/>
+<img src="docs/images/FET_switch_SD.png" width="900px"/>
 
 **Add body diode (MOSFET-E only):** Draws the body diode of power MOSFETS.
 
@@ -337,7 +337,7 @@ In both cases, you have two options in the `Color` drop down menu:
 
 **Add i_D/i_S/i_G current arrows:** Add collector, base and emitter current annotations
 
-** v_GS/v_DS/v_DG labels:** labels of voltage drop annotations
+**v_GS/v_DS/v_DG labels:** labels of voltage drop annotations
 
 **i_D/i_S/i_G labels:** labels of transistor currents
 
