@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 793.7008056641 1122.51965332"
+   version="1.1"
+   id="svg2"
+   inkscape:version="0.92.1 unknown"
+   sodipodi:docname="BJT_envelope.svg">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1081"
+     inkscape:window-height="778"
+     id="namedview4"
+     showgrid="true"
+     inkscape:zoom="3.017526903583"
+     inkscape:cx="145.8417927865"
+     inkscape:cy="707.5284012643"
+     inkscape:window-x="810"
+     inkscape:window-y="151"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2"
+     inkscape:snap-text-baseline="true">
+    <inkscape:grid
+       type="xygrid"
+       id="grid4568" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata8">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs6">
+    <marker
+       id="arrowVoltageEnd"
+       orient="auto"
+       refX="0"
+       refY="0"
+       style="overflow:visible"
+       inkscape:stockid="arrowVoltageEnd">
+      <path
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#217b21;fill-rule:evenodd;stroke:#217b21;stroke-width:1"
+         transform="matrix(-0.25,0,0,-0.25,-1.823125,0)"
+         id="path4141"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       id="arrowVoltageStart"
+       orient="auto"
+       refX="0"
+       refY="0"
+       style="overflow:visible"
+       inkscape:stockid="arrowVoltageStart">
+      <path
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#217b21;fill-rule:evenodd;stroke:#217b21;stroke-width:1"
+         transform="matrix(0.25,0,0,0.25,1.823125,0)"
+         id="path4138"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       id="marker4750"
+       orient="auto"
+       refX="0"
+       refY="0"
+       style="overflow:visible"
+       inkscape:stockid="arrowVoltageEnd">
+      <path
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#217b21;fill-rule:evenodd;stroke:#217b21;stroke-width:1"
+         transform="matrix(-0.25,0,0,-0.25,-1.823125,0)"
+         id="path4748"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       id="marker4754"
+       orient="auto"
+       refX="0"
+       refY="0"
+       style="overflow:visible"
+       inkscape:stockid="arrowVoltageStart">
+      <path
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#217b21;fill-rule:evenodd;stroke:#217b21;stroke-width:1"
+         transform="matrix(0.25,0,0,0.25,1.823125,0)"
+         id="path4752"
+         inkscape:connector-curvature="0" />
+    </marker>
+    <marker
+       inkscape:stockid="BJTArrow"
+       style="overflow:visible"
+       refY="0.0"
+       refX="0.0"
+       orient="auto"
+       id="BJTArrow">
+      <path
+         id="path5813"
+         style="stroke-width:0.6;stroke:#000000;fill:#000000;fill-rule:evenodd"
+         d="M 0,0 l -3.000000,1.250000 l 0,-2.500000 z" />
+    </marker>
+  </defs>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.3333334923px;line-height:20px;font-family:Verdana;-inkscape-font-specification:Verdana;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:center;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:middle;white-space:normal;shape-padding:0;opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     x="87.55858612061"
+     y="337.5196533203"
+     id="text4572-3"
+     inkscape:export-xdpi="253.8950042725"
+     inkscape:export-ydpi="253.8950042725"><tspan
+       sodipodi:role="line"
+       id="tspan4570-5"
+       x="87.55858612061"
+       y="337.5196533203">with envelope</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.3333334923px;line-height:20px;font-family:Verdana;-inkscape-font-specification:Verdana;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-feature-settings:normal;text-indent:0;text-align:center;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:0px;word-spacing:0px;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:middle;white-space:normal;shape-padding:0;opacity:1;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+     x="170"
+     y="337.5196533203"
+     id="text4572-3-6"
+     inkscape:export-xdpi="253.8950042725"
+     inkscape:export-ydpi="253.8950042725"><tspan
+       sodipodi:role="line"
+       id="tspan4570-5-2"
+       x="170"
+       y="337.5196533203">without envelope</tspan></text>
+  <g
+     transform="translate(-75,-57.48034667969)"
+     inkscape:label="BJT"
+     id="g5774">
+    <g
+       inkscape:label="BJT"
+       id="g5772">
+      <path
+         inkscape:connector-curvature="0"
+         d="m 140,430 h 28"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+         inkscape:label="none"
+         id="path5760" />
+      <path
+         inkscape:connector-curvature="0"
+         d="m 167.5,424 v 12"
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+         inkscape:label="none"
+         id="path5762" />
+      <path
+         inkscape:connector-curvature="0"
+         d="m 168,427 7,-5 v -17"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+         inkscape:label="none"
+         id="path5764" />
+      <path
+         inkscape:connector-curvature="0"
+         d="m 168,433 7,5"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;marker-end:url(#BJTArrow)"
+         inkscape:label="none"
+         id="path5766" />
+      <path
+         inkscape:connector-curvature="0"
+         d="m 175,438 v 17"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+         inkscape:label="none"
+         id="path5768" />
+      <circle
+         r="10"
+         cy="430"
+         cx="172"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+         inkscape:label="circle"
+         id="path5770" />
+    </g>
+  </g>
+  <g
+     id="g5841"
+     inkscape:label="BJT"
+     transform="translate(15,-57.48034667969)">
+    <g
+       id="g5839"
+       inkscape:label="BJT">
+      <path
+         id="path5829"
+         inkscape:label="none"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+         d="m 140,430 h 28"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path5831"
+         inkscape:label="none"
+         style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+         d="m 167.5,424 v 12"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path5833"
+         inkscape:label="none"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+         d="m 168,427 7,-5 v -17"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path5835"
+         inkscape:label="none"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;marker-end:url(#BJTArrow)"
+         d="m 168,433 7,5"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path5837"
+         inkscape:label="none"
+         style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+         d="m 175,438 v 17"
+         inkscape:connector-curvature="0" />
+    </g>
+  </g>
+</svg>
