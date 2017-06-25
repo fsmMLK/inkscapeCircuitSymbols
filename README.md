@@ -315,7 +315,7 @@ In both cases, you have two options in the `Color` drop down menu:
 
 **FET Type / Channel type:** Type of FET.
 
-<img src="docs/images/MOSFET_types.png" width="900px"/>
+<img src="docs/images/MOSFET_Types.png" width="900px"/>
 
 **Orientation:** Rotation angle in degrees. See *RLC tab* section for examples.
 
