@@ -101,12 +101,12 @@
       <param name="FET_DrawIDarrow" type="boolean" _gui-text="Add drain current arrow (i_d)">0</param>
       <param name="FET_DrawISarrow" type="boolean" _gui-text="Add source current arrow (i_s)">0</param>
       <param name="FET_DrawIGarrow" type="boolean" _gui-text="Add gate current arrow (i_g)">0</param>
-      <param name="FET_VGSname" type="string" _gui-text="v_GS label (no $...$ needed)">v_{cb}</param>
-      <param name="FET_VDSname" type="string" _gui-text="v_DS label (no $...$ needed)">v_{ce}</param>
-      <param name="FET_VDGname" type="string" _gui-text="v_DG label (no $...$ needed)">v_{be}</param>
-      <param name="FET_IDname" type="string" _gui-text="i_d label (no $...$ needed)">i_e</param>
-      <param name="FET_ISname" type="string" _gui-text="i_s label (no $...$ needed)">i_c</param>
-      <param name="FET_IGname" type="string" _gui-text="i_g label (no $...$ needed)">i_b</param>
+      <param name="FET_VGSname" type="string" _gui-text="v_GS label (no $...$ needed)">v_{gs}</param>
+      <param name="FET_VDSname" type="string" _gui-text="v_DS label (no $...$ needed)">v_{ds}</param>
+      <param name="FET_VDGname" type="string" _gui-text="v_DG label (no $...$ needed)">v_{dg}</param>
+      <param name="FET_IDname" type="string" _gui-text="i_d label (no $...$ needed)">i_d</param>
+      <param name="FET_ISname" type="string" _gui-text="i_s label (no $...$ needed)">i_s</param>
+      <param name="FET_IGname" type="string" _gui-text="i_g label (no $...$ needed)">i_g</param>
     </page>
     <page name="Opamp" appearance="minimal" _gui-text="OpAmp">
       <param name="opamp" type="optiongroup" appearance="minimal" _gui-text="Type:">

@@ -1648,11 +1648,11 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
     
     if drawVGS:
       if mirrorEC:
-        pos = [position[0]+15,position[1]-15]
-        ang = +45
+        pos = [position[0]+15,position[1]-14]
+        ang = +19
       else:
-        pos = [position[0]+15,position[1]+15]
-        ang = -45
+        pos = [position[0]+15,position[1]+14]
+        ang = -19
       self.drawVoltArrowSimple(group,pos,name=VGSname,color=self.voltageColor,angleDeg=ang,
                                invertArrows=True, size=10.0,  invertCurvatureDirection=mirrorEC, extraAngleText=angleDeg)
 
@@ -1840,7 +1840,10 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
                 if theta<=290:
                   justif='cr'
                 else:
-                  justif='tr'
+                  if theta<=340:
+                    justif='tr'
+                  else:
+                    justif='tc'
                   
     centerY=-radius*math.cos(halfTheta)
     posY=centerY+radius
