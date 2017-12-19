@@ -76,7 +76,7 @@ In addition to these elements, both menu entries has extra tabs to generate sign
 
 ### RLC tab
 
-<img src="docs/images/Tab_RLC.png" width="600px"/>
+<img src="docs/images/Tab_RLC.png" width="800px"/>
 
 **Type:** You can select the type of bipole. The available types are:
 
@@ -320,7 +320,7 @@ In both cases, you have two options in the `Color` drop down menu:
 
 <img src="docs/images/MOSFET_Types.png" width="900px"/>
 
-<img src="docs/images/JFET_Types.png" width="400px"/>
+<img src="docs/images/JFET_Types.png" width="350px"/>
 
 **Orientation:** Rotation angle in degrees. See *RLC tab* section for examples.
 
