@@ -27,7 +27,8 @@
         <_option value="30">30</_option>
         <_option value="45">45</_option>
         <_option value="60">60</_option>
-      </param>
+      </param>      
+      <param name="diodeMirror" type="boolean" _gui-text="Invert diode direction">0</param>
       <param name="desc1" type="description" appearance="header">Annotation arrows</param>
       <param name="diodeVolt" type="boolean" _gui-text="Add voltage arrow">1</param>
       <param name="diodeCurr" type="boolean" _gui-text="Add current arrow">1</param>
@@ -70,9 +71,9 @@
     </page>
     <page name="Transistor_FET" appearance="minimal" _gui-text="FET">
       <param name="FET_Type" type="optiongroup" appearance="minimal" _gui-text="FET type:">
-
         <_option value="MOSFET-E">MOSFET-E (enhancement-mode)</_option>
         <_option value="MOSFET-D">MOSFET-D (depletion-mode)</_option>
+        <_option value="JFET">JFET</_option>
       </param>
       <param name="FET_Gate" type="optiongroup" appearance="minimal" _gui-text="Channel type:">
         <_option value="P_gate">Positive</_option>
@@ -92,6 +93,9 @@
       <param name="FET_Envelope" type="boolean" _gui-text="Draw envelope">1</param>
       <param name="FET_MirrorEC" type="boolean" _gui-text="Switch Source/Drain terminals">0</param>
       <param name="FET_BodyDiode" type="boolean" _gui-text="Add body diode (MOSFET-E only)">0</param>
+      <param name="FET_MoveGate" type="boolean" _gui-text="Move gate towards the source (JFET only)">0</param>
+      
+      
       
       <param name="desc1" type="description" appearance="header">Annotation</param>
       <param name="FET_SGDtags" type="boolean" _gui-text="Add S/G/D tags">0</param>
@@ -178,6 +182,7 @@
       <param name="arrowInvert" type="boolean" _gui-text="Invert arrow direction">0</param>
       <param name="arrowCurvaturDirection" type="boolean" _gui-text="Invert disposition">0</param>
       <param name="some_name" type="description"> - voltage: invert arrow curvature
+        
  - current: text side</param>
     </page>
     <page name="Colors" appearance="minimal" _gui-text="Colors">

@@ -10,7 +10,7 @@ The main features are
  - Passive bipoles: resistors, capacitors, inductors, diodes, LEDs, photo diodes, 2 way switch
  - Active bipoles: various independent and dependent voltage/current sources
  - Operational amplifiers
- - Bipolar transistors
+ - Bipolar and FET transistors
  - Signal labeling generator with a few commonly used signals predefined
  - Each element can be labeled individually. Numeric nominal values are supported with optional unit inclusion
  - current and/or voltage arrows can be added to all elements, with custom labels. Their directions are adjustable.
@@ -266,6 +266,8 @@ In both cases, you have two options in the `Color` drop down menu:
 
 **Label:** Label of the switch. If LaTeX support is enabled, this text will be included in a math environment $...$. You don't have to enclose your text between $...$.
 
+**Invert diode direction:** invert the direction of the diode.
+
 **Orientation:** Rotation angle in degrees. See *RLC tab* section for examples.
 
 **Add voltage/current arrow:** add voltage drop and current arrow indications.
@@ -285,6 +287,7 @@ In both cases, you have two options in the `Color` drop down menu:
 **Type:** You can select the type of transistor. At the moment there are two types.
 
 <img src="docs/images/BJT_types.png" width="400px"/>
+
 
 **Orientation:** Rotation angle in degrees. See *RLC tab* section for examples.
 
@@ -317,6 +320,8 @@ In both cases, you have two options in the `Color` drop down menu:
 
 <img src="docs/images/MOSFET_Types.png" width="900px"/>
 
+<img src="docs/images/JFET_Types.png" width="400px"/>
+
 **Orientation:** Rotation angle in degrees. See *RLC tab* section for examples.
 
 **Draw Envelope:** Draws an envelope circle around the transistor
@@ -330,6 +335,10 @@ In both cases, you have two options in the `Color` drop down menu:
 **Add body diode (MOSFET-E only):** Draws the body diode of power MOSFETS.
 
 <img src="docs/images/FET_bodyDiode.png" width="450px"/>
+
+**Move gate towards the source (JFET only):** Moves gate terminal.
+
+<img src="docs/images/JFET_gate_position.png" width="450px"/>
 
 **Add S/G/D tags:**  Add source, gate and drain label annotations
 

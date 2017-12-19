@@ -21,10 +21,13 @@ def latexUnitMultiple(valueString):
     
   if valueString[-1]=='m':
     return valueString.replace('m',r'\si\milli')
-    
+  
   if valueString[-1]=='u':
     return valueString.replace('u',r'\micro')
     
+  if valueString[-1]=='n':
+    return valueString.replace('n',r'\si\nano')
+  
   if valueString[-1]=='p':
     return valueString.replace('p',r'\si\pico')
   
@@ -99,6 +102,7 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
     self.OptionParser.add_option("--FET_Type",action="store", type="string",dest="FET_Type", default='none')
     self.OptionParser.add_option("--FET_Gate",action="store", type="string",dest="FET_Gate", default='none')
     self.OptionParser.add_option("--FET_BodyDiode",action="store", type="inkbool",dest="FET_BodyDiode", default=False)    
+    self.OptionParser.add_option("--FET_MoveGate",action="store", type="inkbool",dest="FET_MoveGate", default=False)    
     self.OptionParser.add_option("--FET_Rot", action="store", type="string", dest="FET_Rot", default='0') 
     self.OptionParser.add_option("--FET_Envelope", action="store", type="inkbool", dest="FET_Envelope", default=True) 
     self.OptionParser.add_option("--FET_MirrorEC", action="store", type="inkbool", dest="FET_MirrorEC", default=False) 
@@ -119,13 +123,14 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
 
     self.OptionParser.add_option("--diode",action="store", type="string",dest="diode", default='none')
     self.OptionParser.add_option("--diodeVal", action="store", type="string", dest="diodeVal", default=None) 
-    self.OptionParser.add_option("--diodeRot", action="store", type="string", dest="diodeRot", default='0') 
+    self.OptionParser.add_option("--diodeRot", action="store", type="string", dest="diodeRot", default='0')     
     self.OptionParser.add_option("--diodeVolt", action="store", type="inkbool", dest="diodeVolt", default=True) 
     self.OptionParser.add_option("--diodeCurr", action="store", type="inkbool", dest="diodeCurr", default=True)
     self.OptionParser.add_option("--diodeVoltName", action="store", type="string", dest="diodeVoltName", default='v') 
     self.OptionParser.add_option("--diodeCurrName", action="store", type="string", dest="diodeCurrName", default='i') 
     self.OptionParser.add_option("--diodeVoltCurrInvert", action="store", type="inkbool", dest="diodeVoltCurrInvert", default=True)
-   
+    self.OptionParser.add_option("--diodeMirror", action="store", type="inkbool", dest="diodeMirror", default=False)
+       
     self.OptionParser.add_option("--nodal",action="store", type="string",dest="nodal", default='none')
     self.OptionParser.add_option("--nodalVal", action="store", type="string", dest="nodalVal", default='E') 
     self.OptionParser.add_option("--nodalRot", action="store", type="float", dest="nodalRot", default=0)
@@ -269,7 +274,27 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
         self.drawInductor(root_layer,position,value=so.bipoleRLCVal,angleDeg=so.bipoleRLCRot,
                           flagVolt=so.bipoleRLCVolt,voltName=so.bipoleRLCVoltName,flagCurr=so.bipoleRLCCurr,
                           currName=so.bipoleRLCCurrName,invertArrows=so.bipoleRLCVoltCurrInvert)
-                            
+                                    
+      if so.bipoleRLC=="pot2T":
+        if so.bipoleRLCUnit:
+          if inkDraw.useLatex:
+            so.bipoleRLCVal+=r'\si\ohm'
+          else:
+            so.bipoleRLCVal+=u'\u2126'
+        self.drawPotentiometer(root_layer,position,value=so.bipoleRLCVal,angleDeg=so.bipoleRLCRot,
+                               flagVolt=so.bipoleRLCVolt,voltName=so.bipoleRLCVoltName,flagCurr=so.bipoleRLCCurr,
+                               currName=so.bipoleRLCCurrName,invertArrows=so.bipoleRLCVoltCurrInvert,is3T=False)
+       
+      if so.bipoleRLC=="pot3T":
+        if so.bipoleRLCUnit:
+          if inkDraw.useLatex:
+            so.bipoleRLCVal+=r'\si\ohm'
+          else:
+            so.bipoleRLCVal+=u'\u2126'
+        self.drawPotentiometer(root_layer,position,value=so.bipoleRLCVal,angleDeg=so.bipoleRLCRot,
+                               flagVolt=so.bipoleRLCVolt,voltName=so.bipoleRLCVoltName,flagCurr=so.bipoleRLCCurr,
+                               currName=so.bipoleRLCCurrName,invertArrows=so.bipoleRLCVoltCurrInvert,is3T=True)
+        
     #---------------------------
     # independendent sources
     #---------------------------
@@ -361,7 +386,7 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
       if so.diode in ['regular','LED','photoDiode','zener','schottky','tunnel','varicap']:
         self.drawDiode(root_layer,position,value=so.diodeVal,angleDeg=so.diodeRot,
                       flagVolt=so.diodeVolt,voltName=so.diodeVoltName,flagCurr=so.diodeCurr,
-                      currName=so.diodeCurrName,invertArrows=not so.diodeVoltCurrInvert,flagType=so.diode)  
+                      currName=so.diodeCurrName,invertArrows=not so.diodeVoltCurrInvert,flagType=so.diode,mirror=so.diodeMirror)  
       
     #---------------------------
     # Transistors
@@ -382,13 +407,22 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
 
 
     if so.tab=='Transistor_FET':
-        self.drawTransistorMOSFET(root_layer,position,angleDeg=so.FET_Rot,mirrorEC=so.FET_MirrorEC,
+      if 'MOSFET' in so.FET_Type:
+        self.drawTransistorMOSFET(root_layer,position,angleDeg=so.FET_Rot,mirrorSD=so.FET_MirrorEC,
                                   drawSGDtags=so.FET_SGDtags,drawEnvelope=so.FET_Envelope,modeType=so.FET_Type,gateType=so.FET_Gate,bodyDiode=so.FET_BodyDiode,
                                   drawVGS=so.FET_DrawVGSarrow,drawVDS=so.FET_DrawVDSarrow,drawVDG=so.FET_DrawVDGarrow,
                                   drawIDarrow=so.FET_DrawIDarrow,drawISarrow=so.FET_DrawISarrow,drawIGarrow=so.FET_DrawIGarrow,
                                   VGSname=so.FET_VGSname,VDSname=so.FET_VDSname,VDGname=so.FET_VDGname,
                                   IDname=so.FET_IDname,ISname=so.FET_ISname,IGname=so.FET_IGname)
-
+        
+      if 'JFET' in so.FET_Type:
+        self.drawTransistorJFET(root_layer,position,angleDeg=so.FET_Rot,mirrorSD=so.FET_MirrorEC,
+                                  drawSGDtags=so.FET_SGDtags,drawEnvelope=so.FET_Envelope,gateType=so.FET_Gate,moveGate=so.FET_MoveGate,
+                                  drawVGS=so.FET_DrawVGSarrow,drawVDS=so.FET_DrawVDSarrow,drawVDG=so.FET_DrawVDGarrow,
+                                  drawIDarrow=so.FET_DrawIDarrow,drawISarrow=so.FET_DrawISarrow,drawIGarrow=so.FET_DrawIGarrow,
+                                  VGSname=so.FET_VGSname,VDSname=so.FET_VDSname,VDGname=so.FET_VDGname,
+                                  IDname=so.FET_IDname,ISname=so.FET_ISname,IGname=so.FET_IGname)
+      
     # --------------------------
     # operational amplifiers
     #---------------------------
@@ -544,6 +578,70 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
     return group;
     
   #---------------------------------------------
+  def drawPotentiometer(self,parent,position=[0, 0],value='R',label='Potentiometer',angleDeg=0,
+                        flagVolt=True,voltName='v',flagCurr=True,currName='i',invertArrows=False,is3T=False):
+    """ draws a potentiometer
+    
+    parent: parent object
+    position: position [x,y]
+    value: string with resistor value. If it ends with 'ohm', 'OHM' or 'Ohm', proper Ohm symbol will be added. (Default 'R')
+    
+    label: label of the object (it can be repeated)
+    angleDeg: rotation angle in degrees counter-clockwise (default 0)
+    flagVolt: indicates whether the voltage arrow must be drawn (default: true)
+    voltName: voltage drop name (default: v)
+    flagCurr: indicates whether the current arrow must be drawn (default: true)
+    currName: current drop name (default: i)
+    is3T: indicates the drawPotentiometer has 3 terminals (default:false)
+    """
+      
+    group = self.createGroup(parent,label)
+    elem = self.createGroup(group)
+    
+    # build arrow marker
+    colorBlack=inkDraw.color.defined('black')
+    L_arrow=2.5
+    markerPath = 'M 0,0 l -%f,%f l 0,-%f z'% (L_arrow*1.2, L_arrow/2.0,L_arrow)
+    markerArrow=inkDraw.marker.createMarker(self, 'BJTArrow', markerPath, RenameMode=1, strokeColor=colorBlack, fillColor=colorBlack,lineWidth=0.6,markerTransform='translate (1,0)')
+    lineStyleArrow = inkDraw.lineStyle.set(lineWidth=1, lineColor=colorBlack, markerEnd=markerArrow)
+    
+    
+    inkDraw.line.relCoords(elem, [[15.5,0],[2,3],[3,-6],[3,6],[3,-6],[3,6],[3,-6],[2,3],[15.5,0]],position)
+    
+    # 2-terminal Potentiometer
+    if is3T:
+      inkDraw.line.relCoords(elem, [[0,-10]],[position[0]+25,position[1]+15],lineStyle=lineStyleArrow)
+      pos_text=[position[0]+25,position[1]-3-self.textOffset]
+    else:
+      inkDraw.line.relCoords(elem, [[20,-12]],[position[0]+15,position[1]+6],lineStyle=lineStyleArrow)
+      pos_text=[position[0]+25,position[1]-6-self.textOffset]
+    
+
+    if inkDraw.useLatex:
+      value='$'+value +'$'
+      
+    inkDraw.text.latex(self,group,value,pos_text,fontSize=self.fontSize,refPoint='bc',preambleFile=self.preambleFile)
+
+    if angleDeg!=0:
+      self.rotateElement(group,position,angleDeg)
+    
+    if flagVolt:
+      if is3T:
+        pos=[position[0]+25 ,position[1]+5]
+      else:
+        pos=[position[0]+25 ,position[1]+8]
+      self.drawVoltArrow(group,pos,name=voltName,color=self.voltageColor,angleDeg=angleDeg,invertArrows=not invertArrows)
+      
+    if flagCurr:
+      if is3T:
+        pos=[position[0]+40 ,position[1]-5]
+      else:
+        pos=[position[0]+42 ,position[1]-5]
+      self.drawCurrArrow(group,pos,name=currName,color=self.currentColor,angleDeg=angleDeg,invertArrows=invertArrows)
+      
+    return group;
+  
+  #---------------------------------------------
   def drawCapacitor(self,parent,position=[0, 0],value='C',label='Capacitor',flagPol=False,angleDeg=0,
                     flagVolt=True,voltName='v',flagCurr=True,currName='i',invertArrows=False):
     """ draws a capacitor
@@ -635,7 +733,7 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
 
   #---------------------------------------------
   def drawDiode(self,parent,position=[0, 0],value='D',label='diode',angleDeg=0,
-                flagVolt=True,voltName='v',flagCurr=True,currName='i',invertArrows=False,flagType='regular'):
+                flagVolt=True,voltName='v',flagCurr=True,currName='i',invertArrows=False,flagType='regular',mirror=False):
     """ draws a diode
     
     parent: parent object
@@ -649,35 +747,69 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
     flagCurr: indicates whether the current arrow must be drawn (default: true)
     currName: current drop name (default: i)]
     flagType: tipe of element: available types:  'regular', 'LED', 'photoDiode', 'zener', 'schottky','tunnel','varicap' (default: regular)
+    mirror: mirror diode (default: False)
     """
       
     group = self.createGroup(parent,label)
     elem = self.createGroup(group)
 
-    inkDraw.line.relCoords(elem, [[19,0]],position)
-    inkDraw.line.relCoords(elem, [[-12,6],[0,-12],[12,6]],[position[0]+31,position[1]])
-    if flagType == 'varicap':
-      inkDraw.line.relCoords(elem, [[16,0]],[position[0]+31+3,position[1]])
-    else:
+    if mirror:
+      if flagType == 'varicap':
+        inkDraw.line.relCoords(elem, [[16,0]],position)
+      else:
+        inkDraw.line.relCoords(elem, [[19,0]],position)
+        
+      inkDraw.line.relCoords(elem, [[12,6],[0,-12],[-12,6]],[position[0]+19,position[1]])
       inkDraw.line.relCoords(elem, [[19,0]],[position[0]+31,position[1]])
-    
-    
-    if flagType in ['regular','LED','photoDiode']:
-      inkDraw.line.relCoords(elem, [[0,12]],[position[0]+31,position[1]-6])
-    
-    if flagType == 'zener':
-      inkDraw.line.relCoords(elem, [[-2,-2],[0,-10],[-2,-2]],[position[0]+31+2,position[1]+5+2])
       
-    if flagType == 'schottky':
-      inkDraw.line.relCoords(elem, [[0,2],[3,0],[0,-12],[3,0],[0,2]],[position[0]+31-3,position[1]+6-2])
       
-    if flagType == 'tunnel':
-      inkDraw.line.relCoords(elem, [[3,0],[0,-12],[-3,0]],[position[0]+31-3,position[1]+6])
-    
-    if flagType == 'varicap':
-      inkDraw.line.relCoords(elem, [[0,12]],[position[0]+31,position[1]-6])
-      inkDraw.line.relCoords(elem, [[0,12]],[position[0]+34,position[1]-6])
+      if flagType in ['regular','LED','photoDiode']:
+        inkDraw.line.relCoords(elem, [[0,12]],[position[0]+19,position[1]-6])
       
+      if flagType == 'zener':
+        inkDraw.line.relCoords(elem, [[-2,-2],[0,-10],[-2,-2]],[position[0]+19+2,position[1]+5+2])
+        
+      if flagType == 'schottky':
+        inkDraw.line.relCoords(elem, [[0,2],[3,0],[0,-12],[3,0],[0,2]],[position[0]+19-3,position[1]+6-2])
+        
+      if flagType == 'tunnel':
+        if mirror:
+          inkDraw.line.relCoords(elem, [[-3,0],[0,-12],[3,0]],[position[0]+19+3,position[1]+6])
+        else:
+          inkDraw.line.relCoords(elem, [[3,0],[0,-12],[-3,0]],[position[0]+19-3,position[1]+6])
+      
+      if flagType == 'varicap':
+        inkDraw.line.relCoords(elem, [[0,12]],[position[0]+19,position[1]-6])
+        if mirror:
+          inkDraw.line.relCoords(elem, [[0,12]],[position[0]+16,position[1]-6])
+        else:
+          inkDraw.line.relCoords(elem, [[0,12]],[position[0]+22,position[1]-6])
+        
+    else:
+      inkDraw.line.relCoords(elem, [[19,0]],position)
+      inkDraw.line.relCoords(elem, [[-12,6],[0,-12],[12,6]],[position[0]+31,position[1]])
+      if flagType == 'varicap':
+        inkDraw.line.relCoords(elem, [[16,0]],[position[0]+31+3,position[1]])
+      else:
+        inkDraw.line.relCoords(elem, [[19,0]],[position[0]+31,position[1]])
+      
+      
+      if flagType in ['regular','LED','photoDiode']:
+        inkDraw.line.relCoords(elem, [[0,12]],[position[0]+31,position[1]-6])
+      
+      if flagType == 'zener':
+        inkDraw.line.relCoords(elem, [[-2,-2],[0,-10],[-2,-2]],[position[0]+31+2,position[1]+5+2])
+        
+      if flagType == 'schottky':
+        inkDraw.line.relCoords(elem, [[0,2],[3,0],[0,-12],[3,0],[0,2]],[position[0]+31-3,position[1]+6-2])
+        
+      if flagType == 'tunnel':
+        inkDraw.line.relCoords(elem, [[3,0],[0,-12],[-3,0]],[position[0]+31-3,position[1]+6])
+      
+      if flagType == 'varicap':
+        inkDraw.line.relCoords(elem, [[0,12]],[position[0]+31,position[1]-6])
+        inkDraw.line.relCoords(elem, [[0,12]],[position[0]+34,position[1]-6])
+         
     if value!=None:
       
       if flagType=='LED':
@@ -696,10 +828,10 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
       self.rotateElement(group,position,angleDeg)
     
     if flagVolt:
-      self.drawVoltArrow(group,[position[0]+25 ,position[1]+7],name=voltName,color=self.voltageColor,angleDeg=angleDeg,invertArrows=not invertArrows)
+      self.drawVoltArrow(group,[position[0]+25 ,position[1]+7],name=voltName,color=self.voltageColor,angleDeg=angleDeg,invertArrows= not (invertArrows != mirror ))
       
     if flagCurr:
-      self.drawCurrArrow(group,[position[0]+40 ,position[1]-5],name=currName,color=self.currentColor,angleDeg=angleDeg,invertArrows=invertArrows)
+      self.drawCurrArrow(group,[position[0]+40 ,position[1]-5],name=currName,color=self.currentColor,angleDeg=angleDeg,invertArrows=(invertArrows != mirror ))
     
     if flagType=='LED':
       arrow = self.createGroup(elem)
@@ -1363,12 +1495,17 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
     """ draws BJT transisitor
     
     parent: parent object
-    position: position [x,y]
     label: label of the object (it can be repeated)
-    mirrorInput: invert + and - inputs (default: positive above, negative below)
-    opampDrawVin: write v+ and v- besides the inputs (default: False)
-    opampDrawVd: write vd besides the input terminals
-    flagDrawSupply: draw supply terminals
+    position: position [x,y]
+    angleDeg: orientation (default: 0.0)
+    mirrorED: invert E and C terminals (default: False (C above, E below)
+    drawBCEtags: indentify BCE terminals (default: False)
+    drawEnvelope: draw circular envelope (default:False)
+    transistorType: type of Bipolar junction transistor values: 'NPN' (Default)  'PNP'
+    drawVCE,drawVCB,drawVBE: draw voltage drop annotations (default: False)
+    drawICarrow,drawIBarrow,drawIEarrow: draw current annotations (default: False)
+    VCEname,VCBname,VBEname: voltage drop annotation text
+    ICname,IBname,IEname: current annotation text
     """
     
     if transistorType == 'NPN':
@@ -1424,19 +1561,11 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
       
     if angleDeg!=0:
       self.rotateElement(group,position,angleDeg)
-
-    if inkDraw.useLatex:
-      VCEname='$'+VCEname+'$'
-      VCBname='$'+VCBname+'$'
-      VBEname='$'+VBEname+'$'
-      ICname='$'+ICname+'$'
-      IBname='$'+IBname+'$'
-      IEname='$'+IEname+'$'
       
     #draw voltage drops
     if drawVCE:
       pos=[position[0]+25+10 ,position[1]]
-      self.drawVoltArrowSimple(group,pos,name=VCEname,color=self.voltageColor,angleDeg=90,invertArrows=(mirrorEC == isNPN) ,size=20.0,invertCurvatureDirection=False,extraAngleText=angleDeg)
+      self.drawVoltArrowSimple(group,pos,name=VCEname,color=self.voltageColor,angleDeg=90,invertArrows=mirrorEC,size=20.0,invertCurvatureDirection=False,extraAngleText=angleDeg)
     
     if drawVCB:
       if mirrorEC:
@@ -1446,7 +1575,7 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
         pos = [position[0]+12,position[1]-12]
         ang = 45
         
-      self.drawVoltArrowSimple(group,pos,name=VCBname,color=self.voltageColor,angleDeg=ang,invertArrows=not isNPN,size=20.0,invertCurvatureDirection=not mirrorEC,extraAngleText=angleDeg)
+      self.drawVoltArrowSimple(group,pos,name=VCBname,color=self.voltageColor,angleDeg=ang,invertArrows=False,size=20.0,invertCurvatureDirection=not mirrorEC,extraAngleText=angleDeg)
  
     if drawVBE:
       if mirrorEC:
@@ -1456,7 +1585,7 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
         pos = [position[0]+12,position[1]+12]
         ang = -45
 
-      self.drawVoltArrowSimple(group,pos,name=VBEname,color=self.voltageColor,angleDeg= ang,invertArrows= isNPN,size=20.0,invertCurvatureDirection= mirrorEC,extraAngleText=angleDeg)
+      self.drawVoltArrowSimple(group,pos,name=VBEname,color=self.voltageColor,angleDeg= ang,invertArrows=True,size=20.0,invertCurvatureDirection= mirrorEC,extraAngleText=angleDeg)
 
 
     # draw terminal currents
@@ -1483,7 +1612,7 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
   
   #---------------------------------------------
   #metal-oxide-semiconductor field-effect transistor (N and P channel)
-  def drawTransistorMOSFET(self,parent,position=[0, 0],angleDeg=0,label='MOSFET',mirrorEC=False,
+  def drawTransistorMOSFET(self,parent,position=[0, 0],angleDeg=0,label='MOSFET',mirrorSD=False,
                           drawSGDtags=False,
                           drawEnvelope=False,
                           modeType='MOSFET-E',
@@ -1502,22 +1631,29 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
                           ISname='i_s',
                           IGname='i_g'):
          
-    """ draws a general MOSFET
+    """ draws a general Field Effect transistor
     
     parent: parent object
-    position: position [x,y]
     label: label of the object (it can be repeated)
-    mirrorInput: invert + and - inputs (default: positive above, negative below)
-    opampDrawVin: write v+ and v- besides the inputs (default: False)
-    opampDrawVd: write vd besides the input terminals
-    flagDrawSupply: draw supply terminals
+    position: position [x,y]
+    angleDeg: orientation (default: 0.0)
+    mirrorSD: invert S and D terminals (default: False (D above, S below)
+    drawSGDtags: indentify SGD terminals (default: False)
+    drawEnvelope: draw circular envelope (default:False)
+    modeType: type of field effect transistor: 'MOSFET-E' (Default)  'MOSFET_P'
+    gateType: type of gate: 'P_gate',  'N_gate'
+    bodyDiode: draws body diode (MOSFET-E only)
+    drawVGS,drawVDS,drawVDG: draw voltage drop annotations (default: False)
+    drawIDarrow,drawISarrow,drawIGarrow: draw current annotations (default: False)
+    VGSname,VDSname,VDGname: voltage drop annotation text
+    IDname,ISname,IGname: current annotation text
     """
     
     if gateType == 'P_gate':
       isNgate=False
     else:
       isNgate=True
-      
+    
     if modeType == 'MOSFET-E':
       isEmode=True
     else:
@@ -1533,7 +1669,7 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
     lineStyleArrow = inkDraw.lineStyle.set(lineWidth=0.7, lineColor=colorBlack, markerEnd=markerMOS)
     lineStyleFine = inkDraw.lineStyle.set(lineWidth=0.7, lineColor=colorBlack)
 
-    if mirrorEC:
+    if mirrorSD:
       inkDraw.line.relCoords(elem, [[0,-12],[-28,0]],[position[0]+17,position[1]+6])   #gate
       
       if bodyDiode and isEmode:
@@ -1631,69 +1767,240 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
             
     if angleDeg!=0:
       self.rotateElement(group,position,angleDeg)
-
-    if inkDraw.useLatex:
-      VDSname='$'+VDSname+'$'
-      VGSname='$'+VGSname+'$'
-      VDGname='$'+VDGname+'$'
-      IGname='$'+IGname+'$'
-      IDname='$'+IDname+'$'
-      ISname='$'+ISname+'$'
       
     #draw voltage drops
     if drawVDS:
       pos=[position[0]+25+10 ,position[1]]
       self.drawVoltArrowSimple(group,pos,name=VDSname,color=self.voltageColor,angleDeg=90,
-                               invertArrows=mirrorEC ,size=20.0,invertCurvatureDirection=False,extraAngleText=angleDeg)
+                               invertArrows=mirrorSD ,size=20.0,invertCurvatureDirection=False,extraAngleText=angleDeg)
     
     if drawVGS:
-      if mirrorEC:
+      if mirrorSD:
         pos = [position[0]+15,position[1]-14]
         ang = +19
       else:
         pos = [position[0]+15,position[1]+14]
         ang = -19
       self.drawVoltArrowSimple(group,pos,name=VGSname,color=self.voltageColor,angleDeg=ang,
-                               invertArrows=True, size=10.0,  invertCurvatureDirection=mirrorEC, extraAngleText=angleDeg)
+                               invertArrows=True, size=10.0,  invertCurvatureDirection=mirrorSD, extraAngleText=angleDeg)
 
     if drawVDG:
-      if mirrorEC:
+      if mirrorSD:
         pos = [position[0]+10,position[1]+8]
         ang = -45
       else:
         pos = [position[0]+10,position[1]-8]
         ang = 45
       self.drawVoltArrowSimple(group,pos,name=VDGname,color=self.voltageColor,angleDeg= ang,
-                                invertArrows= False,size=20.0,invertCurvatureDirection=not mirrorEC,extraAngleText=angleDeg)
+                                invertArrows= False,size=20.0,invertCurvatureDirection=not mirrorSD,extraAngleText=angleDeg)
           
     # draw terminal currents
     if drawISarrow:
-      if mirrorEC:
+      if mirrorSD:
         pos = [position[0]+29 ,position[1]-17.5]
       else:
         pos = [position[0]+29 ,position[1]+17.5]
 
       self.drawCurrArrowSimple(group,pos,name=ISname,color=self.currentColor,
-                              angleDeg=90,invertArrows=not mirrorEC,size=7.5,invertTextSide=True,extraAngleText=angleDeg)
+                              angleDeg=90,invertArrows=not mirrorSD,size=7.5,invertTextSide=True,extraAngleText=angleDeg)
      
     if drawIGarrow:
-      if mirrorEC:
+      if mirrorSD:
         pos = [position[0]-5 ,position[1]-11]
       else:
         pos = [position[0]-5 ,position[1]+11]
 
       self.drawCurrArrowSimple(group,pos,name=IGname,color=self.currentColor,
-                               angleDeg=0,invertArrows=False,size=7.5,invertTextSide=not mirrorEC,extraAngleText=angleDeg) 
+                               angleDeg=0,invertArrows=False,size=7.5,invertTextSide=not mirrorSD,extraAngleText=angleDeg) 
 
     if drawIDarrow:
-      if mirrorEC:
+      if mirrorSD:
         pos = [position[0]+29 ,position[1]+17.5]
       else:
         pos = [position[0]+29 ,position[1]-17.5]
       self.drawCurrArrowSimple(group,pos,name=IDname,color=self.currentColor,
-                                 angleDeg=90,invertArrows=not mirrorEC,size=7.5,invertTextSide=True,extraAngleText=angleDeg) 
+                                 angleDeg=90,invertArrows=not mirrorSD,size=7.5,invertTextSide=True,extraAngleText=angleDeg) 
 
     return group;
+  
+  #---------------------------------------------
+  #junction gate field-effect transistor (N and P channel)
+  def drawTransistorJFET(self,parent,position=[0, 0],angleDeg=0,label='JFET',mirrorSD=False,
+                        drawSGDtags=False,
+                        drawEnvelope=False,
+                        gateType='P_gate',
+                        moveGate=False,
+                        drawVGS=False,
+                        drawVDS=False,
+                        drawVDG=False,
+                        drawIDarrow=False,
+                        drawISarrow=False,
+                        drawIGarrow=False,
+                        VGSname='V_{GS}',
+                        VDSname='V_{SD}',
+                        VDGname='V_{GD}',
+                        IDname='i_d',
+                        ISname='i_s',
+                        IGname='i_g'):
+         
+    """ draws a junction gate field-effect transistor JFET
+    
+    parent: parent object
+    label: label of the object (it can be repeated)
+    position: position [x,y]
+    angleDeg: orientation (default: 0.0)
+    mirrorSD: invert S and D terminals (default: False (D above, S below)
+    drawSGDtags: indentify SGD terminals (default: False)
+    drawEnvelope: draw circular envelope (default:False)
+    transistorType: type of field effect transistor: 'MOSFET-E' (Default)  'MOSFET_P'
+    gateType: type of gate: 'P_gate',  'N_gate'
+    moveGate: move gate terminar towards the source
+    drawVGS,drawVDS,drawVDG: draw voltage drop annotations (default: False)
+    drawIDarrow,drawISarrow,drawIGarrow: draw current annotations (default: False)
+    VGSname,VDSname,VDGname: voltage drop annotation text
+    IDname,ISname,IGname: current annotation text
+    """
+    
+    if gateType == 'P_gate':
+      isNgate=False
+    else:
+      isNgate=True
+
+    group = self.createGroup(parent,label)
+    elem = self.createGroup(group,label)
+    colorBlack=inkDraw.color.defined('black')
+
+    R_circle=10.0
+    L_arrow=2.0
+    markerMOS=inkDraw.marker.createMarker(self, 'MOSArrow', 'M -0.3,0 l -%f,%f l 0,-%f z'% (L_arrow*1.2, L_arrow/2.0,L_arrow), RenameMode=1,
+                                          strokeColor=colorBlack, fillColor=colorBlack, lineWidth=0.6)
+    lineStyleArrow = inkDraw.lineStyle.set(lineWidth=1.0, lineColor=colorBlack, markerEnd=markerMOS)
+
+    inkDraw.line.relCoords(elem, [[6,0],[0,20]],[position[0]+17,position[1]+5.0]) # source line
+    inkDraw.line.relCoords(elem, [[6,0],[0,-20]],[position[0]+17,position[1]-5.0]) # drain line
+    
+    inkDraw.line.relCoords(elem, [[0,14]],[position[0]+17,position[1]-7],lineStyle=inkDraw.lineStyle.setSimpleBlack(lineWidth=2)) # vertical junction line
+
+    
+    if moveGate:
+      if mirrorSD:
+        posG_Y=-5
+      else:
+        posG_Y=5
+    else:
+      posG_Y=0
+    
+    theta=math.asin(posG_Y/R_circle)
+    P1=[10+R_circle*(1-math.cos(theta)),posG_Y]
+    P2=[10+R_circle-3,posG_Y]
+  
+    inkDraw.line.absCoords(elem, [[-12,posG_Y],P1],position)                                    #gate terminal
+
+    if isNgate:
+      inkDraw.line.absCoords(elem, [P1,P2],position,lineStyle=lineStyleArrow)   #gate arrow  -->
+    else:
+      inkDraw.line.absCoords(elem, [P2,P1],position,lineStyle=lineStyleArrow)   #gate arrow   <--
+      
+    if drawEnvelope:
+      inkDraw.circle.centerRadius(elem, centerPoint=[position[0]+19,position[1]], radius=10, offset=[0, 0], label='circle')
+
+    if drawSGDtags:
+      if mirrorSD:
+        pos_Gtag=[position[0]+6,position[1]+3+posG_Y]
+        pos_Dtag=[position[0]+25.5,position[1]+11.5]
+        pos_Stag=[position[0]+25.5,position[1]-11.5]
+        
+      else:
+        pos_Gtag=[position[0]+6,position[1]-3+posG_Y]
+        pos_Dtag=[position[0]+25.5,position[1]-11.5]
+        pos_Stag=[position[0]+25.5,position[1]+11.5]
+        
+      tB=inkDraw.text.latex(self,group,'G',position=pos_Gtag,fontSize=self.fontSizeSmall/1.5,refPoint='cc',preambleFile=self.preambleFile,angleDeg=-angleDeg)
+      tC=inkDraw.text.latex(self,group,'D',position=pos_Dtag,fontSize=self.fontSizeSmall/1.5,refPoint='cc',preambleFile=self.preambleFile,angleDeg=-angleDeg)
+      tE=inkDraw.text.latex(self,group,'S',position=pos_Stag,fontSize=self.fontSizeSmall/1.5,refPoint='cc',preambleFile=self.preambleFile,angleDeg=-angleDeg)
+            
+    if angleDeg!=0:
+      self.rotateElement(group,position,angleDeg)
+      
+    #draw voltage drops
+    if drawVDS:
+      pos=[position[0]+25+9 ,position[1]]
+      self.drawVoltArrowSimple(group,pos,name=VDSname,color=self.voltageColor,angleDeg=90,
+                               invertArrows=mirrorSD ,size=20.0,invertCurvatureDirection=False,extraAngleText=angleDeg)
+    
+    if drawVGS:
+      if mirrorSD:
+        if moveGate:
+          pos = [position[0]+15,position[1]-13]
+          ang = 19
+          L = 10
+        else:
+          pos = [position[0]+12,position[1]-11]
+          ang = +30
+          L = 15
+      else:
+        if moveGate:
+          pos = [position[0]+15,position[1]+13]
+          ang = -19
+          L = 10
+        else:
+          pos = [position[0]+12,position[1]+11]
+          ang = -30
+          L = 15
+      self.drawVoltArrowSimple(group,pos,name=VGSname,color=self.voltageColor,angleDeg=ang,
+                               invertArrows=True, size=L,  invertCurvatureDirection=mirrorSD, extraAngleText=angleDeg)
+
+    if drawVDG:
+      if mirrorSD:
+        if moveGate:
+          pos = [position[0]+12,position[1]+9]
+          ang = -45
+          L = 20
+        else:
+          pos = [position[0]+12,position[1]+11]
+          ang = -30
+          L = 15
+      else:
+        if moveGate:
+          pos = [position[0]+12,position[1]-9]
+          ang = 45
+          L = 20
+        else:
+          pos = [position[0]+12,position[1]-11]
+          ang = 30
+          L = 15
+      self.drawVoltArrowSimple(group,pos,name=VDGname,color=self.voltageColor,angleDeg= ang,
+                                invertArrows= False,size=L,invertCurvatureDirection=not mirrorSD,extraAngleText=angleDeg)
+          
+    # draw terminal currents
+    if drawISarrow:
+      if mirrorSD:
+        pos = [position[0]+28 ,position[1]-17.5]
+      else:
+        pos = [position[0]+28 ,position[1]+17.5]
+
+      self.drawCurrArrowSimple(group,pos,name=ISname,color=self.currentColor,
+                              angleDeg=90,invertArrows=not mirrorSD,size=7.5,invertTextSide=True,extraAngleText=angleDeg)
+     
+    if drawIGarrow:
+      if mirrorSD:
+        pos = [position[0]-5 ,position[1]+posG_Y-5]
+      else:
+        pos = [position[0]-5 ,position[1]+posG_Y+5]
+
+      self.drawCurrArrowSimple(group,pos,name=IGname,color=self.currentColor,
+                               angleDeg=0,invertArrows=False,size=7.5,invertTextSide=not mirrorSD,extraAngleText=angleDeg) 
+
+    if drawIDarrow:
+      if mirrorSD:
+        pos = [position[0]+28 ,position[1]+17.5]
+      else:
+        pos = [position[0]+28 ,position[1]-17.5]
+      self.drawCurrArrowSimple(group,pos,name=IDname,color=self.currentColor,
+                                 angleDeg=90,invertArrows=not mirrorSD,size=7.5,invertTextSide=True,extraAngleText=angleDeg) 
+
+    return group;
+    
     
   #---------------------------------------------
   def drawSwitch2T(self,parent,position=[0, 0],value='S',label='Switch',angleDeg=0,flagOpen=True,flagDrawArrow=False,OpenCloseText=''):
@@ -1755,7 +2062,7 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
     
   #---------------------------------------------
   
-  def drawVoltArrowSimple(self,parent,position,label='arrowV',name='',color=inkDraw.color.defined('black'),
+  def drawVoltArrowSimple(self,parent,position,label='arrowV',name='v',color=inkDraw.color.defined('black'),
                           angleDeg=0,invertArrows=False,size=20.0,invertCurvatureDirection=False,extraAngleText=0.0):
                                 
     """ draws a voltage drop arrow

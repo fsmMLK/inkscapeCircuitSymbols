@@ -14,10 +14,12 @@
         <_option value="capacitor">Capacitor</_option>
         <_option value="capacitorPol">Polarized Capacitor</_option>
         <_option value="inductor">Inductor</_option>
+        <_option value="pot2T">Potentiometer (2T)</_option>
+        <_option value="pot3T">Potentiometer (3T)</_option>
         <_option value="genericBipole">Generic Bipole</_option>
       </param>
       <param name="bipoleRLCVal" type="string" _gui-text="Value (no $...$ needed)">R</param>
-      <param name="some_name" type="description">obs: You can use M, k, m, u, p to indicate multipliers</param>
+      <param name="some_name" type="description">obs: You can use M, k, m, u, n, p to indicate multipliers</param>
       <param name="bipoleRLCUnit" type="boolean" _gui-text="Include unit">0</param>
       <param name="bipoleRLCRot" type="optiongroup" appearance="minimal" _gui-text="Orientation (deg):">
         <_option value="0">0</_option>
@@ -46,7 +48,7 @@
         <_option value="currIndep">Current source (General)</_option>
       </param>
       <param name="sourceVal" type="string" _gui-text="Value (no $...$ needed)">E</param>
-      <param name="some_name" type="description">obs: You can use M, k, m, u, p to indicate multipliers</param>
+      <param name="some_name" type="description">obs: You can use M, k, m, u, n, p to indicate multipliers</param>
       <param name="sourceUnit" type="boolean" _gui-text="Include unit">1</param>
       <param name="sourceRot" type="optiongroup" appearance="minimal" _gui-text="Orientation (deg):">
         <_option value="0">0</_option>
@@ -165,6 +167,7 @@
       <param name="arrowInvert" type="boolean" _gui-text="Invert arrow direction">0</param>
       <param name="arrowCurvaturDirection" type="boolean" _gui-text="Invert disposition">0</param>
       <param name="some_name" type="description"> - voltage: invert arrow curvature
+        
  - current: text side</param>
     </page>
     <page name="Colors" appearance="minimal" _gui-text="Colors">
