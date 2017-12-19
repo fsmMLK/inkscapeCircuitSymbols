@@ -76,11 +76,11 @@ In addition to these elements, both menu entries has extra tabs to generate sign
 
 ### RLC tab
 
-<img src="docs/images/Tab_RLC.png" width="800px"/>
+<img src="docs/images/Tab_RLC.png" width="600px"/>
 
 **Type:** You can select the type of bipole. The available types are:
 
-<img src="docs/images/RLC_types.png" width="500px"/>
+<img src="docs/images/RLC_types.png" width="600px"/>
 
 **Value:** Value of the bipole. If LaTeX support is enabled, this text will be included in a math environment $...$. You don't have to enclose your text between $...$. If you type numeric values, you can use ``M,k,m,u,p`` to indicate multiplier unit.
 
