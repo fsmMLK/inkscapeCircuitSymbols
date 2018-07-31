@@ -128,7 +128,7 @@ In addition to these elements, both menu entries has extra tabs to generate sign
 
 **I label:** (voltage sources only)  Label of the current in voltage sources. This parameter does not change the label of the current passing in current sources (the label matches its Value). If LaTeX support is enabled, this text will be included in a math environment $...$. You don't have to enclose your text between $...$.
 
-**Invert V or directions:** invert the directions of one of the arrows as following:
+**Invert V or I directions:** invert the directions of one of the arrows as following:
   - current sources: invert voltage drop direction
   - voltage sources: invert current direction
 
@@ -165,7 +165,7 @@ In addition to these elements, both menu entries has extra tabs to generate sign
 
 **I label:** (voltage sources only)  Label of the current in voltage sources. This parameter does not change the label of the current passing in current sources (the label matches its Value). If LaTeX support is enabled, this text will be included in a math environment $...$. You don't have to enclose your text between $...$.
 
-**Invert V or directions:** invert the directions of one of the arrows as following:
+**Invert V or I directions:** invert the directions of one of the arrows as following:
   - current sources: invert voltage drop direction
   - voltage sources: invert current direction
 
@@ -243,7 +243,7 @@ This tab allows you to create custom voltage or current annotation to add to you
 
 <img src="docs/images/Tab_Colors.png" width="600px"/>
 
-This tab is divided in two sections. The first control the color of current annotation, the second controls the color of voltage annotation.
+This tab is divided in two sections. The first controls the color of current annotation, the second controls the color of voltage annotation.
 
 In both cases, you have two options in the `Color` drop down menu:
 
