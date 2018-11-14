@@ -40,7 +40,8 @@ inkscape/extensions/
             |   |-- textext.py
             |
             |-- circuitSymbols.py
-            `-- circuitSymbols.inx
+            |-- circuitSymbols_semiconductors.inx
+            `-- circuitSymbols_general.inx
 ```
 
 **LaTeX package requirement**
@@ -62,7 +63,7 @@ Please refer to <https://fsmmlk.github.io/inkscapeMadeEasy/#installation-and-req
 
 # Usage
 
-This extension is presented in two menu entries: **General** and **Semiconductor**.
+This extension is presented in two menu entries: **General** and **Semiconductor**. Both can be found under `extensions > fsmMLK > Circuit symbols` menu.
 
 The first generates symbols of commonly used circuit elements like resistors, capacitors, inductors, 2 way switches and  various independent and dependent voltage/current sources
 

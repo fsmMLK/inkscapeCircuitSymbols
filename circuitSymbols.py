@@ -36,7 +36,7 @@ def latexUnitMultiple(valueString):
 #---------------------------------------------
 class CircuitSymbols(inkBase.inkscapeMadeEasy):
   def __init__(self):
-    inkex.Effect.__init__(self)
+    inkBase.inkscapeMadeEasy.__init__(self)
     
     self.OptionParser.add_option("--tab",action="store", type="string",dest="tab", default="object") 
     
@@ -182,6 +182,7 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
     
     #root_layer = self.current_layer
     root_layer = self.document.getroot()
+    #root_layer = self.getcurrentLayer()
     
     # text size and font style
     self.fontSize=5
