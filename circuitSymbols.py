@@ -8,7 +8,7 @@ import math
 
 #some symbol definition
 
-Ohm=u'\u2126'
+OhmChar=u'\u2126'.encode('utf-8')
 
 # package needed:  steinmetz
 
@@ -40,7 +40,7 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
     
     self.OptionParser.add_option("--tab",action="store", type="string",dest="tab", default="object") 
     
-    self.OptionParser.add_option("--bipoleRLC",action="store", type="string",dest="bipoleRLC", default='none')
+    self.OptionParser.add_option("--bipoleRLC",action="store", type="string",dest="bipoleRLC", default='resistor')
     self.OptionParser.add_option("--bipoleRLCVal", action="store", type="string", dest="bipoleRLCVal", default='Z') 
     self.OptionParser.add_option("--bipoleRLCUnit",action="store", type="inkbool",dest="bipoleRLCUnit", default=False)
     self.OptionParser.add_option("--bipoleRLCRot", action="store", type="string", dest="bipoleRLCRot", default='0') 
@@ -50,7 +50,7 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
     self.OptionParser.add_option("--bipoleRLCCurrName", action="store", type="string", dest="bipoleRLCCurrName", default='i') 
     self.OptionParser.add_option("--bipoleRLCVoltCurrInvert", action="store", type="inkbool", dest="bipoleRLCVoltCurrInvert", default=True)
     
-    self.OptionParser.add_option("--source",action="store", type="string",dest="source", default='none')
+    self.OptionParser.add_option("--source",action="store", type="string",dest="source", default='voltIndep')
     self.OptionParser.add_option("--sourceVal", action="store", type="string", dest="sourceVal", default='E') 
     self.OptionParser.add_option("--sourceUnit",action="store", type="inkbool",dest="sourceUnit", default=False)
     self.OptionParser.add_option("--sourceRot", action="store", type="string", dest="sourceRot", default='0') 
@@ -61,7 +61,7 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
     self.OptionParser.add_option("--sourceVoltCurrInvert", action="store", type="inkbool", dest="sourceVoltCurrInvert", default=True)
     self.OptionParser.add_option("--sourceMirror", action="store", type="inkbool", dest="sourceMirror", default=False)
         
-    self.OptionParser.add_option("--sourceControlled",action="store", type="string",dest="sourceControlled", default='none')
+    self.OptionParser.add_option("--sourceControlled",action="store", type="string",dest="sourceControlled", default='volt')
     self.OptionParser.add_option("--sourceControlledType",action="store", type="string",dest="sourceControlledType", default='curr')
     self.OptionParser.add_option("--sourceControlledGain", action="store", type="string", dest="sourceControlledGain", default='k')
     self.OptionParser.add_option("--sourceControlledControlName", action="store", type="string", dest="sourceControlledControlName", default='v_c')
@@ -73,7 +73,7 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
     self.OptionParser.add_option("--sourceControlledVoltCurrInvert", action="store", type="inkbool", dest="sourceControlledVoltCurrInvert", default=True)
     self.OptionParser.add_option("--sourceControlledMirror", action="store", type="inkbool", dest="sourceControlledMirror", default=False)
     
-    self.OptionParser.add_option("--switch",action="store", type="string",dest="switch", default='none')
+    self.OptionParser.add_option("--switch",action="store", type="string",dest="switch", default='switch2T')
     self.OptionParser.add_option("--switchVal", action="store", type="string", dest="switchVal", default='') 
     self.OptionParser.add_option("--switchFlagOpen", action="store", type="inkbool", dest="switchFlagOpen", default=True) 
     self.OptionParser.add_option("--switchOpenClose", action="store", type="inkbool", dest="switchOpenClose", default=True) 
@@ -231,7 +231,7 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
           if inkDraw.useLatex:
             so.bipoleRLCVal+=r'\si\ohm'
           else:
-            so.bipoleRLCVal+=u'\u2126'
+            so.bipoleRLCVal+= OhmChar
         self.drawBipoleGeneral(root_layer,position,value=so.bipoleRLCVal,angleDeg=so.bipoleRLCRot,
                               flagVolt=so.bipoleRLCVolt,voltName=so.bipoleRLCVoltName,flagCurr=so.bipoleRLCCurr,
                               currName=so.bipoleRLCCurrName,invertArrows=so.bipoleRLCVoltCurrInvert)
@@ -241,7 +241,7 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
           if inkDraw.useLatex:
             so.bipoleRLCVal+=r'\si\ohm'
           else:
-            so.bipoleRLCVal+=u'\u2126'
+            so.bipoleRLCVal+= OhmChar
         self.drawResistor(root_layer,position,value=so.bipoleRLCVal,angleDeg=so.bipoleRLCRot,
                           flagVolt=so.bipoleRLCVolt,voltName=so.bipoleRLCVoltName,flagCurr=so.bipoleRLCCurr,
                           currName=so.bipoleRLCCurrName,invertArrows=so.bipoleRLCVoltCurrInvert)
@@ -281,7 +281,7 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
           if inkDraw.useLatex:
             so.bipoleRLCVal+=r'\si\ohm'
           else:
-            so.bipoleRLCVal+=u'\u2126'
+            so.bipoleRLCVal+= OhmChar
         self.drawPotentiometer(root_layer,position,value=so.bipoleRLCVal,angleDeg=so.bipoleRLCRot,
                                flagVolt=so.bipoleRLCVolt,voltName=so.bipoleRLCVoltName,flagCurr=so.bipoleRLCCurr,
                                currName=so.bipoleRLCCurrName,invertArrows=so.bipoleRLCVoltCurrInvert,is3T=False)
@@ -291,7 +291,7 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
           if inkDraw.useLatex:
             so.bipoleRLCVal+=r'\si\ohm'
           else:
-            so.bipoleRLCVal+=u'\u2126'
+            so.bipoleRLCVal+= OhmChar
         self.drawPotentiometer(root_layer,position,value=so.bipoleRLCVal,angleDeg=so.bipoleRLCRot,
                                flagVolt=so.bipoleRLCVolt,voltName=so.bipoleRLCVoltName,flagCurr=so.bipoleRLCCurr,
                                currName=so.bipoleRLCCurrName,invertArrows=so.bipoleRLCVoltCurrInvert,is3T=True)
@@ -585,7 +585,7 @@ class CircuitSymbols(inkBase.inkscapeMadeEasy):
     
     parent: parent object
     position: position [x,y]
-    value: string with resistor value. If it ends with 'ohm', 'OHM' or 'Ohm', proper Ohm symbol will be added. (Default 'R')
+    value: string with resistor value.
     
     label: label of the object (it can be repeated)
     angleDeg: rotation angle in degrees counter-clockwise (default 0)

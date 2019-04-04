@@ -9,7 +9,6 @@
   <param name="tab" type="notebook">
     <page name="RLC" appearance="minimal" _gui-text="RLC">
       <param name="bipoleRLC" type="optiongroup" appearance="minimal" _gui-text="Type:">
-        <_option value="none">None</_option>
         <_option value="resistor">Resistor</_option>
         <_option value="capacitor">Capacitor</_option>
         <_option value="capacitorPol">Polarized Capacitor</_option>
@@ -40,7 +39,6 @@
     </page>
     <page name="Indep. Source" appearance="minimal" _gui-text="Ind. Src">
       <param name="source" type="optiongroup" appearance="minimal" _gui-text="Type:">
-        <_option value="none">None</_option>
         <_option value="voltIndep">Voltage source (General)</_option>
         <_option value="voltIndepSinusoidal">Voltage source (AC)</_option>
         <_option value="voltIndepDC">Voltage source (DC)</_option>
@@ -72,7 +70,6 @@
     </page>
     <page name="Dep. Source" appearance="minimal" _gui-text="Dep. Src">
       <param name="sourceControlled" type="optiongroup" appearance="minimal" _gui-text="Type:">
-        <_option value="none">None</_option>
         <_option value="volt">Voltage source</_option>
         <_option value="curr">Current source</_option>
       </param>
@@ -104,7 +101,6 @@
     </page>
     <page name="Switches" appearance="minimal" _gui-text="Switches">
       <param name="switch" type="optiongroup" appearance="minimal" _gui-text="Type:">
-        <_option value="none">None</_option>
         <_option value="switch2T">Two contact switch</_option>
       </param>
       <param name="switchVal" type="string" _gui-text="Label (no $...$ needed)">S</param>
@@ -147,7 +143,6 @@
     </page>
     <page name="Arrow" appearance="minimal" _gui-text="Annotation">
       <param name="arrow" type="optiongroup" appearance="minimal" _gui-text="Type:">
-        <_option value="none">None</_option>
         <_option value="voltage">voltage</_option>
         <_option value="current">current</_option>
       </param>
