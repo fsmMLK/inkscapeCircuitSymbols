@@ -1,231 +1,240 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
-  <_name>Semiconductors</_name>
-  <id>fsmMLK.circuitSymbols.semiconductors</id>
-  <dependency type="executable" location="extensions">circuitSymbols.py</dependency>
-  <dependency type="executable" location="extensions">inkscapeMadeEasy_Base.py</dependency>
-  <dependency type="executable" location="extensions">inkscapeMadeEasy_Draw.py</dependency>
-  <dependency type="executable" location="extensions">inkex.py</dependency>
-  <param name="tab" type="notebook">
-    <page name="Diodes" appearance="minimal" _gui-text="Diodes">
-      <param name="diode" type="optiongroup" appearance="minimal" _gui-text="Type:">
-        <_option value="regular">Regular diode</_option>
-        <_option value="LED">LED</_option>
-        <_option value="photoDiode">Photo Diode</_option>
-        <_option value="zener">Zener</_option>
-        <_option value="schottky">Schottky</_option>
-        <_option value="tunnel">Tunnel</_option>
-        <_option value="varicap">Varicap</_option>
-      </param>
-      <param name="diodeVal" type="string" _gui-text="Label (no $...$ needed)"/>
-      <param name="diodeRot" type="optiongroup" appearance="minimal" _gui-text="Orientation (deg):">
-        <_option value="0">0</_option>
-        <_option value="90">90</_option>
-        <_option value="-60">-60</_option>
-        <_option value="-45">-45</_option>
-        <_option value="-30">-30</_option>
-        <_option value="30">30</_option>
-        <_option value="45">45</_option>
-        <_option value="60">60</_option>
-      </param>      
-      <param name="diodeMirror" type="boolean" _gui-text="Invert diode direction">0</param>
-      <param name="desc1" type="description" appearance="header">Annotation arrows</param>
-      <param name="diodeVolt" type="boolean" _gui-text="Add voltage arrow">1</param>
-      <param name="diodeCurr" type="boolean" _gui-text="Add current arrow">1</param>
-      <param name="diodeVoltName" type="string" _gui-text="V label (no $...$ needed)">v</param>
-      <param name="diodeCurrName" type="string" _gui-text="I label (no $...$ needed)">i</param>
-      <param name="diodeVoltCurrInvert" type="boolean" _gui-text="Invert V/I directions">0</param>
-    </page>
-    <page name="Transistor_BJT" appearance="minimal" _gui-text="BJT">
-      <param name="BJT" type="optiongroup" appearance="minimal" _gui-text="Type:">
-        <_option value="BJT_NPN">bipolar NPN</_option>
-        <_option value="BJT_PNP">bipolar PNP</_option>
-      </param>
-      <param name="BJT_Rot" type="optiongroup" appearance="minimal" _gui-text="Orientation (deg):">
-        <_option value="0">0</_option>
-        <_option value="90">90</_option>
-        <_option value="-60">-60</_option>
-        <_option value="-45">-45</_option>
-        <_option value="-30">-30</_option>
-        <_option value="30">30</_option>
-        <_option value="45">45</_option>
-        <_option value="60">60</_option>
-        <_option value="180">180</_option>
-      </param>
-      <param name="BJT_Envelope" type="boolean" _gui-text="Draw envelope">1</param>
-      <param name="BJT_MirrorEC" type="boolean" _gui-text="Switch Emitter/Collector terminals">0</param>
-      <param name="desc1" type="description" appearance="header">Annotation</param>
-      <param name="BJT_EBCtags" type="boolean" _gui-text="Add E/B/C tags">0</param>
-      <param name="BJT_DrawVCEarrow" type="boolean" _gui-text="Add v_CE voltage arrow">0</param>
-      <param name="BJT_DrawVCBarrow" type="boolean" _gui-text="Add v_CB voltage arrow">0</param>
-      <param name="BJT_DrawVBEarrow" type="boolean" _gui-text="Add v_BE voltage arrow">0</param>
-      <param name="BJT_DrawICarrow" type="boolean" _gui-text="Add collector current arrow (i_c)">0</param>
-      <param name="BJT_DrawIBarrow" type="boolean" _gui-text="Add base current arrow (i_b)">0</param>
-      <param name="BJT_DrawIEarrow" type="boolean" _gui-text="Add emitter current arrow (i_e)">0</param>
-      <param name="BJT_VCEname" type="string" _gui-text="v_CE label (no $...$ needed)">v_{ce}</param>
-      <param name="BJT_VCBname" type="string" _gui-text="v_CB label (no $...$ needed)">v_{cb}</param>
-      <param name="BJT_VBEname" type="string" _gui-text="v_BE label (no $...$ needed)">v_{be}</param>
-      <param name="BJT_ICname" type="string" _gui-text="i_c label (no $...$ needed)">i_c</param>
-      <param name="BJT_IBname" type="string" _gui-text="i_b label (no $...$ needed)">i_b</param>
-      <param name="BJT_IEname" type="string" _gui-text="i_e label (no $...$ needed)">i_e</param>
-    </page>
-    <page name="Transistor_FET" appearance="minimal" _gui-text="FET">
-      <param name="FET_Type" type="optiongroup" appearance="minimal" _gui-text="FET type:">
-        <_option value="MOSFET-E">MOSFET-E (enhancement-mode)</_option>
-        <_option value="MOSFET-D">MOSFET-D (depletion-mode)</_option>
-        <_option value="JFET">JFET</_option>
-      </param>
-      <param name="FET_Gate" type="optiongroup" appearance="minimal" _gui-text="Channel type:">
-        <_option value="P_gate">Positive</_option>
-        <_option value="N_gate">Negative</_option>
-      </param>
-      <param name="FET_Rot" type="optiongroup" appearance="minimal" _gui-text="Orientation (deg):">
-        <_option value="0">0</_option>
-        <_option value="90">90</_option>
-        <_option value="-60">-60</_option>
-        <_option value="-45">-45</_option>
-        <_option value="-30">-30</_option>
-        <_option value="30">30</_option>
-        <_option value="45">45</_option>
-        <_option value="60">60</_option>
-        <_option value="180">180</_option>
-      </param>
-      <param name="FET_Envelope" type="boolean" _gui-text="Draw envelope">1</param>
-      <param name="FET_MirrorEC" type="boolean" _gui-text="Switch Source/Drain terminals">0</param>
-      <param name="FET_BodyDiode" type="boolean" _gui-text="Add body diode (MOSFET-E only)">0</param>
-      <param name="FET_MoveGate" type="boolean" _gui-text="Move gate towards the source (JFET only)">0</param>
-      
-      
-      
-      <param name="desc1" type="description" appearance="header">Annotation</param>
-      <param name="FET_SGDtags" type="boolean" _gui-text="Add S/G/D tags">0</param>
-      <param name="FET_DrawVGSarrow" type="boolean" _gui-text="Add v_GS voltage arrow">0</param>
-      <param name="FET_DrawVDSarrow" type="boolean" _gui-text="Add v_DS voltage arrow">0</param>
-      <param name="FET_DrawVDGarrow" type="boolean" _gui-text="Add v_DG voltage arrow">0</param>
-      <param name="FET_DrawIDarrow" type="boolean" _gui-text="Add drain current arrow (i_d)">0</param>
-      <param name="FET_DrawISarrow" type="boolean" _gui-text="Add source current arrow (i_s)">0</param>
-      <param name="FET_DrawIGarrow" type="boolean" _gui-text="Add gate current arrow (i_g)">0</param>
-      <param name="FET_VGSname" type="string" _gui-text="v_GS label (no $...$ needed)">v_{gs}</param>
-      <param name="FET_VDSname" type="string" _gui-text="v_DS label (no $...$ needed)">v_{ds}</param>
-      <param name="FET_VDGname" type="string" _gui-text="v_DG label (no $...$ needed)">v_{dg}</param>
-      <param name="FET_IDname" type="string" _gui-text="i_d label (no $...$ needed)">i_d</param>
-      <param name="FET_ISname" type="string" _gui-text="i_s label (no $...$ needed)">i_s</param>
-      <param name="FET_IGname" type="string" _gui-text="i_g label (no $...$ needed)">i_g</param>
-    </page>
-    <page name="Opamp" appearance="minimal" _gui-text="OpAmp">
-      <param name="opamp" type="optiongroup" appearance="minimal" _gui-text="Type:">
+    <_name>Semiconductors</_name>
+    <id>fsmMLK.circuitSymbols.semiconductors</id>
+    <dependency type="executable" location="extensions">circuitSymbols.py</dependency>
+    <dependency type="executable" location="extensions">inkscapeMadeEasy_Base.py</dependency>
+    <dependency type="executable" location="extensions">inkscapeMadeEasy_Draw.py</dependency>
+    <dependency type="executable" location="extensions">inkex.py</dependency>
+    <param name="tab" type="notebook">
+        <page name="Diodes" appearance="minimal" _gui-text="Diodes">
+            <param name="diode" type="optiongroup" appearance="minimal" _gui-text="Type:">
+                <_option value="regular">Regular diode</_option>
+                <_option value="LED">LED</_option>
+                <_option value="photoDiode">Photo Diode</_option>
+                <_option value="zener">Zener</_option>
+                <_option value="schottky">Schottky</_option>
+                <_option value="tunnel">Tunnel</_option>
+                <_option value="varicap">Varicap</_option>
+            </param>
+            <param name="diodeVal" type="string" _gui-text="Label (no $...$ needed)"/>
+            <param name="diodeRot" type="optiongroup" appearance="minimal" _gui-text="Orientation (deg):">
+                <_option value="0">0</_option>
+                <_option value="90">90</_option>
+                <_option value="-60">-60</_option>
+                <_option value="-45">-45</_option>
+                <_option value="-30">-30</_option>
+                <_option value="30">30</_option>
+                <_option value="45">45</_option>
+                <_option value="60">60</_option>
+            </param>
+            <param name="diodeMirror" type="boolean" _gui-text="Invert diode direction">0</param>
+            <param name="desc1" type="description" appearance="header">Annotation arrows</param>
+            <param name="diodeConvention" type="optiongroup" appearance="minimal" _gui-text="Sign convention:">
+                <_option value="passive">Passive</_option>
+                <_option value="active">Active</_option>
+            </param>
+            <param name="diodeVolt" type="boolean" _gui-text="Add voltage arrow">1</param>
+            <param name="diodeCurr" type="boolean" _gui-text="Add current arrow">1</param>
+            <param name="diodeVoltCurrInvert" type="boolean" _gui-text="Invert V/I directions">0</param>
+            <param name="diodeVoltName" type="string" _gui-text="V label (no $...$ needed)">v</param>
+            <param name="diodeCurrName" type="string" _gui-text="I label (no $...$ needed)">i</param>
+        </page>
+        <page name="Transistor_BJT" appearance="minimal" _gui-text="BJT">
+            <param name="BJT" type="optiongroup" appearance="minimal" _gui-text="Type:">
+                <_option value="BJT_NPN">bipolar NPN</_option>
+                <_option value="BJT_PNP">bipolar PNP</_option>
+            </param>
+            <param name="BJT_Photo" type="boolean" _gui-text="Phototransistor">0</param>
+            <param name="BJT_Rot" type="optiongroup" appearance="minimal" _gui-text="Orientation (deg):">
+                <_option value="0">0</_option>
+                <_option value="90">90</_option>
+                <_option value="-60">-60</_option>
+                <_option value="-45">-45</_option>
+                <_option value="-30">-30</_option>
+                <_option value="30">30</_option>
+                <_option value="45">45</_option>
+                <_option value="60">60</_option>
+                <_option value="180">180</_option>
+            </param>
+            <param name="BJT_Envelope" type="boolean" _gui-text="Draw envelope">1</param>
+            <param name="BJT_MirrorEC" type="boolean" _gui-text="Switch Emitter/Collector terminals">0</param>
+            <param name="desc1" type="description" appearance="header">Annotation</param>
+            <param name="BJT_EBCtags" type="boolean" _gui-text="Add E/B/C tags">0</param>
+            <param name="BJT_DrawVCEarrow" type="boolean" _gui-text="Add v_CE voltage arrow">0</param>
+            <param name="BJT_DrawVCBarrow" type="boolean" _gui-text="Add v_CB voltage arrow">0</param>
+            <param name="BJT_DrawVBEarrow" type="boolean" _gui-text="Add v_BE voltage arrow">0</param>
+            <param name="BJT_DrawICarrow" type="boolean" _gui-text="Add collector current arrow (i_c)">0</param>
+            <param name="BJT_DrawIBarrow" type="boolean" _gui-text="Add base current arrow (i_b)">0</param>
+            <param name="BJT_DrawIEarrow" type="boolean" _gui-text="Add emitter current arrow (i_e)">0</param>
+            <param name="BJT_VCEname" type="string" _gui-text="v_CE label (no $...$ needed)">v_{ce}</param>
+            <param name="BJT_VCBname" type="string" _gui-text="v_CB label (no $...$ needed)">v_{cb}</param>
+            <param name="BJT_VBEname" type="string" _gui-text="v_BE label (no $...$ needed)">v_{be}</param>
+            <param name="BJT_ICname" type="string" _gui-text="i_c label (no $...$ needed)">i_c</param>
+            <param name="BJT_IBname" type="string" _gui-text="i_b label (no $...$ needed)">i_b</param>
+            <param name="BJT_IEname" type="string" _gui-text="i_e label (no $...$ needed)">i_e</param>
+        </page>
+        <page name="Transistor_FET" appearance="minimal" _gui-text="FET">
+            <param name="FET_Type" type="optiongroup" appearance="minimal" _gui-text="FET type:">
+                <_option value="MOSFET-E">MOSFET-E (enhancement-mode)</_option>
+                <_option value="MOSFET-D">MOSFET-D (depletion-mode)</_option>
+                <_option value="JFET">JFET</_option>
+            </param>
+            <param name="FET_Gate" type="optiongroup" appearance="minimal" _gui-text="Channel type:">
+                <_option value="P_gate">Positive</_option>
+                <_option value="N_gate">Negative</_option>
+            </param>
+            <param name="FET_Rot" type="optiongroup" appearance="minimal" _gui-text="Orientation (deg):">
+                <_option value="0">0</_option>
+                <_option value="90">90</_option>
+                <_option value="-60">-60</_option>
+                <_option value="-45">-45</_option>
+                <_option value="-30">-30</_option>
+                <_option value="30">30</_option>
+                <_option value="45">45</_option>
+                <_option value="60">60</_option>
+                <_option value="180">180</_option>
+            </param>
+            <param name="FET_Envelope" type="boolean" _gui-text="Draw envelope">1</param>
+            <param name="FET_MirrorEC" type="boolean" _gui-text="Switch Source/Drain terminals">0</param>
+            <param name="FET_BodyDiode" type="boolean" _gui-text="Add body diode (MOSFET-E only)">0</param>
+            <param name="FET_MoveGate" type="boolean" _gui-text="Move gate towards the source (JFET only)">0</param>
 
-        <_option value="general">general</_option>
-      </param>
-      <param name="opampMirrorInput" type="boolean" _gui-text="Invert inputs">0</param>
-      <param name="desc1" type="description" appearance="header">Supply</param>
-      <param name="opampFlagSupply" type="boolean" _gui-text="Add supply terminals">0</param>
-      <param name="opampFlagSupplyValues" type="boolean" _gui-text="Add supply values">0</param>
-      <param name="opampSupplySymm" type="boolean" _gui-text="Symmetric supply">1</param>
-      <param name="opampSupplyPositiveVal" type="string" _gui-text="+V supply label">5</param>
-      <param name="opampSupplyNegativeVal" type="string" _gui-text="-V supply label (unsymmetric only)">-5</param>
-      <param name="desc1" type="description" appearance="header">Annotation arrows</param>
-      <param name="opampDrawVin" type="boolean" _gui-text="Add input voltage labels (v+) (v-)">0</param>
-      <param name="opampDrawIin" type="boolean" _gui-text="Add input current labels (i+) (i-)">0</param>
-      <param name="opampDrawVout" type="boolean" _gui-text="Add output voltage label (Vout)">0</param>
-      <param name="opampDrawIout" type="boolean" _gui-text="Add output current label (Iout)">0</param>
-      <param name="opampDrawVd" type="boolean" _gui-text="Add input differential voltage arrow (Vd)">0</param>
-      <param name="opampInputV+Name" type="string" _gui-text="v+ label (no $...$ needed)">v^+</param>
-      <param name="opampInputV-Name" type="string" _gui-text="v- label (no $...$ needed)">v^-</param>
-      <param name="opampInputI+Name" type="string" _gui-text="i+ label (no $...$ needed)">i^+</param>
-      <param name="opampInputI-Name" type="string" _gui-text="i- label (no $...$ needed)">i^-</param>
-      <param name="opampVoutName" type="string" _gui-text="Vout label (no $...$ needed)">v_{out}</param>
-      <param name="opampIoutName" type="string" _gui-text="Iout label (no $...$ needed)">i_{out}</param>
-      <param name="opampInputDiffName" type="string" _gui-text="Vd label (no $...$ needed)">v_d</param>
-    </page>
-    <page name="Signals" appearance="minimal" _gui-text="Signals">
-      <param name="nodal" type="optiongroup" appearance="minimal" _gui-text="Type:">
-        <_option value="custom">Custom</_option>
-        <_option value="GND">GND</_option>
-        <_option value="common">Common</_option>
-        <_option value="+vcc">+Vcc</_option>
-        <_option value="-vcc">-Vcc</_option>
-        <_option value="+5V">+5V</_option>
-        <_option value="-5V">-5V</_option>
-        <_option value="+15V">+15V</_option>
-        <_option value="-15V">-15V</_option>
-        <_option value="v_in">v_in</_option>
-        <_option value="v_out">v_out</_option>
-      </param>
-      <param name="nodalVal" type="string" _gui-text="Custom label (for 'Custom' type)">E</param>
-      <param name="nodalRot" type="optiongroup" appearance="minimal" _gui-text="Direction">
-        <_option value="0">North</_option>
-        <_option value="90">West</_option>
-        <_option value="-90">East</_option>
-        <_option value="180">South</_option>
-      </param>
-      <param name="nodalDrawLine" type="boolean" _gui-text="Draw line">0</param>
-    </page>
-    <page name="Arrow" appearance="minimal" _gui-text="Annotation">
-      <param name="arrow" type="optiongroup" appearance="minimal" _gui-text="Type:">
-        <_option value="voltage">voltage</_option>
-        <_option value="current">current</_option>
-      </param>
-      <param name="arrowVal" type="string" _gui-text="Label (no $...$ needed)">v</param>
-      <param name="arrowRot" type="optiongroup" appearance="minimal" _gui-text="Orientation (deg):">
-        <_option value="0">0</_option>
-        <_option value="90">90</_option>
-        <_option value="-60">-60</_option>
-        <_option value="-45">-45</_option>
-        <_option value="-30">-30</_option>
-        <_option value="30">30</_option>
-        <_option value="45">45</_option>
-        <_option value="60">60</_option>
-      </param>
-      <param name="arrowVSize" type="int" min="5" max="200" _gui-text="Arrow size (V only)">20</param>
-      <param name="arrowISize" type="int" min="5" max="200" _gui-text="Arrow size (I only)">10</param>
-      <param name="arrowInvert" type="boolean" _gui-text="Invert arrow direction">0</param>
-      <param name="arrowCurvaturDirection" type="boolean" _gui-text="Invert disposition">0</param>
-      <param name="some_name" type="description"> - voltage: invert arrow curvature
-        
- - current: text side</param>
-    </page>
-    <page name="Colors" appearance="minimal" _gui-text="Colors">
-      <param name="desc1" type="description" appearance="header">Current annotation color</param>
-      <param name="currColor" type="optiongroup" appearance="minimal" _gui-text="Color:">
-        <_option value="#FF0000">default current color</_option>
-        <_option value="picker">use color picker</_option>
-      </param>
-      <param name="colorPickerCurrent" type="color"/>
-      <param name="desc1" type="description" appearance="header">Voltage annotation color</param>
-      <param name="voltColor" type="optiongroup" appearance="minimal" _gui-text="Color:">
-        <_option value="#217B21">default voltage color</_option>
-        <_option value="picker">use color picker</_option>
-      </param>
-      <param name="colorPickerVolt" type="color"/>
-    </page>
-    <page name="Help" _gui-text="LaTeX Help">
-      <_param name="instructions" type="description" xml:space="preserve">
+
+            <param name="desc1" type="description" appearance="header">Annotation</param>
+            <param name="FET_SGDtags" type="boolean" _gui-text="Add S/G/D tags">0</param>
+            <param name="FET_DrawVGSarrow" type="boolean" _gui-text="Add v_GS voltage arrow">0</param>
+            <param name="FET_DrawVDSarrow" type="boolean" _gui-text="Add v_DS voltage arrow">0</param>
+            <param name="FET_DrawVDGarrow" type="boolean" _gui-text="Add v_DG voltage arrow">0</param>
+            <param name="FET_DrawIDarrow" type="boolean" _gui-text="Add drain current arrow (i_d)">0</param>
+            <param name="FET_DrawISarrow" type="boolean" _gui-text="Add source current arrow (i_s)">0</param>
+            <param name="FET_DrawIGarrow" type="boolean" _gui-text="Add gate current arrow (i_g)">0</param>
+            <param name="FET_VGSname" type="string" _gui-text="v_GS label (no $...$ needed)">v_{gs}</param>
+            <param name="FET_VDSname" type="string" _gui-text="v_DS label (no $...$ needed)">v_{ds}</param>
+            <param name="FET_VDGname" type="string" _gui-text="v_DG label (no $...$ needed)">v_{dg}</param>
+            <param name="FET_IDname" type="string" _gui-text="i_d label (no $...$ needed)">i_d</param>
+            <param name="FET_ISname" type="string" _gui-text="i_s label (no $...$ needed)">i_s</param>
+            <param name="FET_IGname" type="string" _gui-text="i_g label (no $...$ needed)">i_g</param>
+        </page>
+        <page name="Opamp" appearance="minimal" _gui-text="OpAmp">
+            <param name="opamp" type="optiongroup" appearance="minimal" _gui-text="Type:">
+                <_option value="general">general</_option>
+            </param>
+            <param name="opampMirrorInput" type="boolean" _gui-text="Invert inputs">0</param>
+            <param name="desc1" type="description" appearance="header">Supply</param>
+            <param name="opampFlagSupply" type="boolean" _gui-text="Add supply terminals">0</param>
+            <param name="opampFlagSupplyValues" type="boolean" _gui-text="Add supply values">0</param>
+            <param name="opampSupplySymm" type="boolean" _gui-text="Symmetric supply">1</param>
+            <param name="opampSupplyPositiveVal" type="string" _gui-text="+V supply label">5</param>
+            <param name="opampSupplyNegativeVal" type="string" _gui-text="-V supply label (unsymmetric only)">-5</param>
+            <param name="desc1" type="description" appearance="header">Annotation arrows</param>
+            <param name="opampDrawVin" type="boolean" _gui-text="Add input voltage labels (v+) (v-)">0</param>
+            <param name="opampDrawIin" type="boolean" _gui-text="Add input current labels (i+) (i-)">0</param>
+            <param name="opampDrawVout" type="boolean" _gui-text="Add output voltage label (Vout)">0</param>
+            <param name="opampDrawIout" type="boolean" _gui-text="Add output current label (Iout)">0</param>
+            <param name="opampDrawVd" type="boolean" _gui-text="Add input differential voltage arrow (Vd)">0</param>
+            <param name="opampInputV+Name" type="string" _gui-text="v+ label (no $...$ needed)">v^+</param>
+            <param name="opampInputV-Name" type="string" _gui-text="v- label (no $...$ needed)">v^-</param>
+            <param name="opampInputI+Name" type="string" _gui-text="i+ label (no $...$ needed)">i^+</param>
+            <param name="opampInputI-Name" type="string" _gui-text="i- label (no $...$ needed)">i^-</param>
+            <param name="opampVoutName" type="string" _gui-text="Vout label (no $...$ needed)">v_{out}</param>
+            <param name="opampIoutName" type="string" _gui-text="Iout label (no $...$ needed)">i_{out}</param>
+            <param name="opampInputDiffName" type="string" _gui-text="Vd label (no $...$ needed)">v_d</param>
+        </page>
+        <page name="Signals" appearance="minimal" _gui-text="Signals">
+            <param name="nodal" type="optiongroup" appearance="minimal" _gui-text="Type:">
+                <_option value="custom">Custom</_option>
+                <_option value="GND">GND</_option>
+                <_option value="common">Common</_option>
+                <_option value="+vcc">+Vcc</_option>
+                <_option value="-vcc">-Vcc</_option>
+                <_option value="+5V">+5V</_option>
+                <_option value="-5V">-5V</_option>
+                <_option value="+15V">+15V</_option>
+                <_option value="-15V">-15V</_option>
+                <_option value="v_in">v_in</_option>
+                <_option value="v_out">v_out</_option>
+            </param>
+            <param name="nodalVal" type="string" _gui-text="Custom label (for 'Custom' type)">E</param>
+            <param name="nodalRot" type="optiongroup" appearance="minimal" _gui-text="Direction">
+                <_option value="0">North</_option>
+                <_option value="90">West</_option>
+                <_option value="-90">East</_option>
+                <_option value="180">South</_option>
+            </param>
+            <param name="nodalDrawLine" type="boolean" _gui-text="Draw line">0</param>
+        </page>
+        <page name="Arrow" appearance="minimal" _gui-text="Annotation">
+            <param name="arrow" type="optiongroup" appearance="minimal" _gui-text="Type:">
+                <_option value="voltage">voltage</_option>
+                <_option value="current">current</_option>
+            </param>
+            <param name="arrowVal" type="string" _gui-text="Label (no $...$ needed)">v</param>
+            <param name="arrowUnit" type="boolean" _gui-text="Include unit">0</param>
+            <param name="arrowRot" type="optiongroup" appearance="minimal" _gui-text="Orientation (deg):">
+                <_option value="0">0</_option>
+                <_option value="90">90</_option>
+                <_option value="-60">-60</_option>
+                <_option value="-45">-45</_option>
+                <_option value="-30">-30</_option>
+                <_option value="30">30</_option>
+                <_option value="45">45</_option>
+                <_option value="60">60</_option>
+            </param>
+            <param name="arrowVSize" type="int" min="5" max="200" _gui-text="Arrow size (V only)">20</param>
+            <param name="arrowISize" type="int" min="5" max="200" _gui-text="Arrow size (I only)">10</param>
+            <param name="arrowInvert" type="boolean" _gui-text="Invert arrow direction">0</param>
+            <param name="arrowCurvaturDirection" type="boolean" _gui-text="Invert disposition">0</param>
+            <param name="some_name" type="description">- voltage: invert arrow curvature</param>
+            <param name="some_name" type="description">- current: text side</param>
+        </page>
+        <page name="Colors" appearance="minimal" _gui-text="Colors">
+            <param name="desc1" type="description" appearance="header">Current annotation color</param>
+            <param name="currColor" type="optiongroup" appearance="minimal" _gui-text="Color:">
+                <_option value="#FF0000">default current color</_option>
+                <_option value="picker">use color picker</_option>
+            </param>
+            <param name="colorPickerCurrent" type="color"/>
+            <param name="desc1" type="description" appearance="header">Voltage annotation color</param>
+            <param name="voltColor" type="optiongroup" appearance="minimal" _gui-text="Color:">
+                <_option value="#217B21">default voltage color</_option>
+                <_option value="picker">use color picker</_option>
+            </param>
+            <param name="colorPickerVolt" type="color"/>
+        </page>
+        <page name="Help" _gui-text="LaTeX Help">
+            <_param name="instructions" type="description" xml:space="preserve">
+For detailed help, see
+https://github.com/fsmMLK/inkscapeCircuitSymbols
+
+
 Useful LaTeX commands
 \phase{} : for phasor angle symbol (steinmetz package needed)
 
 siunitx package commands available, Ex:
 \ohm,\farad,\henry,\ampere,\volt,\degree
 
-Custom predefined functions:
-\newcommand{\phasorName}[1]{ \ensuremath{ \boldsymbol{\hat #1} } }
-\newcommand{\impedance}[1]{ \ensuremath{ \boldsymbol{#1} } }
-\newcommand{\complexPol}[2]{\ensuremath{#1\phase{#2}}}
-\newcommand{\complexPolDeg}[2]{\ensuremath{#1\phase{#2\degree}}}
+Custom predefined functions (LaTeX only):
+\phasorName{V} : Inserts phasor variable with a hat
+\impedance{Z} :
+\complexPol{magnitude}{theta_in_radians}
+\complexPolDeg{magnitude}{theta_in_deg}
+\Vpp, \App : peak-to-peak V and A units
+\Vrms,\Arms : rms V and A units
 
             </_param>
-    </page>
-  </param>
-  <effect>
-    <object-type>all</object-type>
-    <effects-menu>
-      <submenu _name="fsmMLK">
-        <submenu name="Circuit symbols"/>
-      </submenu>
-    </effects-menu>
-  </effect>
-  <script>
-    <command reldir="extensions" interpreter="python">circuitSymbols.py</command>
-  </script>
+        </page>
+    </param>
+    <effect>
+        <object-type>all</object-type>
+        <effects-menu>
+            <submenu _name="fsmMLK">
+                <submenu name="Circuit symbols"/>
+            </submenu>
+        </effects-menu>
+    </effect>
+    <script>
+        <command reldir="extensions" interpreter="python">circuitSymbols.py</command>
+    </script>
 </inkscape-extension>
 

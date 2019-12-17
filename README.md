@@ -71,7 +71,8 @@ The second generates semiconductor elements like diodes, transistors and operati
 
 Each entry has several tabs. Depending on which tab is on top, the extension will create different elements in your document as soon as you click on `Apply` button (or check `live preview`).
 
-In addition to these elements, both menu entries has extra tabs to generate signal labes and annotation. They are repeated in both entries to facilitate its use.
+In addition to these elements, both menu entries has extra tabs to generate signal labels and annotation. They are
+ repeated in both entries to facilitate its use.
 
 ## GENERAL menu entry
 
@@ -95,11 +96,16 @@ In addition to these elements, both menu entries has extra tabs to generate sign
 
 <img src="docs/images/RLC_orientation.png" width="750px"/>
 
+**Sign convention:** switches between passive and active sign conventions.
+
+<img src="docs/images/sign_convention.png" width="450px"/>
+
 **Add voltage/current arrow:** add voltage drop and current arrow indications.
 
 **V/I labels:** Label of the voltage drop and current arrows. If LaTeX support is enabled, this text will be included in a math environment $...$. You don't have to enclose your text between $...$.
 
-**Invert V/I directions:** invert the directions of the arrows. Keep in mind that they will ALWAYS follow the **receiver convention** (current flows in the direction of the voltage drop).
+**Invert V/I directions:** invert the directions of the arrows. Keep in mind that they will still follow the sign
+ convention you selected.
 
 <img src="docs/images/RLC_annotation.png" width="450px"/>
 
@@ -123,17 +129,20 @@ In addition to these elements, both menu entries has extra tabs to generate sign
 
 **Invert source direction:** invert the direction of the source.
 
+**Sign convention:** switches between passive and active sign conventions. See *RLC tab* section for examples.
+
 **Add voltage/current arrow:** add voltage drop and current arrow indications.
 
 **V label:** (current sources only) Label of the voltage drop arrow in current sources. This parameter does not change the label of the  voltage drop across voltage sources (the label matches its Value). If LaTeX support is enabled, this text will be included in a math environment $...$. You don't have to enclose your text between $...$.
 
 **I label:** (voltage sources only)  Label of the current in voltage sources. This parameter does not change the label of the current passing in current sources (the label matches its Value). If LaTeX support is enabled, this text will be included in a math environment $...$. You don't have to enclose your text between $...$.
 
-**Invert V or I directions:** invert the directions of one of the arrows as following:
-  - current sources: invert voltage drop direction
-  - voltage sources: invert current direction
+**Invert V or I directions:** invert the directions of the indications. If activated, a negative sign will be
+ automatically added to:
+  - Voltage annotation in voltage sources
+  - Current annotation in current sources   
 
-<img src="docs/images/IndSrc_annotation.png" width="700px"/>
+<img src="docs/images/IndSrc_conventions_invert.png" width="850px"/>
 
 
 ### Dependent source tab
@@ -143,6 +152,10 @@ In addition to these elements, both menu entries has extra tabs to generate sign
 **Type:** You can select the type of source.
 
 <img src="docs/images/DepSrc_types.png" width="850px"/>
+
+**Orientation:** Rotation angle in degrees. See *RLC tab* section for examples.
+
+**Invert source direction:** invert the direction of the source.
 
 **Type of control:** You can select the type of control.
 
@@ -154,11 +167,7 @@ In addition to these elements, both menu entries has extra tabs to generate sign
 
 **Control name:** Label of the control signal (voltage or current, depending on the type of control. If LaTeX support is enabled, this text will be included in a math environment $...$. You don't have to enclose your text between $...$. If you type numeric values, you can use ``M,k,m,u,p`` to indicate multiplier unit.
 
-
-**Orientation:** Rotation angle in degrees. See *RLC tab* section for examples.
-
-**Invert source direction:** invert the direction of the source.
-
+**Sign convention:** switches between passive and active sign conventions. See *RLC tab* section for examples.
 
 **Add voltage/current arrow:** add voltage drop and current arrow indications.
 
@@ -166,39 +175,48 @@ In addition to these elements, both menu entries has extra tabs to generate sign
 
 **I label:** (voltage sources only)  Label of the current in voltage sources. This parameter does not change the label of the current passing in current sources (the label matches its Value). If LaTeX support is enabled, this text will be included in a math environment $...$. You don't have to enclose your text between $...$.
 
-**Invert V or I directions:** invert the directions of one of the arrows as following:
-  - current sources: invert voltage drop direction
-  - voltage sources: invert current direction
-
-<img src="docs/images/DepSrc_annotation.png" width="700px"/>
+**Invert V or I directions:** invert the directions of the indications.  See *Independent source tab* section for examples.
 
 
 ### Switches tab
 
 <img src="docs/images/Tab_switch.png" width="600px"/>
 
-**Type:** You can select the type of switch. At the moment there is only one type of switch.
+**Number of poles/throws:** select the number of poles (1 to 4) and throws (1 to 8) of the switch (nPmT)
 
-<img src="docs/images/Switch_types.png" width="150px"/>
+<img src="docs/images/switch_poles_throws.png" width="850px"/>
 
 **Label:** Label of the switch. If LaTeX support is enabled, this text will be included in a math environment $...$. You don't have to enclose your text between $...$.
 
 **Orientation:** Rotation angle in degrees. See *RLC tab* section for examples.
 
-**Open switch:** toggles the state of the switch
+**Commuting arrow:** Adds annotation arrow indicating change of state.
 
-**Draw open/close arrow:** Adds annotation arrow indicating change of state.
-
-**Open/close text:** Adds text near the annotation arrow. Useful to express the time when the switch changes state.
+**Commuting text:** Adds text near the commuting arrow. Useful to express the time when the switch changes state.
 
 <img src="docs/images/Switch_state.png" width="400px"/>
 
+**Orientation:** invert commuting arrow direction. Used only if throw number > 1
 
+<img src="docs/images/switch_commuting.png" width="850px"/>
+
+**Push-button:** sets the switch to push-button. Used only if single throw. See figure above.
+
+**Connecting channel:** sets the output channel connected to the input. Used only if throw number > 1
+
+<img src="docs/images/switch_channel.png" width="850px"/>
+
+**Sign convention:** switches between passive and active sign conventions. See *RLC tab* section for examples.
+
+**Add voltage/current arrow:** add voltage drop and current arrow indications.
+
+**V/I labels:** Label of the voltage drop and current arrows. If LaTeX support is enabled, this text will be included in a math environment $...$. You don't have to enclose your text between $...$.
+
+**Invert V or I directions:** invert the directions of the indications. See *RLC tab* section for examples.
 
 ### Signals tab
 
 <img src="docs/images/Tab_Signals.png" width="600px"/>
-
 
 **Type:** Allows the selection of one type of signal. You can select a few commonly used signal or select ``Custom`` to customize its label. (see below)
 
@@ -256,7 +274,6 @@ In both cases, you have two options in the `Color` drop down menu:
 
 ## SEMICONDUCTOR menu entry
 
-
 ### Diodes tab
 
 <img src="docs/images/Tab_Diodes.png" width="600px"/>
@@ -267,28 +284,26 @@ In both cases, you have two options in the `Color` drop down menu:
 
 **Label:** Label of the switch. If LaTeX support is enabled, this text will be included in a math environment $...$. You don't have to enclose your text between $...$.
 
+**Orientation:** Rotation angle in degrees. See *RLC tab* section for examples.
+
 **Invert diode direction:** invert the direction of the diode.
 
-**Orientation:** Rotation angle in degrees. See *RLC tab* section for examples.
+**Sign convention:** switches between passive and active sign conventions. See *RLC tab* section for examples.
 
 **Add voltage/current arrow:** add voltage drop and current arrow indications.
 
-**V/I labels:** Label of the voltage drop and current arrows. If LaTeX support is enabled, this text will be included in a math environment $...$. You don't have to enclose your text between $...$.
-
 **Invert V/I directions:** invert the directions of the arrows. Keep in mind that they will ALWAYS follow the **receiver convention** (current flows in the direction of the voltage drop).
 
-<img src="docs/images/Semi_annotation.png" width="450px"/>
-
+**V/I labels:** Label of the voltage drop and current arrows. If LaTeX support is enabled, this text will be included in a math environment $...$. You don't have to enclose your text between $...$.
 
 ### BJT Transistor tab
 
 
 <img src="docs/images/Tab_BJT.png" width="600px"/>
 
-**Type:** You can select the type of transistor. At the moment there are two types.
+**Type/Phototransistor:** You can select the type of transistor.
 
 <img src="docs/images/BJT_types.png" width="400px"/>
-
 
 **Orientation:** Rotation angle in degrees. See *RLC tab* section for examples.
 
@@ -333,7 +348,7 @@ In both cases, you have two options in the `Color` drop down menu:
 
 <img src="docs/images/FET_switch_SD.png" width="900px"/>
 
-**Add body diode (MOSFET-E only):** Draws the body diode of power MOSFETS.
+**Add body diode (MOSFET-E only):** Draws the body diode of power MOSFETs.
 
 <img src="docs/images/FET_bodyDiode.png" width="450px"/>
 
@@ -400,6 +415,11 @@ In both cases, you have two options in the `Color` drop down menu:
 
  - The objects will be created at the center of your screen.
 
+ - In the file `CircuitSymbolsLatexPreamble.tex` you can add LaTeX macros and extra packages. A few of functions
+  were define there:
+  
+<img src="docs/images/latex_commands.png" width="900px"/>
+    
 # Examples
 
 <img src="docs/images/Example_B.png" width="550px"/>
