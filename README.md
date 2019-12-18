@@ -190,11 +190,9 @@ In addition to these elements, both menu entries has extra tabs to generate sign
 
 **Orientation:** Rotation angle in degrees. See *RLC tab* section for examples.
 
-**Commuting arrow:** Adds annotation arrow indicating change of state.
+**Commuting arrow:** Adds annotation arrow indicating change of state. See image below
 
-**Commuting text:** Adds text near the commuting arrow. Useful to express the time when the switch changes state.
-
-<img src="docs/images/Switch_state.png" width="400px"/>
+**Commuting text:** Adds text near the commuting arrow. Useful to express the time when the switch changes state. See image below
 
 **Orientation:** invert commuting arrow direction. Used only if throw number > 1
 
@@ -303,7 +301,7 @@ In both cases, you have two options in the `Color` drop down menu:
 
 **Type/Phototransistor:** You can select the type of transistor.
 
-<img src="docs/images/BJT_types.png" width="400px"/>
+<img src="docs/images/BJT_types.png" width="700px"/>
 
 **Orientation:** Rotation angle in degrees. See *RLC tab* section for examples.
 
