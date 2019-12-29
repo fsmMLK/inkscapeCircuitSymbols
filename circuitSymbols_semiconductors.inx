@@ -97,7 +97,8 @@
             </param>
             <param name="FET_Envelope" type="boolean" _gui-text="Draw envelope">1</param>
             <param name="FET_MirrorEC" type="boolean" _gui-text="Switch Source/Drain terminals">0</param>
-            <param name="FET_BodyDiode" type="boolean" _gui-text="Add body diode (MOSFET-E only)">0</param>
+            <param name="FET_BodyDiode" type="boolean" _gui-text="Add body diode (3-terminal MOSFET-E only)">0</param>
+            <param name="FET_4Terminals" type="boolean" _gui-text="4-terminal MOSFET (MOSFET only)">0</param>
             <param name="FET_MoveGate" type="boolean" _gui-text="Move gate towards the source (JFET only)">0</param>
 
 

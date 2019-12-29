@@ -7,7 +7,7 @@ Inkscape extension to assist creating circuit symbols.
 
 The main features are
 
- - Passive bipoles: resistors, capacitors, inductors, diodes, LEDs, photo diodes, 2 way switch
+ - Passive bipoles: resistors, capacitors, inductors, diodes, LEDs, photo diodes, nPnT switches
  - Active bipoles: various independent and dependent voltage/current sources
  - Operational amplifiers
  - Bipolar and FET transistors
@@ -346,9 +346,13 @@ In both cases, you have two options in the `Color` drop down menu:
 
 <img src="docs/images/FET_switch_SD.png" width="900px"/>
 
-**Add body diode (MOSFET-E only):** Draws the body diode of power MOSFETs.
+**Add body diode (3-terminal MOSFET-E only):** Draws the body diode of power MOSFETs.
 
 <img src="docs/images/FET_bodyDiode.png" width="450px"/>
+
+**4-terminal MOSFET (MOSFET only):** Switch between 3 and 4-terminal MOSFETs.
+
+<img src="docs/images/FET_nTerminals.png" width="450px"/>
 
 **Move gate towards the source (JFET only):** Moves gate terminal.
 

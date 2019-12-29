@@ -126,6 +126,7 @@ class CircuitSymbols(RLC, source, transistor, signal, arrow, ampOp, diode, switc
         self.OptionParser.add_option("--FET_Type", action="store", type="string", dest="FET_Type", default='none')
         self.OptionParser.add_option("--FET_Gate", action="store", type="string", dest="FET_Gate", default='none')
         self.OptionParser.add_option("--FET_BodyDiode", action="store", type="inkbool", dest="FET_BodyDiode", default=False)
+        self.OptionParser.add_option("--FET_4Terminals", action="store", type="inkbool", dest="FET_4Terminals", default=False)
         self.OptionParser.add_option("--FET_MoveGate", action="store", type="inkbool", dest="FET_MoveGate", default=False)
         self.OptionParser.add_option("--FET_Rot", action="store", type="string", dest="FET_Rot", default='0')
         self.OptionParser.add_option("--FET_Envelope", action="store", type="inkbool", dest="FET_Envelope", default=True)
@@ -466,8 +467,8 @@ class CircuitSymbols(RLC, source, transistor, signal, arrow, ampOp, diode, switc
             if 'MOSFET' in so.FET_Type:
                 self.drawTransistorMOSFET(root_layer, position, angleDeg=so.FET_Rot, mirrorSD=so.FET_MirrorEC,
                                           drawSGDtags=so.FET_SGDtags, drawEnvelope=so.FET_Envelope,
-                                          modeType=so.FET_Type, gateType=so.FET_Gate, bodyDiode=so.FET_BodyDiode,
-                                          drawVGS=so.FET_DrawVGSarrow, drawVDS=so.FET_DrawVDSarrow,
+                                          modeType=so.FET_Type, gateType=so.FET_Gate, is4terminal=so.FET_4Terminals,
+                                          bodyDiode=so.FET_BodyDiode,drawVGS=so.FET_DrawVGSarrow, drawVDS=so.FET_DrawVDSarrow,
                                           drawVDG=so.FET_DrawVDGarrow, drawIDarrow=so.FET_DrawIDarrow,
                                           drawISarrow=so.FET_DrawISarrow, drawIGarrow=so.FET_DrawIGarrow,
                                           VGSname=so.FET_VGSname, VDSname=so.FET_VDSname, VDGname=so.FET_VDGname,
