@@ -40,6 +40,15 @@ inkscape/extensions/
             |   |-- textext.py
             |
             |-- circuitSymbols.py
+            |-- circuitSymbols.py
+            |-- drawAmpOp.py
+            |-- drawArrows.py
+            |-- drawDiodes.py
+            |-- drawRLC.py
+            |-- drawSignals.py
+            |-- drawSources.py
+            |-- drawSwitches.py
+            |-- drawTransistors.py
             |-- circuitSymbols_semiconductors.inx
             `-- circuitSymbols_general.inx
 ```
