@@ -1,0 +1,27 @@
+\usepackage{amsmath,amsthm,amsbsy,amsfonts,amssymb}
+\usepackage[per=slash]{siunitx}
+\usepackage{steinmetz}
+\usepackage[utf8]{inputenc}
+%\usepackage[T1]{fontenc}
+
+\newcommand{\micro}{\ensuremath{\mu}}
+\newcommand{\phasorName}[1]{ \ensuremath{ \boldsymbol{\hat #1} } }
+\newcommand{\impedance}[1]{ \ensuremath{ \boldsymbol{#1} } }
+\newcommand{\complexPol}[2]{\ensuremath{#1\phase{#2}}}
+\newcommand{\complexPolDeg}[2]{\ensuremath{#1\phase{#2\degree}}}
+
+% new units
+\newunit{\Vef}{\volt_{ef}} % volt eficaz
+\newunit{\Vrms}{\volt_{rms}} % volt RMS
+\newunit{\Vpp}{\volt_{pp}} % volt peak-to-peak
+
+\newunit{\Aef}{\ampere_{ef}} % ampere eficaz
+\newunit{\Arms}{\ampere_{rms}} % ampere rms
+\newunit{\App}{\ampere_{pp}} % ampere peak-to-peak
+
+% logic Commands
+\newcommand{\NOT}[1]{\ensuremath{\overline{\mbox{\ensuremath{#1}}}}}
+\newcommand{\AND}{\ensuremath{\cdot}}
+\newcommand{\OR}{\ensuremath{+}}
+\newcommand{\XOR}{\ensuremath{\oplus}}
+\newcommand{\XNOR}{\ensuremath{\odot}}

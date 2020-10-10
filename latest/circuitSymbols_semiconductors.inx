@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+    <name>Semiconductors</name>
+    <id>fsmMLK.circuitSymbols.semiconductors</id>
+    <dependency type="executable" location="inx">circuitSymbols.py</dependency>
+    <dependency type="executable" location="extensions">inkscapeMadeEasy/inkscapeMadeEasy_Base.py</dependency>
+    <dependency type="executable" location="extensions">inkscapeMadeEasy/inkscapeMadeEasy_Draw.py</dependency>
+    <param name="tab" type="notebook">
+        <page name="Diodes" appearance="minimal" gui-text="Diodes">
+            <hbox>
+                <vbox>
+                    <param name="diode" type="optiongroup" appearance="combo" gui-text="Type:">
+                        <option value="regular">Regular diode</option>
+                        <option value="LED">LED</option>
+                        <option value="photoDiode">Photo Diode</option>
+                        <option value="zener">Zener</option>
+                        <option value="schottky">Schottky</option>
+                        <option value="tunnel">Tunnel</option>
+                        <option value="varicap">Varicap</option>
+                    </param>
+                    <param name="diodeRot" type="optiongroup" appearance="combo" gui-text="Orientation (deg):">
+                        <option value="0">0</option>
+                        <option value="90">90</option>
+                        <option value="-60">-60</option>
+                        <option value="-45">-45</option>
+                        <option value="-30">-30</option>
+                        <option value="30">30</option>
+                        <option value="45">45</option>
+                        <option value="60">60</option>
+                    </param>
+                    <param name="diodeMirror" type="bool" gui-text="Invert diode direction">false</param>
+                </vbox>
+                <spacer/>
+                <separator/>
+                <spacer/>
+                <vbox>
+                    <param name="diodeVal" type="string" gui-text="Label¹:"/>
+                </vbox>
+            </hbox>
+            <label appearance="header">Voltage and current indications</label>
+            <hbox>
+                <vbox>
+                    <param name="diodeConvention" type="optiongroup" appearance="combo" gui-text="Sign convention:">
+                        <option value="passive">Passive</option>
+                        <option value="active">Active</option>
+                    </param>
+                    <hbox>
+                        <param name="diodeVolt" type="bool" gui-text="Add voltage indication¹:">true</param>
+                        <param name="diodeVoltName" type="string" gui-text="">v</param>
+                    </hbox>
+                    <hbox>
+                        <param name="diodeCurr" type="bool" gui-text="Add current indication¹:">true</param>
+                        <param name="diodeCurrName" type="string" gui-text="">i</param>
+                    </hbox>
+                    <param name="diodeVoltCurrInvert" type="bool" gui-text="Invert V/I directions">false</param>
+                </vbox>
+            </hbox>
+        </page>
+        <page name="Transistor_BJT" appearance="minimal" gui-text="BJT">
+            <hbox>
+                <vbox>
+                    <param name="BJT" type="optiongroup" appearance="combo" gui-text="Type:">
+                        <option value="BJT_NPN">bipolar NPN</option>
+                        <option value="BJT_PNP">bipolar PNP</option>
+                    </param>
+                    <param name="BJT_Rot" type="optiongroup" appearance="combo" gui-text="Orientation (deg):">
+                        <option value="0">0</option>
+                        <option value="90">90</option>
+                        <option value="-60">-60</option>
+                        <option value="-45">-45</option>
+                        <option value="-30">-30</option>
+                        <option value="30">30</option>
+                        <option value="45">45</option>
+                        <option value="60">60</option>
+                        <option value="180">180</option>
+                    </param>
+                </vbox>
+                <spacer/>
+                <separator/>
+                <spacer/>
+                <vbox>
+                    <param name="BJT_Photo" type="bool" gui-text="Phototransistor">false</param>
+                    <param name="BJT_Envelope" type="bool" gui-text="Draw envelope">true</param>
+                    <param name="BJT_MirrorEC" type="bool" gui-text="Switch Emitter/Collector terminals">false</param>
+                    <param name="BJT_EBCtags" type="bool" gui-text="Add E/B/C tags">false</param>
+                </vbox>
+            </hbox>
+            <label appearance="header">Voltage and current indications</label>
+            <hbox>
+                <vbox>
+                    <hbox>
+                        <param name="BJT_DrawVCEarrow" type="bool" gui-text="Add v_CE indication¹:">false</param>
+                        <spacer size="expand"/>
+                        <param name="BJT_VCEname" type="string" gui-text="">v_{ce}</param>
+                    </hbox>
+                    <hbox>
+                        <param name="BJT_DrawVCBarrow" type="bool" gui-text="Add v_CB indication¹:">false</param>
+                        <spacer size="expand"/>
+                        <param name="BJT_VCBname" type="string" gui-text="">v_{cb}</param>
+                    </hbox>
+                    <hbox>
+                        <param name="BJT_DrawVBEarrow" type="bool" gui-text="Add v_BE indication¹:">false</param>
+                        <spacer size="expand"/>
+                        <param name="BJT_VBEname" type="string" gui-text="">v_{be}</param>
+                    </hbox>
+                    <hbox>
+                        <param name="BJT_DrawICarrow" type="bool" gui-text="Add i_C indication¹:">false</param>
+                        <spacer size="expand"/>
+                        <param name="BJT_ICname" type="string" gui-text="">i_c</param>
+                    </hbox>
+                    <hbox>
+                        <param name="BJT_DrawIBarrow" type="bool" gui-text="Add i_B indication¹:">false</param>
+                        <spacer size="expand"/>
+                        <param name="BJT_IBname" type="string" gui-text="">i_b</param>
+                    </hbox>
+                    <hbox>
+                        <param name="BJT_DrawIEarrow" type="bool" gui-text="Add i_E indication¹:">false</param>
+                        <spacer size="expand"/>
+                        <param name="BJT_IEname" type="string" gui-text="">i_e</param>
+                    </hbox>
+                </vbox>
+                <spacer size="expand"/>
+            </hbox>
+        </page>
+        <page name="Transistor_FET" appearance="minimal" gui-text="FET">
+            <hbox>
+                <vbox>
+                    <param name="FET_Type" type="optiongroup" appearance="combo" gui-text="type:">
+                        <option value="MOSFET-E">MOSFET-E (enhancement-mode)</option>
+                        <option value="MOSFET-D">MOSFET-D (depletion-mode)</option>
+                        <option value="JFET">JFET</option>
+                    </param>
+                    <param name="FET_Gate" type="optiongroup" appearance="combo" gui-text="Channel type:">
+                        <option value="P_gate">Positive</option>
+                        <option value="N_gate">Negative</option>
+                    </param>
+                    <param name="FET_4Terminals" type="bool" gui-text="4-terminal MOSFET (MOSFET only)">false</param>
+                    <param name="FET_Rot" type="optiongroup" appearance="combo" gui-text="Orientation (deg):">
+                        <option value="0">0</option>
+                        <option value="90">90</option>
+                        <option value="-60">-60</option>
+                        <option value="-45">-45</option>
+                        <option value="-30">-30</option>
+                        <option value="30">30</option>
+                        <option value="45">45</option>
+                        <option value="60">60</option>
+                        <option value="180">180</option>
+                    </param>
+                </vbox>
+                <separator/>
+                <vbox>
+                    <param name="FET_BodyDiode" type="bool" gui-text="Add body diode (3-terminal MOSFET-E only)">false</param>
+                    <param name="FET_MoveGate" type="bool" gui-text="Move gate towards the source (JFET only)">false</param>
+                    <param name="FET_Envelope" type="bool" gui-text="Draw envelope">true</param>
+                    <param name="FET_MirrorEC" type="bool" gui-text="Switch Source/Drain terminals">false</param>
+                    <param name="FET_SGDtags" type="bool" gui-text="Add S/G/D tags:">false</param>
+                </vbox>
+            </hbox>
+            <label appearance="header">Voltage and current indications</label>
+            <hbox>
+                <vbox>
+                    <hbox>
+                        <param name="FET_DrawVGSarrow" type="bool" gui-text="Add v_GS indication¹:">false</param>
+                        <spacer size="expand"/>
+                        <param name="FET_VGSname" type="string" gui-text="">v_{gs}</param>
+                    </hbox>
+                    <hbox>
+                        <param name="FET_DrawVDSarrow" type="bool" gui-text="Add v_DS indication¹:">false</param>
+                        <spacer size="expand"/>
+                        <param name="FET_VDSname" type="string" gui-text="">v_{ds}</param>
+                    </hbox>
+                    <hbox>
+                        <param name="FET_DrawVDGarrow" type="bool" gui-text="Add v_DG indication¹:">false</param>
+                        <spacer size="expand"/>
+                        <param name="FET_VDGname" type="string" gui-text="">v_{dg}</param>
+                    </hbox>
+                    <hbox>
+                        <param name="FET_DrawIDarrow" type="bool" gui-text="Add i_D indication¹:">false</param>
+                        <spacer size="expand"/>
+                        <param name="FET_IDname" type="string" gui-text="">i_d</param>
+                    </hbox>
+                    <hbox>
+                        <param name="FET_DrawISarrow" type="bool" gui-text="Add i_S indication¹:">false</param>
+                        <spacer size="expand"/>
+                        <param name="FET_ISname" type="string" gui-text="">i_s</param>
+                    </hbox>
+                    <hbox>
+                        <param name="FET_DrawIGarrow" type="bool" gui-text="Add i_G indication¹:">false</param>
+                        <spacer size="expand"/>
+                        <param name="FET_IGname" type="string" gui-text="">i_g</param>
+                    </hbox>
+                </vbox>
+                <spacer size="expand"/>
+            </hbox>
+        </page>
+        <page name="Opamp" appearance="minimal" gui-text="OpAmp">
+            <hbox>
+                <vbox>
+                    <param name="opamp" type="optiongroup" appearance="combo" gui-text="Type:">
+                        <option value="general">general</option>
+                    </param>
+                    <param name="opampMirrorInput" type="bool" gui-text="Invert inputs">false</param>
+                </vbox>
+                <separator/>
+                <vbox>
+                    <label appearance="header">Supply</label>
+                    <param name="opampFlagSupply" type="bool" gui-text="Add supply terminals">false</param>
+                    <param name="opampFlagSupplyValues" type="bool" gui-text="Add supply values">false</param>
+                    <param name="opampSupplySymm" type="bool" gui-text="Symmetric supply">true</param>
+                    <param name="opampSupplyPositiveVal" type="string" gui-text="+V supply:">5</param>
+                    <param name="opampSupplyNegativeVal" type="string" gui-text="-V supply (unsymmetric only):">-5</param>
+                </vbox>
+            </hbox>
+            <label appearance="header">Voltage and current indications</label>
+            <hbox>
+                <vbox>
+                    <hbox>
+                        <param name="opampDrawVin" type="bool" gui-text="Add (v+) (v-) indications¹:">false</param>
+                        <spacer size="expand"/>
+                        <param name="opampInputV+Name" type="string" gui-text="">v^+</param>
+                        <param name="opampInputV-Name" type="string" gui-text="">v^-</param>
+                    </hbox>
+                    <hbox>
+                        <param name="opampDrawIin" type="bool" gui-text="Add (i+) (i-) indications¹:">false</param>
+                        <spacer size="expand"/>
+                        <param name="opampInputI+Name" type="string" gui-text="">i^+</param>
+                        <param name="opampInputI-Name" type="string" gui-text="">i^-</param>
+                    </hbox>
+                    <hbox>
+                        <param name="opampDrawVout" type="bool" gui-text="Add V_out indication¹:">false</param>
+                        <spacer size="expand"/>
+                        <param name="opampVoutName" type="string" gui-text="">v_{out}</param>
+                    </hbox>
+                    <hbox>
+                        <param name="opampDrawIout" type="bool" gui-text="Add I_out indication¹:">false</param>
+                        <spacer size="expand"/>
+                        <param name="opampIoutName" type="string" gui-text="">i_{out}</param>
+                    </hbox>
+                    <hbox>
+                        <param name="opampDrawVd" type="bool" gui-text="Add V_d indication¹:">false</param>
+                        <spacer size="expand"/>
+                        <param name="opampInputDiffName" type="string" gui-text="">v_d</param>
+                    </hbox>
+                </vbox>
+                <spacer size="expand"/>
+            </hbox>
+        </page>
+        <page name="SignalsAnnotation" appearance="minimal" gui-text="Sig./Ind.">
+            <param name="subTab_sigAnn" type="notebook">
+                <page name="Signals" appearance="minimal" gui-text="Signals">
+                    <hbox>
+                        <vbox>
+                            <param name="nodal" type="optiongroup" appearance="combo" gui-text="Type:">
+                                <option value="custom">Custom</option>
+                                <option value="GND">GND</option>
+                                <option value="common">Common</option>
+                                <option value="digital">Digital</option>
+                                <option value="+vcc">+Vcc</option>
+                                <option value="-vcc">-Vcc</option>
+                                <option value="+5V">+5V</option>
+                                <option value="-5V">-5V</option>
+                                <option value="-5V">-5V</option>
+                                <option value="+15V">+15V</option>
+                                <option value="-15V">-15V</option>
+                                <option value="v_in">v_in</option>
+                                <option value="v_out">v_out</option>
+                            </param>
+                            <param name="nodalRot" type="optiongroup" appearance="combo" gui-text="Direction:">
+                                <option value="0">↓ North</option>
+                                <option value="90">→ West</option>
+                                <option value="-90">← East</option>
+                                <option value="180">↑ South</option>
+                            </param>
+                        </vbox>
+                        <spacer/>
+                        <separator/>
+                        <spacer/>
+                        <vbox>
+                            <param name="nodalVal" type="string" gui-text="Label¹ ²:">E</param>
+                            <param name="nodalDrawLine" type="bool" gui-text="Draw signal line">false</param>
+                        </vbox>
+                    </hbox>
+                    <spacer/>
+                    <label>² For 'Custom' and 'Digital' only.</label>
+                </page>
+                <page name="Arrow" appearance="minimal" gui-text="Indications">
+                    <hbox>
+                        <vbox>
+                            <param name="arrow" type="optiongroup" appearance="combo" gui-text="Type:">
+                                <option value="voltage">Voltage</option>
+                                <option value="current">Current</option>
+                            </param>
+                            <param name="arrowRot" type="optiongroup" appearance="combo" gui-text="Orientation (deg):">
+                                <option value="0">0</option>
+                                <option value="90">90</option>
+                                <option value="-60">-60</option>
+                                <option value="-45">-45</option>
+                                <option value="-30">-30</option>
+                                <option value="30">30</option>
+                                <option value="45">45</option>
+                                <option value="60">60</option>
+                            </param>
+                            <param name="arrowInvert" type="bool" gui-text="Invert direction">false</param>
+                            <param name="arrowCurvaturDirection" type="bool" gui-text="Invert disposition ³">false</param>
+                        </vbox>
+                        <spacer/>
+                        <separator/>
+                        <spacer/>
+                        <vbox>
+                            <param name="arrowVal" type="string" gui-text="Label¹ ²:">v</param>
+                            <param name="arrowUnit" type="bool" gui-text="Add unit">false</param>
+                            <param name="arrowVSize" type="int" min="5" max="200" gui-text="Indication size (V only):">20</param>
+                            <param name="arrowISize" type="int" min="5" max="200" gui-text="Indication size (I only):">10</param>
+                        </vbox>
+                    </hbox>
+                    <label appearance="header">Color setup</label>
+                    <hbox>
+                        <param name="currColor" type="optiongroup" appearance="combo" gui-text="Current indication color:">
+                            <option value="#FF0000">default (red)</option>
+                            <option value="picker">use color picker --></option>
+                        </param>
+                        <param name="colorPickerCurrent" type="color" appearance="colorbutton" gui-text=""/>
+                    </hbox>
+                    <hbox>
+                        <param name="voltColor" type="optiongroup" appearance="combo" gui-text="Voltage indication color:">
+                            <option value="#217B21">default (green)</option>
+                            <option value="picker">use color picker --></option>
+                        </param>
+                        <param name="colorPickerVolt" type="color" appearance="colorbutton" gui-text=""/>
+                    </hbox>
+                    <spacer/>
+                    <label>² Multipliers: M, k, m, u, n, p</label>
+                    <label>³ Voltage: invert curvature. Current: text side</label>
+                </page>
+            </param>
+            <spacer size="expand"/>
+        </page>
+        <page name="Help" gui-text="Help">
+            <param name="subTab_help" type="notebook">
+                <page name="LatexHelp" gui-text="LaTeX help">
+                    <label appearance="header">Custom LaTeX functions</label>
+                    <label>\phase{} : for phasor angle symbol</label>
+                    <label>\phasorName{V} : phasor symbol</label>
+                    <label>\impedance{Z} : impedance symbol</label>
+                    <label>\complexPol{magnitude}{theta_in_radians}</label>
+                    <label>\complexPolDeg{magnitude}{theta_in_deg}</label>
+                    <label>\Vpp, \App : peak-to-peak V and A units</label>
+                    <label>\Vrms,\Arms : rms V and A units</label>
+                </page>
+                <page name="About" gui-text="About">
+                    <label>For details please refer to</label>
+                    <label appearance="url">https://github.com/fsmMLK/inkscapeCircuitSymbols</label>
+                </page>
+            </param>
+        </page>
+    </param>
+    <label>¹ LaTeX: texts will be in inline math mode. No $...$ is needed</label>
+    <effect>
+        <object-type>all</object-type>
+        <effects-menu>
+            <submenu name="fsmMLK">
+                <submenu name="Circuit symbols"/>
+            </submenu>
+        </effects-menu>
+    </effect>
+    <script>
+        <command location="inx" interpreter="python">circuitSymbols.py</command>
+    </script>
+</inkscape-extension>
+

@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+    <name>General</name>
+    <id>fsmMLK.circuitSymbols.general</id>
+    <dependency type="executable" location="inx">circuitSymbols.py</dependency>
+    <dependency type="executable" location="extensions">inkscapeMadeEasy/inkscapeMadeEasy_Base.py</dependency>
+    <dependency type="executable" location="extensions">inkscapeMadeEasy/inkscapeMadeEasy_Draw.py</dependency>
+    <param name="tab" type="notebook">
+        <page name="RLC" appearance="minimal" gui-text="RLC">
+            <hbox>
+                <vbox>
+                    <param name="bipoleRLC" type="optiongroup" appearance="combo" gui-text="Type:">
+                        <option value="resistor">Resistor</option>
+                        <option value="capacitor">Capacitor</option>
+                        <option value="capacitorPol">Polarized Capacitor</option>
+                        <option value="inductor">Inductor</option>
+                        <option value="pot2T">Potentiometer (2T)</option>
+                        <option value="pot3T">Potentiometer (3T)</option>
+                        <option value="genericBipole">Generic Bipole</option>
+                    </param>
+                    <param name="bipoleRLCRot" type="optiongroup" appearance="combo" gui-text="Orientation (deg):">
+                        <option value="0">0</option>
+                        <option value="90">90</option>
+                        <option value="-60">-60</option>
+                        <option value="-45">-45</option>
+                        <option value="-30">-30</option>
+                        <option value="30">30</option>
+                        <option value="45">45</option>
+                        <option value="60">60</option>
+                    </param>
+                </vbox>
+                <spacer/>
+                <separator/>
+                <spacer/>
+                <vbox>
+                    <hbox>
+                        <param name="bipoleRLCVal" type="string" gui-text="Value¹ ²:">R</param>
+                    </hbox>
+                    <param name="bipoleRLCUnit" type="bool" gui-text="Add unit">false</param>
+                </vbox>
+            </hbox>
+            <hbox>
+                <vbox>
+                    <label appearance="header">Voltage and current indications</label>
+                    <param name="bipoleRLCconvention" type="optiongroup" appearance="combo" gui-text="Sign convention:">
+                        <option value="passive">Passive</option>
+                        <option value="active">Active</option>
+                    </param>
+                    <hbox>
+                        <param name="bipoleRLCVolt" type="bool" gui-text="Add voltage indication¹:">false</param>
+                        <param name="bipoleRLCVoltName" type="string" gui-text="">v</param>
+                    </hbox>
+                    <hbox>
+                        <param name="bipoleRLCCurr" type="bool" gui-text="Add current indication¹:">false</param>
+                        <param name="bipoleRLCCurrName" type="string" gui-text="">i</param>
+                    </hbox>
+                    <param name="bipoleRLCVoltCurrInvert" type="bool" gui-text="Invert V/I directions">false</param>
+                </vbox>
+            </hbox>
+            <spacer size="expand"/>
+            <label>² Multipliers: M, k, m, u, n, p</label>
+        </page>
+        <page name="Sources" appearance="minimal" gui-text="Sources">
+            <param name="subTab_sources" type="notebook">
+                <page name="Indep. Source" appearance="minimal" gui-text="Independent">
+                    <hbox>
+                        <vbox>
+                            <param name="source" type="optiongroup" appearance="combo" gui-text="Type:">
+                                <option value="voltIndep">Voltage (General)</option>
+                                <option value="voltIndepSinusoidal">Voltage (AC)</option>
+                                <option value="voltIndepDC">Voltage (DC)</option>
+                                <option value="voltIndepDCbattery">Voltage (battery)</option>
+                                <option value="currIndep">Current (General)</option>
+                            </param>
+                            <param name="sourceRot" type="optiongroup" appearance="combo" gui-text="Orientation (deg):">
+                                <option value="0">0</option>
+                                <option value="90">90</option>
+                                <option value="-60">-60</option>
+                                <option value="-45">-45</option>
+                                <option value="-30">-30</option>
+                                <option value="30">30</option>
+                                <option value="45">45</option>
+                                <option value="60">60</option>
+                            </param>
+                            <param name="sourceMirror" type="bool" gui-text="Invert source direction">false</param>
+                        </vbox>
+                        <spacer/>
+                        <separator/>
+                        <spacer/>
+                        <vbox>
+                            <hbox>
+                                <param name="sourceVal" type="string" gui-text="Value¹ ²:">V</param>
+                            </hbox>
+                            <param name="sourceUnit" type="bool" gui-text="Add unit">true</param>
+                        </vbox>
+                    </hbox>
+                </page>
+                <page name="Dep. Source" appearance="minimal" gui-text="Dependent">
+                    <hbox>
+                        <vbox>
+                            <param name="sourceControlled" type="optiongroup" appearance="combo" gui-text="Type:">
+                                <option value="volt">Voltage</option>
+                                <option value="curr">Current</option>
+                            </param>
+                            <param name="sourceControlledRot" type="optiongroup" appearance="combo" gui-text="Orientation (deg):">
+                                <option value="0">0</option>
+                                <option value="90">90</option>
+                                <option value="-60">-60</option>
+                                <option value="-45">-45</option>
+                                <option value="-30">-30</option>
+                                <option value="30">30</option>
+                                <option value="45">45</option>
+                                <option value="60">60</option>
+                            </param>
+                            <param name="sourceControlledMirror" type="bool" gui-text="Invert source direction">false</param>
+                        </vbox>
+                        <spacer/>
+                        <separator/>
+                        <spacer/>
+                        <vbox>
+                            <label appearance="header">Control signal</label>
+                            <param name="sourceControlledType" type="optiongroup" appearance="combo" gui-text="Control:">
+                                <option value="volt">Voltage</option>
+                                <option value="curr">Current</option>
+                            </param>
+                            <param name="sourceControlledGain" type="string" gui-text="Gain¹:">\beta</param>
+                            <param name="sourceControlledControlName" type="string" gui-text="Control signal¹:">v_c</param>
+                            <param name="sourceControlledDrawArrow" type="bool" gui-text="Draw control indications">false</param>
+                        </vbox>
+                    </hbox>
+                </page>
+            </param>
+            <hbox>
+                <vbox>
+                    <label appearance="header">Voltage and current indications</label>
+                    <param name="sourceConvention" type="optiongroup" appearance="combo" gui-text="Sign convention:">
+                        <option value="passive">Passive</option>
+                        <option value="active">Active</option>
+                    </param>
+                    <hbox>
+                        <param name="sourceVolt" type="bool" gui-text="Add voltage indication¹:">false</param>
+                        <param name="sourceVoltName" type="string" gui-text="" gui-description="OBS: custom V name for current sources only.">v</param>
+                    </hbox>
+                    <hbox>
+                        <param name="sourceCurr" type="bool" gui-text="Add current indication¹:">false</param>
+                        <param name="sourceCurrName" type="string" gui-text="" gui-description="OBS: custom I name for voltage sources only.">i</param>
+                    </hbox>
+                    <param name="sourceVoltCurrInvert" type="bool" gui-text="Invert V/I directions">false</param>
+                </vbox>
+            </hbox>
+            <spacer size="expand"/>
+            <label>² Multipliers: M, k, m, u, n, p</label>
+        </page>
+        <page name="Switches" appearance="minimal" gui-text="Switches">
+            <hbox>
+                <vbox>
+                    <param name="switchPoles" type="int" min="1" max="4" gui-text="Number of poles (nP):">1</param>
+                    <param name="switchThrows" type="int" min="1" max="8" gui-text="Number of throws (nT):">1</param>
+                    <param name="switchRot" type="optiongroup" appearance="combo" gui-text="Orientation (deg):">
+                        <option value="0">0</option>
+                        <option value="90">90</option>
+                        <option value="-60">-60</option>
+                        <option value="-45">-45</option>
+                        <option value="-30">-30</option>
+                        <option value="30">30</option>
+                        <option value="45">45</option>
+                        <option value="60">60</option>
+                    </param>
+                </vbox>
+                <spacer/>
+                <separator/>
+                <spacer/>
+                <vbox>
+                    <hbox>
+                        <param name="switchVal" type="string" gui-text="Label¹:">S</param>
+                    </hbox>
+                    <param name="switchPushButton" type="bool" gui-text="Push-button (forces nT=1)">false</param>
+                    <param name="switchConnection" type="optiongroup" appearance="combo" gui-text="Current state:">
+                        <option value="0">open</option>
+                        <option value="1">channel 1</option>
+                        <option value="2">channel 2</option>
+                        <option value="3">channel 3</option>
+                        <option value="4">channel 4</option>
+                        <option value="5">channel 5</option>
+                        <option value="6">channel 6</option>
+                        <option value="7">channel 7</option>
+                        <option value="8">channel 8</option>
+                    </param>
+                </vbox>
+            </hbox>
+            <hbox>
+                <vbox>
+                    <label appearance="header">Commutating information</label>
+                    <hbox>
+                        <param name="switchCommuteArrow" type="bool" gui-text="Commutating arrow¹">false</param>
+                        <param name="switchCommuteText" type="string" gui-text="">t=1</param>
+                    </hbox>
+                    <param name="switchCommuteArrowOrientation" type="optiongroup" appearance="combo" gui-text="Direction (only if nT>1):">
+                        <option value="cw">Clockwise</option>
+                        <option value="ccw">Counterclockwise</option>
+                    </param>
+                    <label appearance="header">Voltage and current indications</label>
+                    <param name="switchConvention" type="optiongroup" appearance="combo" gui-text="Sign convention:">
+                        <option value="passive">Passive</option>
+                        <option value="active">Active</option>
+                    </param>
+                    <hbox>
+                        <param name="switchVolt" type="bool" gui-text="Add voltage indication¹:">false</param>
+                        <param name="switchVoltName" type="string" gui-text="">v</param>
+                    </hbox>
+                    <hbox>
+                        <param name="switchCurr" type="bool" gui-text="Add current indication¹:">false</param>
+                        <param name="switchCurrName" type="string" gui-text="">i</param>
+                    </hbox>
+                    <param name="switchVoltCurrInvert" type="bool" gui-text="Invert V/I directions">false</param>
+                </vbox>
+            </hbox>
+            <label>² 0: open switch, n: n-th output</label>
+        </page>
+        <page name="SignalsAnnotation" appearance="minimal" gui-text="Sig./Ind.">
+            <param name="subTab_sigAnn" type="notebook">
+                <page name="Signals" appearance="minimal" gui-text="Signals">
+                    <hbox>
+                        <vbox>
+                            <param name="nodal" type="optiongroup" appearance="combo" gui-text="Type:">
+                                <option value="custom">Custom</option>
+                                <option value="GND">GND</option>
+                                <option value="common">Common</option>
+                                <option value="digital">Digital</option>
+                                <option value="+vcc">+Vcc</option>
+                                <option value="-vcc">-Vcc</option>
+                                <option value="+5V">+5V</option>
+                                <option value="-5V">-5V</option>
+                                <option value="-5V">-5V</option>
+                                <option value="+15V">+15V</option>
+                                <option value="-15V">-15V</option>
+                                <option value="v_in">v_in</option>
+                                <option value="v_out">v_out</option>
+                            </param>
+                            <param name="nodalRot" type="optiongroup" appearance="combo" gui-text="Direction:">
+                                <option value="0">↓ North</option>
+                                <option value="90">→ West</option>
+                                <option value="-90">← East</option>
+                                <option value="180">↑ South</option>
+                            </param>
+                        </vbox>
+                        <spacer/>
+                        <separator/>
+                        <spacer/>
+                        <vbox>
+                            <param name="nodalVal" type="string" gui-text="Label¹ ²:">E</param>
+                            <param name="nodalDrawLine" type="bool" gui-text="Draw signal line">false</param>
+                        </vbox>
+                    </hbox>
+                    <spacer/>
+                    <label>² For 'Custom' and 'Digital' only.</label>
+                </page>
+                <page name="Arrow" appearance="minimal" gui-text="Indications">
+                    <hbox>
+                        <vbox>
+                            <param name="arrow" type="optiongroup" appearance="combo" gui-text="Type:">
+                                <option value="voltage">Voltage</option>
+                                <option value="current">Current</option>
+                            </param>
+                            <param name="arrowRot" type="optiongroup" appearance="combo" gui-text="Orientation (deg):">
+                                <option value="0">0</option>
+                                <option value="90">90</option>
+                                <option value="-60">-60</option>
+                                <option value="-45">-45</option>
+                                <option value="-30">-30</option>
+                                <option value="30">30</option>
+                                <option value="45">45</option>
+                                <option value="60">60</option>
+                            </param>
+                            <param name="arrowInvert" type="bool" gui-text="Invert direction">false</param>
+                            <param name="arrowCurvaturDirection" type="bool" gui-text="Invert disposition ³">false</param>
+                        </vbox>
+                        <spacer/>
+                        <separator/>
+                        <spacer/>
+                        <vbox>
+                            <param name="arrowVal" type="string" gui-text="Label¹ ²:">v</param>
+                            <param name="arrowUnit" type="bool" gui-text="Add unit">false</param>
+                            <param name="arrowVSize" type="int" min="5" max="200" gui-text="Indication size (V only):">20</param>
+                            <param name="arrowISize" type="int" min="5" max="200" gui-text="Indication size (I only):">10</param>
+                        </vbox>
+                    </hbox>
+                    <label appearance="header">Color setup</label>
+                    <hbox>
+                        <param name="currColor" type="optiongroup" appearance="combo" gui-text="Current indication color:">
+                            <option value="#FF0000">default (red)</option>
+                            <option value="picker">use color picker --></option>
+                        </param>
+                        <param name="colorPickerCurrent" type="color" appearance="colorbutton" gui-text=""/>
+                    </hbox>
+                    <hbox>
+                        <param name="voltColor" type="optiongroup" appearance="combo" gui-text="Voltage indication color:">
+                            <option value="#217B21">default (green)</option>
+                            <option value="picker">use color picker --></option>
+                        </param>
+                        <param name="colorPickerVolt" type="color" appearance="colorbutton" gui-text=""/>
+                    </hbox>
+                    <spacer/>
+                    <label>² Multipliers: M, k, m, u, n, p</label>
+                    <label>³ Voltage: invert curvature. Current: text side</label>
+                </page>
+            </param>
+            <spacer size="expand"/>
+        </page>
+        <page name="Help" gui-text="Help">
+            <param name="subTab_help" type="notebook">
+                <page name="LatexHelp" gui-text="LaTeX help">
+                    <label appearance="header">Custom LaTeX functions</label>
+                    <label>\phase{} : for phasor angle symbol</label>
+                    <label>\phasorName{V} : phasor symbol</label>
+                    <label>\impedance{Z} : impedance symbol</label>
+                    <label>\complexPol{magnitude}{theta_in_radians}</label>
+                    <label>\complexPolDeg{magnitude}{theta_in_deg}</label>
+                    <label>\Vpp, \App : peak-to-peak V and A units</label>
+                    <label>\Vrms,\Arms : rms V and A units</label>
+                </page>
+                <page name="About" gui-text="About">
+                    <label>For details please refer to</label>
+                    <label appearance="url">https://github.com/fsmMLK/inkscapeCircuitSymbols</label>
+                </page>
+            </param>
+        </page>
+    </param>
+    <label>¹ LaTeX: text will be in inline math mode $...$.</label>
+    <effect>
+        <object-type>all</object-type>
+        <effects-menu>
+            <submenu name="fsmMLK">
+                <submenu name="Circuit symbols"/>
+            </submenu>
+        </effects-menu>
+    </effect>
+    <script>
+        <command location="inx" interpreter="python">circuitSymbols.py</command>
+    </script>
+</inkscape-extension>
+
