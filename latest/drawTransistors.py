@@ -10,8 +10,9 @@ class transistor(inkBase.inkscapeMadeEasy):
 
     # ---------------------------------------------
     # bipolar junction transistors (NPN and PNP)
-    def drawTransistorBJT(self, parent, position=[0, 0], angleDeg=0, label='BJT', mirrorEC=False, drawBCEtags=False, drawEnvelope=False, transistorType='NPN', flagPhototransistor=False, drawVCE=False,
-                          drawVCB=False, drawVBE=False, drawICarrow=False, drawIBarrow=False, drawIEarrow=False, VCEname='V_{ce}', VCBname='V_{cb}', VBEname='V_{be}', ICname='i_c', IBname='i_b',
+    def drawTransistorBJT(self, parent, position=[0, 0], angleDeg=0, label='BJT', mirrorEC=False, drawBCEtags=False, drawEnvelope=False,
+                          transistorType='NPN', flagPhototransistor=False, drawVCE=False, drawVCB=False, drawVBE=False, drawICarrow=False,
+                          drawIBarrow=False, drawIEarrow=False, VCEname='V_{ce}', VCBname='V_{cb}', VBEname='V_{be}', ICname='i_c', IBname='i_b',
                           IEname='i_e'):
 
         """ draws BJT transisitor
@@ -59,12 +60,13 @@ class transistor(inkBase.inkscapeMadeEasy):
             self.rotateElement(arrow, position, -30)
             self.moveElement(arrow, [4, 0])
 
-        inkDraw.line.relCoords(elem, [[0, 12]], [position[0] + 17.5, position[1] - 6], lineStyle=inkDraw.lineStyle.setSimpleBlack(lineWidth=2))  # vertical junction line
+        inkDraw.line.relCoords(elem, [[0, 12]], [position[0] + 17.5, position[1] - 6],
+                               lineStyle=inkDraw.lineStyle.setSimpleBlack(lineWidth=2))  # vertical junction line
 
         # build emitter arrow marker
         L_arrow = 2.5
-        markerBJT = inkDraw.marker.createMarker(self, 'BJTArrow', 'M 0,0 l -%f,%f l 0,-%f z' % (L_arrow * 1.2, L_arrow / 2.0, L_arrow), RenameMode=0, strokeColor=colorBlack, fillColor=colorBlack,
-                                                lineWidth=0.6)
+        markerBJT = inkDraw.marker.createMarker(self, 'BJTArrow', 'M 0,0 l -%f,%f l 0,-%f z' % (L_arrow * 1.2, L_arrow / 2.0, L_arrow), RenameMode=0,
+                                                strokeColor=colorBlack, fillColor=colorBlack, lineWidth=0.6)
         lineStyleArrow = inkDraw.lineStyle.set(lineWidth=1, lineColor=colorBlack, markerEnd=markerBJT)
 
         # draw emitter and collector terminals
@@ -74,7 +76,8 @@ class transistor(inkBase.inkscapeMadeEasy):
             inkDraw.line.relCoords(elem, [[0, Yfactor * 17]], [position[0] + 25, position[1] + Yfactor * 8])  # emitter
         else:
             inkDraw.line.relCoords(elem, [[7, -Yfactor * 5], [0, -Yfactor * 17]], [position[0] + 18, position[1] - Yfactor * 3])  # collector
-            inkDraw.line.relCoords(elem, [[-7, -Yfactor * 5]], [position[0] + 25, position[1] + Yfactor * 8], lineStyle=lineStyleArrow)  # emitter arrow
+            inkDraw.line.relCoords(elem, [[-7, -Yfactor * 5]], [position[0] + 25, position[1] + Yfactor * 8],
+                                   lineStyle=lineStyleArrow)  # emitter arrow
             inkDraw.line.relCoords(elem, [[0, Yfactor * 17]], [position[0] + 25, position[1] + Yfactor * 8])  # emitter
 
         if drawEnvelope:
@@ -84,10 +87,12 @@ class transistor(inkBase.inkscapeMadeEasy):
             pos_Ctag = [position[0] + 22.5, position[1] - Yfactor * 12.5]
             pos_Etag = [position[0] + 22.5, position[1] + Yfactor * 12.5]
             if not flagPhototransistor:
-                tB = inkDraw.text.latex(self, group, 'B', position=[position[0] + 10, position[1] - 3], fontSize=self.fontSizeSmall / 1.5, refPoint='cc', preambleFile=self.preambleFile,
-                                        angleDeg=-angleDeg)
-            tC = inkDraw.text.latex(self, group, 'C', position=pos_Ctag, fontSize=self.fontSizeSmall / 1.5, refPoint='cc', preambleFile=self.preambleFile, angleDeg=-angleDeg)
-            tE = inkDraw.text.latex(self, group, 'E', position=pos_Etag, fontSize=self.fontSizeSmall / 1.5, refPoint='cc', preambleFile=self.preambleFile, angleDeg=-angleDeg)
+                tB = inkDraw.text.latex(self, group, 'B', position=[position[0] + 10, position[1] - 3], fontSize=self.fontSizeSmall / 1.5,
+                                        refPoint='cc', preambleFile=self.preambleFile, angleDeg=-angleDeg)
+            tC = inkDraw.text.latex(self, group, 'C', position=pos_Ctag, fontSize=self.fontSizeSmall / 1.5, refPoint='cc',
+                                    preambleFile=self.preambleFile, angleDeg=-angleDeg)
+            tE = inkDraw.text.latex(self, group, 'E', position=pos_Etag, fontSize=self.fontSizeSmall / 1.5, refPoint='cc',
+                                    preambleFile=self.preambleFile, angleDeg=-angleDeg)
 
         if angleDeg != 0:
             self.rotateElement(group, position, angleDeg)
@@ -95,37 +100,41 @@ class transistor(inkBase.inkscapeMadeEasy):
         # draw voltage drops
         if drawVCE:
             pos = [position[0] + 25 + 10, position[1]]
-            self.drawVoltArrowSimple(group, pos, name=VCEname, color=self.voltageColor, angleDeg=90, invertArrows=mirrorEC, size=20.0, invertCurvatureDirection=False, extraAngleText=angleDeg)
+            self.drawVoltArrowSimple(group, pos, name=VCEname, color=self.voltageColor, angleDeg=90, invertArrows=mirrorEC, size=20.0,
+                                     invertCurvatureDirection=False, extraAngleText=angleDeg)
 
         if drawVCB:
             pos = [position[0] + 12, position[1] - Yfactor * 12]
             ang = Yfactor * 45
-            self.drawVoltArrowSimple(group, pos, name=VCBname, color=self.voltageColor, angleDeg=ang, invertArrows=False, size=20.0, invertCurvatureDirection=not mirrorEC, extraAngleText=angleDeg)
+            self.drawVoltArrowSimple(group, pos, name=VCBname, color=self.voltageColor, angleDeg=ang, invertArrows=False, size=20.0,
+                                     invertCurvatureDirection=not mirrorEC, extraAngleText=angleDeg)
 
         if drawVBE:
             pos = [position[0] + 12, position[1] + Yfactor * 12]
             ang = -Yfactor * 45
-            self.drawVoltArrowSimple(group, pos, name=VBEname, color=self.voltageColor, angleDeg=ang, invertArrows=True, size=20.0, invertCurvatureDirection=mirrorEC, extraAngleText=angleDeg)
+            self.drawVoltArrowSimple(group, pos, name=VBEname, color=self.voltageColor, angleDeg=ang, invertArrows=True, size=20.0,
+                                     invertCurvatureDirection=mirrorEC, extraAngleText=angleDeg)
 
         # draw terminal currents
         if drawICarrow:
-            self.drawCurrArrowSimple(group, [position[0] + 30, position[1] - Yfactor * 17.5], name=ICname, color=self.currentColor, angleDeg=90, invertArrows=mirrorEC ^ isNPN, size=7.5,
-                                     invertTextSide=True, extraAngleText=angleDeg)
+            self.drawCurrArrowSimple(group, [position[0] + 30, position[1] - Yfactor * 17.5], name=ICname, color=self.currentColor, angleDeg=90,
+                                     invertArrows=mirrorEC ^ isNPN, size=7.5, invertTextSide=True, extraAngleText=angleDeg)
 
         if drawIBarrow:
-            self.drawCurrArrowSimple(group, [position[0] + 7.5 - 10, position[1] - 5], name=IBname, color=self.currentColor, angleDeg=0, invertArrows=not isNPN, size=7.5, invertTextSide=False,
-                                     extraAngleText=angleDeg)
+            self.drawCurrArrowSimple(group, [position[0] + 7.5 - 10, position[1] - 5], name=IBname, color=self.currentColor, angleDeg=0,
+                                     invertArrows=not isNPN, size=7.5, invertTextSide=False, extraAngleText=angleDeg)
 
         if drawIEarrow:
-            self.drawCurrArrowSimple(group, [position[0] + 30, position[1] + Yfactor * 17.5], name=IEname, color=self.currentColor, angleDeg=90, invertArrows=mirrorEC ^ isNPN, size=7.5,
-                                     invertTextSide=True, extraAngleText=angleDeg)
+            self.drawCurrArrowSimple(group, [position[0] + 30, position[1] + Yfactor * 17.5], name=IEname, color=self.currentColor, angleDeg=90,
+                                     invertArrows=mirrorEC ^ isNPN, size=7.5, invertTextSide=True, extraAngleText=angleDeg)
         return group
 
     # ---------------------------------------------
     # metal-oxide-semiconductor field-effect transistor (N and P channel)
-    def drawTransistorMOSFET(self, parent, position=[0, 0], angleDeg=0, label='MOSFET', mirrorSD=False, drawSGDtags=False, drawEnvelope=False, modeType='MOSFET-E', gateType='P_gate', is4terminal=True,
-                             bodyDiode=False, drawVGS=False, drawVDS=False, drawVDG=False, drawIDarrow=False, drawISarrow=False, drawIGarrow=False, VGSname='V_{GS}', VDSname='V_{SD}',
-                             VDGname='V_{GD}', IDname='i_d', ISname='i_s', IGname='i_g'):
+    def drawTransistorMOSFET(self, parent, position=[0, 0], angleDeg=0, label='MOSFET', mirrorSD=False, drawSGDtags=False, drawEnvelope=False,
+                             modeType='MOSFET-E', gateType='P_gate', is4terminal=True, bodyDiode=False, drawVGS=False, drawVDS=False, drawVDG=False,
+                             drawIDarrow=False, drawISarrow=False, drawIGarrow=False, VGSname='V_{GS}', VDSname='V_{SD}', VDGname='V_{GD}',
+                             IDname='i_d', ISname='i_s', IGname='i_g'):
 
         """ draws a general Field Effect transistor
 
@@ -161,12 +170,12 @@ class transistor(inkBase.inkscapeMadeEasy):
         colorBlack = inkDraw.color.defined('black')
 
         L_arrow = 2.0
-        markerMOS = inkDraw.marker.createMarker(self, 'MOSArrow', 'M -0.3,0 l -%f,%f l 0,-%f z' % (L_arrow * 1.2, L_arrow / 2.0, L_arrow), RenameMode=0, strokeColor=colorBlack, fillColor=colorBlack,
-                                                lineWidth=0.6)
+        markerMOS = inkDraw.marker.createMarker(self, 'MOSArrow', 'M -0.3,0 l -%f,%f l 0,-%f z' % (L_arrow * 1.2, L_arrow / 2.0, L_arrow),
+                                                RenameMode=0, strokeColor=colorBlack, fillColor=colorBlack, lineWidth=0.6)
         lineStyleArrow = inkDraw.lineStyle.set(lineWidth=0.7, lineColor=colorBlack, markerEnd=markerMOS)
         lineStyleFine = inkDraw.lineStyle.set(lineWidth=0.7, lineColor=colorBlack)
 
-        inkDraw.line.relCoords(elem, [[0, 11], [-28,0]], [position[0] + 17, position[1] - 6])  # gate
+        inkDraw.line.relCoords(elem, [[0, 11], [-28, 0]], [position[0] + 17, position[1] - 6])  # gate
 
         inkDraw.line.relCoords(elem, [[0, -19.6]], [position[0] + 24, position[1] - 5.4])  # drain line
         inkDraw.line.relCoords(elem, [[5, 0]], [position[0] + 19, position[1] - 5.25], lineStyle=lineStyleFine)  # drain line
@@ -192,10 +201,12 @@ class transistor(inkBase.inkscapeMadeEasy):
 
             if isNgate:
                 inkDraw.line.relCoords(elem, [[3, 0]], [position[0] + 26.5, position[1] - 1.5], lineStyle=lineStyleFine)  # diode cathode side line
-                inkDraw.line.relCoords(elem, [[3, 0], [-1.5, -3], [-1.5, 3]], [position[0] + 26.5, position[1] + 1.5], lineStyle=lineStyleFine)  # diode
+                inkDraw.line.relCoords(elem, [[3, 0], [-1.5, -3], [-1.5, 3]], [position[0] + 26.5, position[1] + 1.5],
+                                       lineStyle=lineStyleFine)  # diode
             else:
                 inkDraw.line.relCoords(elem, [[3, 0]], [position[0] + 26.5, position[1] + 1.5], lineStyle=lineStyleFine)  # diode cathode side line
-                inkDraw.line.relCoords(elem, [[3, 0], [-1.5, 3], [-1.5, -3]], [position[0] + 26.5, position[1] - 1.5], lineStyle=lineStyleFine)  # diode
+                inkDraw.line.relCoords(elem, [[3, 0], [-1.5, 3], [-1.5, -3]], [position[0] + 26.5, position[1] - 1.5],
+                                       lineStyle=lineStyleFine)  # diode
 
         if mirrorSD:
             self.scaleElement(elem, scaleX=1.0, scaleY=-1.0, center=position)
@@ -229,11 +240,15 @@ class transistor(inkBase.inkscapeMadeEasy):
                 pos_Stag = [position[0] + 26.5, position[1] + Yfactor * 11.5]
                 pos_Btag = [position[0] + 33, position[1] - Yfactor * 3]
 
-            tB = inkDraw.text.latex(self, group, 'G', position=pos_Gtag, fontSize=self.fontSizeSmall / 1.5, refPoint='cc', preambleFile=self.preambleFile, angleDeg=-angleDeg)
-            tC = inkDraw.text.latex(self, group, 'D', position=pos_Dtag, fontSize=self.fontSizeSmall / 1.5, refPoint='cc', preambleFile=self.preambleFile, angleDeg=-angleDeg)
-            tE = inkDraw.text.latex(self, group, 'S', position=pos_Stag, fontSize=self.fontSizeSmall / 1.5, refPoint='cc', preambleFile=self.preambleFile, angleDeg=-angleDeg)
+            tB = inkDraw.text.latex(self, group, 'G', position=pos_Gtag, fontSize=self.fontSizeSmall / 1.5, refPoint='cc',
+                                    preambleFile=self.preambleFile, angleDeg=-angleDeg)
+            tC = inkDraw.text.latex(self, group, 'D', position=pos_Dtag, fontSize=self.fontSizeSmall / 1.5, refPoint='cc',
+                                    preambleFile=self.preambleFile, angleDeg=-angleDeg)
+            tE = inkDraw.text.latex(self, group, 'S', position=pos_Stag, fontSize=self.fontSizeSmall / 1.5, refPoint='cc',
+                                    preambleFile=self.preambleFile, angleDeg=-angleDeg)
             if is4terminal:
-                tB = inkDraw.text.latex(self, group, 'B', position=pos_Btag, fontSize=self.fontSizeSmall / 1.5, refPoint='cc', preambleFile=self.preambleFile, angleDeg=-angleDeg)
+                tB = inkDraw.text.latex(self, group, 'B', position=pos_Btag, fontSize=self.fontSizeSmall / 1.5, refPoint='cc',
+                                        preambleFile=self.preambleFile, angleDeg=-angleDeg)
 
         if angleDeg != 0:
             self.rotateElement(group, position, angleDeg)
@@ -241,38 +256,44 @@ class transistor(inkBase.inkscapeMadeEasy):
         # draw voltage drops
         if drawVDS:
             pos = [position[0] + 25 + 10, position[1]]
-            self.drawVoltArrowSimple(group, pos, name=VDSname, color=self.voltageColor, angleDeg=90, invertArrows=mirrorSD, size=20.0, invertCurvatureDirection=False, extraAngleText=angleDeg)
+            self.drawVoltArrowSimple(group, pos, name=VDSname, color=self.voltageColor, angleDeg=90, invertArrows=mirrorSD, size=20.0,
+                                     invertCurvatureDirection=False, extraAngleText=angleDeg)
 
         if drawVGS:
             pos = [position[0] + 15, position[1] + Yfactor * 14]
             ang = -Yfactor * 19
-            self.drawVoltArrowSimple(group, pos, name=VGSname, color=self.voltageColor, angleDeg=ang, invertArrows=True, size=10.0, invertCurvatureDirection=mirrorSD, extraAngleText=angleDeg)
+            self.drawVoltArrowSimple(group, pos, name=VGSname, color=self.voltageColor, angleDeg=ang, invertArrows=True, size=10.0,
+                                     invertCurvatureDirection=mirrorSD, extraAngleText=angleDeg)
 
         if drawVDG:
             pos = [position[0] + 10, position[1] - Yfactor * 8]
             ang = Yfactor * 45
-            self.drawVoltArrowSimple(group, pos, name=VDGname, color=self.voltageColor, angleDeg=ang, invertArrows=False, size=20.0, invertCurvatureDirection=not mirrorSD, extraAngleText=angleDeg)
+            self.drawVoltArrowSimple(group, pos, name=VDGname, color=self.voltageColor, angleDeg=ang, invertArrows=False, size=20.0,
+                                     invertCurvatureDirection=not mirrorSD, extraAngleText=angleDeg)
 
         # draw terminal currents
         if drawISarrow:
             pos = [position[0] + 29, position[1] + Yfactor * 17.5]
-            self.drawCurrArrowSimple(group, pos, name=ISname, color=self.currentColor, angleDeg=90, invertArrows=not mirrorSD, size=7.5, invertTextSide=True, extraAngleText=angleDeg)
+            self.drawCurrArrowSimple(group, pos, name=ISname, color=self.currentColor, angleDeg=90, invertArrows=not mirrorSD, size=7.5,
+                                     invertTextSide=True, extraAngleText=angleDeg)
 
         if drawIGarrow:
             pos = [position[0] - 5, position[1] + Yfactor * 10]
-            self.drawCurrArrowSimple(group, pos, name=IGname, color=self.currentColor, angleDeg=0, invertArrows=False, size=7.5, invertTextSide=not mirrorSD, extraAngleText=angleDeg)
+            self.drawCurrArrowSimple(group, pos, name=IGname, color=self.currentColor, angleDeg=0, invertArrows=False, size=7.5,
+                                     invertTextSide=not mirrorSD, extraAngleText=angleDeg)
 
         if drawIDarrow:
             pos = [position[0] + 29, position[1] - Yfactor * 17.5]
-            self.drawCurrArrowSimple(group, pos, name=IDname, color=self.currentColor, angleDeg=90, invertArrows=not mirrorSD, size=7.5, invertTextSide=True, extraAngleText=angleDeg)
+            self.drawCurrArrowSimple(group, pos, name=IDname, color=self.currentColor, angleDeg=90, invertArrows=not mirrorSD, size=7.5,
+                                     invertTextSide=True, extraAngleText=angleDeg)
 
         return group
 
     # ---------------------------------------------
     # junction gate field-effect transistor (N and P channel)
-    def drawTransistorJFET(self, parent, position=[0, 0], angleDeg=0, label='JFET', mirrorSD=False, drawSGDtags=False, drawEnvelope=False, gateType='P_gate', moveGate=False, drawVGS=False,
-                           drawVDS=False, drawVDG=False, drawIDarrow=False, drawISarrow=False, drawIGarrow=False, VGSname='V_{GS}', VDSname='V_{SD}', VDGname='V_{GD}', IDname='i_d', ISname='i_s',
-                           IGname='i_g'):
+    def drawTransistorJFET(self, parent, position=[0, 0], angleDeg=0, label='JFET', mirrorSD=False, drawSGDtags=False, drawEnvelope=False,
+                           gateType='P_gate', moveGate=False, drawVGS=False, drawVDS=False, drawVDG=False, drawIDarrow=False, drawISarrow=False,
+                           drawIGarrow=False, VGSname='V_{GS}', VDSname='V_{SD}', VDGname='V_{GD}', IDname='i_d', ISname='i_s', IGname='i_g'):
 
         """ draws a junction gate field-effect transistor JFET
 
@@ -308,14 +329,15 @@ class transistor(inkBase.inkscapeMadeEasy):
 
         R_circle = 10.0
         L_arrow = 2.0
-        markerMOS = inkDraw.marker.createMarker(self, 'MOSArrow', 'M -0.3,0 l -%f,%f l 0,-%f z' % (L_arrow * 1.2, L_arrow / 2.0, L_arrow), RenameMode=0, strokeColor=colorBlack, fillColor=colorBlack,
-                                                lineWidth=0.6)
+        markerMOS = inkDraw.marker.createMarker(self, 'MOSArrow', 'M -0.3,0 l -%f,%f l 0,-%f z' % (L_arrow * 1.2, L_arrow / 2.0, L_arrow),
+                                                RenameMode=0, strokeColor=colorBlack, fillColor=colorBlack, lineWidth=0.6)
         lineStyleArrow = inkDraw.lineStyle.set(lineWidth=1.0, lineColor=colorBlack, markerEnd=markerMOS)
 
         inkDraw.line.relCoords(elem, [[6, 0], [0, 20]], [position[0] + 17, position[1] + 5.0])  # source line
         inkDraw.line.relCoords(elem, [[6, 0], [0, -20]], [position[0] + 17, position[1] - 5.0])  # drain line
 
-        inkDraw.line.relCoords(elem, [[0, 14]], [position[0] + 17, position[1] - 7], lineStyle=inkDraw.lineStyle.setSimpleBlack(lineWidth=2))  # vertical junction line
+        inkDraw.line.relCoords(elem, [[0, 14]], [position[0] + 17, position[1] - 7],
+                               lineStyle=inkDraw.lineStyle.setSimpleBlack(lineWidth=2))  # vertical junction line
 
         if moveGate:
             posG_Y = Yfactor * 5
@@ -341,9 +363,12 @@ class transistor(inkBase.inkscapeMadeEasy):
             pos_Dtag = [position[0] + 25.5, position[1] - Yfactor * 11.5]
             pos_Stag = [position[0] + 25.5, position[1] + Yfactor * 11.5]
 
-            tB = inkDraw.text.latex(self, group, 'G', position=pos_Gtag, fontSize=self.fontSizeSmall / 1.5, refPoint='cc', preambleFile=self.preambleFile, angleDeg=-angleDeg)
-            tC = inkDraw.text.latex(self, group, 'D', position=pos_Dtag, fontSize=self.fontSizeSmall / 1.5, refPoint='cc', preambleFile=self.preambleFile, angleDeg=-angleDeg)
-            tE = inkDraw.text.latex(self, group, 'S', position=pos_Stag, fontSize=self.fontSizeSmall / 1.5, refPoint='cc', preambleFile=self.preambleFile, angleDeg=-angleDeg)
+            tB = inkDraw.text.latex(self, group, 'G', position=pos_Gtag, fontSize=self.fontSizeSmall / 1.5, refPoint='cc',
+                                    preambleFile=self.preambleFile, angleDeg=-angleDeg)
+            tC = inkDraw.text.latex(self, group, 'D', position=pos_Dtag, fontSize=self.fontSizeSmall / 1.5, refPoint='cc',
+                                    preambleFile=self.preambleFile, angleDeg=-angleDeg)
+            tE = inkDraw.text.latex(self, group, 'S', position=pos_Stag, fontSize=self.fontSizeSmall / 1.5, refPoint='cc',
+                                    preambleFile=self.preambleFile, angleDeg=-angleDeg)
 
         if angleDeg != 0:
             self.rotateElement(group, position, angleDeg)
@@ -351,7 +376,8 @@ class transistor(inkBase.inkscapeMadeEasy):
         # draw voltage drops
         if drawVDS:
             pos = [position[0] + 25 + 9, position[1]]
-            self.drawVoltArrowSimple(group, pos, name=VDSname, color=self.voltageColor, angleDeg=90, invertArrows=mirrorSD, size=20.0, invertCurvatureDirection=False, extraAngleText=angleDeg)
+            self.drawVoltArrowSimple(group, pos, name=VDSname, color=self.voltageColor, angleDeg=90, invertArrows=mirrorSD, size=20.0,
+                                     invertCurvatureDirection=False, extraAngleText=angleDeg)
 
         if drawVGS:
             if moveGate:
@@ -362,7 +388,8 @@ class transistor(inkBase.inkscapeMadeEasy):
                 pos = [position[0] + 12, position[1] + Yfactor * 11]
                 ang = -Yfactor * 30
                 L = 15
-            self.drawVoltArrowSimple(group, pos, name=VGSname, color=self.voltageColor, angleDeg=ang, invertArrows=True, size=L, invertCurvatureDirection=mirrorSD, extraAngleText=angleDeg)
+            self.drawVoltArrowSimple(group, pos, name=VGSname, color=self.voltageColor, angleDeg=ang, invertArrows=True, size=L,
+                                     invertCurvatureDirection=mirrorSD, extraAngleText=angleDeg)
 
         if drawVDG:
             if moveGate:
@@ -373,19 +400,23 @@ class transistor(inkBase.inkscapeMadeEasy):
                 pos = [position[0] + 12, position[1] - Yfactor * 11]
                 ang = Yfactor * 30
                 L = 15
-            self.drawVoltArrowSimple(group, pos, name=VDGname, color=self.voltageColor, angleDeg=ang, invertArrows=False, size=L, invertCurvatureDirection=not mirrorSD, extraAngleText=angleDeg)
+            self.drawVoltArrowSimple(group, pos, name=VDGname, color=self.voltageColor, angleDeg=ang, invertArrows=False, size=L,
+                                     invertCurvatureDirection=not mirrorSD, extraAngleText=angleDeg)
 
         # draw terminal currents
         if drawISarrow:
             pos = [position[0] + 28, position[1] + Yfactor * 17.5]
-            self.drawCurrArrowSimple(group, pos, name=ISname, color=self.currentColor, angleDeg=90, invertArrows=mirrorSD ^ isNgate, size=7.5, invertTextSide=True, extraAngleText=angleDeg)
+            self.drawCurrArrowSimple(group, pos, name=ISname, color=self.currentColor, angleDeg=90, invertArrows=mirrorSD ^ isNgate, size=7.5,
+                                     invertTextSide=True, extraAngleText=angleDeg)
 
         if drawIGarrow:
             pos = [position[0] - 5, position[1] + posG_Y + Yfactor * 5]
-            self.drawCurrArrowSimple(group, pos, name=IGname, color=self.currentColor, angleDeg=0, invertArrows=not isNgate, size=7.5, invertTextSide=not mirrorSD, extraAngleText=angleDeg)
+            self.drawCurrArrowSimple(group, pos, name=IGname, color=self.currentColor, angleDeg=0, invertArrows=not isNgate, size=7.5,
+                                     invertTextSide=not mirrorSD, extraAngleText=angleDeg)
 
         if drawIDarrow:
             pos = [position[0] + 28, position[1] - Yfactor * 17.5]
-            self.drawCurrArrowSimple(group, pos, name=IDname, color=self.currentColor, angleDeg=90, invertArrows=mirrorSD ^ isNgate, size=7.5, invertTextSide=True, extraAngleText=angleDeg)
+            self.drawCurrArrowSimple(group, pos, name=IDname, color=self.currentColor, angleDeg=90, invertArrows=mirrorSD ^ isNgate, size=7.5,
+                                     invertTextSide=True, extraAngleText=angleDeg)
 
         return group

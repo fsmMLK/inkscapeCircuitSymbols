@@ -7,9 +7,8 @@ import inkscapeMadeEasy.inkscapeMadeEasy_Draw as inkDraw
 class diode(inkBase.inkscapeMadeEasy):
 
     # ---------------------------------------------
-    def drawDiode(self, parent, position=[0, 0], value='D', label='diode', angleDeg=0, flagVolt=True, voltName='v',
-                  flagCurr=True, currName='i', invertArrows=False, flagType='regular', mirror=False,
-                  convention='passive'):
+    def drawDiode(self, parent, position=[0, 0], value='D', label='diode', angleDeg=0, flagVolt=True, voltName='v', flagCurr=True, currName='i',
+                  invertArrows=False, flagType='regular', mirror=False, convention='passive'):
         """ draws a diode
 
         parent: parent object
@@ -43,12 +42,10 @@ class diode(inkBase.inkscapeMadeEasy):
                 inkDraw.line.relCoords(elem, [[0, 12]], [position[0] + 19, position[1] - 6])
 
             if flagType == 'zener':
-                inkDraw.line.relCoords(elem, [[-2, -2], [0, -10], [-2, -2]],
-                                       [position[0] + 19 + 2, position[1] + 5 + 2])
+                inkDraw.line.relCoords(elem, [[-2, -2], [0, -10], [-2, -2]], [position[0] + 19 + 2, position[1] + 5 + 2])
 
             if flagType == 'schottky':
-                inkDraw.line.relCoords(elem, [[0, 2], [3, 0], [0, -12], [3, 0], [0, 2]],
-                                       [position[0] + 19 - 3, position[1] + 6 - 2])
+                inkDraw.line.relCoords(elem, [[0, 2], [3, 0], [0, -12], [3, 0], [0, 2]], [position[0] + 19 - 3, position[1] + 6 - 2])
 
             if flagType == 'tunnel':
                 if mirror:
@@ -75,12 +72,10 @@ class diode(inkBase.inkscapeMadeEasy):
                 inkDraw.line.relCoords(elem, [[0, 12]], [position[0] + 31, position[1] - 6])
 
             if flagType == 'zener':
-                inkDraw.line.relCoords(elem, [[-2, -2], [0, -10], [-2, -2]],
-                                       [position[0] + 31 + 2, position[1] + 5 + 2])
+                inkDraw.line.relCoords(elem, [[-2, -2], [0, -10], [-2, -2]], [position[0] + 31 + 2, position[1] + 5 + 2])
 
             if flagType == 'schottky':
-                inkDraw.line.relCoords(elem, [[0, 2], [3, 0], [0, -12], [3, 0], [0, 2]],
-                                       [position[0] + 31 - 3, position[1] + 6 - 2])
+                inkDraw.line.relCoords(elem, [[0, 2], [3, 0], [0, -12], [3, 0], [0, 2]], [position[0] + 31 - 3, position[1] + 6 - 2])
 
             if flagType == 'tunnel':
                 inkDraw.line.relCoords(elem, [[3, 0], [0, -12], [-3, 0]], [position[0] + 31 - 3, position[1] + 6])
@@ -101,25 +96,22 @@ class diode(inkBase.inkscapeMadeEasy):
             if inkDraw.useLatex:
                 value = '$' + value + '$'
 
-            inkDraw.text.latex(self, group, value, pos_text, fontSize=self.fontSize, refPoint='bc',
-                               preambleFile=self.preambleFile)
+            inkDraw.text.latex(self, group, value, pos_text, fontSize=self.fontSize, refPoint='bc', preambleFile=self.preambleFile)
 
         if angleDeg != 0:
             self.rotateElement(group, position, angleDeg)
 
         if flagVolt:
             if convention == 'passive':
-                self.drawVoltArrow(group, [position[0] + 25, position[1] + 7], name=voltName, color=self.voltageColor,
-                                   angleDeg=angleDeg, invertArrows=not (invertArrows != mirror))
+                self.drawVoltArrow(group, [position[0] + 25, position[1] + 7], name=voltName, color=self.voltageColor, angleDeg=angleDeg,
+                                   invertArrows=not (invertArrows != mirror))
             if convention == 'active':
-                self.drawVoltArrow(group, [position[0] + 25, position[1] + 7], name=voltName, color=self.voltageColor,
-                                   angleDeg=angleDeg, invertArrows= (invertArrows != mirror))
-
-
+                self.drawVoltArrow(group, [position[0] + 25, position[1] + 7], name=voltName, color=self.voltageColor, angleDeg=angleDeg,
+                                   invertArrows=(invertArrows != mirror))
 
         if flagCurr:
-            self.drawCurrArrow(group, [position[0] + 40, position[1] - 5], name=currName, color=self.currentColor,
-                               angleDeg=angleDeg, invertArrows=(invertArrows != mirror))
+            self.drawCurrArrow(group, [position[0] + 40, position[1] - 5], name=currName, color=self.currentColor, angleDeg=angleDeg,
+                               invertArrows=(invertArrows != mirror))
 
         if flagType == 'LED':
             arrow = self.createGroup(elem)

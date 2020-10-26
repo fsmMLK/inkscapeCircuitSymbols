@@ -48,11 +48,11 @@
                     </param>
                     <hbox>
                         <param name="bipoleRLCVolt" type="bool" gui-text="Add voltage indication¹:">false</param>
-                        <param name="bipoleRLCVoltName" type="string" gui-text="">v</param>
+                        <param name="bipoleRLCVoltName" type="string" gui-text=" ">v</param>
                     </hbox>
                     <hbox>
                         <param name="bipoleRLCCurr" type="bool" gui-text="Add current indication¹:">false</param>
-                        <param name="bipoleRLCCurrName" type="string" gui-text="">i</param>
+                        <param name="bipoleRLCCurrName" type="string" gui-text=" ">i</param>
                     </hbox>
                     <param name="bipoleRLCVoltCurrInvert" type="bool" gui-text="Invert V/I directions">false</param>
                 </vbox>
@@ -139,11 +139,11 @@
                     </param>
                     <hbox>
                         <param name="sourceVolt" type="bool" gui-text="Add voltage indication¹:">false</param>
-                        <param name="sourceVoltName" type="string" gui-text="" gui-description="OBS: custom V name for current sources only.">v</param>
+                        <param name="sourceVoltName" type="string" gui-text=" " gui-description="OBS: custom V name for current sources only.">v</param>
                     </hbox>
                     <hbox>
                         <param name="sourceCurr" type="bool" gui-text="Add current indication¹:">false</param>
-                        <param name="sourceCurrName" type="string" gui-text="" gui-description="OBS: custom I name for voltage sources only.">i</param>
+                        <param name="sourceCurrName" type="string" gui-text=" " gui-description="OBS: custom I name for voltage sources only.">i</param>
                     </hbox>
                     <param name="sourceVoltCurrInvert" type="bool" gui-text="Invert V/I directions">false</param>
                 </vbox>
@@ -192,8 +192,8 @@
                 <vbox>
                     <label appearance="header">Commutating information</label>
                     <hbox>
-                        <param name="switchCommuteArrow" type="bool" gui-text="Commutating arrow¹">false</param>
-                        <param name="switchCommuteText" type="string" gui-text="">t=1</param>
+                        <param name="switchCommuteArrow" type="bool" gui-text="Commutating arrow¹:">false</param>
+                        <param name="switchCommuteText" type="string" gui-text=" ">t=1</param>
                     </hbox>
                     <param name="switchCommuteArrowOrientation" type="optiongroup" appearance="combo" gui-text="Direction (only if nT>1):">
                         <option value="cw">Clockwise</option>
@@ -206,11 +206,11 @@
                     </param>
                     <hbox>
                         <param name="switchVolt" type="bool" gui-text="Add voltage indication¹:">false</param>
-                        <param name="switchVoltName" type="string" gui-text="">v</param>
+                        <param name="switchVoltName" type="string" gui-text=" ">v</param>
                     </hbox>
                     <hbox>
                         <param name="switchCurr" type="bool" gui-text="Add current indication¹:">false</param>
-                        <param name="switchCurrName" type="string" gui-text="">i</param>
+                        <param name="switchCurrName" type="string" gui-text=" ">i</param>
                     </hbox>
                     <param name="switchVoltCurrInvert" type="bool" gui-text="Invert V/I directions">false</param>
                 </vbox>
@@ -230,7 +230,6 @@
                                 <option value="+vcc">+Vcc</option>
                                 <option value="-vcc">-Vcc</option>
                                 <option value="+5V">+5V</option>
-                                <option value="-5V">-5V</option>
                                 <option value="-5V">-5V</option>
                                 <option value="+15V">+15V</option>
                                 <option value="-15V">-15V</option>
@@ -291,14 +290,14 @@
                             <option value="#FF0000">default (red)</option>
                             <option value="picker">use color picker --></option>
                         </param>
-                        <param name="colorPickerCurrent" type="color" appearance="colorbutton" gui-text=""/>
+                        <param name="colorPickerCurrent" type="color" appearance="colorbutton" gui-text=" "/>
                     </hbox>
                     <hbox>
                         <param name="voltColor" type="optiongroup" appearance="combo" gui-text="Voltage indication color:">
                             <option value="#217B21">default (green)</option>
                             <option value="picker">use color picker --></option>
                         </param>
-                        <param name="colorPickerVolt" type="color" appearance="colorbutton" gui-text=""/>
+                        <param name="colorPickerVolt" type="color" appearance="colorbutton" gui-text=" "/>
                     </hbox>
                     <spacer/>
                     <label>² Multipliers: M, k, m, u, n, p</label>

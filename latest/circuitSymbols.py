@@ -202,9 +202,7 @@ class CircuitSymbols(RLC, source, transistor, signal, arrow, ampOp, diode, switc
         # latex related preamble
         self.preambleFile = os.getcwd() + '/' + 'circuitSymbolsPreamble.tex'
 
-        # root_layer = self.current_layer
         root_layer = self.document.getroot()
-        # root_layer = self.getcurrentLayer()
 
         # text size and font style
         self.fontSize = 5

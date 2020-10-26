@@ -9,9 +9,8 @@ import inkscapeMadeEasy.inkscapeMadeEasy_Draw as inkDraw
 class arrow(inkBase.inkscapeMadeEasy):
 
     # ---------------------------------------------
-    def drawVoltArrowSimple(self, parent, position, label='arrowV', name='v', color=inkDraw.color.defined('black'),
-                            angleDeg=0, invertArrows=False, size=20.0, invertCurvatureDirection=False,
-                            extraAngleText=0.0):
+    def drawVoltArrowSimple(self, parent, position, label='arrowV', name='v', color=inkDraw.color.defined('black'), angleDeg=0, invertArrows=False,
+                            size=20.0, invertCurvatureDirection=False, extraAngleText=0.0):
 
         """ draws a voltage drop arrow
 
@@ -28,18 +27,16 @@ class arrow(inkBase.inkscapeMadeEasy):
         """
 
         if invertCurvatureDirection:
-            arrow_elem = self.drawVoltArrow(parent, position, label, name, color, angleDeg + 180, invertArrows, size,
-                                            extraAngleText)
+            arrow_elem = self.drawVoltArrow(parent, position, label, name, color, angleDeg + 180, invertArrows, size, extraAngleText)
             self.rotateElement(arrow_elem, position, angleDeg + 180)
         else:
-            arrow_elem = self.drawVoltArrow(parent, position, label, name, color, angleDeg, not invertArrows, size,
-                                            extraAngleText)
+            arrow_elem = self.drawVoltArrow(parent, position, label, name, color, angleDeg, not invertArrows, size, extraAngleText)
             self.rotateElement(arrow_elem, position, angleDeg)
 
     # ---------------------------------------------
 
-    def drawVoltArrow(self, parent, position, label='name', name='v', color=inkDraw.color.defined('black'), angleDeg=0,
-                      invertArrows=False, size=20.0, extraAngleText=0.0):
+    def drawVoltArrow(self, parent, position, label='name', name='v', color=inkDraw.color.defined('black'), angleDeg=0, invertArrows=False, size=20.0,
+                      extraAngleText=0.0):
         """ draws a voltage drop arrow
 
         parent: parent object
@@ -58,8 +55,7 @@ class arrow(inkBase.inkscapeMadeEasy):
 
         renameMode = 0  # 0: do not modify  1: overwrite  2:rename
         # make linestyle
-        [arrowStartVolt, arrowEndVolt] = inkDraw.marker.createArrow1Marker(self, 'arrowVoltage', RenameMode=renameMode,
-                                                                           scale=0.25, strokeColor=color,
+        [arrowStartVolt, arrowEndVolt] = inkDraw.marker.createArrow1Marker(self, 'arrowVoltage', RenameMode=renameMode, scale=0.25, strokeColor=color,
                                                                            fillColor=color)
 
         if invertArrows:
@@ -114,15 +110,15 @@ class arrow(inkBase.inkscapeMadeEasy):
                 dist = 4.0
             else:
                 dist = 3.0
-            inkDraw.text.latex(self, group, name, [position[0], position[1] + posY + dist], fontSize=self.fontSize,
-                               refPoint=justif, textColor=color, angleDeg=-theta, preambleFile=self.preambleFile)
+            inkDraw.text.latex(self, group, name, [position[0], position[1] + posY + dist], fontSize=self.fontSize, refPoint=justif, textColor=color,
+                               angleDeg=-theta, preambleFile=self.preambleFile)
 
         return group
 
     # ---------------------------------------------
 
-    def drawCurrArrowSimple(self, parent, position, label='arrowI', name='', color=inkDraw.color.defined('black'),
-                            angleDeg=0, invertArrows=False, size=20.0, invertTextSide=False, extraAngleText=0.0):
+    def drawCurrArrowSimple(self, parent, position, label='arrowI', name='', color=inkDraw.color.defined('black'), angleDeg=0, invertArrows=False,
+                            size=20.0, invertTextSide=False, extraAngleText=0.0):
 
         """ draws a current arrow
 
@@ -140,17 +136,17 @@ class arrow(inkBase.inkscapeMadeEasy):
 
         # control signal
         if invertTextSide:
-            temp1 = self.drawCurrArrow(parent, position, label, name, color=self.currentColor, angleDeg=angleDeg + 180,
-                                       invertArrows=invertArrows, size=size, extraAngleText=extraAngleText)
+            temp1 = self.drawCurrArrow(parent, position, label, name, color=self.currentColor, angleDeg=angleDeg + 180, invertArrows=invertArrows,
+                                       size=size, extraAngleText=extraAngleText)
             self.rotateElement(temp1, position, angleDeg + 180)
         else:
-            temp1 = self.drawCurrArrow(parent, position, label, name, color=self.currentColor, angleDeg=angleDeg,
-                                       invertArrows=not invertArrows, size=size, extraAngleText=extraAngleText)
+            temp1 = self.drawCurrArrow(parent, position, label, name, color=self.currentColor, angleDeg=angleDeg, invertArrows=not invertArrows,
+                                       size=size, extraAngleText=extraAngleText)
             self.rotateElement(temp1, position, angleDeg)
 
     # ---------------------------------------------
-    def drawCurrArrow(self, parent, position, label='name', name='i', color=inkDraw.color.defined('black'), angleDeg=0,
-                      invertArrows=False, size=10.0, extraAngleText=0.0):
+    def drawCurrArrow(self, parent, position, label='name', name='i', color=inkDraw.color.defined('black'), angleDeg=0, invertArrows=False, size=10.0,
+                      extraAngleText=0.0):
         """ draws a current arrow
 
         parent: parent object
@@ -168,17 +164,14 @@ class arrow(inkBase.inkscapeMadeEasy):
         renameMode = 0  # 0: do not modify  1: overwrite  2:rename
 
         # make linestyle
-        [arrowStartCurr, arrowEndCurr] = inkDraw.marker.createArrow1Marker(self, 'arrowCurrent', RenameMode=renameMode,
-                                                                           scale=0.25, strokeColor=color,
+        [arrowStartCurr, arrowEndCurr] = inkDraw.marker.createArrow1Marker(self, 'arrowCurrent', RenameMode=renameMode, scale=0.25, strokeColor=color,
                                                                            fillColor=color)
         lineStyle = inkDraw.lineStyle.set(lineColor=color, markerEnd=arrowEndCurr)
 
         if invertArrows:
-            inkDraw.line.relCoords(group, [[10 * scale, 0]], [position[0] - 5 * scale, position[1]], label='none',
-                                   lineStyle=lineStyle)
+            inkDraw.line.relCoords(group, [[10 * scale, 0]], [position[0] - 5 * scale, position[1]], label='none', lineStyle=lineStyle)
         else:
-            inkDraw.line.relCoords(group, [[-10 * scale, 0]], [position[0] + 5 * scale, position[1]], label='none',
-                                   lineStyle=lineStyle)
+            inkDraw.line.relCoords(group, [[-10 * scale, 0]], [position[0] + 5 * scale, position[1]], label='none', lineStyle=lineStyle)
 
         # get appropriate refPoint based on the angle
         theta = angleDeg + extraAngleText
@@ -213,8 +206,7 @@ class arrow(inkBase.inkscapeMadeEasy):
         if inkDraw.useLatex:
             name = '$' + name + '$'
 
-        inkDraw.text.latex(self, group, name, [position[0], position[1] - self.textOffset * 0.8],
-                           fontSize=self.fontSize, refPoint=justif, textColor=color, angleDeg=-theta,
-                           preambleFile=self.preambleFile)
+        inkDraw.text.latex(self, group, name, [position[0], position[1] - self.textOffset * 0.8], fontSize=self.fontSize, refPoint=justif,
+                           textColor=color, angleDeg=-theta, preambleFile=self.preambleFile)
 
         return group

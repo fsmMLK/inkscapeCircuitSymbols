@@ -7,8 +7,8 @@ import inkscapeMadeEasy.inkscapeMadeEasy_Draw as inkDraw
 class source(inkBase.inkscapeMadeEasy):
 
     # ---------------------------------------------
-    def drawSourceV(self, parent, position=[0, 0], value='v(t)', label='Source', angleDeg=0, flagVolt=True,
-                    flagCurr=True, currName='i', invertArrows=False, mirror=False, convention='active'):
+    def drawSourceV(self, parent, position=[0, 0], value='v(t)', label='Source', angleDeg=0, flagVolt=True, flagCurr=True, currName='i',
+                    invertArrows=False, mirror=False, convention='active'):
         """ draws a independend general voltage source
 
         parent: parent object
@@ -45,8 +45,7 @@ class source(inkBase.inkscapeMadeEasy):
         if inkDraw.useLatex:
             value = '$' + value + '$'
 
-        inkDraw.text.latex(self, group, value, pos_text, fontSize=self.fontSize, refPoint='bc',
-                           preambleFile=self.preambleFile)
+        inkDraw.text.latex(self, group, value, pos_text, fontSize=self.fontSize, refPoint='bc', preambleFile=self.preambleFile)
 
         if angleDeg != 0:
             self.rotateElement(group, position, angleDeg)
@@ -65,22 +64,22 @@ class source(inkBase.inkscapeMadeEasy):
                         value = value[1:]
                     else:
                         value = '-' + value
-            self.drawVoltArrow(group, [position[0] + 25, position[1] + 8], name=value, color=self.voltageColor,
-                               angleDeg=angleDeg, invertArrows=inv_volt)
+            self.drawVoltArrow(group, [position[0] + 25, position[1] + 8], name=value, color=self.voltageColor, angleDeg=angleDeg,
+                               invertArrows=inv_volt)
 
         if flagCurr:
             if convention == 'active':
-                self.drawCurrArrow(group, [position[0] + 40, position[1] - 5], name=currName, color=self.currentColor,
-                                   angleDeg=angleDeg, invertArrows=inv_volt)
+                self.drawCurrArrow(group, [position[0] + 40, position[1] - 5], name=currName, color=self.currentColor, angleDeg=angleDeg,
+                                   invertArrows=inv_volt)
             if convention == 'passive':
-                self.drawCurrArrow(group, [position[0] + 40, position[1] - 5], name=currName, color=self.currentColor,
-                                   angleDeg=angleDeg, invertArrows=not inv_volt)
+                self.drawCurrArrow(group, [position[0] + 40, position[1] - 5], name=currName, color=self.currentColor, angleDeg=angleDeg,
+                                   invertArrows=not inv_volt)
 
         return group
 
     # ---------------------------------------------
-    def drawSourceVSinusoidal(self, parent, position=[0, 0], value='v(t)', label='Source', angleDeg=0, flagVolt=True,
-                              flagCurr=True, currName='i', invertArrows=False, mirror=False, convention='active'):
+    def drawSourceVSinusoidal(self, parent, position=[0, 0], value='v(t)', label='Source', angleDeg=0, flagVolt=True, flagCurr=True, currName='i',
+                              invertArrows=False, mirror=False, convention='active'):
         """ draws a independend sinusoidal voltage source
 
         parent: parent object
@@ -106,10 +105,10 @@ class source(inkBase.inkscapeMadeEasy):
         sine = self.createGroup(elem)
         lineStyleSign = inkDraw.lineStyle.setSimpleBlack(lineWidth=0.6)
 
-        inkDraw.arc.startEndRadius(sine, [position[0] + 20, position[1]], [position[0] + 25, position[1]], 2.6, [0, 0],
-                                   lineStyle=lineStyleSign, flagRightOf=True, largeArc=False)
-        inkDraw.arc.startEndRadius(sine, [position[0] + 30, position[1]], [position[0] + 25, position[1]], 2.6, [0, 0],
-                                   lineStyle=lineStyleSign, flagRightOf=True, largeArc=False)
+        inkDraw.arc.startEndRadius(sine, [position[0] + 20, position[1]], [position[0] + 25, position[1]], 2.6, [0, 0], lineStyle=lineStyleSign,
+                                   flagRightOf=True, largeArc=False)
+        inkDraw.arc.startEndRadius(sine, [position[0] + 30, position[1]], [position[0] + 25, position[1]], 2.6, [0, 0], lineStyle=lineStyleSign,
+                                   flagRightOf=True, largeArc=False)
         self.rotateElement(sine, [position[0] + 25, position[1]], -angleDeg)
 
         if mirror:
@@ -125,8 +124,7 @@ class source(inkBase.inkscapeMadeEasy):
         if inkDraw.useLatex:
             value = '$' + value + '$'
 
-        inkDraw.text.latex(self, group, value, pos_text, fontSize=self.fontSize, refPoint='bc',
-                           preambleFile=self.preambleFile)
+        inkDraw.text.latex(self, group, value, pos_text, fontSize=self.fontSize, refPoint='bc', preambleFile=self.preambleFile)
 
         if angleDeg != 0:
             self.rotateElement(group, position, angleDeg)
@@ -145,22 +143,22 @@ class source(inkBase.inkscapeMadeEasy):
                         value = value[1:]
                     else:
                         value = '-' + value
-            self.drawVoltArrow(group, [position[0] + 25, position[1] + 8], name=value, color=self.voltageColor,
-                               angleDeg=angleDeg, invertArrows=inv_volt)
+            self.drawVoltArrow(group, [position[0] + 25, position[1] + 8], name=value, color=self.voltageColor, angleDeg=angleDeg,
+                               invertArrows=inv_volt)
 
         if flagCurr:
             if convention == 'active':
-                self.drawCurrArrow(group, [position[0] + 40, position[1] - 5], name=currName, color=self.currentColor,
-                                   angleDeg=angleDeg, invertArrows=inv_volt)
+                self.drawCurrArrow(group, [position[0] + 40, position[1] - 5], name=currName, color=self.currentColor, angleDeg=angleDeg,
+                                   invertArrows=inv_volt)
             if convention == 'passive':
-                self.drawCurrArrow(group, [position[0] + 40, position[1] - 5], name=currName, color=self.currentColor,
-                                   angleDeg=angleDeg, invertArrows=not inv_volt)
+                self.drawCurrArrow(group, [position[0] + 40, position[1] - 5], name=currName, color=self.currentColor, angleDeg=angleDeg,
+                                   invertArrows=not inv_volt)
 
         return group
 
     # ---------------------------------------------
-    def drawSourceVDC(self, parent, position=[0, 0], value='V', label='Source', angleDeg=0, flagVolt=True,
-                      flagCurr=True, currName='i', invertArrows=False, mirror=False, convention='active'):
+    def drawSourceVDC(self, parent, position=[0, 0], value='V', label='Source', angleDeg=0, flagVolt=True, flagCurr=True, currName='i',
+                      invertArrows=False, mirror=False, convention='active'):
         """ draws a DC voltage source
 
         parent: parent object
@@ -200,8 +198,7 @@ class source(inkBase.inkscapeMadeEasy):
         if inkDraw.useLatex:
             value = '$' + value + '$'
 
-        inkDraw.text.latex(self, group, value, pos_text, fontSize=self.fontSize, refPoint='bc',
-                           preambleFile=self.preambleFile)
+        inkDraw.text.latex(self, group, value, pos_text, fontSize=self.fontSize, refPoint='bc', preambleFile=self.preambleFile)
 
         if angleDeg != 0:
             self.rotateElement(group, position, angleDeg)
@@ -220,23 +217,23 @@ class source(inkBase.inkscapeMadeEasy):
                         value = value[1:]
                     else:
                         value = '-' + value
-            self.drawVoltArrow(group, [position[0] + 25, position[1] + 8], name=value, color=self.voltageColor,
-                               angleDeg=angleDeg, invertArrows=inv_volt)
+            self.drawVoltArrow(group, [position[0] + 25, position[1] + 8], name=value, color=self.voltageColor, angleDeg=angleDeg,
+                               invertArrows=inv_volt)
 
         if flagCurr:
             if convention == 'active':
-                self.drawCurrArrow(group, [position[0] + 40, position[1] - 5], name=currName, color=self.currentColor,
-                                   angleDeg=angleDeg, invertArrows=inv_volt)
+                self.drawCurrArrow(group, [position[0] + 40, position[1] - 5], name=currName, color=self.currentColor, angleDeg=angleDeg,
+                                   invertArrows=inv_volt)
             if convention == 'passive':
-                self.drawCurrArrow(group, [position[0] + 40, position[1] - 5], name=currName, color=self.currentColor,
-                                   angleDeg=angleDeg, invertArrows=not inv_volt)
+                self.drawCurrArrow(group, [position[0] + 40, position[1] - 5], name=currName, color=self.currentColor, angleDeg=angleDeg,
+                                   invertArrows=not inv_volt)
 
         return group
 
         # ---------------------------------------------
 
-    def drawSourceVDCbattery(self, parent, position=[0, 0], value='V', label='Source', angleDeg=0, flagVolt=True,
-                             flagCurr=True, currName='i', invertArrows=False, mirror=False, convention='active'):
+    def drawSourceVDCbattery(self, parent, position=[0, 0], value='V', label='Source', angleDeg=0, flagVolt=True, flagCurr=True, currName='i',
+                             invertArrows=False, mirror=False, convention='active'):
         """ draws a DC battery  source
 
         parent: parent object
@@ -285,8 +282,7 @@ class source(inkBase.inkscapeMadeEasy):
         if inkDraw.useLatex:
             value = '$' + value + '$'
 
-        inkDraw.text.latex(self, group, value, pos_text, fontSize=self.fontSize, refPoint='bc',
-                           preambleFile=self.preambleFile)
+        inkDraw.text.latex(self, group, value, pos_text, fontSize=self.fontSize, refPoint='bc', preambleFile=self.preambleFile)
 
         if angleDeg != 0:
             self.rotateElement(group, position, angleDeg)
@@ -305,22 +301,22 @@ class source(inkBase.inkscapeMadeEasy):
                         value = value[1:]
                     else:
                         value = '-' + value
-            self.drawVoltArrow(group, [position[0] + 25, position[1] + 8], name=value, color=self.voltageColor,
-                               angleDeg=angleDeg, invertArrows=inv_volt)
+            self.drawVoltArrow(group, [position[0] + 25, position[1] + 8], name=value, color=self.voltageColor, angleDeg=angleDeg,
+                               invertArrows=inv_volt)
 
         if flagCurr:
             if convention == 'active':
-                self.drawCurrArrow(group, [position[0] + 40, position[1] - 5], name=currName, color=self.currentColor,
-                                   angleDeg=angleDeg, invertArrows=inv_volt)
+                self.drawCurrArrow(group, [position[0] + 40, position[1] - 5], name=currName, color=self.currentColor, angleDeg=angleDeg,
+                                   invertArrows=inv_volt)
             if convention == 'passive':
-                self.drawCurrArrow(group, [position[0] + 40, position[1] - 5], name=currName, color=self.currentColor,
-                                   angleDeg=angleDeg, invertArrows=not inv_volt)
+                self.drawCurrArrow(group, [position[0] + 40, position[1] - 5], name=currName, color=self.currentColor, angleDeg=angleDeg,
+                                   invertArrows=not inv_volt)
 
         return group
 
     # ---------------------------------------------
-    def drawSourceI(self, parent, position=[0, 0], value='i(t)', label='Source', angleDeg=0, flagVolt=True,
-                    flagCurr=True, voltName='v', invertArrows=False, mirror=False, convention='active'):
+    def drawSourceI(self, parent, position=[0, 0], value='i(t)', label='Source', angleDeg=0, flagVolt=True, flagCurr=True, voltName='v',
+                    invertArrows=False, mirror=False, convention='active'):
         """ draws a independend general current source
 
         parent: parent object
@@ -343,22 +339,20 @@ class source(inkBase.inkscapeMadeEasy):
         inkDraw.circle.centerRadius(elem, [25, 0], 7.0, offset=position, label='circle')
 
         # arrow
-        lineStyleSign = inkDraw.lineStyle.set(lineWidth=0.7, lineColor=inkDraw.color.defined('black'),
-                                              fillColor=inkDraw.color.defined('black'))
+        lineStyleSign = inkDraw.lineStyle.set(lineWidth=0.7, lineColor=inkDraw.color.defined('black'), fillColor=inkDraw.color.defined('black'))
         if mirror:
-            inkDraw.line.relCoords(elem, [[-5, 0], [0, 1.2], [-3, -1.2], [3, -1.2], [0, 1.2]],
-                                   [position[0] + 29, position[1]], lineStyle=lineStyleSign)
+            inkDraw.line.relCoords(elem, [[-5, 0], [0, 1.2], [-3, -1.2], [3, -1.2], [0, 1.2]], [position[0] + 29, position[1]],
+                                   lineStyle=lineStyleSign)
         else:
-            inkDraw.line.relCoords(elem, [[5, 0], [0, 1.2], [3, -1.2], [-3, -1.2], [0, 1.2]],
-                                   [position[0] + 21, position[1]], lineStyle=lineStyleSign)
+            inkDraw.line.relCoords(elem, [[5, 0], [0, 1.2], [3, -1.2], [-3, -1.2], [0, 1.2]], [position[0] + 21, position[1]],
+                                   lineStyle=lineStyleSign)
 
         pos_text = [position[0] + 25, position[1] - 8 - self.textOffset]
 
         if inkDraw.useLatex:
             value = '$' + value + '$'
 
-        inkDraw.text.latex(self, group, value, pos_text, fontSize=self.fontSize, refPoint='bc',
-                           preambleFile=self.preambleFile)
+        inkDraw.text.latex(self, group, value, pos_text, fontSize=self.fontSize, refPoint='bc', preambleFile=self.preambleFile)
 
         if angleDeg != 0:
             self.rotateElement(group, position, angleDeg)
@@ -367,11 +361,11 @@ class source(inkBase.inkscapeMadeEasy):
 
         if flagVolt:
             if convention == 'active':
-                self.drawVoltArrow(group, [position[0] + 25, position[1] + 8], name=voltName, color=self.voltageColor,
-                                   angleDeg=angleDeg, invertArrows=inv_curr)
+                self.drawVoltArrow(group, [position[0] + 25, position[1] + 8], name=voltName, color=self.voltageColor, angleDeg=angleDeg,
+                                   invertArrows=inv_curr)
             if convention == 'passive':
-                self.drawVoltArrow(group, [position[0] + 25, position[1] + 8], name=voltName, color=self.voltageColor,
-                                   angleDeg=angleDeg, invertArrows=not inv_curr)
+                self.drawVoltArrow(group, [position[0] + 25, position[1] + 8], name=voltName, color=self.voltageColor, angleDeg=angleDeg,
+                                   invertArrows=not inv_curr)
 
         if flagCurr:
             if invertArrows:
@@ -386,15 +380,14 @@ class source(inkBase.inkscapeMadeEasy):
                     else:
                         value = '-' + value
 
-            self.drawCurrArrow(group, [position[0] + 40, position[1] - 5], name=value, color=self.currentColor,
-                               angleDeg=angleDeg, invertArrows=inv_curr)
+            self.drawCurrArrow(group, [position[0] + 40, position[1] - 5], name=value, color=self.currentColor, angleDeg=angleDeg,
+                               invertArrows=inv_curr)
 
         return group
 
     # ---------------------------------------------
-    def drawControledSourceV(self, parent, position=[0, 0], controlType='volt', gain='k', controlName='v_c',
-                             label='Source', angleDeg=0, flagVolt=True, flagCurr=True, currName='i', invertArrows=False,
-                             mirror=False, convention='active', drawControl=False):
+    def drawControledSourceV(self, parent, position=[0, 0], controlType='volt', gain='k', controlName='v_c', label='Source', angleDeg=0,
+                             flagVolt=True, flagCurr=True, currName='i', invertArrows=False, mirror=False, convention='active', drawControl=False):
         """ draws a controlled general voltage source
 
         parent: parent object
@@ -437,8 +430,7 @@ class source(inkBase.inkscapeMadeEasy):
         if inkDraw.useLatex:
             value = '$' + value + '$'
 
-        inkDraw.text.latex(self, group, value, pos_text, fontSize=self.fontSize, refPoint='bc',
-                           preambleFile=self.preambleFile)
+        inkDraw.text.latex(self, group, value, pos_text, fontSize=self.fontSize, refPoint='bc', preambleFile=self.preambleFile)
 
         if angleDeg != 0:
             self.rotateElement(group, position, angleDeg)
@@ -458,16 +450,16 @@ class source(inkBase.inkscapeMadeEasy):
                         value = value[1:]
                     else:
                         value = '-' + value
-            self.drawVoltArrow(group, [position[0] + 25, position[1] + 8], name=value, color=self.voltageColor,
-                               angleDeg=angleDeg, invertArrows=inv_volt)
+            self.drawVoltArrow(group, [position[0] + 25, position[1] + 8], name=value, color=self.voltageColor, angleDeg=angleDeg,
+                               invertArrows=inv_volt)
 
         if flagCurr:
             if convention == 'active':
-                self.drawCurrArrow(group, [position[0] + 40, position[1] - 5], name=currName, color=self.currentColor,
-                                   angleDeg=angleDeg, invertArrows=inv_volt)
+                self.drawCurrArrow(group, [position[0] + 40, position[1] - 5], name=currName, color=self.currentColor, angleDeg=angleDeg,
+                                   invertArrows=inv_volt)
             if convention == 'passive':
-                self.drawCurrArrow(group, [position[0] + 40, position[1] - 5], name=currName, color=self.currentColor,
-                                   angleDeg=angleDeg, invertArrows=not inv_volt)
+                self.drawCurrArrow(group, [position[0] + 40, position[1] - 5], name=currName, color=self.currentColor, angleDeg=angleDeg,
+                                   invertArrows=not inv_volt)
 
         # control signal
         if drawControl:
@@ -475,15 +467,11 @@ class source(inkBase.inkscapeMadeEasy):
                 pos1 = [position[0] + 5, position[1] + 25 + theta / 4]
                 pos2 = [position[0] + 25, position[1] + 25 + theta / 4]
                 if controlType == 'volt':
-                    temp1 = self.drawVoltArrow(parent, pos1, name=controlName, color=self.voltageColor, angleDeg=theta,
-                                               invertArrows=False)
-                    temp2 = self.drawVoltArrow(parent, pos2, name=controlName, color=self.voltageColor, angleDeg=theta,
-                                               invertArrows=True)
+                    temp1 = self.drawVoltArrow(parent, pos1, name=controlName, color=self.voltageColor, angleDeg=theta, invertArrows=False)
+                    temp2 = self.drawVoltArrow(parent, pos2, name=controlName, color=self.voltageColor, angleDeg=theta, invertArrows=True)
                 if controlType == 'curr':
-                    temp1 = self.drawCurrArrow(parent, pos1, name=controlName, color=self.currentColor, angleDeg=theta,
-                                               invertArrows=False)
-                    temp2 = self.drawCurrArrow(parent, pos2, name=controlName, color=self.currentColor, angleDeg=theta,
-                                               invertArrows=True)
+                    temp1 = self.drawCurrArrow(parent, pos1, name=controlName, color=self.currentColor, angleDeg=theta, invertArrows=False)
+                    temp2 = self.drawCurrArrow(parent, pos2, name=controlName, color=self.currentColor, angleDeg=theta, invertArrows=True)
 
                 self.rotateElement(temp1, pos1, theta)
                 self.rotateElement(temp2, pos2, theta)
@@ -491,9 +479,8 @@ class source(inkBase.inkscapeMadeEasy):
         return group
 
     # ---------------------------------------------
-    def drawControledSourceI(self, parent, position=[0, 0], controlType='volt', gain='k', controlName='v_c',
-                             label='Source', angleDeg=0, flagVolt=True, flagCurr=True, voltName='v', invertArrows=False,
-                             mirror=False, convention='active', drawControl=False):
+    def drawControledSourceI(self, parent, position=[0, 0], controlType='volt', gain='k', controlName='v_c', label='Source', angleDeg=0,
+                             flagVolt=True, flagCurr=True, voltName='v', invertArrows=False, mirror=False, convention='active', drawControl=False):
         """ draws a controlled general current source
 
         parent: parent object
@@ -518,14 +505,13 @@ class source(inkBase.inkscapeMadeEasy):
         inkDraw.line.relCoords(elem, [[8, 8], [8, -8], [-8, -8], [-8, 8]], [position[0] + 17, position[1]])
 
         # arrow
-        lineStyleSign = inkDraw.lineStyle.set(lineWidth=0.7, lineColor=inkDraw.color.defined('black'),
-                                              fillColor=inkDraw.color.defined('black'))
+        lineStyleSign = inkDraw.lineStyle.set(lineWidth=0.7, lineColor=inkDraw.color.defined('black'), fillColor=inkDraw.color.defined('black'))
         if mirror:
-            inkDraw.line.relCoords(elem, [[-5, 0], [0, 1.2], [-3, -1.2], [3, -1.2], [0, 1.2]],
-                                   [position[0] + 29, position[1]], lineStyle=lineStyleSign)
+            inkDraw.line.relCoords(elem, [[-5, 0], [0, 1.2], [-3, -1.2], [3, -1.2], [0, 1.2]], [position[0] + 29, position[1]],
+                                   lineStyle=lineStyleSign)
         else:
-            inkDraw.line.relCoords(elem, [[5, 0], [0, 1.2], [3, -1.2], [-3, -1.2], [0, 1.2]],
-                                   [position[0] + 21, position[1]], lineStyle=lineStyleSign)
+            inkDraw.line.relCoords(elem, [[5, 0], [0, 1.2], [3, -1.2], [-3, -1.2], [0, 1.2]], [position[0] + 21, position[1]],
+                                   lineStyle=lineStyleSign)
 
         # text
         pos_text = [position[0] + 25, position[1] - 8 - self.textOffset]
@@ -534,8 +520,7 @@ class source(inkBase.inkscapeMadeEasy):
         if inkDraw.useLatex:
             value = '$' + value + '$'
 
-        inkDraw.text.latex(self, group, value, pos_text, fontSize=self.fontSize, refPoint='bc',
-                           preambleFile=self.preambleFile)
+        inkDraw.text.latex(self, group, value, pos_text, fontSize=self.fontSize, refPoint='bc', preambleFile=self.preambleFile)
 
         if angleDeg != 0:
             self.rotateElement(group, position, angleDeg)
@@ -545,11 +530,11 @@ class source(inkBase.inkscapeMadeEasy):
 
         if flagVolt:
             if convention == 'active':
-                self.drawVoltArrow(group, [position[0] + 25, position[1] + 8], name=voltName, color=self.voltageColor,
-                                   angleDeg=angleDeg, invertArrows=inv_curr)
+                self.drawVoltArrow(group, [position[0] + 25, position[1] + 8], name=voltName, color=self.voltageColor, angleDeg=angleDeg,
+                                   invertArrows=inv_curr)
             if convention == 'passive':
-                self.drawVoltArrow(group, [position[0] + 25, position[1] + 8], name=voltName, color=self.voltageColor,
-                                   angleDeg=angleDeg, invertArrows=not inv_curr)
+                self.drawVoltArrow(group, [position[0] + 25, position[1] + 8], name=voltName, color=self.voltageColor, angleDeg=angleDeg,
+                                   invertArrows=not inv_curr)
 
         if flagCurr:
             if invertArrows:
@@ -564,8 +549,8 @@ class source(inkBase.inkscapeMadeEasy):
                     else:
                         value = '-' + value
 
-            self.drawCurrArrow(group, [position[0] + 40, position[1] - 5], name=value, color=self.currentColor,
-                               angleDeg=angleDeg, invertArrows=inv_curr)
+            self.drawCurrArrow(group, [position[0] + 40, position[1] - 5], name=value, color=self.currentColor, angleDeg=angleDeg,
+                               invertArrows=inv_curr)
 
         # control signal
         if drawControl:
@@ -573,15 +558,11 @@ class source(inkBase.inkscapeMadeEasy):
                 pos1 = [position[0] + 5, position[1] + 25 + theta / 4]
                 pos2 = [position[0] + 25, position[1] + 25 + theta / 4]
                 if controlType == 'volt':
-                    temp1 = self.drawVoltArrow(parent, pos1, name=controlName, color=self.voltageColor, angleDeg=theta,
-                                               invertArrows=False)
-                    temp2 = self.drawVoltArrow(parent, pos2, name=controlName, color=self.voltageColor, angleDeg=theta,
-                                               invertArrows=True)
+                    temp1 = self.drawVoltArrow(parent, pos1, name=controlName, color=self.voltageColor, angleDeg=theta, invertArrows=False)
+                    temp2 = self.drawVoltArrow(parent, pos2, name=controlName, color=self.voltageColor, angleDeg=theta, invertArrows=True)
                 if controlType == 'curr':
-                    temp1 = self.drawCurrArrow(parent, pos1, name=controlName, color=self.currentColor, angleDeg=theta,
-                                               invertArrows=False)
-                    temp2 = self.drawCurrArrow(parent, pos2, name=controlName, color=self.currentColor, angleDeg=theta,
-                                               invertArrows=True)
+                    temp1 = self.drawCurrArrow(parent, pos1, name=controlName, color=self.currentColor, angleDeg=theta, invertArrows=False)
+                    temp2 = self.drawCurrArrow(parent, pos2, name=controlName, color=self.currentColor, angleDeg=theta, invertArrows=True)
 
                 self.rotateElement(temp1, pos1, theta)
                 self.rotateElement(temp2, pos2, theta)

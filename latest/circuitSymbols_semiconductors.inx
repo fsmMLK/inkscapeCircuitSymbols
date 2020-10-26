@@ -46,11 +46,11 @@
                     </param>
                     <hbox>
                         <param name="diodeVolt" type="bool" gui-text="Add voltage indication¹:">true</param>
-                        <param name="diodeVoltName" type="string" gui-text="">v</param>
+                        <param name="diodeVoltName" type="string" gui-text=" ">v</param>
                     </hbox>
                     <hbox>
                         <param name="diodeCurr" type="bool" gui-text="Add current indication¹:">true</param>
-                        <param name="diodeCurrName" type="string" gui-text="">i</param>
+                        <param name="diodeCurrName" type="string" gui-text=" ">i</param>
                     </hbox>
                     <param name="diodeVoltCurrInvert" type="bool" gui-text="Invert V/I directions">false</param>
                 </vbox>
@@ -91,32 +91,32 @@
                     <hbox>
                         <param name="BJT_DrawVCEarrow" type="bool" gui-text="Add v_CE indication¹:">false</param>
                         <spacer size="expand"/>
-                        <param name="BJT_VCEname" type="string" gui-text="">v_{ce}</param>
+                        <param name="BJT_VCEname" type="string" gui-text=" ">v_{ce}</param>
                     </hbox>
                     <hbox>
                         <param name="BJT_DrawVCBarrow" type="bool" gui-text="Add v_CB indication¹:">false</param>
                         <spacer size="expand"/>
-                        <param name="BJT_VCBname" type="string" gui-text="">v_{cb}</param>
+                        <param name="BJT_VCBname" type="string" gui-text=" ">v_{cb}</param>
                     </hbox>
                     <hbox>
                         <param name="BJT_DrawVBEarrow" type="bool" gui-text="Add v_BE indication¹:">false</param>
                         <spacer size="expand"/>
-                        <param name="BJT_VBEname" type="string" gui-text="">v_{be}</param>
+                        <param name="BJT_VBEname" type="string" gui-text=" ">v_{be}</param>
                     </hbox>
                     <hbox>
                         <param name="BJT_DrawICarrow" type="bool" gui-text="Add i_C indication¹:">false</param>
                         <spacer size="expand"/>
-                        <param name="BJT_ICname" type="string" gui-text="">i_c</param>
+                        <param name="BJT_ICname" type="string" gui-text=" ">i_c</param>
                     </hbox>
                     <hbox>
                         <param name="BJT_DrawIBarrow" type="bool" gui-text="Add i_B indication¹:">false</param>
                         <spacer size="expand"/>
-                        <param name="BJT_IBname" type="string" gui-text="">i_b</param>
+                        <param name="BJT_IBname" type="string" gui-text=" ">i_b</param>
                     </hbox>
                     <hbox>
                         <param name="BJT_DrawIEarrow" type="bool" gui-text="Add i_E indication¹:">false</param>
                         <spacer size="expand"/>
-                        <param name="BJT_IEname" type="string" gui-text="">i_e</param>
+                        <param name="BJT_IEname" type="string" gui-text=" ">i_e</param>
                     </hbox>
                 </vbox>
                 <spacer size="expand"/>
@@ -162,32 +162,32 @@
                     <hbox>
                         <param name="FET_DrawVGSarrow" type="bool" gui-text="Add v_GS indication¹:">false</param>
                         <spacer size="expand"/>
-                        <param name="FET_VGSname" type="string" gui-text="">v_{gs}</param>
+                        <param name="FET_VGSname" type="string" gui-text=" ">v_{gs}</param>
                     </hbox>
                     <hbox>
                         <param name="FET_DrawVDSarrow" type="bool" gui-text="Add v_DS indication¹:">false</param>
                         <spacer size="expand"/>
-                        <param name="FET_VDSname" type="string" gui-text="">v_{ds}</param>
+                        <param name="FET_VDSname" type="string" gui-text=" ">v_{ds}</param>
                     </hbox>
                     <hbox>
                         <param name="FET_DrawVDGarrow" type="bool" gui-text="Add v_DG indication¹:">false</param>
                         <spacer size="expand"/>
-                        <param name="FET_VDGname" type="string" gui-text="">v_{dg}</param>
+                        <param name="FET_VDGname" type="string" gui-text=" ">v_{dg}</param>
                     </hbox>
                     <hbox>
                         <param name="FET_DrawIDarrow" type="bool" gui-text="Add i_D indication¹:">false</param>
                         <spacer size="expand"/>
-                        <param name="FET_IDname" type="string" gui-text="">i_d</param>
+                        <param name="FET_IDname" type="string" gui-text=" ">i_d</param>
                     </hbox>
                     <hbox>
                         <param name="FET_DrawISarrow" type="bool" gui-text="Add i_S indication¹:">false</param>
                         <spacer size="expand"/>
-                        <param name="FET_ISname" type="string" gui-text="">i_s</param>
+                        <param name="FET_ISname" type="string" gui-text=" ">i_s</param>
                     </hbox>
                     <hbox>
                         <param name="FET_DrawIGarrow" type="bool" gui-text="Add i_G indication¹:">false</param>
                         <spacer size="expand"/>
-                        <param name="FET_IGname" type="string" gui-text="">i_g</param>
+                        <param name="FET_IGname" type="string" gui-text=" ">i_g</param>
                     </hbox>
                 </vbox>
                 <spacer size="expand"/>
@@ -217,29 +217,29 @@
                     <hbox>
                         <param name="opampDrawVin" type="bool" gui-text="Add (v+) (v-) indications¹:">false</param>
                         <spacer size="expand"/>
-                        <param name="opampInputV+Name" type="string" gui-text="">v^+</param>
-                        <param name="opampInputV-Name" type="string" gui-text="">v^-</param>
+                        <param name="opampInputV+Name" type="string" gui-text=" ">v^+</param>
+                        <param name="opampInputV-Name" type="string" gui-text=" ">v^-</param>
                     </hbox>
                     <hbox>
                         <param name="opampDrawIin" type="bool" gui-text="Add (i+) (i-) indications¹:">false</param>
                         <spacer size="expand"/>
-                        <param name="opampInputI+Name" type="string" gui-text="">i^+</param>
-                        <param name="opampInputI-Name" type="string" gui-text="">i^-</param>
+                        <param name="opampInputI+Name" type="string" gui-text=" ">i^+</param>
+                        <param name="opampInputI-Name" type="string" gui-text=" ">i^-</param>
                     </hbox>
                     <hbox>
                         <param name="opampDrawVout" type="bool" gui-text="Add V_out indication¹:">false</param>
                         <spacer size="expand"/>
-                        <param name="opampVoutName" type="string" gui-text="">v_{out}</param>
+                        <param name="opampVoutName" type="string" gui-text=" ">v_{out}</param>
                     </hbox>
                     <hbox>
                         <param name="opampDrawIout" type="bool" gui-text="Add I_out indication¹:">false</param>
                         <spacer size="expand"/>
-                        <param name="opampIoutName" type="string" gui-text="">i_{out}</param>
+                        <param name="opampIoutName" type="string" gui-text=" ">i_{out}</param>
                     </hbox>
                     <hbox>
                         <param name="opampDrawVd" type="bool" gui-text="Add V_d indication¹:">false</param>
                         <spacer size="expand"/>
-                        <param name="opampInputDiffName" type="string" gui-text="">v_d</param>
+                        <param name="opampInputDiffName" type="string" gui-text=" ">v_d</param>
                     </hbox>
                 </vbox>
                 <spacer size="expand"/>
@@ -258,7 +258,6 @@
                                 <option value="+vcc">+Vcc</option>
                                 <option value="-vcc">-Vcc</option>
                                 <option value="+5V">+5V</option>
-                                <option value="-5V">-5V</option>
                                 <option value="-5V">-5V</option>
                                 <option value="+15V">+15V</option>
                                 <option value="-15V">-15V</option>
@@ -319,14 +318,14 @@
                             <option value="#FF0000">default (red)</option>
                             <option value="picker">use color picker --></option>
                         </param>
-                        <param name="colorPickerCurrent" type="color" appearance="colorbutton" gui-text=""/>
+                        <param name="colorPickerCurrent" type="color" appearance="colorbutton" gui-text=" "/>
                     </hbox>
                     <hbox>
                         <param name="voltColor" type="optiongroup" appearance="combo" gui-text="Voltage indication color:">
                             <option value="#217B21">default (green)</option>
                             <option value="picker">use color picker --></option>
                         </param>
-                        <param name="colorPickerVolt" type="color" appearance="colorbutton" gui-text=""/>
+                        <param name="colorPickerVolt" type="color" appearance="colorbutton" gui-text=" "/>
                     </hbox>
                     <spacer/>
                     <label>² Multipliers: M, k, m, u, n, p</label>
