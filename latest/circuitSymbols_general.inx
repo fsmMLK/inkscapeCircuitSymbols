@@ -28,6 +28,7 @@
                         <option value="45">45</option>
                         <option value="60">60</option>
                     </param>
+                    <param name="bipoleRLCextraWireSize" type="int" min="-10" max="10" gui-text="Extra wire length:">0</param>
                 </vbox>
                 <spacer/>
                 <separator/>
@@ -82,6 +83,7 @@
                                 <option value="45">45</option>
                                 <option value="60">60</option>
                             </param>
+                            <param name="sourceExtraWireSize" type="int" min="-10" max="10" gui-text="Extra wire length:">0</param>
                             <param name="sourceMirror" type="bool" gui-text="Invert source direction">false</param>
                         </vbox>
                         <spacer/>
@@ -112,6 +114,7 @@
                                 <option value="45">45</option>
                                 <option value="60">60</option>
                             </param>
+                            <param name="sourceControlledExtraWireSize" type="int" min="-10" max="10" gui-text="Extra wire length:">0</param>
                             <param name="sourceControlledMirror" type="bool" gui-text="Invert source direction">false</param>
                         </vbox>
                         <spacer/>
@@ -166,6 +169,7 @@
                         <option value="45">45</option>
                         <option value="60">60</option>
                     </param>
+                    <param name="switchExtraWireSize" type="int" min="-10" max="10" gui-text="Extra wire length:">0</param>
                 </vbox>
                 <spacer/>
                 <separator/>

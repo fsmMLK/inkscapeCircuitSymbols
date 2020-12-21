@@ -28,6 +28,7 @@
                         <option value="45">45</option>
                         <option value="60">60</option>
                     </param>
+                    <param name="diodeExtraWireSize" type="int" min="-10" max="10" gui-text="Extra wire length:">0</param>
                     <param name="diodeMirror" type="bool" gui-text="Invert diode direction">false</param>
                 </vbox>
                 <spacer/>
@@ -74,6 +75,7 @@
                         <option value="60">60</option>
                         <option value="180">180</option>
                     </param>
+                    <param name="BJT_ExtraWireSize" type="int" min="-10" max="10" gui-text="Extra wire length:">0</param>
                 </vbox>
                 <spacer/>
                 <separator/>
@@ -146,6 +148,7 @@
                         <option value="60">60</option>
                         <option value="180">180</option>
                     </param>
+                    <param name="FET_ExtraWireSize" type="int" min="-10" max="10" gui-text="Extra wire length:">0</param>
                 </vbox>
                 <separator/>
                 <vbox>

@@ -162,6 +162,13 @@ In this tab you can create resistors, capacitors and inductors. The section **Vo
 
 <img src="docs/images/RLC_orientation.png" width="600px"/>
 
+
+**Extra wire length:** You can adjust the length of the wires. You can choose any integer number between -10 and 10. (Defaults is 0).
+
+> Note: Keep in mind that negative numbers can cause current arrow indication to overlap other elements of the symbol. You can manually adjust if needed.
+
+<img src="docs/images/WireExtraLength.png" width="400px"/>
+
 **Value:** Literal or numeric value of the bipole. If you type numeric values, you can use ``M,k,m,u,n,p`` to indicate multiplier unit. If LaTeX support is enabled, this text will be included in a math environment $...$. Also for LaTeX, there are a couple of functions to specify values in terms of complex impedances. See image below for examples.
 
 **Add unit:** If selected, unit will be automatically added to the value. The unit will be selected accordingly with the type (ohm for resistors and generic bipole (impedance), farad for capacitors, henry for inductors).
@@ -203,6 +210,8 @@ There is also a common section called **Voltage and current indications** that w
 
 **Orientation:** Rotation angle in degrees. See *RLC tab* section for examples.
 
+**Extra wire length:** You can adjust the length of the wires. See *RLC tab* section for examples.
+
 **Invert source direction:** invert the direction of the source.
 
 **Value:** Literal or numeric value of the bipole. If you type numeric values, you can use ``M,k,m,u,n,p`` to indicate multiplier unit. If LaTeX support is enabled, this text will be included in a math environment $...$. Also for LaTeX, there are a couple of functions to specify values in terms of phasors. See examples below.
@@ -222,6 +231,8 @@ There is also a common section called **Voltage and current indications** that w
 <img src="docs/images/DepSrc_types.png" width="500px"/>
 
 **Orientation:** Rotation angle in degrees. See *RLC tab* section for examples.
+
+**Extra wire length:** You can adjust the length of the wires. See *RLC tab* section for examples.
 
 **Invert source direction:** invert the direction of the source.
 
@@ -263,6 +274,8 @@ In this tab you can create switches. The section **Commuting information** allow
 <img src="docs/images/switch_poles_throws.png" width="850px"/>
 
 **Orientation:** Rotation angle in degrees. See *RLC tab* section for examples.
+
+**Extra wire length:** You can adjust the length of the wires. See *RLC tab* section for examples.
 
 **Label:** Set the text of the label of the switch. If LaTeX support is enabled, this text will be included in a math environment $...$.
 
@@ -376,6 +389,8 @@ In this tab you can create diodes and LEDs.
 
 **Orientation:** Rotation angle in degrees. See *RLC tab* section for examples.
 
+**Extra wire length:** You can adjust the length of the wires. See *RLC tab* section for examples.
+
 **Invert diode direction:** invert the direction of the diode.
 
 **Label:** Label of the indication. If LaTeX support is enabled the text will be inserted in a mathematical environment $...$
@@ -402,6 +417,8 @@ In this tab you can create BJT (photo)transistors.
 <img src="docs/images/BJT_types.png" width="700px"/>
 
 **Orientation:** Rotation angle in degrees. See *RLC tab* section for examples.
+
+**Extra wire length:** You can adjust the length of the wires. See *RLC tab* section for examples.
 
 **Phototransistor:** Turns the BJT into a phototransistor. See image above.
 
@@ -443,6 +460,8 @@ In this tab you can create MOSFET and JFET transistors.
 <img src="docs/images/FET_nTerminals.png" width="400px"/>
 
 **Orientation:** Rotation angle in degrees. See *RLC tab* section for examples.
+
+**Extra wire length:** You can adjust the length of the wires. See *RLC tab* section for examples.
 
 **Add body diode (3-terminal MOSFET-E only):** Draws the body diode of power MOSFETs.
 
