@@ -150,13 +150,15 @@ In addition to these elements, both menu entries has extra tabs to generate sign
 
 ## RLC tab
 
-In this tab you can create resistors, capacitors and inductors. The section **Voltage and current indications** serves to add voltage or current annotation arrows to the symbol and adjust their orientations.
+In this tab you can create resistors, capacitors, inductors and fuses. The section **Voltage and current indications** serves to add voltage or current annotation arrows to the symbol and adjust their orientations.
 
 <img src="docs/images/Tab_RLC.png" width="450px"/>
 
 **Type:** You can select the type of bipole. The available types are:
 
-<img src="docs/images/RLC_types.png" width="700px"/>
+<img src="docs/images/RLC_types.png" width="800px"/>
+
+**Standard:** Here you can choose the standard. There are two options, IEEE Std 315-1975 (american) and IEC 60167 (europe). This option affects RLC tab only.
 
 **Orientation:** Rotation angle in degrees.
 
@@ -208,6 +210,8 @@ There is also a common section called **Voltage and current indications** that w
 
 <img src="docs/images/IndSrc_types.png" width="450px"/>
 
+**Standard:** Here you can choose the standard. There are two options, IEEE Std 315-1975 (american) and IEC 60167 (europe). This option affects independent sources only.
+
 **Orientation:** Rotation angle in degrees. See *RLC tab* section for examples.
 
 **Extra wire length:** You can adjust the length of the wires. See *RLC tab* section for examples.
@@ -228,7 +232,9 @@ There is also a common section called **Voltage and current indications** that w
 
 **Type:** Here you can select the type of source. The available types are presented below. 
 
-<img src="docs/images/DepSrc_types.png" width="500px"/>
+**Standard:** Here you can choose the standard. There are two options, IEEE Std 315-1975 (american) and IEC 60167 (europe). This option affects dependent sources only.
+
+<img src="docs/images/DepSrc_types.png" width="900px"/>
 
 **Orientation:** Rotation angle in degrees. See *RLC tab* section for examples.
 

@@ -21,13 +21,14 @@ class source(inkBase.inkscapeMadeEasy):
             inkDraw.line.relCoords(group, [[0, 2]], self.add(positionNeg, [0, -1]), lineStyle=lineStyleSign)
 
     # ---------------------------------------------
-    def drawSourceV(self, parent, position=[0, 0], value='v(t)', label='Source', angleDeg=0, flagVolt=True, flagCurr=True, currName='i',
-                    invertArrows=False, mirror=False, convention='active', wireExtraSize=0):
-        """ draws a independend general voltage source
+    def drawSourceV(self, parent, position=[0, 0], value='v(t)', sourceType='general', label='Source', angleDeg=0, flagVolt=True, flagCurr=True, currName='i',
+                    invertArrows=False, mirror=False, convention='active', wireExtraSize=0,standard='IEEE'):
+        """ draws a independend voltage source
 
         parent: parent object
         position: position [x,y]
         value: string with value.
+        sourceType: type of source. Values: 'general' (default), 'sinusoidal'
         label: label of the object (it can be repeated)
         angleDeg: rotation angle in degrees counter-clockwise (default 0)
         flagVolt: indicates whether the voltage arrow must be drawn (default: true)
@@ -36,94 +37,40 @@ class source(inkBase.inkscapeMadeEasy):
         mirror: mirror source drawing (default: False)
         convention: passive/active sign convention. available types: 'passive', 'active' (default)
         wireExtraSize: additional length added to the terminals. If negative, the length will be reduced. default: 0)
+        standard: types: 'IEEE' (american), 'IEC' (european)
         """
 
         group = self.createGroup(parent, label)
         elem = self.createGroup(group, label)
-
-        inkDraw.line.relCoords(elem, [[-(18 + wireExtraSize), 0]], self.add(position, [-7, 0]))
-        inkDraw.line.relCoords(elem, [[18 + wireExtraSize, 0]], self.add(position, [7, 0]))
-        inkDraw.circle.centerRadius(elem, [0, 0], 7.0, offset=position, label='circle')
-
-        # signs
-        if mirror:
-            self.drawSigns(elem, positionPos=self.add(position, [-4, 0]), positionNeg=self.add(position, [4, 0]))
-        else:
-            self.drawSigns(elem, positionPos=self.add(position, [4, 0]), positionNeg=self.add(position, [-4, 0]))
-
-        pos_text = self.add(position, [0, -8 - self.textOffset])
-        if inkDraw.useLatex:
-            value = '$' + value + '$'
-
-        inkDraw.text.latex(self, group, value, pos_text, fontSize=self.fontSize, refPoint='bc', preambleFile=self.preambleFile)
-
-        if angleDeg != 0:
-            self.rotateElement(group, position, angleDeg)
-
-        inv_volt = (invertArrows == mirror)
-
-        if flagVolt:
-            if invertArrows:
-                if inkDraw.useLatex:
-                    if value[1] == '-':
-                        value = value[0] + value[2:]
-                    else:
-                        value = value[0] + '-' + value[1:]
-                else:
-                    if value[0] == '-':
-                        value = value[1:]
-                    else:
-                        value = '-' + value
-            self.drawVoltArrow(group, self.add(position, [0, 8]), name=value, color=self.voltageColor, angleDeg=angleDeg, invertArrows=inv_volt)
-
-        if flagCurr:
-            if convention == 'active':
-                self.drawCurrArrow(group, self.add(position, [20 + wireExtraSize, -5]), name=currName, color=self.currentColor, angleDeg=angleDeg,
-                                   invertArrows=inv_volt)
-            if convention == 'passive':
-                self.drawCurrArrow(group, self.add(position, [20 + wireExtraSize, -5]), name=currName, color=self.currentColor, angleDeg=angleDeg,
-                                   invertArrows=not inv_volt)
-
-        return group
-
-    # ---------------------------------------------
-    def drawSourceVSinusoidal(self, parent, position=[0, 0], value='v(t)', label='Source', angleDeg=0, flagVolt=True, flagCurr=True, currName='i',
-                              invertArrows=False, mirror=False, convention='active', wireExtraSize=0):
-        """ draws a independend sinusoidal voltage source
-
-        parent: parent object
-        position: position [x,y]
-        value: string with value.
-        label: label of the object (it can be repeated)
-        angleDeg: rotation angle in degrees counter-clockwise (default 0)
-        flagVolt: indicates whether the voltage arrow must be drawn (default: true)
-        flagCurr: indicates whether the current arrow must be drawn (default: true)
-        currName: current drop name (default: i)
-        mirror: mirror source drawing (default: False)
-        convention: passive/active sign convention. available types: 'passive', 'active' (default)
-        wireExtraSize: additional length added to the terminals. If negative, the length will be reduced. default: 0)
-        """
-
-        group = self.createGroup(parent, label)
-        elem = self.createGroup(group, label)
-
-        inkDraw.line.relCoords(elem, [[-(18 + wireExtraSize), 0]], self.add(position, [-7, 0]))
-        inkDraw.line.relCoords(elem, [[18 + wireExtraSize, 0]], self.add(position, [7, 0]))
-        inkDraw.circle.centerRadius(elem, [0, 0], 7.0, offset=position, label='circle')
-
-        # signs
-        sine = self.createGroup(elem)
         lineStyleSign = inkDraw.lineStyle.setSimpleBlack(lineWidth=0.6)
 
-        inkDraw.arc.startEndRadius(sine, self.add(position, [-5, 0]), position, 2.6, [0, 0], lineStyle=lineStyleSign, flagRightOf=True,
-                                   largeArc=False)
-        inkDraw.arc.startEndRadius(sine, self.add(position, [5, 0]), position, 2.6, [0, 0], lineStyle=lineStyleSign, flagRightOf=True, largeArc=False)
-        self.rotateElement(sine, position, -angleDeg)
+        inkDraw.line.relCoords(elem, [[-(18 + wireExtraSize), 0]], self.add(position, [-7, 0]))
+        inkDraw.line.relCoords(elem, [[18 + wireExtraSize, 0]], self.add(position, [7, 0]))
+        inkDraw.circle.centerRadius(elem, [0, 0], 7.0, offset=position, label='circle')
 
-        if mirror:
-            self.drawSigns(elem, positionPos=self.add(position, [-10, -4]), positionNeg=self.add(position, [10, -4]))
-        else:
-            self.drawSigns(elem, positionPos=self.add(position, [10, -4]), positionNeg=self.add(position, [-10, -4]))
+        if sourceType == 'general':
+            if standard == 'IEEE':
+                # signs
+                if mirror:
+                    self.drawSigns(elem, positionPos=self.add(position, [-4, 0]), positionNeg=self.add(position, [4, 0]))
+                else:
+                    self.drawSigns(elem, positionPos=self.add(position, [4, 0]), positionNeg=self.add(position, [-4, 0]))
+            if standard == 'IEC':
+                inkDraw.line.relCoords(elem, [[14, 0]], self.add(position, [-7, 0]),lineStyle=lineStyleSign)
+
+        if sourceType == 'sinusoidal':
+            sine = self.createGroup(elem)
+
+            inkDraw.arc.startEndRadius(sine, self.add(position, [-5, 0]), position, 2.6, [0, 0], lineStyle=lineStyleSign, flagRightOf=True,
+                                       largeArc=False)
+            inkDraw.arc.startEndRadius(sine, self.add(position, [5, 0]), position, 2.6, [0, 0], lineStyle=lineStyleSign, flagRightOf=True,
+                                       largeArc=False)
+            self.rotateElement(sine, position, -angleDeg)
+
+            if mirror:
+                self.drawSigns(elem, positionPos=self.add(position, [-10, -4]), positionNeg=self.add(position, [10, -4]))
+            else:
+                self.drawSigns(elem, positionPos=self.add(position, [10, -4]), positionNeg=self.add(position, [-10, -4]))
 
         pos_text = self.add(position, [0, -8 - self.textOffset])
         if inkDraw.useLatex:
@@ -309,7 +256,7 @@ class source(inkBase.inkscapeMadeEasy):
 
     # ---------------------------------------------
     def drawSourceI(self, parent, position=[0, 0], value='i(t)', label='Source', angleDeg=0, flagVolt=True, flagCurr=True, voltName='v',
-                    invertArrows=False, mirror=False, convention='active', wireExtraSize=0):
+                    invertArrows=False, mirror=False, convention='active', wireExtraSize=0,standard='IEEE'):
         """ draws a independend general current source
 
         parent: parent object
@@ -323,6 +270,7 @@ class source(inkBase.inkscapeMadeEasy):
         mirror: mirror source drawing (default: False)
         convention: passive/active sign convention. available types: 'passive', 'active' (default)
         wireExtraSize: additional length added to the terminals. If negative, the length will be reduced. default: 0)
+        standard: types: 'IEEE' (american), 'IEC' (european)
         """
 
         group = self.createGroup(parent, label)
@@ -332,12 +280,16 @@ class source(inkBase.inkscapeMadeEasy):
         inkDraw.line.relCoords(elem, [[18 + wireExtraSize, 0]], self.add(position, [7, 0]))
         inkDraw.circle.centerRadius(elem, [0, 0], 7.0, offset=position, label='circle')
 
-        # arrow
-        lineStyleSign = inkDraw.lineStyle.set(lineWidth=0.7, lineColor=inkDraw.color.defined('black'), fillColor=inkDraw.color.defined('black'))
-        if mirror:
-            inkDraw.line.relCoords(elem, [[-5, 0], [0, 1.2], [-3, -1.2], [3, -1.2], [0, 1.2]], self.add(position, [4, 0]), lineStyle=lineStyleSign)
-        else:
-            inkDraw.line.relCoords(elem, [[5, 0], [0, 1.2], [3, -1.2], [-3, -1.2], [0, 1.2]], self.add(position, [-4, 0]), lineStyle=lineStyleSign)
+        if standard == 'IEEE':
+            # arrow
+            lineStyleSign = inkDraw.lineStyle.set(lineWidth=0.7, lineColor=inkDraw.color.defined('black'), fillColor=inkDraw.color.defined('black'))
+            if mirror:
+                inkDraw.line.relCoords(elem, [[-5, 0], [0, 1.2], [-3, -1.2], [3, -1.2], [0, 1.2]], self.add(position, [4, 0]), lineStyle=lineStyleSign)
+            else:
+                inkDraw.line.relCoords(elem, [[5, 0], [0, 1.2], [3, -1.2], [-3, -1.2], [0, 1.2]], self.add(position, [-4, 0]), lineStyle=lineStyleSign)
+        if standard == 'IEC':
+            lineStyleSign = inkDraw.lineStyle.setSimpleBlack(lineWidth=0.6)
+            inkDraw.line.relCoords(elem, [[0,14]], self.add(position, [0,-7]),lineStyle=lineStyleSign)
 
         pos_text = self.add(position, [0, -8 - self.textOffset])
         if inkDraw.useLatex:
@@ -379,7 +331,7 @@ class source(inkBase.inkscapeMadeEasy):
     # ---------------------------------------------
     def drawControledSourceV(self, parent, position=[0, 0], controlType='volt', gain='k', controlName='v_c', label='Source', angleDeg=0,
                              flagVolt=True, flagCurr=True, currName='i', invertArrows=False, mirror=False, convention='active', drawControl=False,
-                             wireExtraSize=0):
+                             wireExtraSize=0,standard='IEEE'):
         """ draws a controlled general voltage source
 
         parent: parent object
@@ -394,22 +346,27 @@ class source(inkBase.inkscapeMadeEasy):
         flagCurr: indicates whether the current arrow must be drawn (default: true)
         mirror: mirror source drawing (default: False)
         convention: passive/active sign convention. available types: 'passive', 'active' (default)
-        wireExtraSize: additional length added to the terminals. If negative, the length will be reduced. default: 0)
         drawControl: draws control annotation arrow (default:false)
+        wireExtraSize: additional length added to the terminals. If negative, the length will be reduced. default: 0)
+        standard: types: 'IEEE' (american), 'IEC' (european)
         """
 
         group = self.createGroup(parent, label)
         elem = self.createGroup(group, label)
+        lineStyleSign = inkDraw.lineStyle.setSimpleBlack(lineWidth=0.6)
 
         inkDraw.line.relCoords(elem, [[-(17 + wireExtraSize), 0]], self.add(position, [-8, 0]))
         inkDraw.line.relCoords(elem, [[17 + wireExtraSize, 0]], self.add(position, [8, 0]))
         inkDraw.line.relCoords(elem, [[8, 8], [8, -8], [-8, -8], [-8, 8]], self.add(position, [-8, 0]))
 
-        # signs
-        if mirror:
-            self.drawSigns(elem, positionPos=self.add(position, [-4, 0]), positionNeg=self.add(position, [4, 0]))
-        else:
-            self.drawSigns(elem, positionPos=self.add(position, [4, 0]), positionNeg=self.add(position, [-4, 0]))
+        if standard == 'IEEE':
+            # signs
+            if mirror:
+                self.drawSigns(elem, positionPos=self.add(position, [-4, 0]), positionNeg=self.add(position, [4, 0]))
+            else:
+                self.drawSigns(elem, positionPos=self.add(position, [4, 0]), positionNeg=self.add(position, [-4, 0]))
+        if standard == 'IEC':
+            inkDraw.line.relCoords(elem, [[14, 0]], self.add(position, [-7, 0]),lineStyle=lineStyleSign)
 
         # text
         pos_text = self.add(position, [0, -8 - self.textOffset])
@@ -468,7 +425,7 @@ class source(inkBase.inkscapeMadeEasy):
     # ---------------------------------------------
     def drawControledSourceI(self, parent, position=[0, 0], controlType='volt', gain='k', controlName='v_c', label='Source', angleDeg=0,
                              flagVolt=True, flagCurr=True, voltName='v', invertArrows=False, mirror=False, convention='active', drawControl=False,
-                             wireExtraSize=0):
+                             wireExtraSize=0,standard='IEEE'):
         """ draws a controlled general current source
 
         parent: parent object
@@ -485,6 +442,7 @@ class source(inkBase.inkscapeMadeEasy):
         convention: passive/active sign convention. available types: 'passive', 'active' (default)
         wireExtraSize: additional length added to the terminals. If negative, the length will be reduced. default: 0)
         drawControl: draws control annotation arrow (default:false)
+        standard: types: 'IEEE' (american), 'IEC' (european)
         """
 
         group = self.createGroup(parent, label)
@@ -494,12 +452,16 @@ class source(inkBase.inkscapeMadeEasy):
         inkDraw.line.relCoords(elem, [[17 + wireExtraSize, 0]], self.add(position, [8, 0]))
         inkDraw.line.relCoords(elem, [[8, 8], [8, -8], [-8, -8], [-8, 8]], self.add(position, [-8, 0]))
 
-        # arrow
-        lineStyleSign = inkDraw.lineStyle.set(lineWidth=0.7, lineColor=inkDraw.color.defined('black'), fillColor=inkDraw.color.defined('black'))
-        if mirror:
-            inkDraw.line.relCoords(elem, [[-5, 0], [0, 1.2], [-3, -1.2], [3, -1.2], [0, 1.2]], self.add(position, [4, 0]), lineStyle=lineStyleSign)
-        else:
-            inkDraw.line.relCoords(elem, [[5, 0], [0, 1.2], [3, -1.2], [-3, -1.2], [0, 1.2]], self.add(position, [-4, 0]), lineStyle=lineStyleSign)
+        if standard == 'IEEE':
+            # arrow
+            lineStyleSign = inkDraw.lineStyle.set(lineWidth=0.7, lineColor=inkDraw.color.defined('black'), fillColor=inkDraw.color.defined('black'))
+            if mirror:
+                inkDraw.line.relCoords(elem, [[-5, 0], [0, 1.2], [-3, -1.2], [3, -1.2], [0, 1.2]], self.add(position, [4, 0]), lineStyle=lineStyleSign)
+            else:
+                inkDraw.line.relCoords(elem, [[5, 0], [0, 1.2], [3, -1.2], [-3, -1.2], [0, 1.2]], self.add(position, [-4, 0]), lineStyle=lineStyleSign)
+        if standard == 'IEC':
+            lineStyleSign = inkDraw.lineStyle.setSimpleBlack(lineWidth=0.6)
+            inkDraw.line.relCoords(elem, [[0,14]], self.add(position, [0,-7]),lineStyle=lineStyleSign)
 
         # text
         pos_text = self.add(position, [0, -8 - self.textOffset])

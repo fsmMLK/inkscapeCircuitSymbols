@@ -3,6 +3,8 @@
 import math
 import os
 
+import inkscapeMadeEasy.inkscapeMadeEasy_Base as inkBase
+import inkscapeMadeEasy.inkscapeMadeEasy_Draw as inkDraw
 from drawAmpOp import ampOp
 from drawArrows import arrow
 from drawDiodes import diode
@@ -11,9 +13,6 @@ from drawSignals import signal
 from drawSources import source
 from drawSwitches import switch
 from drawTransistors import transistor
-
-import inkscapeMadeEasy.inkscapeMadeEasy_Base as inkBase
-import inkscapeMadeEasy.inkscapeMadeEasy_Draw as inkDraw
 
 # some symbol definition
 
@@ -59,6 +58,7 @@ class CircuitSymbols(RLC, source, transistor, signal, arrow, ampOp, diode, switc
         self.arg_parser.add_argument("--bipoleRLCUnit", type=self.bool, dest="bipoleRLCUnit", default=False)
         self.arg_parser.add_argument("--bipoleRLCRot", type=str, dest="bipoleRLCRot", default='0')
         self.arg_parser.add_argument("--bipoleRLCconvention", type=str, dest="bipoleRLCconvention", default='passive')
+        self.arg_parser.add_argument("--bipoleRLCstandard", type=str, dest="bipoleRLCstandard", default='IEC')
         self.arg_parser.add_argument("--bipoleRLCVolt", type=self.bool, dest="bipoleRLCVolt", default=True)
         self.arg_parser.add_argument("--bipoleRLCCurr", type=self.bool, dest="bipoleRLCCurr", default=True)
         self.arg_parser.add_argument("--bipoleRLCVoltName", type=str, dest="bipoleRLCVoltName", default='v')
@@ -69,6 +69,7 @@ class CircuitSymbols(RLC, source, transistor, signal, arrow, ampOp, diode, switc
         self.arg_parser.add_argument("--source", type=str, dest="source", default='voltIndep')
         self.arg_parser.add_argument("--sourceVal", type=str, dest="sourceVal", default='E')
         self.arg_parser.add_argument("--sourceUnit", type=self.bool, dest="sourceUnit", default=False)
+        self.arg_parser.add_argument("--sourceStandard", type=str, dest="sourceStandard", default='IEC')
         self.arg_parser.add_argument("--sourceRot", type=str, dest="sourceRot", default='0')
         self.arg_parser.add_argument("--sourceConvention", type=str, dest="sourceConvention", default='active')
         self.arg_parser.add_argument("--sourceVolt", type=self.bool, dest="sourceVolt", default=True)
@@ -81,6 +82,7 @@ class CircuitSymbols(RLC, source, transistor, signal, arrow, ampOp, diode, switc
 
         self.arg_parser.add_argument("--sourceControlled", type=str, dest="sourceControlled", default='volt')
         self.arg_parser.add_argument("--sourceControlledType", type=str, dest="sourceControlledType", default='curr')
+        self.arg_parser.add_argument("--sourceControlledStandard", type=str, dest="sourceControlledStandard", default='IEC')
         self.arg_parser.add_argument("--sourceControlledGain", type=str, dest="sourceControlledGain", default='k')
         self.arg_parser.add_argument("--sourceControlledControlName", type=str, dest="sourceControlledControlName", default='v_c')
         self.arg_parser.add_argument("--sourceControlledRot", type=str, dest="sourceControlledRot", default='0')
@@ -259,9 +261,10 @@ class CircuitSymbols(RLC, source, transistor, signal, arrow, ampOp, diode, switc
                         so.bipoleRLCVal += r'\si\ohm'
                     else:
                         so.bipoleRLCVal += OhmChar
-                self.drawBipoleGeneral(root_layer, position, value=so.bipoleRLCVal, angleDeg=so.bipoleRLCRot, flagVolt=so.bipoleRLCVolt,
-                                       voltName=so.bipoleRLCVoltName, flagCurr=so.bipoleRLCCurr, currName=so.bipoleRLCCurrName,
-                                       invertArrows=so.bipoleRLCVoltCurrInvert, convention=so.bipoleRLCconvention,wireExtraSize=so.bipoleRLCextraWireSize)
+                self.drawResistor(root_layer, position, value=so.bipoleRLCVal, angleDeg=so.bipoleRLCRot, flagVolt=so.bipoleRLCVolt,
+                                  voltName=so.bipoleRLCVoltName, flagCurr=so.bipoleRLCCurr, currName=so.bipoleRLCCurrName,
+                                  invertArrows=so.bipoleRLCVoltCurrInvert, convention=so.bipoleRLCconvention, wireExtraSize=so.bipoleRLCextraWireSize,
+                                  standard='IEC')
 
             if so.bipoleRLC == "resistor":
                 if so.bipoleRLCUnit:
@@ -271,7 +274,8 @@ class CircuitSymbols(RLC, source, transistor, signal, arrow, ampOp, diode, switc
                         so.bipoleRLCVal += OhmChar
                 self.drawResistor(root_layer, position, value=so.bipoleRLCVal, angleDeg=so.bipoleRLCRot, flagVolt=so.bipoleRLCVolt,
                                   voltName=so.bipoleRLCVoltName, flagCurr=so.bipoleRLCCurr, currName=so.bipoleRLCCurrName,
-                                  invertArrows=so.bipoleRLCVoltCurrInvert, convention=so.bipoleRLCconvention,wireExtraSize=so.bipoleRLCextraWireSize)
+                                  invertArrows=so.bipoleRLCVoltCurrInvert, convention=so.bipoleRLCconvention,wireExtraSize=so.bipoleRLCextraWireSize,
+                                  standard=so.bipoleRLCstandard)
 
             if so.bipoleRLC == "capacitor":
                 if so.bipoleRLCUnit:
@@ -281,7 +285,8 @@ class CircuitSymbols(RLC, source, transistor, signal, arrow, ampOp, diode, switc
                         so.bipoleRLCVal += 'F'
                 self.drawCapacitor(root_layer, position, value=so.bipoleRLCVal, flagPol=False, angleDeg=so.bipoleRLCRot, flagVolt=so.bipoleRLCVolt,
                                    voltName=so.bipoleRLCVoltName, flagCurr=so.bipoleRLCCurr, currName=so.bipoleRLCCurrName,
-                                   invertArrows=so.bipoleRLCVoltCurrInvert, convention=so.bipoleRLCconvention,wireExtraSize=so.bipoleRLCextraWireSize)
+                                   invertArrows=so.bipoleRLCVoltCurrInvert, convention=so.bipoleRLCconvention,
+                                   wireExtraSize=so.bipoleRLCextraWireSize, standard=so.bipoleRLCstandard)
 
             if so.bipoleRLC == "capacitorPol":
                 if so.bipoleRLCUnit:
@@ -291,7 +296,8 @@ class CircuitSymbols(RLC, source, transistor, signal, arrow, ampOp, diode, switc
                         so.bipoleRLCVal += 'F'
                 self.drawCapacitor(root_layer, position, value=so.bipoleRLCVal, flagPol=True, angleDeg=so.bipoleRLCRot, flagVolt=so.bipoleRLCVolt,
                                    voltName=so.bipoleRLCVoltName, flagCurr=so.bipoleRLCCurr, currName=so.bipoleRLCCurrName,
-                                   invertArrows=so.bipoleRLCVoltCurrInvert, convention=so.bipoleRLCconvention,wireExtraSize=so.bipoleRLCextraWireSize)
+                                   invertArrows=so.bipoleRLCVoltCurrInvert, convention=so.bipoleRLCconvention,
+                                   wireExtraSize=so.bipoleRLCextraWireSize, standard=so.bipoleRLCstandard)
 
             if so.bipoleRLC == "inductor":
                 if so.bipoleRLCUnit:
@@ -311,7 +317,8 @@ class CircuitSymbols(RLC, source, transistor, signal, arrow, ampOp, diode, switc
                         so.bipoleRLCVal += OhmChar
                 self.drawPotentiometer(root_layer, position, value=so.bipoleRLCVal, angleDeg=so.bipoleRLCRot, flagVolt=so.bipoleRLCVolt,
                                        voltName=so.bipoleRLCVoltName, flagCurr=so.bipoleRLCCurr, currName=so.bipoleRLCCurrName,
-                                       invertArrows=so.bipoleRLCVoltCurrInvert, is3T=False, convention=so.bipoleRLCconvention,wireExtraSize=so.bipoleRLCextraWireSize)
+                                       invertArrows=so.bipoleRLCVoltCurrInvert, is3T=False, convention=so.bipoleRLCconvention,
+                                       wireExtraSize=so.bipoleRLCextraWireSize, standard=so.bipoleRLCstandard)
 
             if so.bipoleRLC == "pot3T":
                 if so.bipoleRLCUnit:
@@ -321,7 +328,14 @@ class CircuitSymbols(RLC, source, transistor, signal, arrow, ampOp, diode, switc
                         so.bipoleRLCVal += OhmChar
                 self.drawPotentiometer(root_layer, position, value=so.bipoleRLCVal, angleDeg=so.bipoleRLCRot, flagVolt=so.bipoleRLCVolt,
                                        voltName=so.bipoleRLCVoltName, flagCurr=so.bipoleRLCCurr, currName=so.bipoleRLCCurrName,
-                                       invertArrows=so.bipoleRLCVoltCurrInvert, is3T=True, convention=so.bipoleRLCconvention,wireExtraSize=so.bipoleRLCextraWireSize)
+                                       invertArrows=so.bipoleRLCVoltCurrInvert, is3T=True, convention=so.bipoleRLCconvention,
+                                       wireExtraSize=so.bipoleRLCextraWireSize, standard=so.bipoleRLCstandard)
+
+            if so.bipoleRLC == "fuse":
+                self.drawFuse(root_layer, position, value=so.bipoleRLCVal, angleDeg=so.bipoleRLCRot, flagVolt=so.bipoleRLCVolt,
+                                  voltName=so.bipoleRLCVoltName, flagCurr=so.bipoleRLCCurr, currName=so.bipoleRLCCurrName,
+                                  invertArrows=so.bipoleRLCVoltCurrInvert, convention=so.bipoleRLCconvention, wireExtraSize=so.bipoleRLCextraWireSize,
+                                  standard=so.bipoleRLCstandard)
 
         # ---------------------------
         # sources
@@ -360,9 +374,9 @@ class CircuitSymbols(RLC, source, transistor, signal, arrow, ampOp, diode, switc
                             so.sourceVal += r'\si\volt'
                         else:
                             so.sourceVal += 'V'
-                    self.drawSourceV(root_layer, position, value=so.sourceVal, angleDeg=so.sourceRot, flagVolt=so.sourceVolt, flagCurr=so.sourceCurr,
-                                     currName=so.sourceCurrName, invertArrows=so.sourceVoltCurrInvert, mirror=so.sourceMirror,
-                                     convention=so.sourceConvention,wireExtraSize=so.sourceExtraWireSize)
+                    self.drawSourceV(root_layer, position, value=so.sourceVal, sourceType='general', angleDeg=so.sourceRot, flagVolt=so.sourceVolt,
+                                     flagCurr=so.sourceCurr, currName=so.sourceCurrName, invertArrows=so.sourceVoltCurrInvert, mirror=so.sourceMirror,
+                                     convention=so.sourceConvention, wireExtraSize=so.sourceExtraWireSize,standard=so.sourceStandard)
 
                 if so.source == "voltIndepSinusoidal":
                     if so.sourceUnit:
@@ -370,19 +384,19 @@ class CircuitSymbols(RLC, source, transistor, signal, arrow, ampOp, diode, switc
                             so.sourceVal += r'\si\volt'
                         else:
                             so.sourceVal += 'V'
-                    self.drawSourceVSinusoidal(root_layer, position, value=so.sourceVal, angleDeg=so.sourceRot, flagVolt=so.sourceVolt,
-                                               flagCurr=so.sourceCurr, currName=so.sourceCurrName, invertArrows=so.sourceVoltCurrInvert,
-                                               mirror=so.sourceMirror, convention=so.sourceConvention,wireExtraSize=so.sourceExtraWireSize)
+                    self.drawSourceV(root_layer, position, value=so.sourceVal, sourceType='sinusoidal', angleDeg=so.sourceRot, flagVolt=so.sourceVolt,
+                                     flagCurr=so.sourceCurr, currName=so.sourceCurrName, invertArrows=so.sourceVoltCurrInvert, mirror=so.sourceMirror,
+                                     convention=so.sourceConvention, wireExtraSize=so.sourceExtraWireSize,standard=so.sourceControlledStandard)
 
                 if so.source == "currIndep":
                     if so.sourceUnit:
                         if inkDraw.useLatex:
-                            so.sourceVal += r'\si\ampere'
+                            so.sourceVal += r'\si{\ampere}' # weird effect of ampere symbol. It causes Latex text to be misplaced.
                         else:
                             so.sourceVal += 'A'
                     self.drawSourceI(root_layer, position, value=so.sourceVal, angleDeg=so.sourceRot, flagVolt=so.sourceVolt, flagCurr=so.sourceCurr,
                                      voltName=so.sourceVoltName, invertArrows=so.sourceVoltCurrInvert, mirror=so.sourceMirror,
-                                     convention=so.sourceConvention,wireExtraSize=so.sourceExtraWireSize)
+                                     convention=so.sourceConvention,wireExtraSize=so.sourceExtraWireSize,standard=so.sourceStandard)
 
             # --------------------------
             # controlled sources
@@ -394,14 +408,14 @@ class CircuitSymbols(RLC, source, transistor, signal, arrow, ampOp, diode, switc
                                               controlName=so.sourceControlledControlName, angleDeg=so.sourceControlledRot, flagVolt=so.sourceVolt,
                                               flagCurr=so.sourceCurr, currName=so.sourceCurrName, invertArrows=so.sourceVoltCurrInvert,
                                               mirror=so.sourceControlledMirror, convention=so.sourceConvention,
-                                              drawControl=so.sourceControlledDrawArrow,wireExtraSize=so.sourceControlledExtraWireSize)
+                                              drawControl=so.sourceControlledDrawArrow,wireExtraSize=so.sourceControlledExtraWireSize,standard=so.sourceControlledStandard)
 
                 if so.sourceControlled == "curr":
                     self.drawControledSourceI(root_layer, position, controlType=so.sourceControlledType, gain=so.sourceControlledGain,
                                               controlName=so.sourceControlledControlName, angleDeg=so.sourceControlledRot, flagVolt=so.sourceVolt,
                                               flagCurr=so.sourceCurr, voltName=so.sourceVoltName, invertArrows=so.sourceVoltCurrInvert,
                                               mirror=so.sourceControlledMirror, convention=so.sourceConvention,
-                                              drawControl=so.sourceControlledDrawArrow,wireExtraSize=so.sourceControlledExtraWireSize)
+                                              drawControl=so.sourceControlledDrawArrow,wireExtraSize=so.sourceControlledExtraWireSize,standard=so.sourceControlledStandard)
 
         # ---------------------------
         # Single Throw switches

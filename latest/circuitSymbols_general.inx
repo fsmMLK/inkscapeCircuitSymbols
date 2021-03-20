@@ -17,6 +17,11 @@
                         <option value="pot2T">Potentiometer (2T)</option>
                         <option value="pot3T">Potentiometer (3T)</option>
                         <option value="genericBipole">Generic Bipole</option>
+                        <option value="fuse">Fuse</option>
+                    </param>
+                    <param name="bipoleRLCstandard" type="optiongroup" appearance="combo" gui-text="Standard:">
+                        <option value="IEEE">IEEE Std 315-1975</option>
+                        <option value="IEC">IEC 60167</option>
                     </param>
                     <param name="bipoleRLCRot" type="optiongroup" appearance="combo" gui-text="Orientation (deg):">
                         <option value="0">0</option>
@@ -73,6 +78,10 @@
                                 <option value="voltIndepDCbattery">Voltage (battery)</option>
                                 <option value="currIndep">Current (General)</option>
                             </param>
+                            <param name="sourceStandard" type="optiongroup" appearance="combo" gui-text="Standard:">
+                                <option value="IEEE">IEEE Std 315-1975</option>
+                                <option value="IEC">IEC 60167</option>
+                            </param>
                             <param name="sourceRot" type="optiongroup" appearance="combo" gui-text="Orientation (deg):">
                                 <option value="0">0</option>
                                 <option value="90">90</option>
@@ -103,6 +112,10 @@
                             <param name="sourceControlled" type="optiongroup" appearance="combo" gui-text="Type:">
                                 <option value="volt">Voltage</option>
                                 <option value="curr">Current</option>
+                            </param>
+                            <param name="sourceControlledStandard" type="optiongroup" appearance="combo" gui-text="Standard:">
+                                <option value="IEEE">IEEE Std 315-1975</option>
+                                <option value="IEC">IEC 60167</option>
                             </param>
                             <param name="sourceControlledRot" type="optiongroup" appearance="combo" gui-text="Orientation (deg):">
                                 <option value="0">0</option>
