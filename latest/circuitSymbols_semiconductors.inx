@@ -318,14 +318,14 @@
                     <label appearance="header">Color setup</label>
                     <hbox>
                         <param name="currColor" type="optiongroup" appearance="combo" gui-text="Current indication color:">
-                            <option value="#FF0000">default (red)</option>
+                            <option value="#FF0000FF">default (red)</option>
                             <option value="picker">use color picker --></option>
                         </param>
                         <param name="colorPickerCurrent" type="color" appearance="colorbutton" gui-text=" "/>
                     </hbox>
                     <hbox>
                         <param name="voltColor" type="optiongroup" appearance="combo" gui-text="Voltage indication color:">
-                            <option value="#217B21">default (green)</option>
+                            <option value="#217B21FF">default (green)</option>
                             <option value="picker">use color picker --></option>
                         </param>
                         <param name="colorPickerVolt" type="color" appearance="colorbutton" gui-text=" "/>

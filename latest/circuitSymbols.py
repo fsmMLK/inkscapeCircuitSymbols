@@ -197,10 +197,10 @@ class CircuitSymbols(RLC, source, transistor, signal, arrow, ampOp, diode, switc
         self.arg_parser.add_argument("--arrowISize", type=int, dest="arrowISize", default=10)
         self.arg_parser.add_argument("--arrowCurvaturDirection", type=self.bool, dest="arrowCurvaturDirection", default=True)
 
-        self.arg_parser.add_argument("--currColor", type=str, dest="currColor", default='#FF0000')
+        self.arg_parser.add_argument("--currColor", type=str, dest="currColor", default='#FF0000FF')
         self.arg_parser.add_argument("--colorPickerCurrent", type=str, dest="colorPickerCurrent", default='0')
 
-        self.arg_parser.add_argument("--voltColor", type=str, dest="voltColor", default='#217B21')
+        self.arg_parser.add_argument("--voltColor", type=str, dest="voltColor", default='#217B21FF')
         self.arg_parser.add_argument("--colorPickerVolt", type=str, dest="colorPickerVolt", default='0')
 
     def effect(self):
@@ -228,8 +228,8 @@ class CircuitSymbols(RLC, source, transistor, signal, arrow, ampOp, diode, switc
         position[0] = int(math.ceil(position[0] / 10.0)) * 10
         position[1] = int(math.ceil(position[1] / 10.0)) * 10
 
-        [self.voltageColor, alpha] = inkDraw.color.parseColorPicker(so.voltColor, so.colorPickerVolt)
-        [self.currentColor, alpha] = inkDraw.color.parseColorPicker(so.currColor, so.colorPickerCurrent)
+        self.voltageColor = inkDraw.color.parseColorPicker(so.voltColor, so.colorPickerVolt)
+        self.currentColor = inkDraw.color.parseColorPicker(so.currColor, so.colorPickerCurrent)
 
         so.bipoleRLCRot = float(so.bipoleRLCRot)
         so.sourceRot = float(so.sourceRot)

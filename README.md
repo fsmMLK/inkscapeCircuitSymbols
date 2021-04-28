@@ -194,7 +194,7 @@ In this tab you can create resistors, capacitors, inductors and fuses. The secti
 
 ## Sources tab
 
-In this tab you can create voltage and current. The sources can be independent or dependent (contolled).
+In this tab you can create voltage and current sources. The sources can be independent or dependent (contolled).
 
 This tab contains two subtabs, *Independent* and *Dependent*. The 'Apply' button will execute the action associated to the subtab that is on the top.
 
