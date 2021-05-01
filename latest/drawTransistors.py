@@ -132,7 +132,7 @@ class transistor(inkBase.inkscapeMadeEasy):
     # ---------------------------------------------
     # metal-oxide-semiconductor field-effect transistor (N and P channel)
     def drawTransistorMOSFET(self, parent, position=[0, 0], angleDeg=0, label='MOSFET', mirrorSD=False, drawSGDtags=False, drawEnvelope=False,
-                             modeType='MOSFET-E', gateType='P_gate', is4terminal=True, bodyDiode=False, drawVGS=False, drawVDS=False, drawVDG=False,
+                             modeType='MOSFET-E', gateType='P_gate', MOSsymbolType=True, bodyDiode=False, drawVGS=False, drawVDS=False, drawVDG=False,
                              drawIDarrow=False, drawISarrow=False, drawIGarrow=False, VGSname='V_{GS}', VDSname='V_{SD}', VDGname='V_{GD}',
                              IDname='i_d', ISname='i_s', IGname='i_g', wireExtraSize=0):
 
@@ -147,7 +147,7 @@ class transistor(inkBase.inkscapeMadeEasy):
         drawEnvelope: draw circular envelope (default:False)
         modeType: type of field effect transistor: 'MOSFET-E' (Default)  'MOSFET_P'
         gateType: type of gate: 'P_gate',  'N_gate'
-        is3terminal: 3 (True, Default) or 4 (False) terminals transistor
+        MOSsymbolType: symbol type: '3T', '4T', '3TnB', 'shorthand'
         bodyDiode: draws body diode (MOSFET-E only)
         drawVGS,drawVDS,drawVDG: draw voltage drop annotations (default: False)
         drawIDarrow,drawISarrow,drawIGarrow: draw current annotations (default: False)
@@ -169,34 +169,60 @@ class transistor(inkBase.inkscapeMadeEasy):
         group = self.createGroup(parent, label)
         elem = self.createGroup(group, label)
         colorBlack = inkDraw.color.defined('black')
+        colorWhite = inkDraw.color.defined('white')
 
         L_arrow = 2.0
         markerMOS = inkDraw.marker.createMarker(self, 'MOSArrow', 'M -0.3,0 l -%f,%f l 0,-%f z' % (L_arrow * 1.2, L_arrow / 2.0, L_arrow),
                                                 RenameMode=0, strokeColor=colorBlack, fillColor=colorBlack, lineWidth=0.6)
         lineStyleArrow = inkDraw.lineStyle.set(lineWidth=0.7, lineColor=colorBlack, markerEnd=markerMOS)
         lineStyleFine = inkDraw.lineStyle.set(lineWidth=0.7, lineColor=colorBlack)
+        lineStyleFineWhite = inkDraw.lineStyle.set(lineWidth=0.7, lineColor=colorBlack, fillColor=colorWhite)
+        lineStyleBold = inkDraw.lineStyle.set(lineWidth=2, lineColor=colorBlack)
 
-        inkDraw.line.relCoords(elem, [[0, 11], [-(28 + wireExtraSize), 0]], self.add(position, [17, -6]))  # gate
+        if MOSsymbolType == 'shorthand':
+            if not isEmode:
+                inkDraw.line.relCoords(elem, [[0, 12]], self.add(position, [16, -6]), lineStyle=lineStyleFine)  # gate
+                if isNgate:
+                    inkDraw.line.relCoords(elem, [ [-(26.75 + wireExtraSize), 0]], self.add(position, [15.75, 0]))  # gate
+                else:
+                    inkDraw.line.relCoords(elem, [ [-(24.75 + wireExtraSize), 0]], self.add(position, [13.75, 0]))  # gate
+                    inkDraw.circle.centerRadius(elem, self.add(position, [15, 0]), radius=1.0, offset=[0,0], label='circle',lineStyle=lineStyleFineWhite) # gate negate input
+            else:
+                inkDraw.line.relCoords(elem, [[0, 12]], self.add(position, [17, -6]), lineStyle=lineStyleFine)  # gate
+                if isNgate:
+                    inkDraw.line.relCoords(elem, [ [-(27.75 + wireExtraSize), 0]], self.add(position, [16.75, 0]))  # gate
+                else:
+                    inkDraw.line.relCoords(elem, [ [-(25.75 + wireExtraSize), 0]], self.add(position, [14.75, 0]))  # gate
+                    inkDraw.circle.centerRadius(elem, self.add(position, [16, 0]), radius=1.0, offset=[0,0], label='circle',lineStyle=lineStyleFineWhite) # gate negate input
+        else:
+            inkDraw.line.relCoords(elem, [[0, 11]], self.add(position, [17, -6]), lineStyle=lineStyleFine)  # gate
+            inkDraw.line.relCoords(elem, [ [-(27.75 + wireExtraSize), 0]], self.add(position, [16.75, 5]))  # gate
 
         inkDraw.line.relCoords(elem, [[0, -(19.6 + wireExtraSize)]], self.add(position, [24, -5.4]))  # drain line
         inkDraw.line.relCoords(elem, [[5, 0]], self.add(position, [19, -5.25]), lineStyle=lineStyleFine)  # drain line
 
         inkDraw.line.relCoords(elem, [[0, 19.6 + wireExtraSize]], self.add(position, [24, 5.4]))  # source line
-        inkDraw.line.relCoords(elem, [[5, 0]], self.add(position, [19, 5.25]), lineStyle=lineStyleFine)  # source line
-
-        if is4terminal:
-            inkDraw.line.relCoords(elem, [[25 + wireExtraSize, 0]], self.add(position, [24, 0]))  # source line
-            pass
+        if MOSsymbolType == '3TnB':
+            if not isNgate:
+                inkDraw.line.relCoords(elem, [[-5, 0]], self.add(position, [24, 5.25]), lineStyle=lineStyleArrow)  # source current arrow
+            else:
+                inkDraw.line.relCoords(elem, [[5, 0]], self.add(position, [19, 5.25]), lineStyle=lineStyleArrow)  # source current arrow
         else:
-            inkDraw.line.relCoords(elem, [[0, -5.25]], self.add(position, [24, 5.25]), lineStyle=lineStyleFine)  # source line
+            inkDraw.line.relCoords(elem, [[5, 0]], self.add(position, [19, 5.25]), lineStyle=lineStyleFine)  # source line
+
+        if MOSsymbolType == '4T':
+            inkDraw.line.relCoords(elem, [[25 + wireExtraSize, 0]], self.add(position, [24, 0]))  # bulk line
+        if MOSsymbolType == '3T':
+            inkDraw.line.relCoords(elem, [[0, -5.25]], self.add(position, [24, 5.25]), lineStyle=lineStyleFine)  # source-bulk connection line
             inkDraw.circle.centerRadius(elem, self.add(position, [24, 5.25]), radius=0.4, offset=[0, 0], label='circle')  # source dot
 
-        if isNgate:
-            inkDraw.line.relCoords(elem, [[-5, 0]], self.add(position, [24, 0]), lineStyle=lineStyleArrow)  # horizontal arrow line
-        else:
-            inkDraw.line.relCoords(elem, [[5, 0]], self.add(position, [19, 0]), lineStyle=lineStyleArrow)  # horizontal arrow line
+        if MOSsymbolType == '4T' or MOSsymbolType == '3T':
+            if isNgate:
+                inkDraw.line.relCoords(elem, [[-5, 0]], self.add(position, [24, 0]), lineStyle=lineStyleArrow)  # PN bulk junction
+            else:
+                inkDraw.line.relCoords(elem, [[5, 0]], self.add(position, [19, 0]), lineStyle=lineStyleArrow)  # PN bulk junction
 
-        if bodyDiode and isEmode and not is4terminal:
+        if bodyDiode and isEmode and MOSsymbolType == '3T':
             inkDraw.circle.centerRadius(elem, self.add(position, [24, -5.25]), radius=0.4, offset=[0, 0], label='circle')  # diode cathode dot
             inkDraw.line.relCoords(elem, [[4, 0], [0, 3.75]], self.add(position, [24, -5.25]), lineStyle=lineStyleFine)  # diode cathode
             inkDraw.line.relCoords(elem, [[4, 0], [0, -3.75]], self.add(position, [24, 5.25]), lineStyle=lineStyleFine)  # diode anode
@@ -214,22 +240,28 @@ class transistor(inkBase.inkscapeMadeEasy):
         else:
             Yfactor = 1
 
-        if isEmode:
-            # enhancement-mode line
-            inkDraw.line.relCoords(elem, [[0, 3.5]], self.add(position, [19, -7]), lineStyle=lineStyleFine)  # vertical gate line
-            inkDraw.line.relCoords(elem, [[0, 3.5]], self.add(position, [19, -1.75]), lineStyle=lineStyleFine)  # vertical gate line
-            inkDraw.line.relCoords(elem, [[0, 3.5]], self.add(position, [19, 3.5]), lineStyle=lineStyleFine)  # vertical gate line
+        if MOSsymbolType == 'shorthand':
+            if isEmode:
+                inkDraw.line.relCoords(elem, [[0, 14]], self.add(position, [19, -7]), lineStyle=lineStyleFine)  # vertical gate line
+            else:
+                inkDraw.line.relCoords(elem, [[0, 14]], self.add(position, [18.65, -7]), lineStyle=lineStyleBold)  # vertical gate line
         else:
-            inkDraw.line.relCoords(elem, [[0, 14]], self.add(position, [19, -7]), lineStyle=lineStyleFine)  # vertical gate line
+            if isEmode:
+                # enhancement-mode line
+                inkDraw.line.relCoords(elem, [[0, 3.5]], self.add(position, [19, -7]), lineStyle=lineStyleFine)  # vertical gate line
+                inkDraw.line.relCoords(elem, [[0, 3.5]], self.add(position, [19, -1.75]), lineStyle=lineStyleFine)  # vertical gate line
+                inkDraw.line.relCoords(elem, [[0, 3.5]], self.add(position, [19, 3.5]), lineStyle=lineStyleFine)  # vertical gate line
+            else:
+                inkDraw.line.relCoords(elem, [[0, 14]], self.add(position, [19, -7]), lineStyle=lineStyleFine)  # vertical gate line
 
         if drawEnvelope:
-            if bodyDiode and isEmode:
+            if bodyDiode and isEmode and MOSsymbolType == '3T':
                 inkDraw.circle.centerRadius(elem, centerPoint=self.add(position, [22, 0]), radius=10, offset=[0, 0], label='circle')
             else:
                 inkDraw.circle.centerRadius(elem, centerPoint=self.add(position, [20, 0]), radius=10, offset=[0, 0], label='circle')
 
         if drawSGDtags:
-            if bodyDiode and isEmode:
+            if bodyDiode and isEmode and MOSsymbolType == '3T':
                 pos_Gtag = self.add(position, [9, Yfactor * 2])
                 pos_Dtag = self.add(position, [26.5, - Yfactor * 12.5])
                 pos_Stag = self.add(position, [26.5, Yfactor * 12.5])
@@ -246,7 +278,7 @@ class transistor(inkBase.inkscapeMadeEasy):
                                     preambleFile=self.preambleFile, angleDeg=-angleDeg)
             tE = inkDraw.text.latex(self, group, 'S', position=pos_Stag, fontSize=self.fontSizeSmall / 1.5, refPoint='cc',
                                     preambleFile=self.preambleFile, angleDeg=-angleDeg)
-            if is4terminal:
+            if MOSsymbolType == '4T':
                 tB = inkDraw.text.latex(self, group, 'B', position=pos_Btag, fontSize=self.fontSizeSmall / 1.5, refPoint='cc',
                                         preambleFile=self.preambleFile, angleDeg=-angleDeg)
 

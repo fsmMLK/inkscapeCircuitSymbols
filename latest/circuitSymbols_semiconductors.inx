@@ -136,7 +136,12 @@
                         <option value="P_gate">Positive</option>
                         <option value="N_gate">Negative</option>
                     </param>
-                    <param name="FET_4Terminals" type="bool" gui-text="4-terminal MOSFET (MOSFET only)">false</param>
+                    <param name="FET_MOSsymbolType" type="optiongroup" appearance="combo" gui-text="MOSFET symbol type:">
+                        <option value="4T">4-terminal</option>
+                        <option value="3T">3-terminal</option>
+                        <option value="3TnB">3-terminal (no bulk)</option>
+                        <option value="shorthand">Shorthand</option>
+                    </param>
                     <param name="FET_Rot" type="optiongroup" appearance="combo" gui-text="Orientation (deg):">
                         <option value="0">0</option>
                         <option value="90">90</option>

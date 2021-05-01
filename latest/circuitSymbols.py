@@ -130,7 +130,7 @@ class CircuitSymbols(RLC, source, transistor, signal, arrow, ampOp, diode, switc
         self.arg_parser.add_argument("--FET_Type", type=str, dest="FET_Type", default='none')
         self.arg_parser.add_argument("--FET_Gate", type=str, dest="FET_Gate", default='none')
         self.arg_parser.add_argument("--FET_BodyDiode", type=self.bool, dest="FET_BodyDiode", default=False)
-        self.arg_parser.add_argument("--FET_4Terminals", type=self.bool, dest="FET_4Terminals", default=False)
+        self.arg_parser.add_argument("--FET_MOSsymbolType", type=str, dest="FET_MOSsymbolType", default='3T')
         self.arg_parser.add_argument("--FET_MoveGate", type=self.bool, dest="FET_MoveGate", default=False)
         self.arg_parser.add_argument("--FET_Rot", type=str, dest="FET_Rot", default='0')
         self.arg_parser.add_argument("--FET_Envelope", type=self.bool, dest="FET_Envelope", default=True)
@@ -462,7 +462,7 @@ class CircuitSymbols(RLC, source, transistor, signal, arrow, ampOp, diode, switc
         if so.tab == 'Transistor_FET':
             if 'MOSFET' in so.FET_Type:
                 self.drawTransistorMOSFET(root_layer, position, angleDeg=so.FET_Rot, mirrorSD=so.FET_MirrorEC, drawSGDtags=so.FET_SGDtags,
-                                          drawEnvelope=so.FET_Envelope, modeType=so.FET_Type, gateType=so.FET_Gate, is4terminal=so.FET_4Terminals,
+                                          drawEnvelope=so.FET_Envelope, modeType=so.FET_Type, gateType=so.FET_Gate, MOSsymbolType=so.FET_MOSsymbolType,
                                           bodyDiode=so.FET_BodyDiode, drawVGS=so.FET_DrawVGSarrow, drawVDS=so.FET_DrawVDSarrow,
                                           drawVDG=so.FET_DrawVDGarrow, drawIDarrow=so.FET_DrawIDarrow, drawISarrow=so.FET_DrawISarrow,
                                           drawIGarrow=so.FET_DrawIGarrow, VGSname=so.FET_VGSname, VDSname=so.FET_VDSname, VDGname=so.FET_VDGname,

@@ -461,9 +461,9 @@ In this tab you can create MOSFET and JFET transistors.
 
 <img src="docs/images/JFET_Types.png" width="300px"/>
 
-**4-terminal MOSFET (MOSFET only):** Switch between 3 and 4-terminal MOSFETs.
+**MOSFET symbol type (MOSFET only):** Switch between different symbol schemes. See figure below.
 
-<img src="docs/images/FET_nTerminals.png" width="400px"/>
+<img src="docs/images/MOSFET_symbolType.png" width="700px"/>
 
 **Orientation:** Rotation angle in degrees. See *RLC tab* section for examples.
 
