@@ -172,6 +172,30 @@
          style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.6;stroke-opacity:1"
          id="path3940" />
     </marker>
+    <marker
+       id="MOSArrowA"
+       orient="auto"
+       refX="0.0"
+       refY="0.0"
+       style="overflow:visible"
+       inkscape:stockid="MOSArrowA">
+      <path
+         d="M -0.1,0 l -2.400000,1.000000 l 0,-2.000000 z"
+         style="fill:#000000;fill-opacity:1.0;fill-rule:evenodd;stroke:#000000;stroke-opacity:1.0;stroke-width:0.6"
+         id="path1173" />
+    </marker>
+    <marker
+       id="MOSArrowB"
+       orient="auto"
+       refX="0.0"
+       refY="0.0"
+       style="overflow:visible"
+       inkscape:stockid="MOSArrowB">
+      <path
+         d="M -0.3,0 l -2.400000,1.000000 l 0,-2.000000 z"
+         style="fill:#000000;fill-opacity:1.0;fill-rule:evenodd;stroke:#000000;stroke-opacity:1.0;stroke-width:0.6"
+         id="path1176" />
+    </marker>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -181,8 +205,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="3.2868716"
-     inkscape:cx="237.36467"
-     inkscape:cy="246.99136"
+     inkscape:cx="215.386"
+     inkscape:cy="218.91894"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      inkscape:document-rotation="0"
@@ -206,7 +230,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -220,9 +244,9 @@
        x="160"
        y="70"
        id="text833"
-       transform="translate(-15,37.912109)"
-       inkscape:export-xdpi="468.38434"
-       inkscape:export-ydpi="468.38434"><tspan
+       transform="translate(-25,37.912109)"
+       inkscape:export-xdpi="559.26971"
+       inkscape:export-ydpi="559.26971"><tspan
          sodipodi:role="line"
          id="tspan831"
          x="160"
@@ -233,9 +257,9 @@
        x="490"
        y="50"
        id="text837"
-       transform="translate(-235,57.912109)"
-       inkscape:export-xdpi="468.38434"
-       inkscape:export-ydpi="468.38434"><tspan
+       transform="translate(-265,57.912109)"
+       inkscape:export-xdpi="559.26971"
+       inkscape:export-ydpi="559.26971"><tspan
          sodipodi:role="line"
          id="tspan835"
          x="490"
@@ -246,9 +270,9 @@
        x="50"
        y="200"
        id="text841"
-       transform="rotate(-90,47.5,167.5)"
-       inkscape:export-xdpi="468.38434"
-       inkscape:export-ydpi="468.38434"><tspan
+       transform="rotate(-90,45,165)"
+       inkscape:export-xdpi="559.26971"
+       inkscape:export-ydpi="559.26971"><tspan
          sodipodi:role="line"
          id="tspan839"
          x="50"
@@ -259,9 +283,9 @@
        x="-60"
        y="330"
        id="text845"
-       transform="rotate(-90,-42.258789,207.25879)"
-       inkscape:export-xdpi="468.38434"
-       inkscape:export-ydpi="468.38434"><tspan
+       transform="rotate(-90,-49.758789,199.75879)"
+       inkscape:export-xdpi="559.26971"
+       inkscape:export-ydpi="559.26971"><tspan
          sodipodi:role="line"
          id="tspan843"
          x="-60"
@@ -272,9 +296,9 @@
        x="-70"
        y="440"
        id="text849"
-       transform="rotate(-90,-74.994141,289.99414)"
-       inkscape:export-xdpi="468.38434"
-       inkscape:export-ydpi="468.38434"><tspan
+       transform="rotate(-90,-87.494141,277.49414)"
+       inkscape:export-xdpi="559.26971"
+       inkscape:export-ydpi="559.26971"><tspan
          sodipodi:role="line"
          id="tspan847"
          x="-70"
@@ -289,313 +313,64 @@
        x="-90"
        y="560"
        id="text853"
-       transform="rotate(-90,-112.25879,367.25879)"
-       inkscape:export-xdpi="468.38434"
-       inkscape:export-ydpi="468.38434"><tspan
+       transform="rotate(-90,-129.75879,349.75879)"
+       inkscape:export-xdpi="559.26971"
+       inkscape:export-ydpi="559.26971"><tspan
          sodipodi:role="line"
          id="tspan851"
          x="-90"
          y="560">shorthand</tspan></text>
     <path
        style="font-variation-settings:normal;vector-effect:none;fill:#5fbcd3;fill-opacity:1;stroke:#5fbcd3;stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
-       d="M 145,375 V 115"
+       d="M 135,335 V 115"
        id="path3310"
        sodipodi:nodetypes="cc"
-       inkscape:export-xdpi="468.38434"
-       inkscape:export-ydpi="468.38434" />
+       inkscape:export-xdpi="559.26971"
+       inkscape:export-ydpi="559.26971" />
     <path
        style="font-variation-settings:normal;vector-effect:none;fill:#5fbcd3;fill-opacity:1;stroke:#5fbcd3;stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
-       d="M 200,375 V 95"
+       d="M 180,335 V 95"
        id="path3310-2"
        sodipodi:nodetypes="cc"
-       inkscape:export-xdpi="468.38434"
-       inkscape:export-ydpi="468.38434" />
+       inkscape:export-xdpi="559.26971"
+       inkscape:export-ydpi="559.26971" />
     <path
        style="font-variation-settings:normal;vector-effect:none;fill:#5fbcd3;fill-opacity:1;stroke:#5fbcd3;stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
-       d="M 255,375 V 115"
+       d="M 225,335 V 115"
        id="path3310-2-7"
        sodipodi:nodetypes="cc"
-       inkscape:export-xdpi="468.38434"
-       inkscape:export-ydpi="468.38434" />
+       inkscape:export-xdpi="559.26971"
+       inkscape:export-ydpi="559.26971" />
     <path
        style="font-variation-settings:normal;vector-effect:none;fill:#5fbcd3;fill-opacity:1;stroke:#5fbcd3;stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
-       d="M 310,375 V 95"
+       d="M 270,335 V 95"
        id="path3310-2-7-0"
        sodipodi:nodetypes="cc"
-       inkscape:export-xdpi="468.38434"
-       inkscape:export-ydpi="468.38434" />
+       inkscape:export-xdpi="559.26971"
+       inkscape:export-ydpi="559.26971" />
     <path
        style="font-variation-settings:normal;vector-effect:none;fill:#5fbcd3;fill-opacity:1;stroke:#5fbcd3;stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
-       d="M 90,375 V 95"
+       d="M 90,335 V 95"
        id="path3310-8"
        sodipodi:nodetypes="cc"
-       inkscape:export-xdpi="468.38434"
-       inkscape:export-ydpi="468.38434" />
+       inkscape:export-xdpi="559.26971"
+       inkscape:export-ydpi="559.26971" />
     <path
        style="font-variation-settings:normal;vector-effect:none;fill:#5fbcd3;fill-opacity:1;stroke:#5fbcd3;stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
-       d="M 65,375 V 135"
+       d="M 65,335 V 135"
        id="path3310-8-7"
        sodipodi:nodetypes="cc"
-       inkscape:export-xdpi="468.38434"
-       inkscape:export-ydpi="468.38434" />
-    <g
-       inkscape:label="MOSFET"
-       id="g899"
-       transform="translate(-294,-65)"
-       inkscape:export-xdpi="468.38434"
-       inkscape:export-ydpi="468.38434">
-      <g
-         inkscape:label="MOSFET"
-         id="g897">
-        <path
-           d="m 417,284 v 11"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path875" />
-        <path
-           d="M 416.75,295 H 389"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path877" />
-        <path
-           d="M 424,284.6 V 265"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path879" />
-        <path
-           d="m 419,284.75 h 5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path881" />
-        <path
-           d="M 424,295.4 V 315"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path883" />
-        <path
-           d="m 419,295.25 h 5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path885" />
-        <path
-           d="m 424,290 h 10"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path887"
-           sodipodi:nodetypes="cc" />
-        <path
-           d="m 419,290 h 5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#MOSArrow-9)"
-           inkscape:label="none"
-           id="path889" />
-        <path
-           d="m 419,283 v 3.5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path891" />
-        <path
-           d="m 419,288.25 v 3.5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path893" />
-        <path
-           d="M 419,293.5 V 297"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path895" />
-      </g>
-    </g>
-    <g
-       inkscape:label="MOSFET"
-       id="g982"
-       transform="translate(-294,-125)"
-       inkscape:export-xdpi="468.38434"
-       inkscape:export-ydpi="468.38434">
-      <g
-         inkscape:label="MOSFET"
-         id="g980">
-        <path
-           d="m 417,284 v 11"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path956" />
-        <path
-           d="M 416.75,295 H 389"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path958" />
-        <path
-           d="M 424,284.6 V 265"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path960" />
-        <path
-           d="m 419,284.75 h 5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path962" />
-        <path
-           d="M 424,295.4 V 315"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path964" />
-        <path
-           d="m 419,295.25 h 5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path966" />
-        <path
-           d="M 424,295.25 V 290"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path968" />
-        <circle
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="circle"
-           id="path970"
-           cx="424"
-           cy="295.25"
-           r="0.40000001" />
-        <path
-           d="m 419,290 h 5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#MOSArrow-9)"
-           inkscape:label="none"
-           id="path972" />
-        <path
-           d="m 419,283 v 3.5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path974" />
-        <path
-           d="m 419,288.25 v 3.5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path976" />
-        <path
-           d="M 419,293.5 V 297"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path978" />
-      </g>
-    </g>
-    <g
-       inkscape:label="MOSFET"
-       id="g1066"
-       transform="translate(-294,-5)"
-       inkscape:export-xdpi="468.38434"
-       inkscape:export-ydpi="468.38434">
-      <g
-         inkscape:label="MOSFET"
-         id="g1064">
-        <path
-           d="m 417,284 v 11"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1046" />
-        <path
-           d="M 416.75,295 H 389"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1048" />
-        <path
-           d="M 424,284.6 V 265"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1050" />
-        <path
-           d="m 419,284.75 h 5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1052" />
-        <path
-           d="M 424,295.4 V 315"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1054" />
-        <path
-           d="m 424,295.25 h -5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#MOSArrow-9)"
-           inkscape:label="none"
-           id="path1056" />
-        <path
-           d="m 419,283 v 3.5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1058" />
-        <path
-           d="m 419,288.25 v 3.5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1060" />
-        <path
-           d="M 419,293.5 V 297"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1062" />
-      </g>
-    </g>
-    <g
-       inkscape:label="MOSFET"
-       id="g1156"
-       transform="translate(-294,55)"
-       inkscape:export-xdpi="468.38434"
-       inkscape:export-ydpi="468.38434">
-      <g
-         inkscape:label="MOSFET"
-         id="g1154">
-        <path
-           d="m 417,284 v 12"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1138" />
-        <path
-           d="M 414.75,290 H 389"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1140" />
-        <circle
-           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="circle"
-           id="path1142"
-           cx="416"
-           cy="290"
-           r="1" />
-        <path
-           d="M 424,284.6 V 265"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1144" />
-        <path
-           d="m 419,284.75 h 5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1146" />
-        <path
-           d="M 424,295.4 V 315"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1148" />
-        <path
-           d="m 419,295.25 h 5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1150" />
-        <path
-           d="m 419,283 v 14"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1152" />
-      </g>
-    </g>
+       inkscape:export-xdpi="559.26971"
+       inkscape:export-ydpi="559.26971" />
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:sans-serif;font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:center;text-decoration:none;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:middle;white-space:normal;shape-padding:0;shape-margin:0;inline-size:0;vector-effect:none;fill:#000000;fill-opacity:1;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
        x="70"
        y="120"
        id="text1172"
-       transform="translate(47.349609,7.207031)"
-       inkscape:export-xdpi="468.38434"
-       inkscape:export-ydpi="468.38434"><tspan
+       transform="translate(42.349609,7.207031)"
+       inkscape:export-xdpi="559.26971"
+       inkscape:export-ydpi="559.26971"><tspan
          sodipodi:role="line"
          id="tspan1170"
          x="70"
@@ -606,9 +381,9 @@
        x="229.42456"
        y="115.02387"
        id="text1176"
-       transform="translate(-57.074951,12.183159)"
-       inkscape:export-xdpi="468.38434"
-       inkscape:export-ydpi="468.38434"><tspan
+       transform="translate(-72.074951,12.183159)"
+       inkscape:export-xdpi="559.26971"
+       inkscape:export-ydpi="559.26971"><tspan
          sodipodi:role="line"
          id="tspan1174"
          x="229.42456"
@@ -619,9 +394,9 @@
        x="452.32489"
        y="107.77664"
        id="text1172-3"
-       transform="translate(-224.97528,19.430389)"
-       inkscape:export-xdpi="468.38434"
-       inkscape:export-ydpi="468.38434"><tspan
+       transform="translate(-249.97528,19.430389)"
+       inkscape:export-xdpi="559.26971"
+       inkscape:export-ydpi="559.26971"><tspan
          sodipodi:role="line"
          id="tspan1170-6"
          x="452.32489"
@@ -632,734 +407,951 @@
        x="611.74945"
        y="102.80051"
        id="text1176-7"
-       transform="translate(-329.39984,24.406525)"
-       inkscape:export-xdpi="468.38434"
-       inkscape:export-ydpi="468.38434"><tspan
+       transform="translate(-364.39984,24.406525)"
+       inkscape:export-xdpi="559.26971"
+       inkscape:export-ydpi="559.26971"><tspan
          sodipodi:role="line"
          id="tspan1174-5"
          x="611.74945"
          y="102.80051">negative</tspan></text>
-    <g
-       inkscape:label="MOSFET"
-       id="g1301"
-       transform="translate(-239,55)"
-       inkscape:export-xdpi="468.38434"
-       inkscape:export-ydpi="468.38434">
-      <g
-         inkscape:label="MOSFET"
-         id="g1299">
-        <path
-           d="m 417,284 v 12"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1285" />
-        <path
-           d="M 416.75,290 H 389"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1287" />
-        <path
-           d="M 424,284.6 V 265"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1289" />
-        <path
-           d="m 419,284.75 h 5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1291" />
-        <path
-           d="M 424,295.4 V 315"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1293" />
-        <path
-           d="m 419,295.25 h 5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1295" />
-        <path
-           d="m 419,283 v 14"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1297" />
-      </g>
-    </g>
-    <g
-       inkscape:label="MOSFET"
-       id="g1418"
-       transform="translate(-239,-5)"
-       inkscape:export-xdpi="468.38434"
-       inkscape:export-ydpi="468.38434">
-      <g
-         inkscape:label="MOSFET"
-         id="g1416">
-        <path
-           d="m 417,284 v 11"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1398" />
-        <path
-           d="M 416.75,295 H 389"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1400" />
-        <path
-           d="M 424,284.6 V 265"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1402" />
-        <path
-           d="m 419,284.75 h 5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1404" />
-        <path
-           d="M 424,295.4 V 315"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1406" />
-        <path
-           d="m 419,295.25 h 5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#MOSArrow-9)"
-           inkscape:label="none"
-           id="path1408" />
-        <path
-           d="m 419,283 v 3.5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1410" />
-        <path
-           d="m 419,288.25 v 3.5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1412" />
-        <path
-           d="M 419,293.5 V 297"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1414" />
-      </g>
-    </g>
-    <g
-       inkscape:label="MOSFET"
-       id="g1554"
-       transform="translate(-239,-125)"
-       inkscape:export-xdpi="468.38434"
-       inkscape:export-ydpi="468.38434">
-      <g
-         inkscape:label="MOSFET"
-         id="g1552">
-        <path
-           d="m 417,284 v 11"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1528" />
-        <path
-           d="M 416.75,295 H 389"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1530" />
-        <path
-           d="M 424,284.6 V 265"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1532" />
-        <path
-           d="m 419,284.75 h 5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1534" />
-        <path
-           d="M 424,295.4 V 315"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1536" />
-        <path
-           d="m 419,295.25 h 5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1538" />
-        <path
-           d="M 424,295.25 V 290"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1540" />
-        <circle
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="circle"
-           id="path1542"
-           cx="424"
-           cy="295.25"
-           r="0.40000001" />
-        <path
-           d="m 424,290 h -5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#MOSArrow-9)"
-           inkscape:label="none"
-           id="path1544" />
-        <path
-           d="m 419,283 v 3.5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1546" />
-        <path
-           d="m 419,288.25 v 3.5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1548" />
-        <path
-           d="M 419,293.5 V 297"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1550" />
-      </g>
-    </g>
-    <g
-       inkscape:label="MOSFET"
-       id="g1705"
-       transform="translate(-239,-65)"
-       inkscape:export-xdpi="468.38434"
-       inkscape:export-ydpi="468.38434">
-      <g
-         inkscape:label="MOSFET"
-         id="g1703">
-        <path
-           d="m 417,284 v 11"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1681" />
-        <path
-           d="M 416.75,295 H 389"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1683" />
-        <path
-           d="M 424,284.6 V 265"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1685" />
-        <path
-           d="m 419,284.75 h 5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1687" />
-        <path
-           d="M 424,295.4 V 315"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1689" />
-        <path
-           d="m 419,295.25 h 5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1691" />
-        <path
-           d="m 424,290 h 10"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1693"
-           sodipodi:nodetypes="cc" />
-        <path
-           d="m 424,290 h -5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#MOSArrow-9)"
-           inkscape:label="none"
-           id="path1695" />
-        <path
-           d="m 419,283 v 3.5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1697" />
-        <path
-           d="m 419,288.25 v 3.5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1699" />
-        <path
-           d="M 419,293.5 V 297"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1701" />
-      </g>
-    </g>
-    <g
-       inkscape:label="MOSFET"
-       id="g1864"
-       transform="translate(-129,-65)"
-       inkscape:export-xdpi="468.38434"
-       inkscape:export-ydpi="468.38434">
-      <g
-         inkscape:label="MOSFET"
-         id="g1862">
-        <path
-           d="m 417,284 v 11"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1844" />
-        <path
-           d="M 416.75,295 H 389"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1846" />
-        <path
-           d="M 424,284.6 V 265"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1848" />
-        <path
-           d="m 419,284.75 h 5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1850" />
-        <path
-           d="M 424,295.4 V 315"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1852" />
-        <path
-           d="m 419,295.25 h 5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1854" />
-        <path
-           d="m 424,290 h 10"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1856"
-           sodipodi:nodetypes="cc" />
-        <path
-           d="m 424,290 h -5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#MOSArrow-9)"
-           inkscape:label="none"
-           id="path1858" />
-        <path
-           d="m 419,283 v 14"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path1860" />
-      </g>
-    </g>
-    <g
-       inkscape:label="MOSFET"
-       id="g2034"
-       transform="translate(-129,-125)"
-       inkscape:export-xdpi="468.38434"
-       inkscape:export-ydpi="468.38434">
-      <g
-         inkscape:label="MOSFET"
-         id="g2032">
-        <path
-           d="m 417,284 v 11"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path2012" />
-        <path
-           d="M 416.75,295 H 389"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path2014" />
-        <path
-           d="M 424,284.6 V 265"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path2016" />
-        <path
-           d="m 419,284.75 h 5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path2018" />
-        <path
-           d="M 424,295.4 V 315"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path2020" />
-        <path
-           d="m 419,295.25 h 5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path2022" />
-        <path
-           d="M 424,295.25 V 290"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path2024" />
-        <circle
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="circle"
-           id="path2026"
-           cx="424"
-           cy="295.25"
-           r="0.40000001" />
-        <path
-           d="m 424,290 h -5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#MOSArrow-9)"
-           inkscape:label="none"
-           id="path2028" />
-        <path
-           d="m 419,283 v 14"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path2030" />
-      </g>
-    </g>
-    <g
-       inkscape:label="MOSFET"
-       id="g2211"
-       transform="translate(-129,-5)"
-       inkscape:export-xdpi="468.38434"
-       inkscape:export-ydpi="468.38434">
-      <g
-         inkscape:label="MOSFET"
-         id="g2209">
-        <path
-           d="m 417,284 v 11"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path2195" />
-        <path
-           d="M 416.75,295 H 389"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path2197" />
-        <path
-           d="M 424,284.6 V 265"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path2199" />
-        <path
-           d="m 419,284.75 h 5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path2201" />
-        <path
-           d="M 424,295.4 V 315"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path2203" />
-        <path
-           d="m 419,295.25 h 5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#MOSArrow-9)"
-           inkscape:label="none"
-           id="path2205" />
-        <path
-           d="m 419,283 v 14"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path2207" />
-      </g>
-    </g>
-    <g
-       inkscape:label="MOSFET"
-       id="g2394"
-       transform="translate(-129,55)"
-       inkscape:export-xdpi="468.38434"
-       inkscape:export-ydpi="468.38434">
-      <g
-         inkscape:label="MOSFET"
-         id="g2392">
-        <path
-           d="m 416,284 v 12"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path2378" />
-        <path
-           d="M 415.75,290 H 389"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path2380" />
-        <path
-           d="M 424,284.6 V 265"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path2382" />
-        <path
-           d="m 419,284.75 h 5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path2384" />
-        <path
-           d="M 424,295.4 V 315"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path2386" />
-        <path
-           d="m 419,295.25 h 5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path2388" />
-        <path
-           d="m 418.65,283 v 14"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path2390" />
-      </g>
-    </g>
-    <g
-       inkscape:label="MOSFET"
-       id="g2588"
-       transform="translate(-184,55)"
-       inkscape:export-xdpi="468.38434"
-       inkscape:export-ydpi="468.38434">
-      <g
-         inkscape:label="MOSFET"
-         id="g2586">
-        <path
-           d="m 416,284 v 12"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path2570" />
-        <path
-           d="M 413.75,290 H 389"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path2572" />
-        <circle
-           style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="circle"
-           id="path2574"
-           cx="415"
-           cy="290"
-           r="1" />
-        <path
-           d="M 424,284.6 V 265"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path2576" />
-        <path
-           d="m 419,284.75 h 5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path2578" />
-        <path
-           d="M 424,295.4 V 315"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path2580" />
-        <path
-           d="m 419,295.25 h 5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path2582" />
-        <path
-           d="m 418.65,283 v 14"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path2584" />
-      </g>
-    </g>
-    <g
-       inkscape:label="MOSFET"
-       id="g2791"
-       transform="translate(-184,-5)"
-       inkscape:export-xdpi="468.38434"
-       inkscape:export-ydpi="468.38434">
-      <g
-         inkscape:label="MOSFET"
-         id="g2789">
-        <path
-           d="m 417,284 v 11"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path2775" />
-        <path
-           d="M 416.75,295 H 389"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path2777" />
-        <path
-           d="M 424,284.6 V 265"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path2779" />
-        <path
-           d="m 419,284.75 h 5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path2781" />
-        <path
-           d="M 424,295.4 V 315"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path2783" />
-        <path
-           d="m 424,295.25 h -5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#MOSArrow-9)"
-           inkscape:label="none"
-           id="path2785" />
-        <path
-           d="m 419,283 v 14"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path2787" />
-      </g>
-    </g>
-    <g
-       inkscape:label="MOSFET"
-       id="g3008"
-       transform="translate(-184,-125)"
-       inkscape:export-xdpi="468.38434"
-       inkscape:export-ydpi="468.38434">
-      <g
-         inkscape:label="MOSFET"
-         id="g3006">
-        <path
-           d="m 417,284 v 11"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path2986" />
-        <path
-           d="M 416.75,295 H 389"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path2988" />
-        <path
-           d="M 424,284.6 V 265"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path2990" />
-        <path
-           d="m 419,284.75 h 5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path2992" />
-        <path
-           d="M 424,295.4 V 315"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path2994" />
-        <path
-           d="m 419,295.25 h 5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path2996" />
-        <path
-           d="M 424,295.25 V 290"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path2998" />
-        <circle
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="circle"
-           id="path3000"
-           cx="424"
-           cy="295.25"
-           r="0.40000001" />
-        <path
-           d="m 419,290 h 5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#MOSArrow-9)"
-           inkscape:label="none"
-           id="path3002" />
-        <path
-           d="m 419,283 v 14"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path3004" />
-      </g>
-    </g>
-    <g
-       inkscape:label="MOSFET"
-       id="g3238"
-       transform="translate(-184,-65)"
-       inkscape:export-xdpi="468.38434"
-       inkscape:export-ydpi="468.38434">
-      <g
-         inkscape:label="MOSFET"
-         id="g3236">
-        <path
-           d="m 417,284 v 11"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path3218" />
-        <path
-           d="M 416.75,295 H 389"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path3220" />
-        <path
-           d="M 424,284.6 V 265"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path3222" />
-        <path
-           d="m 419,284.75 h 5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path3224" />
-        <path
-           d="M 424,295.4 V 315"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path3226" />
-        <path
-           d="m 419,295.25 h 5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path3228" />
-        <path
-           d="m 424,290 h 10"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path3230"
-           sodipodi:nodetypes="cc" />
-        <path
-           d="m 419,290 h 5"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#MOSArrow-9)"
-           inkscape:label="none"
-           id="path3232" />
-        <path
-           d="m 419,283 v 14"
-           style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.7;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
-           inkscape:label="none"
-           id="path3234" />
-      </g>
-    </g>
     <path
        style="font-variation-settings:normal;vector-effect:none;fill:#5fbcd3;fill-opacity:1;stroke:#5fbcd3;stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
-       d="M 310,195 H 65"
+       d="M 270,185 H 65"
        id="path3433"
        sodipodi:nodetypes="cc"
-       inkscape:export-xdpi="468.38434"
-       inkscape:export-ydpi="468.38434" />
+       inkscape:export-xdpi="559.26971"
+       inkscape:export-ydpi="559.26971" />
     <path
        style="font-variation-settings:normal;vector-effect:none;fill:#5fbcd3;fill-opacity:1;stroke:#5fbcd3;stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
-       d="M 310,255 H 65"
+       d="M 270,235 H 65"
        id="path3433-2"
        sodipodi:nodetypes="cc"
-       inkscape:export-xdpi="468.38434"
-       inkscape:export-ydpi="468.38434" />
+       inkscape:export-xdpi="559.26971"
+       inkscape:export-ydpi="559.26971" />
     <path
        style="font-variation-settings:normal;vector-effect:none;fill:#5fbcd3;fill-opacity:1;stroke:#5fbcd3;stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
-       d="M 310,315 H 65"
+       d="M 270,285 H 65"
        id="path3433-6"
        sodipodi:nodetypes="cc"
-       inkscape:export-xdpi="468.38434"
-       inkscape:export-ydpi="468.38434" />
+       inkscape:export-xdpi="559.26971"
+       inkscape:export-ydpi="559.26971" />
     <path
        style="font-variation-settings:normal;vector-effect:none;fill:#5fbcd3;fill-opacity:1;stroke:#5fbcd3;stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
-       d="M 310,375 H 65"
+       d="M 270,335 H 65"
        id="path3433-6-1"
        sodipodi:nodetypes="cc"
-       inkscape:export-xdpi="468.38434"
-       inkscape:export-ydpi="468.38434" />
+       inkscape:export-xdpi="559.26971"
+       inkscape:export-ydpi="559.26971" />
     <path
        style="font-variation-settings:normal;vector-effect:none;fill:#5fbcd3;fill-opacity:1;stroke:#5fbcd3;stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
-       d="M 310,135 H 65"
+       d="M 270,135 H 65"
        id="path3433-20"
        sodipodi:nodetypes="cc"
-       inkscape:export-xdpi="468.38434"
-       inkscape:export-ydpi="468.38434" />
+       inkscape:export-xdpi="559.26971"
+       inkscape:export-ydpi="559.26971" />
     <path
        style="font-variation-settings:normal;vector-effect:none;fill:#5fbcd3;fill-opacity:1;stroke:#5fbcd3;stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
-       d="M 310,115 H 90"
+       d="M 270,115 H 90"
        id="path3433-20-2"
        sodipodi:nodetypes="cc"
-       inkscape:export-xdpi="468.38434"
-       inkscape:export-ydpi="468.38434" />
+       inkscape:export-xdpi="559.26971"
+       inkscape:export-ydpi="559.26971" />
     <path
        style="font-variation-settings:normal;vector-effect:none;fill:#5fbcd3;fill-opacity:1;stroke:#5fbcd3;stroke-width:1px;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000"
-       d="M 310,95 H 90"
+       d="M 270,95 H 90"
        id="path3433-20-2-3"
        sodipodi:nodetypes="cc"
-       inkscape:export-xdpi="468.38434"
-       inkscape:export-ydpi="468.38434" />
+       inkscape:export-xdpi="559.26971"
+       inkscape:export-ydpi="559.26971" />
+  </g>
+  <g
+     inkscape:label="MOSFET"
+     id="g1417"
+     transform="translate(-144,10)">
+    <g
+       inkscape:label="MOSFET"
+       id="g1415">
+      <path
+         d="m 257,244 v 12"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path1396" />
+      <path
+         d="M 256.75,250 H 239"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path1399" />
+      <path
+         d="M 264,244.6 V 235"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path1401" />
+      <path
+         d="m 259,244.75 h 5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path1403" />
+      <path
+         d="M 264,255.4 V 265"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path1405" />
+      <path
+         d="m 264,255.25 h -5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#MOSArrowB)"
+         inkscape:label="none"
+         id="path1407" />
+      <path
+         d="m 259,243 v 3.5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path1409" />
+      <path
+         d="m 259,248.25 v 3.5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path1411" />
+      <path
+         d="M 259,253.5 V 257"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path1413" />
+    </g>
+  </g>
+  <g
+     inkscape:label="MOSFET"
+     id="g1804"
+     transform="translate(-99,10)">
+    <g
+       inkscape:label="MOSFET"
+       id="g1802">
+      <path
+         d="m 257,244 v 12"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path1784" />
+      <path
+         d="M 256.75,250 H 239"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path1786" />
+      <path
+         d="M 264,244.6 V 235"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path1788" />
+      <path
+         d="m 259,244.75 h 5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path1790" />
+      <path
+         d="M 264,255.4 V 265"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path1792" />
+      <path
+         d="m 259,255.25 h 5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#MOSArrowB)"
+         inkscape:label="none"
+         id="path1794" />
+      <path
+         d="m 259,243 v 3.5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path1796" />
+      <path
+         d="m 259,248.25 v 3.5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path1798" />
+      <path
+         d="M 259,253.5 V 257"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path1800" />
+    </g>
+  </g>
+  <g
+     inkscape:label="MOSFET"
+     id="g2104"
+     transform="translate(-99,60)">
+    <g
+       inkscape:label="MOSFET"
+       id="g2102">
+      <path
+         d="m 257,244 v 12"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path2088" />
+      <path
+         d="M 256.75,250 H 239"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path2090" />
+      <path
+         d="M 264,244.6 V 235"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path2092" />
+      <path
+         d="m 259,244.75 h 5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path2094" />
+      <path
+         d="M 264,255.4 V 265"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path2096" />
+      <path
+         d="m 259,255.25 h 5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path2098" />
+      <path
+         d="m 259,243 v 14"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path2100" />
+    </g>
+  </g>
+  <g
+     inkscape:label="MOSFET"
+     id="g2740"
+     transform="translate(-134,10)">
+    <g
+       inkscape:label="MOSFET"
+       id="g2738">
+      <path
+         d="m 247,294 v 12"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path2722" />
+      <path
+         d="M 244.75,300 H 229"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path2724" />
+      <circle
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="circle"
+         id="path2726"
+         cx="246"
+         cy="300"
+         r="1" />
+      <path
+         d="M 254,294.6 V 285"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path2728" />
+      <path
+         d="m 249,294.75 h 5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path2730" />
+      <path
+         d="M 254,305.4 V 315"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path2732" />
+      <path
+         d="m 249,305.25 h 5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path2734" />
+      <path
+         d="m 249,293 v 14"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path2736" />
+    </g>
+  </g>
+  <g
+     inkscape:label="MOSFET"
+     id="g3068"
+     transform="translate(-134,-140)">
+    <g
+       inkscape:label="MOSFET"
+       id="g3066">
+      <path
+         d="m 247,294 v 11"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path3042" />
+      <path
+         d="M 246.75,305 H 229"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path3044" />
+      <path
+         d="M 254,294.6 V 285"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path3046" />
+      <path
+         d="m 249,294.75 h 5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path3048" />
+      <path
+         d="M 254,305.4 V 315"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path3050" />
+      <path
+         d="m 249,305.25 h 5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path3052" />
+      <path
+         d="M 254,305.25 V 300"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path3054" />
+      <circle
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="circle"
+         id="path3056"
+         cx="254"
+         cy="305.25"
+         r="0.40000001" />
+      <path
+         d="m 249,300 h 5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#MOSArrowB)"
+         inkscape:label="none"
+         id="path3058" />
+      <path
+         d="m 249,293 v 3.5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path3060" />
+      <path
+         d="m 249,298.25 v 3.5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path3062" />
+      <path
+         d="M 249,303.5 V 307"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path3064" />
+    </g>
+  </g>
+  <g
+     inkscape:label="MOSFET"
+     id="g3414"
+     transform="translate(-89,-140)">
+    <g
+       inkscape:label="MOSFET"
+       id="g3412">
+      <path
+         d="m 247,294 v 11"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path3388" />
+      <path
+         d="M 246.75,305 H 229"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path3390" />
+      <path
+         d="M 254,294.6 V 285"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path3392" />
+      <path
+         d="m 249,294.75 h 5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path3394" />
+      <path
+         d="M 254,305.4 V 315"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path3396" />
+      <path
+         d="m 249,305.25 h 5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path3398" />
+      <path
+         d="M 254,305.25 V 300"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path3400" />
+      <circle
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="circle"
+         id="path3402"
+         cx="254"
+         cy="305.25"
+         r="0.40000001" />
+      <path
+         d="m 254,300 h -5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#MOSArrowB)"
+         inkscape:label="none"
+         id="path3404" />
+      <path
+         d="m 249,293 v 3.5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path3406" />
+      <path
+         d="m 249,298.25 v 3.5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path3408" />
+      <path
+         d="M 249,303.5 V 307"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path3410" />
+    </g>
+  </g>
+  <g
+     inkscape:label="MOSFET"
+     id="g3772"
+     transform="translate(-89,-90)">
+    <g
+       inkscape:label="MOSFET"
+       id="g3770">
+      <path
+         d="m 247,294 v 11"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path3748" />
+      <path
+         d="M 246.75,305 H 229"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path3750" />
+      <path
+         d="M 254,294.6 V 285"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path3752" />
+      <path
+         d="m 249,294.75 h 5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path3754" />
+      <path
+         d="M 254,305.4 V 315"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path3756" />
+      <path
+         d="m 249,305.25 h 5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path3758" />
+      <path
+         d="m 254,300 h 10"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path3760"
+         sodipodi:nodetypes="cc" />
+      <path
+         d="m 254,300 h -4.75"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#MOSArrowA)"
+         inkscape:label="none"
+         id="path3762" />
+      <path
+         d="m 249,293 v 3.5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path3764" />
+      <path
+         d="m 249,298.25 v 3.5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path3766" />
+      <path
+         d="M 249,303.5 V 307"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path3768" />
+    </g>
+  </g>
+  <g
+     inkscape:label="MOSFET"
+     id="g4142"
+     transform="translate(-134,-90)">
+    <g
+       inkscape:label="MOSFET"
+       id="g4140">
+      <path
+         d="m 247,294 v 11"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path4118" />
+      <path
+         d="M 246.75,305 H 229"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path4120" />
+      <path
+         d="M 254,294.6 V 285"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path4122" />
+      <path
+         d="m 249,294.75 h 5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path4124" />
+      <path
+         d="M 254,305.4 V 315"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path4126" />
+      <path
+         d="m 249,305.25 h 5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path4128" />
+      <path
+         d="m 254,300 h 10"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path4130"
+         sodipodi:nodetypes="cc" />
+      <path
+         d="m 249.25,300 h 5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#MOSArrowA)"
+         inkscape:label="none"
+         id="path4132" />
+      <path
+         d="m 249,293 v 3.5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path4134" />
+      <path
+         d="m 249,298.25 v 3.5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path4136" />
+      <path
+         d="M 249,303.5 V 307"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path4138" />
+    </g>
+  </g>
+  <g
+     inkscape:label="MOSFET"
+     id="g4521"
+     transform="translate(-44,-90)">
+    <g
+       inkscape:label="MOSFET"
+       id="g4519">
+      <path
+         d="m 247,294 v 11"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path4501" />
+      <path
+         d="M 246.75,305 H 229"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path4503" />
+      <path
+         d="M 254,294.6 V 285"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path4505" />
+      <path
+         d="m 249,294.75 h 5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path4507" />
+      <path
+         d="M 254,305.4 V 315"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path4509" />
+      <path
+         d="m 249,305.25 h 5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path4511" />
+      <path
+         d="m 254,300 h 10"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path4513"
+         sodipodi:nodetypes="cc" />
+      <path
+         d="m 249.25,300 h 5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#MOSArrowA)"
+         inkscape:label="none"
+         id="path4515" />
+      <path
+         d="m 249,293 v 14"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path4517" />
+    </g>
+  </g>
+  <g
+     inkscape:label="MOSFET"
+     id="g4909"
+     transform="translate(1,-90)">
+    <g
+       inkscape:label="MOSFET"
+       id="g4907">
+      <path
+         d="m 247,294 v 11"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path4889" />
+      <path
+         d="M 246.75,305 H 229"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path4891" />
+      <path
+         d="M 254,294.6 V 285"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path4893" />
+      <path
+         d="m 249,294.75 h 5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path4895" />
+      <path
+         d="M 254,305.4 V 315"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path4897" />
+      <path
+         d="m 249,305.25 h 5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path4899" />
+      <path
+         d="m 254,300 h 10"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path4901"
+         sodipodi:nodetypes="cc" />
+      <path
+         d="m 254,300 h -4.75"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#MOSArrowA)"
+         inkscape:label="none"
+         id="path4903" />
+      <path
+         d="m 249,293 v 14"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path4905" />
+    </g>
+  </g>
+  <g
+     inkscape:label="MOSFET"
+     id="g5310"
+     transform="translate(1,-140)">
+    <g
+       inkscape:label="MOSFET"
+       id="g5308">
+      <path
+         d="m 247,294 v 11"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path5288" />
+      <path
+         d="M 246.75,305 H 229"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path5290" />
+      <path
+         d="M 254,294.6 V 285"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path5292" />
+      <path
+         d="m 249,294.75 h 5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path5294" />
+      <path
+         d="M 254,305.4 V 315"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path5296" />
+      <path
+         d="m 249,305.25 h 5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path5298" />
+      <path
+         d="M 254,305.25 V 300"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path5300" />
+      <circle
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="circle"
+         id="path5302"
+         cx="254"
+         cy="305.25"
+         r="0.40000001" />
+      <path
+         d="m 254,300 h -5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#MOSArrowB)"
+         inkscape:label="none"
+         id="path5304" />
+      <path
+         d="m 249,293 v 14"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path5306" />
+    </g>
+  </g>
+  <g
+     inkscape:label="MOSFET"
+     id="g5724"
+     transform="translate(-44,-140)">
+    <g
+       inkscape:label="MOSFET"
+       id="g5722">
+      <path
+         d="m 247,294 v 11"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path5702" />
+      <path
+         d="M 246.75,305 H 229"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path5704" />
+      <path
+         d="M 254,294.6 V 285"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path5706" />
+      <path
+         d="m 249,294.75 h 5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path5708" />
+      <path
+         d="M 254,305.4 V 315"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path5710" />
+      <path
+         d="m 249,305.25 h 5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path5712" />
+      <path
+         d="M 254,305.25 V 300"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path5714" />
+      <circle
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="circle"
+         id="path5716"
+         cx="254"
+         cy="305.25"
+         r="0.40000001" />
+      <path
+         d="m 249,300 h 5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#MOSArrowB)"
+         inkscape:label="none"
+         id="path5718" />
+      <path
+         d="m 249,293 v 14"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path5720" />
+    </g>
+  </g>
+  <g
+     inkscape:label="MOSFET"
+     id="g6144"
+     transform="translate(-44,-40)">
+    <g
+       inkscape:label="MOSFET"
+       id="g6142">
+      <path
+         d="m 247,294 v 12"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path6128" />
+      <path
+         d="M 246.75,300 H 229"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path6130" />
+      <path
+         d="M 254,294.6 V 285"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path6132" />
+      <path
+         d="m 249,294.75 h 5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path6134" />
+      <path
+         d="M 254,305.4 V 315"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path6136" />
+      <path
+         d="m 254,305.25 h -5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#MOSArrowB)"
+         inkscape:label="none"
+         id="path6138" />
+      <path
+         d="m 249,293 v 14"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path6140" />
+    </g>
+  </g>
+  <g
+     inkscape:label="MOSFET"
+     id="g6570"
+     transform="translate(1,-40)">
+    <g
+       inkscape:label="MOSFET"
+       id="g6568">
+      <path
+         d="m 247,294 v 12"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path6554" />
+      <path
+         d="M 246.75,300 H 229"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path6556" />
+      <path
+         d="M 254,294.6 V 285"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path6558" />
+      <path
+         d="m 249,294.75 h 5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path6560" />
+      <path
+         d="M 254,305.4 V 315"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path6562" />
+      <path
+         d="m 249,305.25 h 5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#MOSArrowB)"
+         inkscape:label="none"
+         id="path6564" />
+      <path
+         d="m 249,293 v 14"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path6566" />
+    </g>
+  </g>
+  <g
+     inkscape:label="MOSFET"
+     id="g7005"
+     transform="translate(1,10)">
+    <g
+       inkscape:label="MOSFET"
+       id="g7003">
+      <path
+         d="m 246,294 v 12"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path6989" />
+      <path
+         d="M 245.75,300 H 229"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path6991" />
+      <path
+         d="M 254,294.6 V 285"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path6993" />
+      <path
+         d="m 249,294.75 h 5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path6995" />
+      <path
+         d="M 254,305.4 V 315"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path6997" />
+      <path
+         d="m 249,305.25 h 5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path6999" />
+      <path
+         d="m 248.65,293 v 14"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path7001" />
+    </g>
+  </g>
+  <g
+     inkscape:label="MOSFET"
+     id="g7451"
+     transform="translate(-44,10)">
+    <g
+       inkscape:label="MOSFET"
+       id="g7449">
+      <path
+         d="m 246,294 v 12"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path7433" />
+      <path
+         d="M 243.75,300 H 229"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path7435" />
+      <circle
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="circle"
+         id="path7437"
+         cx="245"
+         cy="300"
+         r="1" />
+      <path
+         d="M 254,294.6 V 285"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path7439" />
+      <path
+         d="m 249,294.75 h 5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path7441" />
+      <path
+         d="M 254,305.4 V 315"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path7443" />
+      <path
+         d="m 249,305.25 h 5"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path7445" />
+      <path
+         d="m 248.65,293 v 14"
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         inkscape:label="none"
+         id="path7447" />
+    </g>
   </g>
 </svg>
