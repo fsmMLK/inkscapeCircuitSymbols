@@ -1,5 +1,5 @@
 \usepackage{amsmath,amsthm,amsbsy,amsfonts,amssymb}
-\usepackage[per=slash]{siunitx}
+\usepackage[per-mode=symbol]{siunitx}
 \usepackage{steinmetz}
 \usepackage[utf8]{inputenc}
 %\usepackage[T1]{fontenc}
@@ -11,13 +11,13 @@
 \newcommand{\complexPolDeg}[2]{\ensuremath{#1\phase{#2\degree}}}
 
 % new units
-\newunit{\Vef}{\volt_{ef}} % volt eficaz
-\newunit{\Vrms}{\volt_{rms}} % volt RMS
-\newunit{\Vpp}{\volt_{pp}} % volt peak-to-peak
+\DeclareSIUnit{\Vef}{\volt_{ef}} % volt eficaz
+\DeclareSIUnit{\Vrms}{\volt_{rms}} % volt RMS
+\DeclareSIUnit{\Vpp}{\volt_{pp}} % volt peak-to-peak
 
-\newunit{\Aef}{\ampere_{ef}} % ampere eficaz
-\newunit{\Arms}{\ampere_{rms}} % ampere rms
-\newunit{\App}{\ampere_{pp}} % ampere peak-to-peak
+\DeclareSIUnit{\Aef}{\ampere_{ef}} % ampere eficaz
+\DeclareSIUnit{\Arms}{\ampere_{rms}} % ampere rms
+\DeclareSIUnit{\App}{\ampere_{pp}} % ampere peak-to-peak
 
 % logic Commands
 \newcommand{\NOT}[1]{\ensuremath{\overline{\mbox{\ensuremath{#1}}}}}

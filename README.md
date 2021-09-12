@@ -463,7 +463,7 @@ In this tab you can create MOSFET and JFET transistors.
 
 **MOSFET symbol type (MOSFET only):** Switch between different symbol schemes. See figure below.
 
-<img src="docs/images/MOSFET_symbolType.png" width="700px"/>
+<img src="docs/images/MOSFET_symbolType.png" width="600px"/>
 
 **Orientation:** Rotation angle in degrees. See *RLC tab* section for examples.
 
