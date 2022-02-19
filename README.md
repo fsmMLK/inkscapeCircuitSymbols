@@ -636,5 +636,6 @@ This tab is identical to the tab with the same name on GENERAL menu entry. Check
 
 - Added variable RLC components
 - Added variable independent sources
+- Added old current source symbol (two circles)
 - Added insulated gate bipolar transistor (NPN and PNP)
 - Removed 2-terminal potentiometer. Now you can create the same symbol with Resistor + variable indication
