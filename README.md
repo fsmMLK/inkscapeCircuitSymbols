@@ -211,7 +211,7 @@ There is also a common section called **Voltage and current indications** that w
 
 ### Independent source subtab
 
-<img src="docs/images/Tab_SrcInd.png" width="450px"/>
+<img src="docs/images/Tab_SrcInd.png" width="600px"/>
 
 **Type:** Here you can select the type of source. The available types are presented below. 
 
@@ -331,7 +331,7 @@ In this tab you can create transformers.
 
 **Type:** You can select the type of transformer. The available types are:
 
-<img src="docs/images/transf_types.png" width="800px"/>
+<img src="docs/images/transf_types.png" width="500px"/>
 
 **Orientation:** Rotation angle in degrees. See *RLC tab* section for examples.
 
@@ -339,15 +339,15 @@ In this tab you can create transformers.
 
 **Core type:** You can choose between air, iron, and ferrite cores
 
-<img src="docs/images/transf_coreTypes.png" width="800px"/>
+<img src="docs/images/transf_coreTypes.png" width="600px"/>
 
 **Step type:** You can choose between step up, step down, and one to one. This option affects transformers only.
 
-<img src="docs/images/transf_stepTypes.png" width="800px"/>
+<img src="docs/images/transf_stepTypes.png" width="600px"/>
 
 **Add coil polarity:** You can add symbol to indicate the polarity of the coils. This option affects transformers only.
 
-<img src="docs/images/transf_polaritySymbol.png" width="800px"/>
+<img src="docs/images/transf_polaritySymbol.png" width="500px"/>
 
 ### Primary/SEcondary subtab
 
@@ -355,13 +355,13 @@ The subtabs control each coil of the transformer. Only the **Primary** subtab af
 
 **Number of coils:** You can choose the number of coils in the primary/secondary. You can choose between 1 or 2 coils. This option has not effect on inductors.
 
-<img src="docs/images/transf_Ncoils.png" width="800px"/>
+<img src="docs/images/transf_Ncoils.png" width="500px"/>
 
 **Coil tap:** Adds a centra tap to the coil
 
 **Flip coil polarity:** Flip the polarity indictaion in the coils
 
-<img src="docs/images/transf_flipPolarity.png" width="800px"/>
+<img src="docs/images/transf_flipPolarity.png" width="500px"/>
 
 Voltage and current indications
 
