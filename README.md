@@ -349,7 +349,7 @@ In this tab you can create transformers.
 
 <img src="docs/images/transf_polaritySymbol.png" width="300px"/>
 
-### Primary/SEcondary subtab
+### Primary/Secondary subtab
 
 The subtabs control each coil of the transformer. Only the **Primary** subtab affects inductors. 
 
