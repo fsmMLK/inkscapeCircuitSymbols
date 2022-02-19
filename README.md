@@ -4,7 +4,7 @@ This extension will assist you creating electric symbols in [Inkscape](https://i
 
 <img src="docs/images/Examples.png" width="900px"/>
 
-**NEWS:** See the new section [Changelog](#-changelog) for new features!
+**NEWS:** See the new section [Changelog](#changelog) for new features!
 
 ## main features
 
