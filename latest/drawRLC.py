@@ -13,7 +13,7 @@ class RLC(inkBase.inkscapeMadeEasy):
 
     # ---------------------------------------------
     def drawResistor(self, parent, position=[0, 0], value='R', label='Resistor', angleDeg=0, flagVolt=True, voltName='v', flagCurr=True, currName='i',
-                     invertArrows=False, convention='passive', wireExtraSize=0,standard='IEEE'):
+                     invertArrows=False, convention='passive', wireExtraSize=0,standard='IEEE',flagVariable=False):
         """ draws a resistor
 
         parent: parent object
@@ -44,7 +44,20 @@ class RLC(inkBase.inkscapeMadeEasy):
             inkDraw.line.relCoords(elem, [[19, 0], [0, -6], [-19, 0], [0, 6]], self.add(position, [-9.5, 3]))
             inkDraw.line.relCoords(elem, [[15.5 + wireExtraSize, 0]], self.add(position, [9.5, 0]))
 
-        pos_text = self.add(position, [0, -3 - self.textOffset])
+        if flagVariable:
+            # build arrow marker
+            colorBlack = inkDraw.color.defined('black')
+            L_arrow = 2.5
+            markerPath = 'M 0,0 l -%f,%f l 0,-%f z' % (L_arrow * 1.2, L_arrow / 2.0, L_arrow)
+            markerArrow = inkDraw.marker.createMarker(self, 'arrow', markerPath, RenameMode=0, strokeColor=colorBlack, fillColor=colorBlack,
+                                                      lineWidth=0.6, markerTransform='translate (1,0)')
+            lineStyleArrow = inkDraw.lineStyle.set(lineWidth=1, lineColor=colorBlack, markerEnd=markerArrow)
+
+            inkDraw.line.relCoords(elem, [[20, -12]], self.add(position, [-10, 6]), lineStyle=lineStyleArrow)
+            pos_text = self.add(position, [0, -6 - self.textOffset])
+        else:
+            pos_text = self.add(position, [0, -3 - self.textOffset])
+
         if inkDraw.useLatex:
             value = '$' + value + '$'
 
@@ -54,11 +67,16 @@ class RLC(inkBase.inkscapeMadeEasy):
             self.rotateElement(group, position, angleDeg)
 
         if flagVolt:
+            if flagVariable:
+                pos = self.add(position, [0, 8])
+            else:
+                pos = self.add(position, [0, 5])
+
             if convention == 'passive':
-                self.drawVoltArrow(group, self.add(position, [0, 5]), name=voltName, color=self.voltageColor, angleDeg=angleDeg,
+                self.drawVoltArrow(group, pos, name=voltName, color=self.voltageColor, angleDeg=angleDeg,
                                    invertArrows=not invertArrows)
             if convention == 'active':
-                self.drawVoltArrow(group, self.add(position, [0, 5]), name=voltName, color=self.voltageColor, angleDeg=angleDeg,
+                self.drawVoltArrow(group, pos, name=voltName, color=self.voltageColor, angleDeg=angleDeg,
                                    invertArrows=invertArrows)
 
         if flagCurr:
@@ -153,7 +171,7 @@ class RLC(inkBase.inkscapeMadeEasy):
 
     # ---------------------------------------------
     def drawCapacitor(self, parent, position=[0, 0], value='C', label='Capacitor', flagPol=False, angleDeg=0, flagVolt=True, voltName='v',
-                      flagCurr=True, currName='i', invertArrows=False, convention='passive', wireExtraSize=0,standard='IEEE'):
+                      flagCurr=True, currName='i', invertArrows=False, convention='passive', wireExtraSize=0,standard='IEEE',flagVariable=False):
         """ draws a capacitor
 
         parent: parent object
@@ -190,6 +208,17 @@ class RLC(inkBase.inkscapeMadeEasy):
             #capacitor plates
             inkDraw.arc.threePoints(group, [0,7],[2,0],[0,-7], self.add(position, [-3, 0]))
 
+        if flagVariable:
+            # build arrow marker
+            colorBlack = inkDraw.color.defined('black')
+            L_arrow = 2.5
+            markerPath = 'M 0,0 l -%f,%f l 0,-%f z' % (L_arrow * 1.2, L_arrow / 2.0, L_arrow)
+            markerArrow = inkDraw.marker.createMarker(self, 'arrow', markerPath, RenameMode=0, strokeColor=colorBlack, fillColor=colorBlack,
+                                                      lineWidth=0.6, markerTransform='translate (1,0)')
+            lineStyleArrow = inkDraw.lineStyle.set(lineWidth=1, lineColor=colorBlack, markerEnd=markerArrow)
+
+            inkDraw.line.relCoords(elem, [[20, -12]], self.add(position, [-10, 6]), lineStyle=lineStyleArrow)
+
         pos_text = self.add(position, [0, -8 - self.textOffset])
         if inkDraw.useLatex:
             value = '$' + value + '$'
@@ -198,8 +227,8 @@ class RLC(inkBase.inkscapeMadeEasy):
 
         if flagPol:
             lineStyleSign = inkDraw.lineStyle.setSimpleBlack(lineWidth=0.6)
-            inkDraw.line.relCoords(elem, [[-2, 0]], self.add(position, [6, -5]), lineStyle=lineStyleSign)
-            inkDraw.line.relCoords(elem, [[0, 2]], self.add(position, [5, -6]), lineStyle=lineStyleSign)
+            inkDraw.line.relCoords(elem, [[-2, 0]], self.add(position, [6, -6]), lineStyle=lineStyleSign)
+            inkDraw.line.relCoords(elem, [[0, 2]], self.add(position, [5, -7]), lineStyle=lineStyleSign)
 
         if angleDeg != 0:
             self.rotateElement(group, position, angleDeg)
@@ -220,7 +249,7 @@ class RLC(inkBase.inkscapeMadeEasy):
 
     # ---------------------------------------------
     def drawInductor(self, parent, position=[0, 0], value='L', label='Inductro', angleDeg=0, flagVolt=True, voltName='v', flagCurr=True, currName='i',
-                     invertArrows=False, convention='passive', wireExtraSize=0):
+                     invertArrows=False, convention='passive', wireExtraSize=0,flagVariable=False):
         """ draws an inductor
 
         parent: parent object
@@ -249,7 +278,21 @@ class RLC(inkBase.inkscapeMadeEasy):
         inkDraw.arc.centerAngStartAngEnd(elem, self.add(position, [3, 0]), 3.0, 0.0, 180.0, [0, 0], largeArc=False)
         inkDraw.arc.centerAngStartAngEnd(elem, self.add(position, [9, 0]), 3.0, 0.0, 180.0, [0, 0], largeArc=False)
 
-        pos_text = self.add(position, [0, -self.textOffset])
+        if flagVariable:
+            # build arrow marker
+            colorBlack = inkDraw.color.defined('black')
+            L_arrow = 2.5
+            markerPath = 'M 0,0 l -%f,%f l 0,-%f z' % (L_arrow * 1.2, L_arrow / 2.0, L_arrow)
+            markerArrow = inkDraw.marker.createMarker(self, 'arrow', markerPath, RenameMode=0, strokeColor=colorBlack, fillColor=colorBlack,
+                                                      lineWidth=0.6, markerTransform='translate (1,0)')
+            lineStyleArrow = inkDraw.lineStyle.set(lineWidth=1, lineColor=colorBlack, markerEnd=markerArrow)
+
+            inkDraw.line.relCoords(elem, [[20, -12]], self.add(position, [-10, 7]), lineStyle=lineStyleArrow)
+
+            pos_text = self.add(position, [0, -5 - self.textOffset])
+        else:
+            pos_text = self.add(position, [0,  - self.textOffset])
+
         if inkDraw.useLatex:
             value = '$' + value + '$'
 
@@ -259,11 +302,16 @@ class RLC(inkBase.inkscapeMadeEasy):
             self.rotateElement(group, position, angleDeg)
 
         if flagVolt:
+            if flagVariable:
+                pos = self.add(position, [0, 9])
+            else:
+                pos = self.add(position, [0, 6])
+
             if convention == 'passive':
-                self.drawVoltArrow(group, self.add(position, [0, 5]), name=voltName, color=self.voltageColor, angleDeg=angleDeg,
+                self.drawVoltArrow(group, pos, name=voltName, color=self.voltageColor, angleDeg=angleDeg,
                                    invertArrows=not invertArrows)
             if convention == 'active':
-                self.drawVoltArrow(group, self.add(position, [0, 5]), name=voltName, color=self.voltageColor, angleDeg=angleDeg,
+                self.drawVoltArrow(group, pos, name=voltName, color=self.voltageColor, angleDeg=angleDeg,
                                    invertArrows=invertArrows)
 
         if flagCurr:

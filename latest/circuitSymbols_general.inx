@@ -14,7 +14,6 @@
                         <option value="capacitor">Capacitor</option>
                         <option value="capacitorPol">Polarized Capacitor</option>
                         <option value="inductor">Inductor</option>
-                        <option value="pot2T">Potentiometer (2T)</option>
                         <option value="pot3T">Potentiometer (3T)</option>
                         <option value="genericBipole">Generic Bipole</option>
                         <option value="fuse">Fuse</option>
@@ -42,6 +41,7 @@
                     <hbox>
                         <param name="bipoleRLCVal" type="string" gui-text="Value¹ ²:">R</param>
                     </hbox>
+                    <param name="bipoleRLCvariable" type="bool" gui-text="Variable">false</param>
                     <param name="bipoleRLCUnit" type="bool" gui-text="Add unit">false</param>
                 </vbox>
             </hbox>
@@ -77,6 +77,7 @@
                                 <option value="voltIndepDC">Voltage (DC)</option>
                                 <option value="voltIndepDCbattery">Voltage (battery)</option>
                                 <option value="currIndep">Current (General)</option>
+                                <option value="currIndepOld">Current (Old)</option>
                             </param>
                             <param name="sourceStandard" type="optiongroup" appearance="combo" gui-text="Standard:">
                                 <option value="IEEE">IEEE Std 315-1975</option>
@@ -102,6 +103,7 @@
                             <hbox>
                                 <param name="sourceVal" type="string" gui-text="Value¹ ²:">V</param>
                             </hbox>
+                            <param name="sourceVariable" type="bool" gui-text="Variable">false</param>
                             <param name="sourceUnit" type="bool" gui-text="Add unit">true</param>
                         </vbox>
                     </hbox>
@@ -233,6 +235,89 @@
                 </vbox>
             </hbox>
             <label>² 0: open switch, n: n-th output</label>
+        </page>
+        <page name="Transformers" appearance="minimal" gui-text="Transformers">
+            <hbox>
+                <vbox>
+                    <param name="transformerType" type="optiongroup" appearance="combo" gui-text="Type:">
+                        <option value="inductor">Inductor</option>
+                        <option value="transformer">Transformer</option>
+                    </param>
+                    <param name="transformerRot" type="optiongroup" appearance="combo" gui-text="Orientation (deg):">
+                        <option value="0">0</option>
+                        <option value="90">90</option>
+                        <option value="-60">-60</option>
+                        <option value="-45">-45</option>
+                        <option value="-30">-30</option>
+                        <option value="30">30</option>
+                        <option value="45">45</option>
+                        <option value="60">60</option>
+                    </param>
+                    <param name="transformerExtraWireSize" type="int" min="-10" max="10" gui-text="Extra wire length:">0</param>
+                </vbox>
+                <spacer/>
+                <separator/>
+                <spacer/>
+                <vbox>
+                    <param name="transformerCore" type="optiongroup" appearance="combo" gui-text="Core type:">
+                        <option value="air">air</option>
+                        <option value="iron">iron</option>
+                        <option value="ferrite">ferrite</option>
+                    </param>
+                    <param name="transformerStepType" type="optiongroup" appearance="combo" gui-text="Step²:">
+                        <option value="up">up</option>
+                        <option value="down">down</option>
+                        <option value="one2one">one-to-one</option>
+                    </param>
+                    <param name="transformerPolaritySymbol" type="bool" gui-text="Add coil polarity²">false</param>
+                </vbox>
+            </hbox>
+            <hbox>
+                <vbox>
+                    <param name="subtab_transformerWindings" type="notebook">
+                        <page name="Primary" appearance="minimal" gui-text="Primary">
+                            <param name="transformerNcoils1" type="int" min="1" max="2" gui-text="Number of coils²:">1</param>
+                            <param name="transformerTapped1" type="bool" gui-text="Coil tap">false</param>
+                            <param name="transformerInvPolarity1" type="bool" gui-text="Flip coil polarity">false</param>
+                            <label appearance="header">Voltage and current indications</label>
+                            <param name="transformerConvention1" type="optiongroup" appearance="combo" gui-text="Sign convention:">
+                                <option value="passive">Passive</option>
+                                <option value="active">Active</option>
+                            </param>
+                            <hbox>
+                                <param name="transformerVolt1" type="bool" gui-text="Add voltage indication¹:">false</param>
+                                <param name="transformerVoltName1" type="string" gui-text=" ">v</param>
+                            </hbox>
+                            <hbox>
+                                <param name="transformerCurr1" type="bool" gui-text="Add current indication¹:">false</param>
+                                <param name="transformerCurrName1" type="string" gui-text=" ">i</param>
+                            </hbox>
+                            <param name="transformerVoltCurrInvert1" type="bool" gui-text="Invert V/I directions">false</param>
+                        </page>
+                        <page name="Secondary" appearance="minimal" gui-text="Secondary²">
+                            <param name="transformerNcoils2" type="int" min="1" max="2" gui-text="Number of coils:">1</param>
+                            <param name="transformerTapped2" type="bool" gui-text="Coil tap">false</param>
+                            <param name="transformerInvPolarity2" type="bool" gui-text="Flip coil polarity">false</param>
+                            <label appearance="header">Voltage and current indications</label>
+                            <param name="transformerConvention2" type="optiongroup" appearance="combo" gui-text="Sign convention:">
+                                <option value="passive">Passive</option>
+                                <option value="active">Active</option>
+                            </param>
+                            <hbox>
+                                <param name="transformerVolt2" type="bool" gui-text="Add voltage indication¹:">false</param>
+                                <param name="transformerVoltName2" type="string" gui-text=" ">v</param>
+                            </hbox>
+                            <hbox>
+                                <param name="transformerCurr2" type="bool" gui-text="Add current indication¹:">false</param>
+                                <param name="transformerCurrName2" type="string" gui-text=" ">i</param>
+                            </hbox>
+                            <param name="transformerVoltCurrInvert2" type="bool" gui-text="Invert V/I directions">false</param>
+                        </page>
+                    </param>
+                </vbox>
+            </hbox>
+            <spacer size="expand"/>
+            <label>² Transformer only.</label>
         </page>
         <page name="SignalsAnnotation" appearance="minimal" gui-text="Sig./Ind.">
             <param name="subTab_sigAnn" type="notebook">

@@ -81,10 +81,11 @@
                 <separator/>
                 <spacer/>
                 <vbox>
-                    <param name="BJT_Photo" type="bool" gui-text="Phototransistor">false</param>
+                    <param name="BJT_IGBT" type="bool" gui-text="IGBT">false</param>
+                    <param name="BJT_Photo" type="bool" gui-text="Phototransistor³">false</param>
                     <param name="BJT_Envelope" type="bool" gui-text="Draw envelope">true</param>
                     <param name="BJT_MirrorEC" type="bool" gui-text="Switch Emitter/Collector terminals">false</param>
-                    <param name="BJT_EBCtags" type="bool" gui-text="Add E/B/C tags">false</param>
+                    <param name="BJT_EBCtags" type="bool" gui-text="Add E/B/C tags²">false</param>
                 </vbox>
             </hbox>
             <label appearance="header">Voltage and current indications</label>
@@ -96,12 +97,12 @@
                         <param name="BJT_VCEname" type="string" gui-text=" ">v_{ce}</param>
                     </hbox>
                     <hbox>
-                        <param name="BJT_DrawVCBarrow" type="bool" gui-text="Add v_CB indication¹:">false</param>
+                        <param name="BJT_DrawVCBarrow" type="bool" gui-text="Add v_CB indication¹²:">false</param>
                         <spacer size="expand"/>
                         <param name="BJT_VCBname" type="string" gui-text=" ">v_{cb}</param>
                     </hbox>
                     <hbox>
-                        <param name="BJT_DrawVBEarrow" type="bool" gui-text="Add v_BE indication¹:">false</param>
+                        <param name="BJT_DrawVBEarrow" type="bool" gui-text="Add v_BE indication¹²:">false</param>
                         <spacer size="expand"/>
                         <param name="BJT_VBEname" type="string" gui-text=" ">v_{be}</param>
                     </hbox>
@@ -111,7 +112,7 @@
                         <param name="BJT_ICname" type="string" gui-text=" ">i_c</param>
                     </hbox>
                     <hbox>
-                        <param name="BJT_DrawIBarrow" type="bool" gui-text="Add i_B indication¹:">false</param>
+                        <param name="BJT_DrawIBarrow" type="bool" gui-text="Add i_B indication¹²:">false</param>
                         <spacer size="expand"/>
                         <param name="BJT_IBname" type="string" gui-text=" ">i_b</param>
                     </hbox>
@@ -123,6 +124,9 @@
                 </vbox>
                 <spacer size="expand"/>
             </hbox>
+            <spacer/>
+            <label>² For IGBT, base is replaced by gate.</label>
+            <label>³ Used only if IGBT is unchecked.</label>
         </page>
         <page name="Transistor_FET" appearance="minimal" gui-text="FET">
             <hbox>

@@ -22,7 +22,7 @@ class source(inkBase.inkscapeMadeEasy):
 
     # ---------------------------------------------
     def drawSourceV(self, parent, position=[0, 0], value='v(t)', sourceType='general', label='Source', angleDeg=0, flagVolt=True, flagCurr=True, currName='i',
-                    invertArrows=False, mirror=False, convention='active', wireExtraSize=0,standard='IEEE'):
+                    invertArrows=False, mirror=False, convention='active', wireExtraSize=0,standard='IEEE',flagVariable=False):
         """ draws a independend voltage source
 
         parent: parent object
@@ -72,6 +72,17 @@ class source(inkBase.inkscapeMadeEasy):
             else:
                 self.drawSigns(elem, positionPos=self.add(position, [10, -4]), positionNeg=self.add(position, [-10, -4]))
 
+        if flagVariable:
+            # build arrow marker
+            colorBlack = inkDraw.color.defined('black')
+            L_arrow = 2.5
+            markerPath = 'M 0,0 l -%f,%f l 0,-%f z' % (L_arrow * 1.2, L_arrow / 2.0, L_arrow)
+            markerArrow = inkDraw.marker.createMarker(self, 'arrow', markerPath, RenameMode=0, strokeColor=colorBlack, fillColor=colorBlack,
+                                                      lineWidth=0.6, markerTransform='translate (1,0)')
+            lineStyleArrow = inkDraw.lineStyle.set(lineWidth=1, lineColor=colorBlack, markerEnd=markerArrow)
+
+            inkDraw.line.relCoords(elem, [[17, -15]], self.add(position, [-8, 7]), lineStyle=lineStyleArrow)
+
         pos_text = self.add(position, [0, -8 - self.textOffset])
         if inkDraw.useLatex:
             value = '$' + value + '$'
@@ -109,7 +120,7 @@ class source(inkBase.inkscapeMadeEasy):
 
     # ---------------------------------------------
     def drawSourceVDC(self, parent, position=[0, 0], value='V', label='Source', angleDeg=0, flagVolt=True, flagCurr=True, currName='i',
-                      invertArrows=False, mirror=False, convention='active', wireExtraSize=0):
+                      invertArrows=False, mirror=False, convention='active', wireExtraSize=0,flagVariable=False):
         """ draws a DC voltage source
 
         parent: parent object
@@ -133,13 +144,24 @@ class source(inkBase.inkscapeMadeEasy):
 
         # draw source
         if mirror:
-            self.drawSigns(elem, positionPos=self.add(position, [-4, -4]), positionNeg=self.add(position, [5, -4]))
+            self.drawSigns(elem, positionPos=self.add(position, [-4, -6]), positionNeg=self.add(position, [5, -6]))
             inkDraw.line.relCoords(elem, [[0, -6]], self.add(position, [2, 3]))
             inkDraw.line.relCoords(elem, [[0, -14]], self.add(position, [-1, 7]))
         else:
-            self.drawSigns(elem, positionPos=self.add(position, [5, -4]), positionNeg=self.add(position, [-4, -4]))
+            self.drawSigns(elem, positionPos=self.add(position, [5, -6]), positionNeg=self.add(position, [-4, -6]))
             inkDraw.line.relCoords(elem, [[0, -6]], self.add(position, [-1, 3]))
             inkDraw.line.relCoords(elem, [[0, -14]], self.add(position, [2, 7]))
+
+        if flagVariable:
+            # build arrow marker
+            colorBlack = inkDraw.color.defined('black')
+            L_arrow = 2.5
+            markerPath = 'M 0,0 l -%f,%f l 0,-%f z' % (L_arrow * 1.2, L_arrow / 2.0, L_arrow)
+            markerArrow = inkDraw.marker.createMarker(self, 'arrow', markerPath, RenameMode=0, strokeColor=colorBlack, fillColor=colorBlack,
+                                                      lineWidth=0.6, markerTransform='translate (1,0)')
+            lineStyleArrow = inkDraw.lineStyle.set(lineWidth=1, lineColor=colorBlack, markerEnd=markerArrow)
+
+            inkDraw.line.relCoords(elem, [[16, -10]], self.add(position, [-8, 5]), lineStyle=lineStyleArrow)
 
         pos_text = self.add(position, [0, -8 - self.textOffset])
         if inkDraw.useLatex:
@@ -179,7 +201,7 @@ class source(inkBase.inkscapeMadeEasy):
         # ---------------------------------------------
 
     def drawSourceVDCbattery(self, parent, position=[0, 0], value='V', label='Source', angleDeg=0, flagVolt=True, flagCurr=True, currName='i',
-                             invertArrows=False, mirror=False, convention='active', wireExtraSize=0):
+                             invertArrows=False, mirror=False, convention='active', wireExtraSize=0,flagVariable=False):
         """ draws a DC battery  source
 
         parent: parent object
@@ -219,7 +241,18 @@ class source(inkBase.inkscapeMadeEasy):
             inkDraw.line.relCoords(elem, [[0, -14]], self.add(position, [8, 7]))
             inkDraw.line.relCoords(elem, [[0, -6]], self.add(position, [5, 3]))
 
-        pos_text = self.add(position, [0, -8 - self.textOffset])
+        if flagVariable:
+            # build arrow marker
+            colorBlack = inkDraw.color.defined('black')
+            L_arrow = 2.5
+            markerPath = 'M 0,0 l -%f,%f l 0,-%f z' % (L_arrow * 1.2, L_arrow / 2.0, L_arrow)
+            markerArrow = inkDraw.marker.createMarker(self, 'arrow', markerPath, RenameMode=0, strokeColor=colorBlack, fillColor=colorBlack,
+                                                      lineWidth=0.6, markerTransform='translate (1,0)')
+            lineStyleArrow = inkDraw.lineStyle.set(lineWidth=1, lineColor=colorBlack, markerEnd=markerArrow)
+
+            inkDraw.line.relCoords(elem, [[19, -18]], self.add(position, [-9, 8]), lineStyle=lineStyleArrow)
+
+        pos_text = self.add(position, [0, -9 - self.textOffset])
         if inkDraw.useLatex:
             value = '$' + value + '$'
 
@@ -242,7 +275,7 @@ class source(inkBase.inkscapeMadeEasy):
                         value = value[1:]
                     else:
                         value = '-' + value
-            self.drawVoltArrow(group, self.add(position, [0, 8]), name=value, color=self.voltageColor, angleDeg=angleDeg, invertArrows=inv_volt)
+            self.drawVoltArrow(group, self.add(position, [0, 9]), name=value, color=self.voltageColor, angleDeg=angleDeg, invertArrows=inv_volt)
 
         if flagCurr:
             if convention == 'active':
@@ -256,7 +289,7 @@ class source(inkBase.inkscapeMadeEasy):
 
     # ---------------------------------------------
     def drawSourceI(self, parent, position=[0, 0], value='i(t)', label='Source', angleDeg=0, flagVolt=True, flagCurr=True, voltName='v',
-                    invertArrows=False, mirror=False, convention='active', wireExtraSize=0,standard='IEEE'):
+                    invertArrows=False, mirror=False, convention='active', wireExtraSize=0,standard='IEEE',flagVariable=False):
         """ draws a independend general current source
 
         parent: parent object
@@ -270,26 +303,54 @@ class source(inkBase.inkscapeMadeEasy):
         mirror: mirror source drawing (default: False)
         convention: passive/active sign convention. available types: 'passive', 'active' (default)
         wireExtraSize: additional length added to the terminals. If negative, the length will be reduced. default: 0)
-        standard: types: 'IEEE' (american), 'IEC' (european)
+        standard: types: 'IEEE' (american), 'IEC' (european), 'OLD' (two circles - DIN)
         """
 
         group = self.createGroup(parent, label)
         elem = self.createGroup(group, label)
 
-        inkDraw.line.relCoords(elem, [[-(18 + wireExtraSize), 0]], self.add(position, [-7, 0]))
-        inkDraw.line.relCoords(elem, [[18 + wireExtraSize, 0]], self.add(position, [7, 0]))
-        inkDraw.circle.centerRadius(elem, [0, 0], 7.0, offset=position, label='circle')
+        # terminals and circle(s)
+        if standard.upper() == 'OLD':
+            inkDraw.line.relCoords(elem, [[-(14 + wireExtraSize), 0]], self.add(position, [-11, 0]))
+            inkDraw.line.relCoords(elem, [[14 + wireExtraSize, 0]], self.add(position, [11, 0]))
+            inkDraw.circle.centerRadius(elem, [4, 0], 7.0, offset=position, label='circle')
+            inkDraw.circle.centerRadius(elem, [-4, 0], 7.0, offset=position, label='circle')
 
-        if standard == 'IEEE':
-            # arrow
+        else:
+            inkDraw.line.relCoords(elem, [[-(18 + wireExtraSize), 0]], self.add(position, [-7, 0]))
+            inkDraw.line.relCoords(elem, [[18 + wireExtraSize, 0]], self.add(position, [7, 0]))
+            inkDraw.circle.centerRadius(elem, [0, 0], 7.0, offset=position, label='circle')
+
+        # arrow
+        if standard.upper() == 'IEEE':
             lineStyleSign = inkDraw.lineStyle.set(lineWidth=0.7, lineColor=inkDraw.color.defined('black'), fillColor=inkDraw.color.defined('black'))
             if mirror:
                 inkDraw.line.relCoords(elem, [[-5, 0], [0, 1.2], [-3, -1.2], [3, -1.2], [0, 1.2]], self.add(position, [4, 0]), lineStyle=lineStyleSign)
             else:
                 inkDraw.line.relCoords(elem, [[5, 0], [0, 1.2], [3, -1.2], [-3, -1.2], [0, 1.2]], self.add(position, [-4, 0]), lineStyle=lineStyleSign)
-        if standard == 'IEC':
+        if standard.upper() == 'IEC':
             lineStyleSign = inkDraw.lineStyle.setSimpleBlack(lineWidth=0.6)
             inkDraw.line.relCoords(elem, [[0,14]], self.add(position, [0,-7]),lineStyle=lineStyleSign)
+        #if standard.upper() == 'OLD':
+        #    lineStyleSign = inkDraw.lineStyle.set(lineWidth=0.7, lineColor=inkDraw.color.defined('black'), fillColor=inkDraw.color.defined('black'))
+        #    if mirror:
+        #        inkDraw.line.relCoords(elem, [[-13, 0], [0, 1.2], [-3, -1.2], [3, -1.2], [0, 1.2]], self.add(position, [8, 0]), lineStyle=lineStyleSign)
+        #    else:
+        #        inkDraw.line.relCoords(elem, [[13, 0], [0, 1.2], [3, -1.2], [-3, -1.2], [0, 1.2]], self.add(position, [-8, 0]), lineStyle=lineStyleSign)
+
+        if flagVariable:
+            # build arrow marker
+            colorBlack = inkDraw.color.defined('black')
+            L_arrow = 2.5
+            markerPath = 'M 0,0 l -%f,%f l 0,-%f z' % (L_arrow * 1.2, L_arrow / 2.0, L_arrow)
+            markerArrow = inkDraw.marker.createMarker(self, 'arrow', markerPath, RenameMode=0, strokeColor=colorBlack, fillColor=colorBlack,
+                                                      lineWidth=0.6, markerTransform='translate (1,0)')
+            lineStyleArrow = inkDraw.lineStyle.set(lineWidth=1, lineColor=colorBlack, markerEnd=markerArrow)
+
+            if standard.upper() == 'OLD':
+                inkDraw.line.relCoords(elem, [[20, -15]], self.add(position, [-10, 7]), lineStyle=lineStyleArrow)
+            else:
+                inkDraw.line.relCoords(elem, [[17, -15]], self.add(position, [-8, 7]), lineStyle=lineStyleArrow)
 
         pos_text = self.add(position, [0, -8 - self.textOffset])
         if inkDraw.useLatex:
@@ -304,10 +365,10 @@ class source(inkBase.inkscapeMadeEasy):
 
         if flagVolt:
             if convention == 'active':
-                self.drawVoltArrow(group, self.add(position, [0, 8]), name=voltName, color=self.voltageColor, angleDeg=angleDeg,
+                self.drawVoltArrow(group, self.add(position, [0, 9]), name=voltName, color=self.voltageColor, angleDeg=angleDeg,
                                    invertArrows=inv_curr)
             if convention == 'passive':
-                self.drawVoltArrow(group, self.add(position, [0, 8]), name=voltName, color=self.voltageColor, angleDeg=angleDeg,
+                self.drawVoltArrow(group, self.add(position, [0, 9]), name=voltName, color=self.voltageColor, angleDeg=angleDeg,
                                    invertArrows=not inv_curr)
 
         if flagCurr:

@@ -4,16 +4,17 @@ This extension will assist you creating electric symbols in [Inkscape](https://i
 
 <img src="docs/images/Examples.png" width="900px"/>
 
+**NEWS:** See the new section [Changelog](#-changelog) for new features!
+
 ## main features
 
 The main features of this extension are
 
- - Passive bipoles: resistors, capacitors, inductors, diodes, LEDs, photo diodes, nPnT switches
+ - Passive bipoles: resistors, capacitors, inductors, fuses, transformers, diodes, LEDs, photo diodes, nPnT switches
  - Active bipoles: various independent and dependent voltage/current sources
  - Operational amplifiers
  - Bipolar and FET transistors
  - Signal labeling generator and predefined common signals.
- - Each element can be labeled individually. Numeric nominal values are supported with optional unit inclusion.
  - Current and/or voltage indication arrows can be added to all elements, with custom labels. Their directions are adjustable.
  - You can choose between active and passive sign convention for all elements
  - adjustable orientation is available
@@ -158,6 +159,8 @@ In this tab you can create resistors, capacitors, inductors and fuses. The secti
 
 <img src="docs/images/RLC_types.png" width="800px"/>
 
+**Important:**  2-terminal potentiometer option was removed. You can have the same symbol with resistor + 'Variable' option turned on.
+
 **Standard:** Here you can choose the standard. There are two options, IEEE Std 315-1975 (american) and IEC 60167 (europe). This option affects RLC tab only.
 
 **Orientation:** Rotation angle in degrees.
@@ -172,6 +175,10 @@ In this tab you can create resistors, capacitors, inductors and fuses. The secti
 <img src="docs/images/WireExtraLength.png" width="400px"/>
 
 **Value:** Literal or numeric value of the bipole. If you type numeric values, you can use ``M,k,m,u,n,p`` to indicate multiplier unit. If LaTeX support is enabled, this text will be included in a math environment $...$. Also for LaTeX, there are a couple of functions to specify values in terms of complex impedances. See image below for examples.
+
+**Variable:** If selected, adds variable arrow on top of the symbol. This option has no effect in fuses and 3-terminal potentiometers.
+
+<img src="docs/images/RLC_variable" width="700px"/>
 
 **Add unit:** If selected, unit will be automatically added to the value. The unit will be selected accordingly with the type (ohm for resistors and generic bipole (impedance), farad for capacitors, henry for inductors).
 
@@ -210,7 +217,7 @@ There is also a common section called **Voltage and current indications** that w
 
 <img src="docs/images/IndSrc_types.png" width="450px"/>
 
-**Standard:** Here you can choose the standard. There are two options, IEEE Std 315-1975 (american) and IEC 60167 (europe). This option affects independent sources only.
+**Standard:** Here you can choose the standard. There are two options, IEEE Std 315-1975 (american) and IEC 60167 (europe). This option affects independent sources only. Old current source style (DIN?) is not affected by this option.
 
 **Orientation:** Rotation angle in degrees. See *RLC tab* section for examples.
 
@@ -219,6 +226,8 @@ There is also a common section called **Voltage and current indications** that w
 **Invert source direction:** invert the direction of the source.
 
 **Value:** Literal or numeric value of the bipole. If you type numeric values, you can use ``M,k,m,u,n,p`` to indicate multiplier unit. If LaTeX support is enabled, this text will be included in a math environment $...$. Also for LaTeX, there are a couple of functions to specify values in terms of phasors. See examples below.
+
+**Variable:** If selected, adds variable arrow on top of the symbol. See *RLC tab* section for examples.
 
 **Add unit:** If selected, unit will be automatically added to the value. The unit will be selected accordingly with the type (V for voltages and A for current).
 
@@ -309,10 +318,60 @@ In this tab you can create switches. The section **Commuting information** allow
 **Sign convention:** Switches between passive and active sign conventions. This option affects the symbol only if you add voltage and current indications.  See *RLC tab* section for examples.
 
 
-**Add voltage/current indications:** Add voltage drop and current arrow indications. On the side there are fields for the labels of the annotations. If LaTeX support is enabled, this text will be included in a math environment $...$.
+**Add voltage/current indications:** Add voltage drop and current arrow indications. On the side there are fields for the labels of the annotations. If LaTeX support is enabled, this text will be included in a math environment $...$.  See *RLC tab* section for examples.
 
 **Invert V/I directions:** invert the directions of the annotations. Keep in mind that they will still follow the sign convention you selected. See *RLC tab* section for examples.
 
+
+## Transformers tab
+
+In this tab you can create transformers. 
+
+<img src="docs/images/Tab_transformers.png" width="450px"/>
+
+**Type:** You can select the type of transformer. The available types are:
+
+<img src="docs/images/transf_types.png" width="800px"/>
+
+**Orientation:** Rotation angle in degrees. See *RLC tab* section for examples.
+
+**Extra wire length:** You can adjust the length of the wires. See *RLC tab* section for examples.
+
+**Core type:** You can choose between air, iron, and ferrite cores
+
+<img src="docs/images/transf_coreTypes.png" width="800px"/>
+
+**Step type:** You can choose between step up, step down, and one to one. This option affects transformers only.
+
+<img src="docs/images/transf_stepTypes.png" width="800px"/>
+
+**Add coil polarity:** You can add symbol to indicate the polarity of the coils. This option affects transformers only.
+
+<img src="docs/images/transf_polaritySymbol.png" width="800px"/>
+
+### Primary/SEcondary subtab
+
+The subtabs control each coil of the transformer. Only the **Primary** subtab affects inductors. 
+
+**Number of coils:** You can choose the number of coils in the primary/secondary. You can choose between 1 or 2 coils. This option has not effect on inductors.
+
+<img src="docs/images/transf_Ncoils.png" width="800px"/>
+
+**Coil tap:** Adds a centra tap to the coil
+
+**Flip coil polarity:** Flip the polarity indictaion in the coils
+
+<img src="docs/images/transf_flipPolarity.png" width="800px"/>
+
+Voltage and current indications
+
+### **Voltage and current indications section**
+
+**Sign convention:** Switches between passive and active sign conventions. This option affects the symbol only if you add voltage and current indications.  See *RLC tab* section for examples.
+
+**Add voltage/current indications:** Add voltage drop and current arrow indications. On the side there are fields for the labels of the annotations. If LaTeX support is enabled, this text will be included in a math environment $...$.  See *RLC tab* section for examples.
+
+**Invert V/I directions:** invert the directions of the annotations. Keep in mind that they will still follow the sign convention you selected. See *RLC tab* section for examples.
 
 ## Sig./Ind tab
 
@@ -570,3 +629,12 @@ This tab is identical to the tab with the same name on GENERAL menu entry. Check
 <img src="docs/images/Example_H.png" width="450px"/>
 
 <img src="docs/images/Example_I.png" width="250px"/>
+
+# Changelog
+
+**2022-02feb-19**
+
+- Added variable RLC components
+- Added variable independent sources
+- Added insulated gate bipolar transistor (NPN and PNP)
+- Removed 2-terminal potentiometer. Now you can create the same symbol with Resistor + variable indication

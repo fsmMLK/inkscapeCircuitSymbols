@@ -130,6 +130,115 @@ class transistor(inkBase.inkscapeMadeEasy):
         return group
 
     # ---------------------------------------------
+    # Insulated Gate Bipolar Transistor (NPN and PNP)
+    def drawTransistorIGBT(self, parent, position=[0, 0], angleDeg=0, label='IGBT', mirrorEC=False, drawGCEtags=False, drawEnvelope=False,
+                          transistorType='NPN', drawVCE=False, drawVCG=False, drawVGE=False, drawICarrow=False,
+                          drawIGarrow=False, drawIEarrow=False, VCEname='V_{ce}', VCGname='V_{cb}', VGEname='V_{be}', ICname='i_c', IGname='i_b',
+                          IEname='i_e', wireExtraSize=0):
+
+        """ draws BJT transisitor
+
+        parent: parent object
+        label: label of the object (it can be repeated)
+        position: position [x,y]
+        angleDeg: orientation (default: 0.0)
+        mirrorED: invert E and C terminals (default: False (C above, E below)
+        drawGCEtags: indentify BCE terminals (default: False)
+        drawEnvelope: draw circular envelope (default:False)
+        transistorType: type of Bipolar junction transistor values: 'NPN' (Default)  'PNP'
+        drawVCE,drawVCG,drawVGE: draw voltage drop annotations (default: False)
+        drawICarrow,drawIGarrow,drawIEarrow: draw current annotations (default: False)
+        VCEname,VCGname,VGEname: voltage drop annotation text
+        ICname,IGname,IEname: current annotation text
+        wireExtraSize: additional length added to the terminals. If negative, the length will be reduced. default: 0)
+        """
+
+        if transistorType == 'NPN':
+            isNPN = True
+        else:
+            isNPN = False
+
+        if mirrorEC:
+            Yfactor = -1
+        else:
+            Yfactor = 1
+
+        group = self.createGroup(parent, label)
+        elem = self.createGroup(group, label)
+        colorBlack = inkDraw.color.defined('black')
+
+        inkDraw.line.relCoords(elem, [[26 + wireExtraSize, 0]], self.add(position, [- 10 - wireExtraSize, 0]))  # base
+
+        # vertical junction line
+        inkDraw.line.relCoords(elem, [[0, 12]], self.add(position, [18, -6]))  # vertical junction line
+        inkDraw.line.relCoords(elem, [[0, 10]], self.add(position, [16, -5]))  # vertical junction line
+
+        # build emitter arrow marker
+        L_arrow = 2.5
+        markerBJT = inkDraw.marker.createMarker(self, 'BJTArrow', 'M 0,0 l -%f,%f l 0,-%f z' % (L_arrow * 1.2, L_arrow / 2.0, L_arrow), RenameMode=0,
+                                                strokeColor=colorBlack, fillColor=colorBlack, lineWidth=0.6)
+        lineStyleArrow = inkDraw.lineStyle.set(lineWidth=1, lineColor=colorBlack, markerEnd=markerBJT)
+
+        # draw emitter and collector terminals
+        # collector
+        inkDraw.line.relCoords(elem, [[7, -Yfactor * 5], [0, -Yfactor * (17 + wireExtraSize)]], self.add(position, [18, - Yfactor * 3]))
+        if isNPN:
+            inkDraw.line.relCoords(elem, [[7, Yfactor * 5]], self.add(position, [18, Yfactor * 3]), lineStyle=lineStyleArrow)  # emitter arrow
+            inkDraw.line.relCoords(elem, [[0, Yfactor * (17 + wireExtraSize)]], self.add(position, [25, Yfactor * 8]))  # emitter
+        else:
+            inkDraw.line.relCoords(elem, [[-7, -Yfactor * 5]], self.add(position, [25, Yfactor * 8]), lineStyle=lineStyleArrow)  # emitter arrow
+            inkDraw.line.relCoords(elem, [[0, Yfactor * (17 + wireExtraSize)]], self.add(position, [25, Yfactor * 8]))  # emitter
+
+        if drawEnvelope:
+            inkDraw.circle.centerRadius(elem, centerPoint=self.add(position, [22, 0]), radius=10, offset=[0, 0], label='circle')
+
+        if drawGCEtags:
+            pos_Ctag = self.add(position, [22.5, -Yfactor * 12.5])
+            pos_Etag = self.add(position, [22.5, Yfactor * 12.5])
+
+            tB = inkDraw.text.latex(self, group, 'G', position=self.add(position, [10, -3]), fontSize=self.fontSizeSmall / 1.5, refPoint='cc',
+                                        preambleFile=self.preambleFile, angleDeg=-angleDeg)
+            tC = inkDraw.text.latex(self, group, 'C', position=pos_Ctag, fontSize=self.fontSizeSmall / 1.5, refPoint='cc',
+                                    preambleFile=self.preambleFile, angleDeg=-angleDeg)
+            tE = inkDraw.text.latex(self, group, 'E', position=pos_Etag, fontSize=self.fontSizeSmall / 1.5, refPoint='cc',
+                                    preambleFile=self.preambleFile, angleDeg=-angleDeg)
+
+        if angleDeg != 0:
+            self.rotateElement(group, position, angleDeg)
+
+        # draw voltage drops
+        if drawVCE:
+            pos = self.add(position, [25 + 10, 0])
+            self.drawVoltArrowSimple(group, pos, name=VCEname, color=self.voltageColor, angleDeg=90, invertArrows=mirrorEC, size=20.0,
+                                     invertCurvatureDirection=False, extraAngleText=angleDeg)
+
+        if drawVCG:
+            pos = self.add(position, [12, - Yfactor * 12])
+            ang = Yfactor * 45
+            self.drawVoltArrowSimple(group, pos, name=VCGname, color=self.voltageColor, angleDeg=ang, invertArrows=False, size=20.0,
+                                     invertCurvatureDirection=not mirrorEC, extraAngleText=angleDeg)
+
+        if drawVGE:
+            pos = self.add(position, [12, Yfactor * 12])
+            ang = -Yfactor * 45
+            self.drawVoltArrowSimple(group, pos, name=VGEname, color=self.voltageColor, angleDeg=ang, invertArrows=True, size=20.0,
+                                     invertCurvatureDirection=mirrorEC, extraAngleText=angleDeg)
+
+        # draw terminal currents
+        if drawICarrow:
+            self.drawCurrArrowSimple(group, self.add(position, [30, - Yfactor * (20 + wireExtraSize)]), name=ICname, color=self.currentColor,
+                                     angleDeg=90, invertArrows=mirrorEC ^ isNPN, size=7.5, invertTextSide=True, extraAngleText=angleDeg)
+
+        if drawIGarrow:
+            self.drawCurrArrowSimple(group, self.add(position, [7.5 - 10, - 5]), name=IGname, color=self.currentColor, angleDeg=0,
+                                     invertArrows=not isNPN, size=7.5, invertTextSide=False, extraAngleText=angleDeg)
+
+        if drawIEarrow:
+            self.drawCurrArrowSimple(group, self.add(position, [30, Yfactor * (20 + wireExtraSize)]), name=IEname, color=self.currentColor,
+                                     angleDeg=90, invertArrows=mirrorEC ^ isNPN, size=7.5, invertTextSide=True, extraAngleText=angleDeg)
+        return group
+
+    # ---------------------------------------------
     # metal-oxide-semiconductor field-effect transistor (N and P channel)
     def drawTransistorMOSFET(self, parent, position=[0, 0], angleDeg=0, label='MOSFET', mirrorSD=False, drawSGDtags=False, drawEnvelope=False,
                              modeType='MOSFET-E', gateType='P_gate', MOSsymbolType=True, bodyDiode=False, drawVGS=False, drawVDS=False, drawVDG=False,
