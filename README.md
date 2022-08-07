@@ -6,6 +6,8 @@ This extension will assist you creating electric symbols in [Inkscape](https://i
 
 **NEWS:** See the new section [Changelog](#changelog) for new features!
 
+**HINT:** If you want to create timing diagrams, please take a look at my newest project [wavedromScape](https://github.com/fsmMLK/wavedromScape)
+
 ## main features
 
 The main features of this extension are
