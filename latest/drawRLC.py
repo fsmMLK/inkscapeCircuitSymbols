@@ -12,7 +12,7 @@ class RLC(inkBase.inkscapeMadeEasy):
         return vector + np.array(delta)
 
     # ---------------------------------------------
-    def drawResistor(self, parent, position=[0, 0], value='R', label='Resistor', angleDeg=0, flagVolt=True, voltName='v', flagCurr=True, currName='i',
+    def drawResistor(self, parent, position=[0, 0], value='', label='Resistor', angleDeg=0, flagVolt=True, voltName='v', flagCurr=True, currName='i',
                      invertArrows=False, convention='passive', wireExtraSize=0,standard='IEEE',flagVariable=False):
         """ draws a resistor
 

@@ -294,7 +294,7 @@ class transistor(inkBase.inkscapeMadeEasy):
         lineStyleArrowFine = inkDraw.lineStyle.set(lineWidth=lineWidth, lineColor=colorBlack, markerEnd=markerMOS)
         lineStyleFine = inkDraw.lineStyle.set(lineWidth=lineWidth, lineColor=colorBlack)
         lineStyleBold = inkDraw.lineStyle.set(lineWidth=2, lineColor=colorBlack)
-
+        lineStyleBoldFine = inkDraw.lineStyle.set(lineWidth=1.5, lineColor=colorBlack)
         #--- GATE
         if MOSsymbolType == 'shorthand':
             if not isEmode:

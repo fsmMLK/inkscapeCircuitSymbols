@@ -24,22 +24,22 @@ OhmChar = u'\u2126'.encode('utf-8')
 
 def latexUnitMultiple(valueString):
     if valueString[-1] == 'M':
-        return valueString.replace('M', r'\si\mega')
+        return valueString.replace('M', r'\si{\mega{}}')
 
     if valueString[-1] == 'k':
-        return valueString.replace('k', r'\si\kilo')
+        return valueString.replace('k', r'\si{\kilo{}}')
 
     if valueString[-1] == 'm':
-        return valueString.replace('m', r'\si\milli')
+        return valueString.replace('m', r'\si{\milli{}}')
 
     if valueString[-1] == 'u':
-        return valueString.replace('u', r'\micro')
+        return valueString.replace('u', r'\si{\micro{}}')
 
     if valueString[-1] == 'n':
-        return valueString.replace('n', r'\si\nano')
+        return valueString.replace('n', r'\si{\nano{}}')
 
     if valueString[-1] == 'p':
-        return valueString.replace('p', r'\si\pico')
+        return valueString.replace('p', r'\si{\pico{}}')
 
     return valueString
 
@@ -56,7 +56,7 @@ class CircuitSymbols(RLC, source, transistor, transformer, signal, arrow, ampOp,
         self.arg_parser.add_argument("--subtab_transformerWindings", type=str, dest="subtab_transformerWindings", default="object")
 
         self.arg_parser.add_argument("--bipoleRLC", type=str, dest="bipoleRLC", default='resistor')
-        self.arg_parser.add_argument("--bipoleRLCVal", type=str, dest="bipoleRLCVal", default='Z')
+        self.arg_parser.add_argument("--bipoleRLCVal", type=str, dest="bipoleRLCVal", default='{}')
         self.arg_parser.add_argument("--bipoleRLCvariable", type=self.bool, dest="bipoleRLCvariable", default=False)
         self.arg_parser.add_argument("--bipoleRLCUnit", type=self.bool, dest="bipoleRLCUnit", default=False)
         self.arg_parser.add_argument("--bipoleRLCRot", type=str, dest="bipoleRLCRot", default='0')
@@ -597,16 +597,16 @@ class CircuitSymbols(RLC, source, transistor, transformer, signal, arrow, ampOp,
                     text = '-V_{cc}'
 
                 if so.nodal == "+5V":
-                    text = r'+5\volt'
+                    text = r'+\SI{5}{\volt}'
 
                 if so.nodal == "-5V":
-                    text = r'-5\volt'
+                    text = r'\SI{-5}{\volt}'
 
                 if so.nodal == "+15V":
-                    text = r'+15\volt'
+                    text = r'\SI{+15}{\volt}'
 
                 if so.nodal == "-15V":
-                    text = r'-15\volt'
+                    text = r'\SI{-15}{\volt}'
 
                 if so.nodal == "v_in":
                     text = r'v_{in}'
