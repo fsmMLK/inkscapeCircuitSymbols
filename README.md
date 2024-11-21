@@ -90,6 +90,7 @@ Installation procedures for latest and older versions are described below.
                   ┣━━ drawSignals.py
                   ┣━━ drawSources.py
                   ┣━━ drawSwitches.py
+                  ┣━━ drawTransformer.py
                   ┗━━ drawTransistors.py
         
         NOTE: You might have other sub folders inside the extensions directory. They don't interfere with the plugin.
