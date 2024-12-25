@@ -12,7 +12,7 @@ class RLC(inkBase.inkscapeMadeEasy):
         return vector + np.array(delta)
 
     # ---------------------------------------------
-    def drawResistor(self, parent, position=[0, 0], value='', label='Resistor', angleDeg=0, flagVolt=True, voltName='v', flagCurr=True, currName='i',
+    def drawResistor(self, parent, position=[0, 0], value='R', label='Resistor', angleDeg=0, flagVolt=True, voltName='v', flagCurr=True, currName='i',
                      invertArrows=False, convention='passive', wireExtraSize=0,standard='IEEE',flagVariable=False):
         """ draws a resistor
 
@@ -58,10 +58,11 @@ class RLC(inkBase.inkscapeMadeEasy):
         else:
             pos_text = self.add(position, [0, -3 - self.textOffset])
 
-        if inkDraw.useLatex:
-            value = '$' + value + '$'
+        if value.strip() != "":
+            if inkDraw.useLatex:
+                value = '$' + value + '$'
 
-        inkDraw.text.latex(self, group, value, pos_text, fontSize=self.fontSize, refPoint='bc', preambleFile=self.preambleFile)
+            inkDraw.text.latex(self, group, value, pos_text, fontSize=self.fontSize, refPoint='bc', preambleFile=self.preambleFile)
 
         if angleDeg != 0:
             self.rotateElement(group, position, angleDeg)
@@ -136,10 +137,11 @@ class RLC(inkBase.inkscapeMadeEasy):
             inkDraw.line.relCoords(elem, [[20, -12]], self.add(position, [-10, 6]), lineStyle=lineStyleArrow)
             pos_text = self.add(position, [0, -6 - self.textOffset])
 
-        if inkDraw.useLatex:
-            value = '$' + value + '$'
+        if value.strip() != "":
+            if inkDraw.useLatex:
+                value = '$' + value + '$'
 
-        inkDraw.text.latex(self, group, value, pos_text, fontSize=self.fontSize, refPoint='bc', preambleFile=self.preambleFile)
+            inkDraw.text.latex(self, group, value, pos_text, fontSize=self.fontSize, refPoint='bc', preambleFile=self.preambleFile)
 
         if angleDeg != 0:
             self.rotateElement(group, position, angleDeg)
@@ -220,10 +222,12 @@ class RLC(inkBase.inkscapeMadeEasy):
             inkDraw.line.relCoords(elem, [[20, -12]], self.add(position, [-10, 6]), lineStyle=lineStyleArrow)
 
         pos_text = self.add(position, [0, -8 - self.textOffset])
-        if inkDraw.useLatex:
-            value = '$' + value + '$'
 
-        inkDraw.text.latex(self, group, value, pos_text, fontSize=self.fontSize, refPoint='bc', preambleFile=self.preambleFile)
+        if value.strip() != "":
+            if inkDraw.useLatex:
+                value = '$' + value + '$'
+
+            inkDraw.text.latex(self, group, value, pos_text, fontSize=self.fontSize, refPoint='bc', preambleFile=self.preambleFile)
 
         if flagPol:
             lineStyleSign = inkDraw.lineStyle.setSimpleBlack(lineWidth=0.6)
@@ -293,10 +297,11 @@ class RLC(inkBase.inkscapeMadeEasy):
         else:
             pos_text = self.add(position, [0,  - self.textOffset])
 
-        if inkDraw.useLatex:
-            value = '$' + value + '$'
+        if value.strip() != "":
+            if inkDraw.useLatex:
+                value = '$' + value + '$'
 
-        inkDraw.text.latex(self, group, value, pos_text, fontSize=self.fontSize, refPoint='bc', preambleFile=self.preambleFile)
+            inkDraw.text.latex(self, group, value, pos_text, fontSize=self.fontSize, refPoint='bc', preambleFile=self.preambleFile)
 
         if angleDeg != 0:
             self.rotateElement(group, position, angleDeg)
@@ -361,10 +366,12 @@ class RLC(inkBase.inkscapeMadeEasy):
             inkDraw.line.relCoords(elem, [[19, 0], [0, -6], [-19, 0], [0, 6]], self.add(position, [-9.5, 3]))
 
         pos_text = self.add(position, [0, -3 - self.textOffset])
-        if inkDraw.useLatex:
-            value = '$' + value + '$'
 
-        inkDraw.text.latex(self, group, value, pos_text, fontSize=self.fontSize, refPoint='bc', preambleFile=self.preambleFile)
+        if value.strip() != "":
+            if inkDraw.useLatex:
+                value = '$' + value + '$'
+
+            inkDraw.text.latex(self, group, value, pos_text, fontSize=self.fontSize, refPoint='bc', preambleFile=self.preambleFile)
 
         if angleDeg != 0:
             self.rotateElement(group, position, angleDeg)

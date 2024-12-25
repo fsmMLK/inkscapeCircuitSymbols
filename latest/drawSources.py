@@ -83,11 +83,12 @@ class source(inkBase.inkscapeMadeEasy):
 
             inkDraw.line.relCoords(elem, [[17, -15]], self.add(position, [-8, 7]), lineStyle=lineStyleArrow)
 
-        pos_text = self.add(position, [0, -8 - self.textOffset])
-        if inkDraw.useLatex:
-            value = '$' + value + '$'
+        if value.strip() != "":
+            pos_text = self.add(position, [0, -8 - self.textOffset])
+            if inkDraw.useLatex:
+                value = '$' + value + '$'
 
-        inkDraw.text.latex(self, group, value, pos_text, fontSize=self.fontSize, refPoint='bc', preambleFile=self.preambleFile)
+            inkDraw.text.latex(self, group, value, pos_text, fontSize=self.fontSize, refPoint='bc', preambleFile=self.preambleFile)
 
         if angleDeg != 0:
             self.rotateElement(group, position, angleDeg)
@@ -163,11 +164,12 @@ class source(inkBase.inkscapeMadeEasy):
 
             inkDraw.line.relCoords(elem, [[16, -10]], self.add(position, [-8, 5]), lineStyle=lineStyleArrow)
 
-        pos_text = self.add(position, [0, -8 - self.textOffset])
-        if inkDraw.useLatex:
-            value = '$' + value + '$'
+        if value.strip() != "":
+            pos_text = self.add(position, [0, -8 - self.textOffset])
+            if inkDraw.useLatex:
+                value = '$' + value + '$'
 
-        inkDraw.text.latex(self, group, value, pos_text, fontSize=self.fontSize, refPoint='bc', preambleFile=self.preambleFile)
+            inkDraw.text.latex(self, group, value, pos_text, fontSize=self.fontSize, refPoint='bc', preambleFile=self.preambleFile)
 
         if angleDeg != 0:
             self.rotateElement(group, position, angleDeg)
@@ -252,11 +254,12 @@ class source(inkBase.inkscapeMadeEasy):
 
             inkDraw.line.relCoords(elem, [[19, -18]], self.add(position, [-9, 8]), lineStyle=lineStyleArrow)
 
-        pos_text = self.add(position, [0, -9 - self.textOffset])
-        if inkDraw.useLatex:
-            value = '$' + value + '$'
+        if value.strip() != "":
+            pos_text = self.add(position, [0, -9 - self.textOffset])
+            if inkDraw.useLatex:
+                value = '$' + value + '$'
 
-        inkDraw.text.latex(self, group, value, pos_text, fontSize=self.fontSize, refPoint='bc', preambleFile=self.preambleFile)
+            inkDraw.text.latex(self, group, value, pos_text, fontSize=self.fontSize, refPoint='bc', preambleFile=self.preambleFile)
 
         if angleDeg != 0:
             self.rotateElement(group, position, angleDeg)
@@ -352,11 +355,12 @@ class source(inkBase.inkscapeMadeEasy):
             else:
                 inkDraw.line.relCoords(elem, [[17, -15]], self.add(position, [-8, 7]), lineStyle=lineStyleArrow)
 
-        pos_text = self.add(position, [0, -8 - self.textOffset])
-        if inkDraw.useLatex:
-            value = '$' + value + '$'
+        if value.strip() != "":
+            pos_text = self.add(position, [0, -8 - self.textOffset])
+            if inkDraw.useLatex:
+                value = '$' + value + '$'
 
-        inkDraw.text.latex(self, group, value, pos_text, fontSize=self.fontSize, refPoint='bc', preambleFile=self.preambleFile)
+            inkDraw.text.latex(self, group, value, pos_text, fontSize=self.fontSize, refPoint='bc', preambleFile=self.preambleFile)
 
         if angleDeg != 0:
             self.rotateElement(group, position, angleDeg)

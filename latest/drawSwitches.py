@@ -95,7 +95,8 @@ class switch(inkBase.inkscapeMadeEasy):
                     pos_text = self.add(position, [3, -6 - self.textOffset])
                 else:
                     pos_text = self.add(position, [-2, -6 - self.textOffset])
-        if value:
+
+        if value.strip() != "":
             if inkDraw.useLatex:
                 value = '$' + value + '$'
 

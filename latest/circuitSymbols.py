@@ -23,23 +23,25 @@ OhmChar = u'\u2126'.encode('utf-8')
 # package needed:  steinmetz
 
 def latexUnitMultiple(valueString):
-    if valueString[-1] == 'M':
-        return valueString.replace('M', r'\si{\mega{}}')
 
-    if valueString[-1] == 'k':
-        return valueString.replace('k', r'\si{\kilo{}}')
+    if len(valueString.strip())>0:
+        if valueString[-1] == 'M':
+            return valueString.replace('M', r'\si{\mega{}}')
 
-    if valueString[-1] == 'm':
-        return valueString.replace('m', r'\si{\milli{}}')
+        if valueString[-1] == 'k':
+            return valueString.replace('k', r'\si{\kilo{}}')
 
-    if valueString[-1] == 'u':
-        return valueString.replace('u', r'\si{\micro{}}')
+        if valueString[-1] == 'm':
+            return valueString.replace('m', r'\si{\milli{}}')
 
-    if valueString[-1] == 'n':
-        return valueString.replace('n', r'\si{\nano{}}')
+        if valueString[-1] == 'u':
+            return valueString.replace('u', r'\si{\micro{}}')
 
-    if valueString[-1] == 'p':
-        return valueString.replace('p', r'\si{\pico{}}')
+        if valueString[-1] == 'n':
+            return valueString.replace('n', r'\si{\nano{}}')
+
+        if valueString[-1] == 'p':
+            return valueString.replace('p', r'\si{\pico{}}')
 
     return valueString
 
@@ -56,7 +58,7 @@ class CircuitSymbols(RLC, source, transistor, transformer, signal, arrow, ampOp,
         self.arg_parser.add_argument("--subtab_transformerWindings", type=str, dest="subtab_transformerWindings", default="object")
 
         self.arg_parser.add_argument("--bipoleRLC", type=str, dest="bipoleRLC", default='resistor')
-        self.arg_parser.add_argument("--bipoleRLCVal", type=str, dest="bipoleRLCVal", default='{}')
+        self.arg_parser.add_argument("--bipoleRLCVal", type=str, dest="bipoleRLCVal", default='')
         self.arg_parser.add_argument("--bipoleRLCvariable", type=self.bool, dest="bipoleRLCvariable", default=False)
         self.arg_parser.add_argument("--bipoleRLCUnit", type=self.bool, dest="bipoleRLCUnit", default=False)
         self.arg_parser.add_argument("--bipoleRLCRot", type=str, dest="bipoleRLCRot", default='0')
@@ -70,7 +72,7 @@ class CircuitSymbols(RLC, source, transistor, transformer, signal, arrow, ampOp,
         self.arg_parser.add_argument("--bipoleRLCextraWireSize", type=float, dest="bipoleRLCextraWireSize", default=0.0)
 
         self.arg_parser.add_argument("--source", type=str, dest="source", default='voltIndep')
-        self.arg_parser.add_argument("--sourceVal", type=str, dest="sourceVal", default='E')
+        self.arg_parser.add_argument("--sourceVal", type=str, dest="sourceVal", default='')
         self.arg_parser.add_argument("--sourceVariable", type=self.bool, dest="sourceVariable", default=False)
         self.arg_parser.add_argument("--sourceUnit", type=self.bool, dest="sourceUnit", default=False)
         self.arg_parser.add_argument("--sourceStandard", type=str, dest="sourceStandard", default='IEC')
@@ -182,7 +184,7 @@ class CircuitSymbols(RLC, source, transistor, transformer, signal, arrow, ampOp,
         self.arg_parser.add_argument("--FET_ExtraWireSize", type=float, dest="FET_ExtraWireSize", default=0.0)
 
         self.arg_parser.add_argument("--diode", type=str, dest="diode", default='none')
-        self.arg_parser.add_argument("--diodeVal", type=str, dest="diodeVal", default=None)
+        self.arg_parser.add_argument("--diodeVal", type=str, dest="diodeVal", default='')
         self.arg_parser.add_argument("--diodeRot", type=str, dest="diodeRot", default='0')
         self.arg_parser.add_argument("--diodeVolt", type=self.bool, dest="diodeVolt", default=True)
         self.arg_parser.add_argument("--diodeCurr", type=self.bool, dest="diodeCurr", default=True)
@@ -288,77 +290,84 @@ class CircuitSymbols(RLC, source, transistor, transformer, signal, arrow, ampOp,
                 so.bipoleRLCVal = latexUnitMultiple(so.bipoleRLCVal)
 
             if so.bipoleRLC == "genericBipole":
-                if so.bipoleRLCUnit:
-                    if inkDraw.useLatex:
-                        so.bipoleRLCVal += r'\si\ohm'
-                    else:
-                        so.bipoleRLCVal += OhmChar
+                if so.bipoleRLCVal.strip() != '':
+                    if so.bipoleRLCUnit:
+                        if inkDraw.useLatex:
+                            so.bipoleRLCVal += r'\si\ohm'
+                        else:
+                            so.bipoleRLCVal += OhmChar
                 self.drawResistor(root_layer, position, value=so.bipoleRLCVal, angleDeg=so.bipoleRLCRot, flagVolt=so.bipoleRLCVolt,
                                   voltName=so.bipoleRLCVoltName, flagCurr=so.bipoleRLCCurr, currName=so.bipoleRLCCurrName,
                                   invertArrows=so.bipoleRLCVoltCurrInvert, convention=so.bipoleRLCconvention, wireExtraSize=so.bipoleRLCextraWireSize,
                                   standard='IEC',flagVariable=so.bipoleRLCvariable)
 
             if so.bipoleRLC == "resistor":
-                if so.bipoleRLCUnit:
-                    if inkDraw.useLatex:
-                        so.bipoleRLCVal += r'\si\ohm'
-                    else:
-                        so.bipoleRLCVal += OhmChar
+                if so.bipoleRLCVal.strip() != '':
+                    if so.bipoleRLCUnit:
+                        if inkDraw.useLatex:
+                            so.bipoleRLCVal += r'\si\ohm'
+                        else:
+                            so.bipoleRLCVal += OhmChar
                 self.drawResistor(root_layer, position, value=so.bipoleRLCVal, angleDeg=so.bipoleRLCRot, flagVolt=so.bipoleRLCVolt,
                                   voltName=so.bipoleRLCVoltName, flagCurr=so.bipoleRLCCurr, currName=so.bipoleRLCCurrName,
                                   invertArrows=so.bipoleRLCVoltCurrInvert, convention=so.bipoleRLCconvention,wireExtraSize=so.bipoleRLCextraWireSize,
                                   standard=so.bipoleRLCstandard,flagVariable=so.bipoleRLCvariable)
 
             if so.bipoleRLC == "capacitor":
-                if so.bipoleRLCUnit:
-                    if inkDraw.useLatex:
-                        so.bipoleRLCVal += r'\si\farad'
-                    else:
-                        so.bipoleRLCVal += 'F'
+                if so.bipoleRLCVal.strip() != '':
+                    if so.bipoleRLCUnit:
+                        if inkDraw.useLatex:
+                            so.bipoleRLCVal += r'\si\farad'
+                        else:
+                            so.bipoleRLCVal += 'F'
                 self.drawCapacitor(root_layer, position, value=so.bipoleRLCVal, flagPol=False, angleDeg=so.bipoleRLCRot, flagVolt=so.bipoleRLCVolt,
                                    voltName=so.bipoleRLCVoltName, flagCurr=so.bipoleRLCCurr, currName=so.bipoleRLCCurrName,
                                    invertArrows=so.bipoleRLCVoltCurrInvert, convention=so.bipoleRLCconvention,
                                    wireExtraSize=so.bipoleRLCextraWireSize, standard=so.bipoleRLCstandard,flagVariable=so.bipoleRLCvariable)
 
             if so.bipoleRLC == "capacitorPol":
-                if so.bipoleRLCUnit:
-                    if inkDraw.useLatex:
-                        so.bipoleRLCVal += r'\si\farad'
-                    else:
-                        so.bipoleRLCVal += 'F'
+                if so.bipoleRLCVal.strip() != '':
+                    if so.bipoleRLCUnit:
+                        if inkDraw.useLatex:
+                            so.bipoleRLCVal += r'\si\farad'
+                        else:
+                            so.bipoleRLCVal += 'F'
                 self.drawCapacitor(root_layer, position, value=so.bipoleRLCVal, flagPol=True, angleDeg=so.bipoleRLCRot, flagVolt=so.bipoleRLCVolt,
                                    voltName=so.bipoleRLCVoltName, flagCurr=so.bipoleRLCCurr, currName=so.bipoleRLCCurrName,
                                    invertArrows=so.bipoleRLCVoltCurrInvert, convention=so.bipoleRLCconvention,
                                    wireExtraSize=so.bipoleRLCextraWireSize, standard=so.bipoleRLCstandard,flagVariable=so.bipoleRLCvariable)
 
             if so.bipoleRLC == "inductor":
-                if so.bipoleRLCUnit:
-                    if inkDraw.useLatex:
-                        so.bipoleRLCVal += r'\si\henry'
-                    else:
-                        so.bipoleRLCVal += 'H'
+                if so.bipoleRLCVal.strip() != '':
+                    if so.bipoleRLCUnit:
+                        if inkDraw.useLatex:
+                            so.bipoleRLCVal += r'\si\henry'
+                        else:
+                            so.bipoleRLCVal += 'H'
                 self.drawInductor(root_layer, position, value=so.bipoleRLCVal, angleDeg=so.bipoleRLCRot, flagVolt=so.bipoleRLCVolt,
                                   voltName=so.bipoleRLCVoltName, flagCurr=so.bipoleRLCCurr, currName=so.bipoleRLCCurrName,
                                   invertArrows=so.bipoleRLCVoltCurrInvert, convention=so.bipoleRLCconvention,wireExtraSize=so.bipoleRLCextraWireSize,
                                   flagVariable=so.bipoleRLCvariable)
 
             if so.bipoleRLC == "pot2T":
-                if so.bipoleRLCUnit:
-                    if inkDraw.useLatex:
-                        so.bipoleRLCVal += r'\si\ohm'
-                    else:
-                        so.bipoleRLCVal += OhmChar
+                if so.bipoleRLCVal.strip() != '':
+                    if so.bipoleRLCUnit:
+                        if inkDraw.useLatex:
+                            so.bipoleRLCVal += r'\si\ohm'
+                        else:
+                            so.bipoleRLCVal += OhmChar
                 self.drawPotentiometer(root_layer, position, value=so.bipoleRLCVal, angleDeg=so.bipoleRLCRot, flagVolt=so.bipoleRLCVolt,
                                        voltName=so.bipoleRLCVoltName, flagCurr=so.bipoleRLCCurr, currName=so.bipoleRLCCurrName,
                                        invertArrows=so.bipoleRLCVoltCurrInvert, is3T=False, convention=so.bipoleRLCconvention,
                                        wireExtraSize=so.bipoleRLCextraWireSize, standard=so.bipoleRLCstandard)
 
             if so.bipoleRLC == "pot3T":
-                if so.bipoleRLCUnit:
-                    if inkDraw.useLatex:
-                        so.bipoleRLCVal += r'\si\ohm'
-                    else:
-                        so.bipoleRLCVal += OhmChar
+                if so.bipoleRLCVal.strip() != '':
+                    if so.bipoleRLCUnit:
+                        if inkDraw.useLatex:
+                            so.bipoleRLCVal += r'\si\ohm'
+                        else:
+                            so.bipoleRLCVal += OhmChar
                 self.drawPotentiometer(root_layer, position, value=so.bipoleRLCVal, angleDeg=so.bipoleRLCRot, flagVolt=so.bipoleRLCVolt,
                                        voltName=so.bipoleRLCVoltName, flagCurr=so.bipoleRLCCurr, currName=so.bipoleRLCCurrName,
                                        invertArrows=so.bipoleRLCVoltCurrInvert, is3T=True, convention=so.bipoleRLCconvention,
@@ -382,66 +391,72 @@ class CircuitSymbols(RLC, source, transistor, transformer, signal, arrow, ampOp,
                     so.sourceVal = latexUnitMultiple(so.sourceVal)
 
                 if so.source == "voltIndepDC":
-                    if so.sourceUnit:
-                        if inkDraw.useLatex:
-                            so.sourceVal += r'\si\volt'
-                        else:
-                            so.sourceVal += 'V'
+                    if so.sourceVal.strip() != '':
+                        if so.sourceUnit:
+                            if inkDraw.useLatex:
+                                so.sourceVal += r'\si\volt'
+                            else:
+                                so.sourceVal += 'V'
                     self.drawSourceVDC(root_layer, position, value=so.sourceVal, angleDeg=so.sourceRot, flagVolt=so.sourceVolt,
                                        flagCurr=so.sourceCurr, currName=so.sourceCurrName, invertArrows=so.sourceVoltCurrInvert,
                                        mirror=so.sourceMirror, convention=so.sourceConvention, wireExtraSize=so.sourceExtraWireSize,
                                        flagVariable=so.sourceVariable)
 
                 if so.source == "voltIndepDCbattery":
-                    if so.sourceUnit:
-                        if inkDraw.useLatex:
-                            so.sourceVal += r'\si\volt'
-                        else:
-                            so.sourceVal += 'V'
+                    if so.sourceVal.strip() != '':
+                        if so.sourceUnit:
+                            if inkDraw.useLatex:
+                                so.sourceVal += r'\si\volt'
+                            else:
+                                so.sourceVal += 'V'
                     self.drawSourceVDCbattery(root_layer, position, value=so.sourceVal, angleDeg=so.sourceRot, flagVolt=so.sourceVolt,
                                               flagCurr=so.sourceCurr, currName=so.sourceCurrName, invertArrows=so.sourceVoltCurrInvert,
                                               mirror=so.sourceMirror, convention=so.sourceConvention, wireExtraSize=so.sourceExtraWireSize,
                                               flagVariable=so.sourceVariable)
 
                 if so.source == "voltIndep":
-                    if so.sourceUnit:
-                        if inkDraw.useLatex:
-                            so.sourceVal += r'\si\volt'
-                        else:
-                            so.sourceVal += 'V'
+                    if so.sourceVal.strip() != '':
+                        if so.sourceUnit:
+                            if inkDraw.useLatex:
+                                so.sourceVal += r'\si\volt'
+                            else:
+                                so.sourceVal += 'V'
                     self.drawSourceV(root_layer, position, value=so.sourceVal, sourceType='general', angleDeg=so.sourceRot, flagVolt=so.sourceVolt,
                                      flagCurr=so.sourceCurr, currName=so.sourceCurrName, invertArrows=so.sourceVoltCurrInvert, mirror=so.sourceMirror,
                                      convention=so.sourceConvention, wireExtraSize=so.sourceExtraWireSize, standard=so.sourceStandard,
                                      flagVariable=so.sourceVariable)
 
                 if so.source == "voltIndepSinusoidal":
-                    if so.sourceUnit:
-                        if inkDraw.useLatex:
-                            so.sourceVal += r'\si\volt'
-                        else:
-                            so.sourceVal += 'V'
+                    if so.sourceVal.strip() != '':
+                        if so.sourceUnit:
+                            if inkDraw.useLatex:
+                                so.sourceVal += r'\si\volt'
+                            else:
+                                so.sourceVal += 'V'
                     self.drawSourceV(root_layer, position, value=so.sourceVal, sourceType='sinusoidal', angleDeg=so.sourceRot, flagVolt=so.sourceVolt,
                                      flagCurr=so.sourceCurr, currName=so.sourceCurrName, invertArrows=so.sourceVoltCurrInvert, mirror=so.sourceMirror,
                                      convention=so.sourceConvention, wireExtraSize=so.sourceExtraWireSize, standard=so.sourceControlledStandard,
                                      flagVariable=so.sourceVariable)
 
                 if so.source == "currIndep":
-                    if so.sourceUnit:
-                        if inkDraw.useLatex:
-                            so.sourceVal += r'\si\ampere'  # weird effect of ampere symbol. It causes Latex text to be misplaced.
-                        else:
-                            so.sourceVal += 'A'
+                    if so.sourceVal.strip() != '':
+                        if so.sourceUnit:
+                            if inkDraw.useLatex:
+                                so.sourceVal += r'\si\ampere'  # weird effect of ampere symbol. It causes Latex text to be misplaced.
+                            else:
+                                so.sourceVal += 'A'
                     self.drawSourceI(root_layer, position, value=so.sourceVal, angleDeg=so.sourceRot, flagVolt=so.sourceVolt, flagCurr=so.sourceCurr,
                                      voltName=so.sourceVoltName, invertArrows=so.sourceVoltCurrInvert, mirror=so.sourceMirror,
                                      convention=so.sourceConvention, wireExtraSize=so.sourceExtraWireSize, standard=so.sourceStandard,
                                      flagVariable=so.sourceVariable)
 
                 if so.source == "currIndepOld":
-                    if so.sourceUnit:
-                        if inkDraw.useLatex:
-                            so.sourceVal += r'\si\ampere'  # weird effect of ampere symbol. It causes Latex text to be misplaced.
-                        else:
-                            so.sourceVal += 'A'
+                    if so.sourceVal.strip() != '':
+                        if so.sourceUnit:
+                            if inkDraw.useLatex:
+                                so.sourceVal += r'\si\ampere'  # weird effect of ampere symbol. It causes Latex text to be misplaced.
+                            else:
+                                so.sourceVal += 'A'
                     self.drawSourceI(root_layer, position, value=so.sourceVal, angleDeg=so.sourceRot, flagVolt=so.sourceVolt, flagCurr=so.sourceCurr,
                                      voltName=so.sourceVoltName, invertArrows=so.sourceVoltCurrInvert, mirror=so.sourceMirror,
                                      convention=so.sourceConvention, wireExtraSize=so.sourceExtraWireSize, standard='OLD',

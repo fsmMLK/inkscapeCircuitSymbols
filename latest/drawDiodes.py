@@ -83,7 +83,7 @@ class diode(inkBase.inkscapeMadeEasy):
                 inkDraw.line.relCoords(elem, [[0, 12]], self.add(position, [6, -6]))
                 inkDraw.line.relCoords(elem, [[0, 12]], self.add(position, [9, -6]))
 
-        if value is not None:
+        if value.strip() != "":
 
             if flagType == 'LED':
                 pos_text = self.add(position, [0, -13 - self.textOffset])
